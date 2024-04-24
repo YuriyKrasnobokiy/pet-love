@@ -1,6 +1,11 @@
-import { MaterialUISwitch } from "../Switch/Switch";
-import { HeaderNav, HeaderWrapper, NavLinkStyled } from "./Layout.styled";
-// import PropTypes from "prop-types";
+import {
+  HeaderNav,
+  HeaderWrapper,
+  NavLinkStyled,
+  ThemeBtn,
+} from "./Layout.styled";
+import { MdOutlineWbSunny } from "react-icons/md";
+import { MdOutlineNightsStay } from "react-icons/md";
 
 const Layout = ({ children, toggleTheme, currentTheme }) => {
   return (
@@ -11,19 +16,18 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
             <NavLinkStyled to="/">Home</NavLinkStyled>
             <NavLinkStyled to="/products">Products</NavLinkStyled>
           </HeaderNav>
-          <MaterialUISwitch
-            onClick={toggleTheme}
-            checked={currentTheme === "dark"}
-          />
+          <ThemeBtn type="button" onClick={toggleTheme}>
+            {currentTheme === "dark" ? (
+              <MdOutlineNightsStay />
+            ) : (
+              <MdOutlineWbSunny />
+            )}
+          </ThemeBtn>
         </HeaderWrapper>
       </header>
       <main>{children}</main>
     </>
   );
 };
-
-// Layout.propTypes = {
-//   children: PropTypes.node.isRequired,
-// };
 
 export default Layout;
