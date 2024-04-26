@@ -6,6 +6,7 @@ import {
 } from "./Layout.styled";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { MdOutlineNightsStay } from "react-icons/md";
+import Icon from "../Icon/Icon";
 
 const Layout = ({ children, toggleTheme, currentTheme }) => {
   return (
@@ -23,6 +24,9 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
               <MdOutlineWbSunny />
             )}
           </ThemeBtn>
+          <div>
+            <Icon size="24" name="icon-star" />
+          </div>
         </HeaderWrapper>
       </header>
       <main>{children}</main>

@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.div`
   width: 1200px;
   padding: 20px 40px;
   margin: 0 auto;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 `;
 
