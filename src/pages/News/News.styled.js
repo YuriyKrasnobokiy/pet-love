@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const ProductsText = styled.p`
+export const NewsText = styled.p`
   color: ${(props) => props.theme.colors.textColor};
 `;

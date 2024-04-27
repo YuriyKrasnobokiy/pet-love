@@ -15,7 +15,7 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
         <HeaderWrapper>
           <HeaderNav>
             <NavLinkStyled to="/">Home</NavLinkStyled>
-            <NavLinkStyled to="/products">Products</NavLinkStyled>
+            <NavLinkStyled to="/news">News</NavLinkStyled>
           </HeaderNav>
           <ThemeBtn type="button" onClick={toggleTheme}>
             {currentTheme === "dark" ? (
@@ -24,9 +24,9 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
               <MdOutlineWbSunny />
             )}
           </ThemeBtn>
-          <div>
-            <Icon size="24" name="icon-star" />
-          </div>
+          <button>
+            <Icon size="24" name="icon-burger-menu" />
+          </button>
         </HeaderWrapper>
       </header>
       <main>{children}</main>

@@ -55,10 +55,18 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
+    width: 335px;
+    padding: 10px 20px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 768px) {
+  .container { 
   max-width: 1200px;
-  margin: 0 auto;
+  
   padding: 20px 40px;
   }
+}
 `;
 
 export default GlobalStyles;

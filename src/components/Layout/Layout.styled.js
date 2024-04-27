@@ -2,12 +2,16 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-  display: flex;
-  width: 1200px;
-  padding: 20px 40px;
+  width: 335px;
   margin: 0 auto;
-  /* justify-content: space-between; */
-  align-items: center;
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    width: 1200px;
+    padding: 20px 40px;
+
+    align-items: center;
+  }
 `;
 
 export const HeaderNav = styled.div`

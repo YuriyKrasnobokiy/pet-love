@@ -2,12 +2,11 @@ import { Suspense, lazy, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Loader } from "./Loader/Loader";
 import Layout from "./Layout/Layout";
-import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import GlobalStyles from "../GlobalStyles";
 import { ThemeProvider } from "styled-components";
 
 const Home = lazy(() => import("../pages/Home/Home"));
-const Products = lazy(() => import("../pages/Products/Products"));
+const News = lazy(() => import("../pages/News/News"));
 
 export const themes = {
   light: {
@@ -49,8 +48,7 @@ export const App = () => {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/products" element={<Products />}></Route>
-            <Route path="/products/:productId/*" element={<ProductDetails />} />
+            <Route path="/news" element={<News />}></Route>
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>
