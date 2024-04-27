@@ -7,11 +7,14 @@ import {
 import { MdOutlineWbSunny } from "react-icons/md";
 import { MdOutlineNightsStay } from "react-icons/md";
 import Icon from "../Icon/Icon";
+import Loader from "../Loader/Loader";
 
 const Layout = ({ children, toggleTheme, currentTheme }) => {
   return (
     <>
       <header>
+        {true && <Loader />}
+
         <HeaderWrapper>
           <HeaderNav>
             <NavLinkStyled to="/">Home</NavLinkStyled>

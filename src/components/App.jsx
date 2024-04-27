@@ -1,9 +1,9 @@
 import { Suspense, lazy, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Loader } from "./Loader/Loader";
 import Layout from "./Layout/Layout";
 import GlobalStyles from "../GlobalStyles";
 import { ThemeProvider } from "styled-components";
+import Loader from "./Loader/Loader";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const News = lazy(() => import("../pages/News/News"));
