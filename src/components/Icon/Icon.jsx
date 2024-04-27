@@ -1,9 +1,9 @@
 import React from "react";
 const spriteURL = "./src/assets/sprite.svg";
 
-const Icon = ({ name, size }) => {
+const Icon = ({ name, width, height }) => {
   return (
-    <svg width={size} height={size}>
+    <svg width={width} height={height}>
       <use href={`${spriteURL}#${name}`}></use>
     </svg>
   );

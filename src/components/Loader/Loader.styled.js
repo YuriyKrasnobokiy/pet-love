@@ -13,7 +13,8 @@ export const LoaderContainer = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-image: url("./src/assets/imgs/mobile/start-screen-1x-mob.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./src/assets/imgs/mobile/start-screen-1x-mob.jpg");
   background-size: cover;
 `;
 

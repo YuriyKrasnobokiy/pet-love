@@ -1,4 +1,6 @@
 import {
+  BurgerBtn,
+  HeaderLogoLink,
   HeaderNav,
   HeaderWrapper,
   NavLinkStyled,
@@ -7,16 +9,18 @@ import {
 import { MdOutlineWbSunny } from "react-icons/md";
 import { MdOutlineNightsStay } from "react-icons/md";
 import Icon from "../Icon/Icon";
-import Loader from "../Loader/Loader";
+import { Link } from "react-router-dom";
 
 const Layout = ({ children, toggleTheme, currentTheme }) => {
   return (
     <>
       <header>
-        {true && <Loader />}
-
         <HeaderWrapper>
-          <HeaderNav>
+          <HeaderLogoLink>
+            <Icon height={20} width={76} name="icon-logo-small"></Icon>
+          </HeaderLogoLink>
+
+          {/* <HeaderNav>
             <NavLinkStyled to="/">Home</NavLinkStyled>
             <NavLinkStyled to="/news">News</NavLinkStyled>
           </HeaderNav>
@@ -26,10 +30,10 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
             ) : (
               <MdOutlineWbSunny />
             )}
-          </ThemeBtn>
-          <button>
-            <Icon size="24" name="icon-burger-menu" />
-          </button>
+          </ThemeBtn> */}
+          <BurgerBtn>
+            <Icon height={32} width={32} name="icon-burger-menu" />
+          </BurgerBtn>
         </HeaderWrapper>
       </header>
       <main>{children}</main>

@@ -56,7 +56,7 @@ const GlobalStyles = createGlobalStyle`
 
   .container {
     width: 335px;
-    padding: 10px 20px;
+    padding: 28px 20px;
     margin: 0 auto;
   }
 

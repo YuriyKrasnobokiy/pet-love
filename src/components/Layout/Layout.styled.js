@@ -1,9 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 335px;
   margin: 0 auto;
+  padding: 28px 20px;
 
   @media screen and (min-width: 1200px) {
     display: flex;
@@ -12,6 +16,11 @@ export const HeaderWrapper = styled.div`
 
     align-items: center;
   }
+`;
+
+export const HeaderLogoLink = styled(Link)`
+  display: flex;
+  align-items: center;
 `;
 
 export const HeaderNav = styled.div`
@@ -50,4 +59,12 @@ export const ThemeBtn = styled.button`
   background-color: transparent;
   color: ${(props) => props.theme.colors.textColor};
   margin: 0;
+`;
+
+export const BurgerBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: transparent;
 `;
