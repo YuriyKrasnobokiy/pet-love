@@ -67,4 +67,5 @@ export const BurgerBtn = styled.button`
   align-items: center;
   margin: 0;
   background-color: transparent;
+  color: ${(props) => props.theme.colors.textColor};
 `;

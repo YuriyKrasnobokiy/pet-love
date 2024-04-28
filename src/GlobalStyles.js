@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     font-family: "Manrope", sans-serif;
-    color: #121417;
+    color: ${(p) => p.theme.colors.textColor};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${(p) => p.theme.colors.mainBgColor};

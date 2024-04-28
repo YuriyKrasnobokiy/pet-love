@@ -1,5 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import modalReducer from "./modal/modalSlice";
+import mobMenuReducer from "./mob-menu/mobMenuSlice";
+
 import {
   FLUSH,
   REHYDRATE,
@@ -19,6 +21,7 @@ export const store = configureStore({
   reducer: {
     // carsStore: persistReducer(carsConfig, carsReducer),
     modal: modalReducer,
+    mobMenu: mobMenuReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

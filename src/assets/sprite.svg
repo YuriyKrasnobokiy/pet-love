@@ -17,7 +17,7 @@
 <path fill="none" stroke="#08aa83" style="stroke: var(--color1, #08aa83)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.1818" d="M26.667 9.333l-14.667 14.667-6.667-6.667"></path>
 </symbol>
 <symbol id="icon-cross-small" viewBox="0 0 32 32">
-<path fill="none" stroke="#ef2447" style="stroke: var(--color2, #ef2447)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M25.333 6.667l-18.667 18.667M6.666 6.667l18.667 18.667"></path>
+<path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M25.333 6.667l-18.667 18.667M6.666 6.667l18.667 18.667"></path>
 </symbol>
 <symbol id="icon-edit" viewBox="0 0 32 32">
 <path fill="none" stroke="#f6b83d" style="stroke: var(--color3, #f6b83d)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M22.667 4c0.35-0.35 0.766-0.628 1.223-0.817s0.948-0.287 1.443-0.287c0.495 0 0.986 0.098 1.443 0.287s0.873 0.467 1.223 0.817c0.35 0.35 0.628 0.766 0.817 1.224s0.287 0.948 0.287 1.443c0 0.495-0.098 0.986-0.287 1.443s-0.467 0.873-0.817 1.223l-18 18-7.333 2 2-7.333 18-18z"></path>

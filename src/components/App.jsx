@@ -11,20 +11,26 @@ const News = lazy(() => import("../pages/News/News"));
 export const themes = {
   light: {
     colors: {
-      textColor: "#121417",
+      textColor: "#262626",
       secondTextColor: "#8a8a89",
-      accentColor: "#0b44cd",
-      secondAccentColor: "#3470ff",
-      mainBgColor: "white",
+      accentColor: "#F6B83D",
+      secondAccentColor: "#FFF4DF",
+      mainBgColor: " #f9f9f9",
+      ModalBgColor: "rgba(0, 0, 0, 0.5)",
+      MobNavLinkColor: "#262626",
+      MobNavLinkBorder: "1px solid rgba(38, 38, 38, 0.15)",
     },
   },
   dark: {
     colors: {
       textColor: "white",
       secondTextColor: "#8a8a89",
-      accentColor: "#0b44cd",
-      secondAccentColor: "#3470ff",
-      mainBgColor: "#010101",
+      accentColor: "#F6B83D",
+      secondAccentColor: "#FFF4DF",
+      mainBgColor: "#121212",
+      ModalBgColor: "#262626",
+      MobNavLinkColor: "#262626",
+      MobNavLinkBorder: "1px solid rgba(38, 38, 38, 0.15)",
     },
   },
 };
