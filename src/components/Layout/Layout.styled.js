@@ -7,7 +7,7 @@ export const HeaderWrapper = styled.div`
   align-items: center;
   width: 335px;
   margin: 0 auto;
-  padding: 28px 20px;
+  padding: 28px 20px 20px;
 
   @media screen and (min-width: 1200px) {
     display: flex;

@@ -19,6 +19,9 @@ export const themes = {
       ModalBgColor: "rgba(0, 0, 0, 0.5)",
       MobNavLinkColor: "#262626",
       MobNavLinkBorder: "1px solid rgba(38, 38, 38, 0.15)",
+      HomeTextColor: "#FFF",
+      HomeTextAccentColor: "rgba(255, 255, 255, 0.4)",
+      HomeBgColor: "#F6B83D",
     },
   },
   dark: {
@@ -31,6 +34,9 @@ export const themes = {
       ModalBgColor: "#262626",
       MobNavLinkColor: "#262626",
       MobNavLinkBorder: "1px solid rgba(38, 38, 38, 0.15)",
+      HomeTextColor: "#FFF",
+      HomeTextAccentColor: "rgba(255, 255, 255, 0.4)",
+      HomeBgColor: "#F6B83D",
     },
   },
 };
