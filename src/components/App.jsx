@@ -4,6 +4,8 @@ import Layout from "./Layout/Layout";
 import GlobalStyles from "../GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import Loader from "./Loader/Loader";
+import OurFriends from "../pages/OurFriends/OurFriends";
+import { FindPet } from "../pages/FindPet/FindPet";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const News = lazy(() => import("../pages/News/News"));
@@ -22,6 +24,12 @@ export const themes = {
       HomeTextColor: "#FFF",
       HomeTextAccentColor: "rgba(255, 255, 255, 0.4)",
       HomeBgColor: "#F6B83D",
+      mobLoginBtnBGColor: "#F6B83D",
+      mobLoginBtnBGHover: " #f9b020",
+      mobLoginBtnColor: "#fff",
+      mobRegBtnBG: "#FFF4DF",
+      mobRegBtnBGHover: "#fbe7c1",
+      mobRegBtnColor: "#F6B83D",
     },
   },
   dark: {
@@ -37,6 +45,12 @@ export const themes = {
       HomeTextColor: "#FFF",
       HomeTextAccentColor: "rgba(255, 255, 255, 0.4)",
       HomeBgColor: "#F6B83D",
+      mobLoginBtnBGColor: "#F6B83D",
+      mobLoginBtnBGHover: "#fff4df",
+      mobLoginBtnColor: "#fff",
+      mobRegBtnBG: "#FFF4DF",
+      mobRegBtnBGHover: "#fbe7c1",
+      mobRegBtnColor: "#F6B83D",
     },
   },
 };
@@ -61,6 +75,8 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/news" element={<News />}></Route>
+            <Route path="/our-friends" element={<OurFriends />}></Route>
+            <Route path="/find-pet" element={<FindPet />}></Route>
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>

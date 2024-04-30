@@ -2,10 +2,13 @@ import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import {
   CloseBtn,
+  MobAuthWrap,
+  MobLoginBtn,
   MobMenuOverlay,
   MobMenuStyled,
   MobNavLink,
   MobNavWrap,
+  MobRegBtn,
 } from "./MobMenu.styled";
 import { useDispatch } from "react-redux";
 import { closeMobMenu } from "../../redux/mob-menu/mobMenuSlice";
@@ -50,9 +53,22 @@ export const MobMenu = () => {
           <MobNavLink to="/news" onClick={() => dispatch(closeMobMenu())}>
             News
           </MobNavLink>
-          <MobNavLink to="/find-pet">Find pet</MobNavLink>
-          <MobNavLink to="/our-friends">Our friends</MobNavLink>
+
+          <MobNavLink to="/find-pet" onClick={() => dispatch(closeMobMenu())}>
+            Find pet
+          </MobNavLink>
+
+          <MobNavLink
+            to="/our-friends"
+            onClick={() => dispatch(closeMobMenu())}
+          >
+            Our friends
+          </MobNavLink>
         </MobNavWrap>
+        <MobAuthWrap>
+          <MobLoginBtn>Login</MobLoginBtn>
+          <MobRegBtn>Registration</MobRegBtn>
+        </MobAuthWrap>
       </MobMenuStyled>
     </MobMenuOverlay>
   );
