@@ -31,6 +31,10 @@ export const themes = {
       mobRegBtnBG: "#FFF4DF",
       mobRegBtnBGHover: "#fbe7c1",
       mobRegBtnColor: "#F6B83D",
+      notFoundTextColor: "#FFF",
+      notFoundImgThumbBGC: "#f7bf50",
+      notFoundBtnBGC: "#fff4df",
+      notFoundBtnColor: "#f6b83d",
     },
   },
   dark: {
@@ -52,6 +56,10 @@ export const themes = {
       mobRegBtnBG: "#FFF4DF",
       mobRegBtnBGHover: "#fbe7c1",
       mobRegBtnColor: "#F6B83D",
+      notFoundTextColor: "#FFF",
+      notFoundImgThumbBGC: "#f7bf50",
+      notFoundBtnBGC: "#fff4df",
+      notFoundBtnColor: "#f6b83d",
     },
   },
 };

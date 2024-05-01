@@ -21,7 +21,7 @@ export const NotFoundTitle = styled.h2`
   font-weight: 800;
   font-size: 120px;
   line-height: 1;
-  color: #fff;
+  color: ${(props) => props.theme.colors.notFoundTextColor};
   margin-bottom: 20px;
 `;
 
@@ -30,7 +30,7 @@ export const ImgThumb = styled.div`
   width: 120px;
   height: 120px;
   border-radius: 100%;
-  background-color: #f7bf50;
+  background-color: ${(props) => props.theme.colors.notFoundImgThumbBGC};
   text-align: center;
 `;
 
@@ -43,7 +43,7 @@ export const NotFoundDescr = styled.p`
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: ${(props) => props.theme.colors.notFoundTextColor};
   margin-bottom: 20px;
 `;
 
@@ -52,10 +52,15 @@ export const NotFoundBtn = styled.button`
   padding: 12px 30px;
   width: 150px;
   height: 42px;
-  background: #fff4df;
+  background-color: ${(props) => props.theme.colors.notFoundBtnBGC};
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.03em;
-  color: #f6b83d;
+  color: ${(props) => props.theme.colors.notFoundBtnColor};
+  transition: background-color 300ms ease-in-out;
+
+  &:hover {
+    background-color: #fbe7c1;
+  }
 `;
