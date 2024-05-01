@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import Loader from "./Loader/Loader";
 import OurFriends from "../pages/OurFriends/OurFriends";
 import { FindPet } from "../pages/FindPet/FindPet";
+import NotFound from "../pages/NotFound/NotFound";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const News = lazy(() => import("../pages/News/News"));
@@ -77,7 +78,8 @@ export const App = () => {
             <Route path="/news" element={<News />}></Route>
             <Route path="/our-friends" element={<OurFriends />}></Route>
             <Route path="/find-pet" element={<FindPet />}></Route>
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="/not-found" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </Layout>

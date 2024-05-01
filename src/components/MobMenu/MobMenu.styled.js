@@ -8,7 +8,7 @@ export const MobMenuOverlay = styled.div`
   bottom: 0;
   left: 0;
   z-index: 99;
-  /* background-color: ${(props) => props.theme.colors.ModalBgColor}; */
+  overflow-y: auto;
   &:hover {
     cursor: pointer;
   }
@@ -21,8 +21,7 @@ export const MobMenuStyled = styled.div`
   padding: 40px 20px;
   background: white;
   cursor: auto;
-  overflow-y: auto;
-  height: 90vh;
+  height: 100vh;
   max-width: 218px;
   display: flex;
   flex-direction: column;
