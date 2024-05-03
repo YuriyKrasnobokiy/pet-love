@@ -35,6 +35,10 @@ export const themes = {
       notFoundImgThumbBGC: "#f7bf50",
       notFoundBtnBGC: "#fff4df",
       notFoundBtnColor: "#f6b83d",
+      friendCardBGColor: "#fff",
+      FriendDescrTextAccentColor: "rgba(38, 38, 38, 0.5);",
+      FriendWorkHoursBGColor: "#fff4df",
+      FriendWorkHoursColor: "#f6b83d",
     },
   },
   dark: {
@@ -60,6 +64,10 @@ export const themes = {
       notFoundImgThumbBGC: "#f7bf50",
       notFoundBtnBGC: "#fff4df",
       notFoundBtnColor: "#f6b83d",
+      friendCardBGColor: "transparent",
+      FriendDescrTextAccentColor: "rgba(38, 38, 38, 0.5);",
+      FriendWorkHoursBGColor: "#fff4df",
+      FriendWorkHoursColor: "#f6b83d",
     },
   },
 };
