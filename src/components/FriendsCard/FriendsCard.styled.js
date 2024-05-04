@@ -10,6 +10,14 @@ export const FriendCarWrap = styled.div`
   &:not(:last-child) {
     margin-bottom: 20px;
   }
+
+  @media screen and (min-width: 768px) {
+    padding: 40px 22px 40px 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export const WorkHoursBage = styled.p`
@@ -40,6 +48,7 @@ export const FriendTitleStyled = styled.h3`
   letter-spacing: -0.04em;
   margin-bottom: 14px;
 `;
+
 export const FriendDescrListLi = styled.li`
   max-width: 194px;
   white-space: nowrap;

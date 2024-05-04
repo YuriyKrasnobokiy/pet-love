@@ -55,18 +55,46 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-    width: 335px;
+    width: 100%;
     padding: 28px 20px;
     margin: 0 auto;
   }
 
+  .title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .container { 
+      width: 335px;
+      padding: 0 20px;
+    }
+    .title {
+      font-weight: 700;
+      font-size: 54px;
+      margin-bottom: 44px;
+    }
+  }
+
   @media screen and (min-width: 768px) {
   .container { 
-  max-width: 1200px;
-  
-  padding: 20px 40px;
+  width: 704px;
+  padding: 0 32px;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .container { 
+  width: 1136px;
+  padding: 0 32px;
+  }
+}
+
+
 `;
 
 export default GlobalStyles;

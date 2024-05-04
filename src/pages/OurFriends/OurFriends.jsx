@@ -7,7 +7,7 @@ import {
 } from "../../redux/our-friends/friendsSelectors";
 import { fetchFriends } from "../../redux/our-friends/friendsSlice";
 import Loader from "../../components/Loader/Loader";
-import { FriendsTitle, FriendsWrapper } from "./OurFriends.styled";
+import { FriendsList, FriendsWrapper } from "./OurFriends.styled";
 import { FriendsCard } from "../../components/FriendsCard/FriendsCard";
 
 const OurFriends = () => {
@@ -25,13 +25,13 @@ const OurFriends = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <FriendsWrapper>
-          <FriendsTitle>Our Friends</FriendsTitle>
-          <ul>
+        <FriendsWrapper className="container">
+          <h2 className="title">Our Friends</h2>
+          <FriendsList>
             {friends.map((friend) => (
               <FriendsCard key={friend._id} friend={friend}></FriendsCard>
             ))}
-          </ul>
+          </FriendsList>
         </FriendsWrapper>
       )}
     </>

@@ -20,7 +20,7 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
   return (
     <>
       <header>
-        <HeaderWrapper>
+        <HeaderWrapper className="container">
           <HeaderLogoLink to="/">
             {currentTheme === "dark" ? (
               <Icon height={20} width={76} name="icon-logo-white-small"></Icon>
