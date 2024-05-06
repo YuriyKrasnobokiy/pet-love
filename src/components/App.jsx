@@ -43,6 +43,9 @@ export const themes = {
       NwCardReadMoreColor: "#f6b83d",
       searchInputColor: "rgba(38, 38, 38, 0.5)",
       searchInputBorderColor: "rgba(38, 38, 38, 0.15)",
+      PaginationBtnBorderColor: "rgba(38, 38, 38, 0.2)",
+      PaginationBtnColor: "rgba(38, 38, 38, 0.5)",
+      PaginationBtnFill: "rgba(38, 38, 38, 0.5)",
     },
   },
   dark: {
@@ -76,6 +79,9 @@ export const themes = {
       NwCardReadMoreColor: "#f6b83d",
       searchInputColor: "rgba(38, 38, 38, 0.5)",
       searchInputBorderColor: "rgba(38, 38, 38, 0.15)",
+      PaginationBtnBorderColor: "rgba(38, 38, 38, 0.2)",
+      PaginationBtnColor: "rgba(38, 38, 38, 0.5)",
+      PaginationBtnFill: "rgba(38, 38, 38, 0.5)",
     },
   },
 };

@@ -1,36 +1,48 @@
 import React from "react";
+import { PagContrlsWrap, PaginationBtn } from "./PaginationControls.styled";
+import Icon from "../Icon/Icon";
 
 const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
   return (
-    <div>
-      <button
+    <PagContrlsWrap>
+      <PaginationBtn
         disabled={currentPage === 1}
         onClick={() => onPageChange((currentPage = 1))}
       >
-        Перша
-      </button>
-      <button
+        <Icon name="icon-arrow" width={20} height={20} />
+      </PaginationBtn>
+      <PaginationBtn
         disabled={currentPage === 1}
         onClick={() => onPageChange(currentPage - 1)}
       >
-        Попередня
-      </button>
-      <span>
-        {currentPage} з {totalPages}
-      </span>
-      <button
+        <Icon name="icon-arrow" width={20} height={20} />
+      </PaginationBtn>
+      <PaginationBtn
+        disabled={currentPage === 1}
+        onClick={() => onPageChange((currentPage = 1))}
+      >
+        1
+      </PaginationBtn>
+      <PaginationBtn
+        disabled={currentPage > 2}
+        onClick={() => onPageChange((currentPage = 2))}
+      >
+        2
+      </PaginationBtn>
+      <PaginationBtn disabled>...</PaginationBtn>
+      <PaginationBtn
         disabled={currentPage === totalPages}
         onClick={() => onPageChange(currentPage + 1)}
       >
-        Наступна
-      </button>
-      <button
+        <Icon name="icon-arrow" width={20} height={20} />
+      </PaginationBtn>
+      <PaginationBtn
         disabled={currentPage === totalPages}
         onClick={() => onPageChange((currentPage = totalPages))}
       >
-        Остання
-      </button>
-    </div>
+        <Icon name="icon-arrow" width={20} height={20} />
+      </PaginationBtn>
+    </PagContrlsWrap>
   );
 };
 

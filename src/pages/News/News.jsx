@@ -51,11 +51,13 @@ const News = () => {
               <NwCard nw={nw} key={nw._id} />
             ))}
           </NewsList>
-          <PaginationControls
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-          />
+          {totalPages > 1 ? (
+            <PaginationControls
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          ) : null}
         </NewsWrap>
       )}
     </>
