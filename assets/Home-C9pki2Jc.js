@@ -1,4 +1,4 @@
-import{u as t,j as o}from"./index-CML2P0Ss.js";const s=t.div`
+import{u as t,j as o}from"./index-BQRM7_YT.js";const s=t.div`
   padding: 0 20px 10px;
 `,r=t.div`
   padding: 50px 20px;
