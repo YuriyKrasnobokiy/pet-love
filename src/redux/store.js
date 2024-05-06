@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import modalReducer from "./modal/modalSlice";
 import mobMenuReducer from "./mob-menu/mobMenuSlice";
 import friendsReducer from "./our-friends/friendsSlice";
+import newsReducer from "./news/newsSlice";
 
 import {
   FLUSH,
@@ -24,6 +25,7 @@ export const store = configureStore({
     modal: modalReducer,
     mobMenu: mobMenuReducer,
     friendsStore: friendsReducer,
+    newsStore: newsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

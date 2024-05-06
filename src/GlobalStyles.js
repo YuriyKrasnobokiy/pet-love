@@ -56,7 +56,7 @@ const GlobalStyles = createGlobalStyle`
 
   .container {
     width: 100%;
-    padding: 28px 20px;
+    padding:28px 20px 20px;
     margin: 0 auto;
   }
 
@@ -71,8 +71,10 @@ const GlobalStyles = createGlobalStyle`
   @media screen and (max-width: 767px) {
     .container { 
       width: 335px;
-      padding: 0 20px;
     }
+  }
+
+    @media screen and (min-width: 768px) {
     .title {
       font-weight: 700;
       font-size: 54px;
