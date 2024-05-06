@@ -6,6 +6,7 @@ export const API_URL = "https://petlove.b.goit.study/api/";
 export const fetchNews = createAsyncThunk("news/fetchNews", async () => {
   try {
     const response = await axios.get(`${API_URL}news?page=1&limit=6`);
+    // return response.data;
     return response.data.results;
   } catch (error) {
     console.error("Error fetching news:", error);

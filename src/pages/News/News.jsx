@@ -8,6 +8,7 @@ import {
 import { fetchNews } from "../../redux/news/newsSlice";
 import Loader from "../../components/Loader/Loader";
 import { NwCard } from "../../components/NwCard/NwCard";
+import { NewsList } from "./News.styled";
 
 const News = () => {
   const dispatch = useDispatch();
@@ -27,20 +28,11 @@ const News = () => {
       ) : (
         <div className="container">
           <h2 className="title">News</h2>
-          <ul>
+          <NewsList>
             {news.map((nw) => (
               <NwCard nw={nw} key={nw._id} />
-              // <li key={nw._id}>
-              //   <img src={nw.imgUrl} alt="news" height={190} />
-              //   <h3>{nw.title}</h3>
-              //   <p>{nw.text}</p>
-              //   <p>{formatDate(nw.date)}</p>
-              //   <a href={nw.url} target="_blank" rel="noopener noreferrer">
-              //     read more
-              //   </a>
-              // </li>
             ))}
-          </ul>
+          </NewsList>
         </div>
       )}
     </>

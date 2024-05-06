@@ -39,6 +39,8 @@ export const themes = {
       FriendDescrTextAccentColor: "rgba(38, 38, 38, 0.5);",
       FriendWorkHoursBGColor: "#fff4df",
       FriendWorkHoursColor: "#f6b83d",
+      NwCardDateColor: "rgba(38, 38, 38, 0.5)",
+      NwCardReadMoreColor: "#f6b83d",
     },
   },
   dark: {
@@ -68,6 +70,8 @@ export const themes = {
       FriendDescrTextAccentColor: "rgba(38, 38, 38, 0.5);",
       FriendWorkHoursBGColor: "#fff4df",
       FriendWorkHoursColor: "#f6b83d",
+      NwCardDateColor: "rgba(38, 38, 38, 0.5)",
+      NwCardReadMoreColor: "#f6b83d",
     },
   },
 };
