@@ -5,12 +5,16 @@ import {
   selectFilterTerm,
   selectIsLoading,
   selectNews,
+  selectPage,
+  selectPerPage,
+  selectTotalPages,
 } from "../../redux/news/newsSelectors";
 import { fetchNews } from "../../redux/news/newsSlice";
 import Loader from "../../components/Loader/Loader";
 import { NwCard } from "../../components/NwCard/NwCard";
 import { NewsList, NewsTitle, NewsWrap } from "./News.styled";
 import { SearchField } from "../../components/SearchField/SearchField";
+import PaginationControls from "../../components/PaginationControls/PaginationControls";
 
 const News = () => {
   const dispatch = useDispatch();
@@ -22,10 +26,17 @@ const News = () => {
   // console.log("news: ", news);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+  const currentPage = useSelector(selectPage);
+  const perPage = useSelector(selectPerPage);
+  const totalPages = useSelector(selectTotalPages);
 
   useEffect(() => {
-    dispatch(fetchNews());
-  }, [dispatch]);
+    dispatch(fetchNews({ page: currentPage, limit: perPage }));
+  }, [dispatch, currentPage, perPage]);
+
+  const handlePageChange = (newPage) => {
+    dispatch(fetchNews({ page: newPage, limit: perPage }));
+  };
 
   return (
     <>
@@ -40,6 +51,11 @@ const News = () => {
               <NwCard nw={nw} key={nw._id} />
             ))}
           </NewsList>
+          <PaginationControls
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
         </NewsWrap>
       )}
     </>

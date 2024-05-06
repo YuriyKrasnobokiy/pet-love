@@ -3,22 +3,30 @@ import axios from "axios";
 
 export const API_URL = "https://petlove.b.goit.study/api/";
 
-export const fetchNews = createAsyncThunk("news/fetchNews", async () => {
-  try {
-    const response = await axios.get(`${API_URL}news?page=1&limit=6`);
-    // return response.data;
-    return response.data.results;
-  } catch (error) {
-    console.error("Error fetching news:", error);
-    throw error;
-  }
-});
+export const fetchNews = createAsyncThunk(
+  "news/fetchNews",
+  async ({ page, limit }) => {
+    try {
+      const response = await axios.get(
+        `${API_URL}news?page=${page}&limit=${limit}`,
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching news:", error);
+      throw error;
+    }
+  },
+);
 
 const initialState = {
   news: [],
   isLoading: false,
   error: null,
   filterTerm: "",
+  page: 1,
+  perPage: 6,
+  totalPages: 0,
+  results: [],
 };
 
 const newsSlice = createSlice({
@@ -37,7 +45,10 @@ const newsSlice = createSlice({
       })
       .addCase(fetchNews.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.news = action.payload;
+        state.news = action.payload.results;
+        state.page = action.payload.page;
+        state.perPage = action.payload.perPage;
+        state.totalPages = action.payload.totalPages;
       })
       .addCase(fetchNews.rejected, (state, action) => {
         state.isLoading = false;
