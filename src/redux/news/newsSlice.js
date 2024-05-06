@@ -18,11 +18,17 @@ const initialState = {
   news: [],
   isLoading: false,
   error: null,
+  filterTerm: "",
 };
 
 const newsSlice = createSlice({
   name: "news",
   initialState,
+  reducers: {
+    setFilterTerm(state, action) {
+      state.filterTerm = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchNews.pending, (state) => {
@@ -39,6 +45,5 @@ const newsSlice = createSlice({
       });
   },
 });
-
-// export const { openModal, closeModal } = friendsSlice.actions;
+export const { setFilterTerm } = newsSlice.actions;
 export default newsSlice.reducer;

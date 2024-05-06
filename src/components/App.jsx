@@ -41,6 +41,8 @@ export const themes = {
       FriendWorkHoursColor: "#f6b83d",
       NwCardDateColor: "rgba(38, 38, 38, 0.5)",
       NwCardReadMoreColor: "#f6b83d",
+      searchInputColor: "rgba(38, 38, 38, 0.5)",
+      searchInputBorderColor: "rgba(38, 38, 38, 0.15)",
     },
   },
   dark: {
@@ -72,6 +74,8 @@ export const themes = {
       FriendWorkHoursColor: "#f6b83d",
       NwCardDateColor: "rgba(38, 38, 38, 0.5)",
       NwCardReadMoreColor: "#f6b83d",
+      searchInputColor: "rgba(38, 38, 38, 0.5)",
+      searchInputBorderColor: "rgba(38, 38, 38, 0.15)",
     },
   },
 };

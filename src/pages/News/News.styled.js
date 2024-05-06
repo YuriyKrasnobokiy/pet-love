@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const NewsWrap = styled.div`
+  padding-top: 34px;
+`;
+
+export const NewsTitle = styled.h2`
+  margin-bottom: 0;
+  margin-bottom: 20px;
+`;
+
 export const NewsList = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
