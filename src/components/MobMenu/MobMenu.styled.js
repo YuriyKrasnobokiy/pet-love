@@ -26,7 +26,7 @@ export const MobMenuStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 `;
 
 export const CloseBtn = styled.button`
@@ -46,7 +46,7 @@ export const MobNavWrap = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 236px;
-  margin-bottom: 280px;
+  /* margin-bottom: 280px; */
 `;
 
 export const MobNavLink = styled(NavLink)`
