@@ -21,7 +21,8 @@ export const MobMenuStyled = styled.div`
   padding: 40px 20px;
   background: white;
   cursor: auto;
-  height: 100vh;
+  /* height: 100vh; */
+  height: -webkit-fill-available;
   max-width: 218px;
   display: flex;
   flex-direction: column;
