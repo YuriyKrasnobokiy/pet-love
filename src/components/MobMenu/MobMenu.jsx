@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import {
   CloseBtn,
   MobAuthWrap,
@@ -13,9 +12,23 @@ import {
 import { useDispatch } from "react-redux";
 import { closeMobMenu } from "../../redux/mob-menu/mobMenuSlice";
 import Icon from "../Icon/Icon";
+import { useLocation } from "react-router-dom";
 
 export const MobMenu = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+  const [bg, setBg] = useState("white");
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/":
+        setBg("orange");
+        break;
+      default:
+        setBg("red");
+        break;
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleKeyDown = (evt) => {
@@ -45,7 +58,7 @@ export const MobMenu = () => {
   };
   return (
     <MobMenuOverlay onClick={handleOverlayClick}>
-      <MobMenuStyled>
+      <MobMenuStyled style={{ background: bg }}>
         <CloseBtn onClick={handleCloseClick} type="button">
           <Icon width={32} height={32} name="icon-cross-small" />
         </CloseBtn>

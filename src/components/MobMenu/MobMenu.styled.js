@@ -19,7 +19,7 @@ export const MobMenuStyled = styled.div`
   top: 0;
   right: 0;
   padding: 40px 20px;
-  background: white;
+  /* background: white; */
   cursor: auto;
   /* height: 100vh; */
   height: -webkit-fill-available;
