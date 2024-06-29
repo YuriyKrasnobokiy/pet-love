@@ -22,10 +22,10 @@ export const MobMenu = () => {
   useEffect(() => {
     switch (location.pathname) {
       case "/":
-        setBg("orange");
+        setBg("#f6b83d");
         break;
       default:
-        setBg("red");
+        setBg("white");
         break;
     }
   }, [location.pathname]);
