@@ -11,6 +11,8 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${(p) => p.theme.colors.mainBgColor};
   }
 
+
+
   p,
   h1,
   h2,
@@ -53,9 +55,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-    width: 100%;
-    padding:28px 20px 20px;
+    max-width: 335px;
     margin: 0 auto;
+    padding: 0px 20px;
   }
 
   .title {

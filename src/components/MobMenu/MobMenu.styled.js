@@ -8,7 +8,6 @@ export const MobMenuOverlay = styled.div`
   bottom: 0;
   left: 0;
   z-index: 99;
-  overflow-y: auto;
   &:hover {
     cursor: pointer;
   }
@@ -28,6 +27,13 @@ export const MobMenuStyled = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  overflow-y: scroll;
+
+  transform: translateX(0%);
+  transition: transform 0.5s ease;
+  &.open {
+    transform: translateX(100%);
+  }
 `;
 
 export const CloseBtn = styled.button`

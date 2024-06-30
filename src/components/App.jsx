@@ -7,6 +7,7 @@ import Loader from "./Loader/Loader";
 import OurFriends from "../pages/OurFriends/OurFriends";
 import { FindPet } from "../pages/FindPet/FindPet";
 import NotFound from "../pages/NotFound/NotFound";
+import Registration from "../pages/Registration/Registration";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const News = lazy(() => import("../pages/News/News"));
@@ -46,6 +47,9 @@ export const themes = {
       PaginationBtnBorderColor: "rgba(38, 38, 38, 0.2)",
       PaginationBtnColor: "rgba(38, 38, 38, 0.5)",
       PaginationBtnFill: "rgba(38, 38, 38, 0.5)",
+      RegistrFormBG: "#fff",
+      FormInputBorder: "1px solid rgba(38, 38, 38, 0.15)",
+      FormInputColor: "rgba(38, 38, 38, 0.5)",
     },
   },
   dark: {
@@ -82,6 +86,9 @@ export const themes = {
       PaginationBtnBorderColor: "rgba(38, 38, 38, 0.2)",
       PaginationBtnColor: "rgba(38, 38, 38, 0.5)",
       PaginationBtnFill: "rgba(38, 38, 38, 0.5)",
+      RegistrFormBG: "transparent",
+      FormInputBorder: "1px solid rgba(38, 38, 38, 0.15)",
+      FormInputColor: "rgba(38, 38, 38, 0.5)",
     },
   },
 };
@@ -105,6 +112,7 @@ export const App = () => {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/register" element={<Registration />}></Route>
             <Route path="/news" element={<News />}></Route>
             <Route path="/our-friends" element={<OurFriends />}></Route>
             <Route path="/find-pet" element={<FindPet />}></Route>

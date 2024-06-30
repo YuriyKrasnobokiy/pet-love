@@ -18,14 +18,17 @@ export const MobMenu = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const [bg, setBg] = useState("white");
+  const [borderColor, setBorderColor] = useState("rgba(38, 38, 38, 0.15)");
 
   useEffect(() => {
     switch (location.pathname) {
       case "/":
         setBg("#f6b83d");
+        setBorderColor("rgba(255, 255, 255, 0.15)");
         break;
       default:
-        setBg("white");
+        setBg("#ffffff");
+        setBorderColor("rgba(38, 38, 38, 0.15)");
         break;
     }
   }, [location.pathname]);
