@@ -1,4 +1,4 @@
-import{u as o,j as e,a as w,r as f,I as c,s as m,b as i,f as g,L as j}from"./index-NaB1KA56.js";const b=t=>t.newsStore.news,C=t=>t.newsStore.isLoading,N=t=>t.newsStore.error,S=t=>t.newsStore.filterTerm,y=t=>t.newsStore.page,k=t=>t.newsStore.perPage,$=t=>t.newsStore.totalPages,v=t=>{const s=new Date(t),n=s.getDate().toString().padStart(2,"0"),d=(s.getMonth()+1).toString().padStart(2,"0"),h=s.getFullYear();return`${n}/${d}/${h}`},B=o.img`
+import{u as o,j as e,a as w,r as f,I as c,s as m,b as i,f as g,L as j}from"./index-Bti_3NRF.js";const b=t=>t.newsStore.news,C=t=>t.newsStore.isLoading,N=t=>t.newsStore.error,S=t=>t.newsStore.filterTerm,y=t=>t.newsStore.page,k=t=>t.newsStore.perPage,$=t=>t.newsStore.totalPages,v=t=>{const s=new Date(t),n=s.getDate().toString().padStart(2,"0"),d=(s.getMonth()+1).toString().padStart(2,"0"),h=s.getFullYear();return`${n}/${d}/${h}`},B=o.img`
   height: 190px;
   max-width: 335px;
   width: 100%;
@@ -81,7 +81,7 @@ import{u as o,j as e,a as w,r as f,I as c,s as m,b as i,f as g,L as j}from"./ind
   top: 13px;
   right: 40px;
   position: absolute;
-  color: red;
+  /* color: red; */
   background-color: transparent;
 `,Y=()=>{const t=w(),[s,n]=f.useState(""),d=r=>{r.preventDefault(),t(m(s))},h=r=>{r.preventDefault(),n(""),t(m(""))},p=r=>{n(r.target.value)};return e.jsxs(M,{onSubmit:d,children:[e.jsx(V,{type:"text",placeholder:"Enter filter word",value:s,onChange:p}),s!==""&&e.jsx(U,{type:"button",onClick:h,children:e.jsx(c,{height:18,width:18,name:"icon-cross-small"})}),e.jsx(_,{type:"submit",children:e.jsx(c,{height:18,width:18,name:"icon-search"})})]})},q=o.div`
   display: flex;
