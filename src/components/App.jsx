@@ -50,6 +50,9 @@ export const themes = {
       RegistrFormBG: "#fff",
       FormInputBorder: "1px solid rgba(38, 38, 38, 0.15)",
       FormInputColor: "rgba(38, 38, 38, 0.5)",
+      FormBtnBgHover: "#f9b020",
+      FormBtnColor: "#fff",
+      ErrorMessageColor: "#ef2447",
     },
   },
   dark: {
@@ -89,6 +92,10 @@ export const themes = {
       RegistrFormBG: "transparent",
       FormInputBorder: "1px solid rgba(38, 38, 38, 0.15)",
       FormInputColor: "rgba(38, 38, 38, 0.5)",
+      FormBtnBgHover: "#f9b020",
+      FormBtnBgHover: "#f9b020",
+      FormBtnColor: "#fff",
+      ErrorMessageColor: "#ef2447",
     },
   },
 };
