@@ -5,7 +5,8 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  padding-top: 34px;
+  padding-bottom: 20px;
   @media screen and (min-width: 1200px) {
     display: flex;
     /* width: 1200px; */

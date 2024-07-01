@@ -52,7 +52,9 @@ export const themes = {
       FormInputColor: "rgba(38, 38, 38, 0.5)",
       FormBtnBgHover: "#f9b020",
       FormBtnColor: "#fff",
-      ErrorMessageColor: "#ef2447",
+      Error: "#ef2447",
+      Success: "#08aa83",
+      FormBottomTextColor: "rgba(38, 38, 38, 0.5)",
     },
   },
   dark: {
@@ -95,7 +97,9 @@ export const themes = {
       FormBtnBgHover: "#f9b020",
       FormBtnBgHover: "#f9b020",
       FormBtnColor: "#fff",
-      ErrorMessageColor: "#ef2447",
+      Error: "#ef2447",
+      Success: "#08aa83",
+      FormBottomTextColor: "rgba(38, 38, 38, 0.5)",
     },
   },
 };

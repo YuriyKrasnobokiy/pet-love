@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import { Link } from "react-router-dom";
+import styled, { css } from "styled-components";
 
 export const RegFormWrap = styled.div`
   padding: 28px 20px;
@@ -55,6 +56,26 @@ export const RegInput = styled.input`
 
     caret-color: ${(props) => props.theme.colors.accentColor};
   }
+
+  ${(props) =>
+    props.$isInvalid &&
+    css`
+      border-color: ${(props) => props.theme.colors.Error};
+
+      &:focus {
+        border-color: ${(props) => props.theme.colors.Error};
+      }
+    `}
+
+  ${(props) =>
+    props.$isValid &&
+    css`
+      border-color: ${(props) => props.theme.colors.Success};
+
+      &:focus {
+        border-color: ${(props) => props.theme.colors.Success};
+      }
+    `}
 `;
 
 export const PasswordBtn = styled.button`
@@ -91,5 +112,26 @@ export const ErrorMessage = styled.p`
   font-size: 12px;
   line-height: 1.16667;
   letter-spacing: -0.03em;
-  color: ${(props) => props.theme.colors.ErrorMessageColor};
+  color: ${(props) => props.theme.colors.Error};
+`;
+
+export const FormBottomText = styled.p`
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.03em;
+  color: ${(props) => props.theme.colors.FormBottomTextColor};
+`;
+
+export const FormBottomLink = styled(Link)`
+  color: ${(props) => props.theme.colors.accentColor};
+  text-decoration: underline;
+  margin-left: 4px;
+  transition: background-color 300ms ease-in-out;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.FormBtnBgHover};
+  }
 `;

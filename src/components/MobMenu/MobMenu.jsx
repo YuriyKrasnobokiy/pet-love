@@ -83,7 +83,7 @@ export const MobMenu = () => {
         </MobNavWrap>
         <MobAuthWrap>
           <MobLoginBtn>Login</MobLoginBtn>
-          <MobRegBtn>Registration</MobRegBtn>
+          <MobRegBtn to="/register">Registration</MobRegBtn>
         </MobAuthWrap>
       </MobMenuStyled>
     </MobMenuOverlay>

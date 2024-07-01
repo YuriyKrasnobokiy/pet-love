@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import {
   ErrorMessage,
+  FormBottomLink,
+  FormBottomText,
   PasswordBtn,
   RegBtn,
   RegDescr,
@@ -13,6 +15,7 @@ import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Icon from "../Icon/Icon";
+import { Link } from "react-router-dom";
 
 const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
 
@@ -32,7 +35,8 @@ export const RegistrForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(RegisterSchema) });
+    watch,
+  } = useForm({ resolver: yupResolver(RegisterSchema), mode: "onChange" });
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -50,11 +54,23 @@ export const RegistrForm = () => {
       <RegDescr>Thank you for your interest in our platform</RegDescr>
       <form>
         <RegInputWrap>
-          <RegInput {...register("name")} type="text" placeholder="Name" />
+          <RegInput
+            placeholder="Name"
+            type="text"
+            {...register("name")}
+            $isValid={!errors.name && watch("name")}
+            $isInvalid={errors.name && watch("name")}
+          />
           <ErrorMessage>{errors.name?.message}</ErrorMessage>
         </RegInputWrap>
         <RegInputWrap>
-          <RegInput {...register("email")} type="email" placeholder="Email" />
+          <RegInput
+            {...register("email")}
+            type="email"
+            placeholder="Email"
+            $isValid={!errors.email && watch("email")}
+            $isInvalid={errors.email && watch("email")}
+          />
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
         </RegInputWrap>
         <RegInputWrap>
@@ -63,6 +79,8 @@ export const RegistrForm = () => {
             type={showPassword ? "text" : "password"}
             placeholder="Password"
             autoComplete="true"
+            $isValid={!errors.password && watch("password")}
+            $isInvalid={errors.password && watch("password")}
           />
           <PasswordBtn type="button" onClick={handlePasswordClick}>
             <Icon
@@ -79,6 +97,8 @@ export const RegistrForm = () => {
             type={showConfirmPassword ? "text" : "password"}
             placeholder="Confirm password"
             autoComplete="true"
+            $isValid={!errors.confirmPassword && watch("confirmPassword")}
+            $isInvalid={errors.confirmPassword && watch("confirmPassword")}
           />
           <PasswordBtn type="button" onClick={handleConfirmPasswordClick}>
             <Icon
@@ -97,6 +117,10 @@ export const RegistrForm = () => {
           registration
         </RegBtn>
       </form>
+      <FormBottomText>
+        Already have an account?
+        <FormBottomLink to="/login">Login</FormBottomLink>
+      </FormBottomText>
     </RegFormWrap>
   );
 };
