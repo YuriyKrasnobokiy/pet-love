@@ -1,4 +1,4 @@
-import{u as t,j as o}from"./index-qI-2zD93.js";const s=t.div`
+import{u as t,j as o}from"./index-cf-hMh2z.js";const s=t.div`
   padding: 0 20px 10px;
 `,r=t.div`
   padding: 50px 20px;
@@ -22,4 +22,4 @@ import{u as t,j as o}from"./index-qI-2zD93.js";const s=t.div`
   color: ${e=>e.theme.colors.HomeTextColor};
 `,m=t.img`
   border-radius: 30px;
-`,a=()=>o.jsxs(s,{className:"container",children:[o.jsxs(r,{children:[o.jsxs(n,{children:["Take good ",o.jsx(i,{children:"care"})," of your small pets"]}),o.jsx(c,{children:"Choosing a pet for your home is a choice that is meant to enrich your life with immeasurable joy and tenderness."})]}),o.jsx("div",{children:o.jsx(m,{src:"src/assets/imgs/mobile/home-img-1x-mob.jpg",alt:"pet"})})]});export{a as default};
+`,l="/pet-love/assets/home-img-2x-mob-BdNO4UoT.jpg",x=()=>o.jsxs(s,{className:"container",children:[o.jsxs(r,{children:[o.jsxs(n,{children:["Take good ",o.jsx(i,{children:"care"})," of your small pets"]}),o.jsx(c,{children:"Choosing a pet for your home is a choice that is meant to enrich your life with immeasurable joy and tenderness."})]}),o.jsx("div",{children:o.jsx(m,{src:l,alt:"pet"})})]});export{x as default};
