@@ -6,6 +6,7 @@ import {
   HomeTextAccent,
   HomeTextCont,
 } from "./Home.styled";
+import HomeImg from "../../assets/imgs/mobile/home-img-2x-mob.jpg";
 
 const Home = () => {
   return (
@@ -21,7 +22,8 @@ const Home = () => {
       </HomeTextCont>
       <div>
         <HomeImgStyled
-          src="src/assets/imgs/mobile/home-img-1x-mob.jpg"
+          // src="src/assets/imgs/mobile/home-img-1x-mob.jpg"
+          src={HomeImg}
           alt="pet"
         />
       </div>

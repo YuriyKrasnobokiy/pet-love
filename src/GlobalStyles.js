@@ -58,6 +58,14 @@ const GlobalStyles = createGlobalStyle`
     max-width: 335px;
     margin: 0 auto;
     padding: 0px 20px;
+
+    @media screen and (min-width: 768px) {
+      max-width: 704px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      max-width: 1136px;
+    }
   }
 
   .title {
