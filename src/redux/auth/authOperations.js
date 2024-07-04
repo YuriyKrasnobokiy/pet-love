@@ -27,3 +27,20 @@ export const registration = createAsyncThunk(
     }
   },
 );
+
+export const login = createAsyncThunk(
+  "auth/login",
+  async (userData, thunkAPI) => {
+    try {
+      const { data } = await axios.post("/signin", userData);
+      setToken(data.token);
+      toast.success("Welcome back 🥰");
+      return data;
+    } catch (e) {
+      const errorMessage =
+        e?.response?.data?.message || e.message || "An unknown error occurred";
+      toast.error(errorMessage);
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  },
+);

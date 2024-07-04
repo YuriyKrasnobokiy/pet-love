@@ -17,6 +17,7 @@ import {
   PasswordBtn,
 } from "./LoginForm.styled";
 import Icon from "../Icon/Icon";
+import { login } from "../../redux/auth/authOperations";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().matches(emailRegExp, "Invalid email").required(),
@@ -85,7 +86,7 @@ export const LoginForm = () => {
         </LoginInputWrap>
 
         <LoginBtn type="submit" onSubmit={handleSubmit(handleFormSubmit)}>
-          registration
+          login
         </LoginBtn>
       </form>
       <FormBottomText>
