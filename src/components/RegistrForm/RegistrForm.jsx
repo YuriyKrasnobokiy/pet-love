@@ -15,7 +15,8 @@ import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Icon from "../Icon/Icon";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { registration } from "../../redux/auth/authOperations";
 
 const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
 
@@ -36,11 +37,12 @@ export const RegistrForm = () => {
     handleSubmit,
     formState: { errors },
     watch,
+    reset,
   } = useForm({ resolver: yupResolver(RegisterSchema), mode: "onChange" });
 
+  const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
   const handlePasswordClick = () => {
     setShowPassword(!showPassword);
   };
@@ -48,11 +50,17 @@ export const RegistrForm = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
+  const handleFormSubmit = (data) => {
+    const { name, email, password } = data;
+    dispatch(registration({ name, email, password }));
+    reset();
+  };
+
   return (
     <RegFormWrap>
       <RegTitle>Registration</RegTitle>
       <RegDescr>Thank you for your interest in our platform</RegDescr>
-      <form>
+      <form onSubmit={handleSubmit(handleFormSubmit)}>
         <RegInputWrap>
           <RegInput
             placeholder="Name"
@@ -110,10 +118,7 @@ export const RegistrForm = () => {
           <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
         </RegInputWrap>
 
-        <RegBtn
-          type="submit"
-          onClick={handleSubmit((data) => console.log(data))}
-        >
+        <RegBtn type="submit" onSubmit={handleSubmit(handleFormSubmit)}>
           registration
         </RegBtn>
       </form>

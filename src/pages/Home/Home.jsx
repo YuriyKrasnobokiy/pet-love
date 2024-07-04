@@ -21,11 +21,7 @@ const Home = () => {
         </HomeDescr>
       </HomeTextCont>
       <div>
-        <HomeImgStyled
-          // src="src/assets/imgs/mobile/home-img-1x-mob.jpg"
-          src={HomeImg}
-          alt="pet"
-        />
+        <HomeImgStyled src={HomeImg} alt="pet" />
       </div>
     </HomeContainer>
   );

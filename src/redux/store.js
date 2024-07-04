@@ -1,31 +1,35 @@
 import { configureStore } from "@reduxjs/toolkit";
-import modalReducer from "./modal/modalSlice";
 import mobMenuReducer from "./mob-menu/mobMenuSlice";
-import friendsReducer from "./our-friends/friendsSlice";
+import modalReducer from "./modal/modalSlice";
 import newsReducer from "./news/newsSlice";
+import friendsReducer from "./our-friends/friendsSlice";
 
 import {
   FLUSH,
-  REHYDRATE,
   PAUSE,
   PERSIST,
+  persistReducer,
+  persistStore,
   PURGE,
   REGISTER,
+  REHYDRATE,
 } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { authReducer } from "./auth/authSlice";
 
-// const carsConfig = {
-//   key: 'root',
-//   storage,
-//   whitelist: ['favoriteCars', 'selectedCarIds'],
-// };
+export const authPersistConfig = {
+  key: "auth",
+  storage,
+  whitelist: ["token"],
+};
 
 export const store = configureStore({
   reducer: {
-    // carsStore: persistReducer(carsConfig, carsReducer),
     modal: modalReducer,
     mobMenu: mobMenuReducer,
     friendsStore: friendsReducer,
     newsStore: newsReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -35,4 +39,4 @@ export const store = configureStore({
     }),
 });
 
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);
