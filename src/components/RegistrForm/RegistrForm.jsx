@@ -1,4 +1,11 @@
+import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import * as Yup from "yup";
+import { emailRegExp } from "../../helpers/emailRegExp";
+import { registration } from "../../redux/auth/authOperations";
+import Icon from "../Icon/Icon";
 import {
   ErrorMessage,
   FormBottomLink,
@@ -11,18 +18,10 @@ import {
   RegInputWrap,
   RegTitle,
 } from "./RegistrForm.styled";
-import { useForm } from "react-hook-form";
-import * as Yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import Icon from "../Icon/Icon";
-import { useDispatch } from "react-redux";
-import { registration } from "../../redux/auth/authOperations";
-
-const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string().min(2, "Name must be at least 2 characters").required(),
-  email: Yup.string().matches(emailPattern, "Invalid email").required(),
+  email: Yup.string().matches(emailRegExp, "Invalid email").required(),
   password: Yup.string()
     .min(7, "Password must be at least 7 characters")
     .required(),
