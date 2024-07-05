@@ -13,22 +13,28 @@ import { useDispatch } from "react-redux";
 import { closeMobMenu } from "../../redux/mob-menu/mobMenuSlice";
 import Icon from "../Icon/Icon";
 import { useLocation } from "react-router-dom";
+import { useTheme } from "styled-components";
 
 export const MobMenu = () => {
+  const theme = useTheme();
   const dispatch = useDispatch();
   const location = useLocation();
   const [bg, setBg] = useState("white");
-  const [borderColor, setBorderColor] = useState("rgba(38, 38, 38, 0.15)");
+  // const [borderColor, setBorderColor] = useState("rgba(38, 38, 38, 0.15)");
 
   useEffect(() => {
     switch (location.pathname) {
-      case "/":
-        setBg("#f6b83d");
-        setBorderColor("rgba(255, 255, 255, 0.15)");
+      case "/login":
+        setBg(theme.colors.accentColor);
+        // setBorderColor("rgba(255, 255, 255, 0.15)");
+        break;
+      case "/register":
+        setBg(theme.colors.accentColor);
+        // setBorderColor("rgba(255, 255, 255, 0.15)");
         break;
       default:
         setBg("#ffffff");
-        setBorderColor("rgba(38, 38, 38, 0.15)");
+        // setBorderColor("rgba(38, 38, 38, 0.15)");
         break;
     }
   }, [location.pathname]);
@@ -82,8 +88,12 @@ export const MobMenu = () => {
           </MobNavLink>
         </MobNavWrap>
         <MobAuthWrap>
-          <MobLoginBtn>Login</MobLoginBtn>
-          <MobRegBtn to="/register">Registration</MobRegBtn>
+          <MobLoginBtn to="/login" onClick={() => dispatch(closeMobMenu())}>
+            Login
+          </MobLoginBtn>
+          <MobRegBtn to="/register" onClick={() => dispatch(closeMobMenu())}>
+            Registration
+          </MobRegBtn>
         </MobAuthWrap>
       </MobMenuStyled>
     </MobMenuOverlay>
