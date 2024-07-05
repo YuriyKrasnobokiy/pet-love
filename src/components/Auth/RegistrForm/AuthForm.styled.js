@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-export const LoginFormWrap = styled.div`
+export const AuthFormWrap = styled.div`
   padding: 28px 20px;
   border-radius: 30px;
   width: 295px;
   background-color: ${(props) => props.theme.colors.RegistrFormBG};
 `;
 
-export const LoginTitle = styled.h2`
+export const AuthTitle = styled.h2`
   font-weight: 700;
   font-size: 28px;
   line-height: 1;
@@ -16,7 +16,7 @@ export const LoginTitle = styled.h2`
   margin-bottom: 12px;
 `;
 
-export const LoginDescr = styled.p`
+export const AuthDescr = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
@@ -24,7 +24,7 @@ export const LoginDescr = styled.p`
   margin-bottom: 20px;
 `;
 
-export const LoginInputWrap = styled.div`
+export const AuthInputWrap = styled.div`
   position: relative;
   margin-bottom: 14px;
   &:last-of-type {
@@ -32,7 +32,7 @@ export const LoginInputWrap = styled.div`
   }
 `;
 
-export const LoginInput = styled.input`
+export const AuthInput = styled.input`
   width: 100%;
   border: ${(props) => props.theme.colors.FormInputBorder};
   border-radius: 30px;
@@ -78,14 +78,14 @@ export const LoginInput = styled.input`
     `}
 `;
 
-export const PasswordBtn = styled.button`
+export const AuthPasswordBtn = styled.button`
   background-color: transparent;
   position: absolute;
   top: 12px;
   right: 12px;
 `;
 
-export const LoginBtn = styled.button`
+export const AuthBtn = styled.button`
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
@@ -115,7 +115,7 @@ export const ErrorMessage = styled.p`
   color: ${(props) => props.theme.colors.Error};
 `;
 
-export const FormBottomText = styled.p`
+export const AuthFormBottomText = styled.p`
   margin-top: 12px;
   text-align: center;
   font-weight: 500;
@@ -125,7 +125,7 @@ export const FormBottomText = styled.p`
   color: ${(props) => props.theme.colors.FormBottomTextColor};
 `;
 
-export const FormBottomLink = styled(Link)`
+export const AuthFormBottomLink = styled(Link)`
   color: ${(props) => props.theme.colors.accentColor};
   text-decoration: underline;
   margin-left: 4px;

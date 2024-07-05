@@ -3,21 +3,21 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
-import { emailRegExp } from "../../helpers/emailRegExp";
-import { registration } from "../../redux/auth/authOperations";
-import Icon from "../Icon/Icon";
+import { emailRegExp } from "../../../helpers/emailRegExp";
+import { registration } from "../../../redux/auth/authOperations";
+import Icon from "../../Icon/Icon";
 import {
+  AuthBtn,
+  AuthDescr,
+  AuthFormBottomLink,
+  AuthFormBottomText,
+  AuthFormWrap,
+  AuthInput,
+  AuthInputWrap,
+  AuthPasswordBtn,
+  AuthTitle,
   ErrorMessage,
-  FormBottomLink,
-  FormBottomText,
-  PasswordBtn,
-  RegBtn,
-  RegDescr,
-  RegFormWrap,
-  RegInput,
-  RegInputWrap,
-  RegTitle,
-} from "./RegistrForm.styled";
+} from "./AuthForm.styled";
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string().min(2, "Name must be at least 2 characters").required(),
@@ -56,12 +56,12 @@ export const RegistrForm = () => {
   };
 
   return (
-    <RegFormWrap>
-      <RegTitle>Registration</RegTitle>
-      <RegDescr>Thank you for your interest in our platform</RegDescr>
+    <AuthFormWrap>
+      <AuthTitle>Registration</AuthTitle>
+      <AuthDescr>Thank you for your interest in our platform</AuthDescr>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
-        <RegInputWrap>
-          <RegInput
+        <AuthInputWrap>
+          <AuthInput
             placeholder="Name"
             type="text"
             {...register("name")}
@@ -69,9 +69,9 @@ export const RegistrForm = () => {
             $isInvalid={errors.name && watch("name")}
           />
           <ErrorMessage>{errors.name?.message}</ErrorMessage>
-        </RegInputWrap>
-        <RegInputWrap>
-          <RegInput
+        </AuthInputWrap>
+        <AuthInputWrap>
+          <AuthInput
             {...register("email")}
             type="email"
             placeholder="Email"
@@ -79,9 +79,9 @@ export const RegistrForm = () => {
             $isInvalid={errors.email && watch("email")}
           />
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
-        </RegInputWrap>
-        <RegInputWrap>
-          <RegInput
+        </AuthInputWrap>
+        <AuthInputWrap>
+          <AuthInput
             {...register("password")}
             type={showPassword ? "text" : "password"}
             placeholder="Password"
@@ -89,17 +89,17 @@ export const RegistrForm = () => {
             $isValid={!errors.password && watch("password")}
             $isInvalid={errors.password && watch("password")}
           />
-          <PasswordBtn type="button" onClick={handlePasswordClick}>
+          <AuthPasswordBtn type="button" onClick={handlePasswordClick}>
             <Icon
               height={18}
               width={18}
               name={showPassword ? "icon-eye-off" : "icon-eye"}
             ></Icon>
-          </PasswordBtn>
+          </AuthPasswordBtn>
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
-        </RegInputWrap>
-        <RegInputWrap>
-          <RegInput
+        </AuthInputWrap>
+        <AuthInputWrap>
+          <AuthInput
             {...register("confirmPassword")}
             type={showConfirmPassword ? "text" : "password"}
             placeholder="Confirm password"
@@ -107,24 +107,24 @@ export const RegistrForm = () => {
             $isValid={!errors.confirmPassword && watch("confirmPassword")}
             $isInvalid={errors.confirmPassword && watch("confirmPassword")}
           />
-          <PasswordBtn type="button" onClick={handleConfirmPasswordClick}>
+          <AuthPasswordBtn type="button" onClick={handleConfirmPasswordClick}>
             <Icon
               height={18}
               width={18}
               name={showConfirmPassword ? "icon-eye-off" : "icon-eye"}
             ></Icon>
-          </PasswordBtn>
+          </AuthPasswordBtn>
           <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
-        </RegInputWrap>
+        </AuthInputWrap>
 
-        <RegBtn type="submit" onSubmit={handleSubmit(handleFormSubmit)}>
+        <AuthBtn type="submit" onSubmit={handleSubmit(handleFormSubmit)}>
           registration
-        </RegBtn>
+        </AuthBtn>
       </form>
-      <FormBottomText>
+      <AuthFormBottomText>
         Already have an account?
-        <FormBottomLink to="/login">Login</FormBottomLink>
-      </FormBottomText>
-    </RegFormWrap>
+        <AuthFormBottomLink to="/login">Login</AuthFormBottomLink>
+      </AuthFormBottomText>
+    </AuthFormWrap>
   );
 };

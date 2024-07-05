@@ -3,21 +3,21 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
-import { emailRegExp } from "../../helpers/emailRegExp";
+import { emailRegExp } from "../../../helpers/emailRegExp";
+import Icon from "../../Icon/Icon";
+import { login } from "../../../redux/auth/authOperations";
 import {
+  AuthBtn,
+  AuthDescr,
+  AuthFormBottomLink,
+  AuthFormBottomText,
+  AuthFormWrap,
+  AuthInput,
+  AuthInputWrap,
+  AuthPasswordBtn,
+  AuthTitle,
   ErrorMessage,
-  FormBottomLink,
-  FormBottomText,
-  LoginBtn,
-  LoginDescr,
-  LoginFormWrap,
-  LoginInput,
-  LoginInputWrap,
-  LoginTitle,
-  PasswordBtn,
-} from "./LoginForm.styled";
-import Icon from "../Icon/Icon";
-import { login } from "../../redux/auth/authOperations";
+} from "../RegistrForm/AuthForm.styled";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().matches(emailRegExp, "Invalid email").required(),
@@ -50,14 +50,14 @@ export const LoginForm = () => {
   };
 
   return (
-    <LoginFormWrap>
-      <LoginTitle>Login</LoginTitle>
-      <LoginDescr>
+    <AuthFormWrap>
+      <AuthTitle>Login</AuthTitle>
+      <AuthDescr>
         Welcome! Please enter your credentials to login to the platform:
-      </LoginDescr>
+      </AuthDescr>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
-        <LoginInputWrap>
-          <LoginInput
+        <AuthInputWrap>
+          <AuthInput
             {...register("email")}
             type="email"
             placeholder="Email"
@@ -65,9 +65,9 @@ export const LoginForm = () => {
             $isInvalid={errors.email && watch("email")}
           />
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
-        </LoginInputWrap>
-        <LoginInputWrap>
-          <LoginInput
+        </AuthInputWrap>
+        <AuthInputWrap>
+          <AuthInput
             {...register("password")}
             type={showPassword ? "text" : "password"}
             placeholder="Password"
@@ -75,24 +75,24 @@ export const LoginForm = () => {
             $isValid={!errors.password && watch("password")}
             $isInvalid={errors.password && watch("password")}
           />
-          <PasswordBtn type="button" onClick={handlePasswordClick}>
+          <AuthPasswordBtn type="button" onClick={handlePasswordClick}>
             <Icon
               height={18}
               width={18}
               name={showPassword ? "icon-eye-off" : "icon-eye"}
             ></Icon>
-          </PasswordBtn>
+          </AuthPasswordBtn>
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
-        </LoginInputWrap>
+        </AuthInputWrap>
 
-        <LoginBtn type="submit" onSubmit={handleSubmit(handleFormSubmit)}>
+        <AuthBtn type="submit" onSubmit={handleSubmit(handleFormSubmit)}>
           login
-        </LoginBtn>
+        </AuthBtn>
       </form>
-      <FormBottomText>
+      <AuthFormBottomText>
         Don`t have an account?
-        <FormBottomLink to="/register">Register</FormBottomLink>
-      </FormBottomText>
-    </LoginFormWrap>
+        <AuthFormBottomLink to="/register">Register</AuthFormBottomLink>
+      </AuthFormBottomText>
+    </AuthFormWrap>
   );
 };

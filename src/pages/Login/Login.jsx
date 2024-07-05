@@ -1,8 +1,8 @@
 import React from "react";
-import { LoginWrap } from "./Login.styled";
-import { PetBlock } from "../../components/RegistrForm/PetBlock";
-import { LoginForm } from "../../components/LoginForm/LoginForm";
 import dogLoginImg from "../../assets/imgs/mobile/login-img-2x-mob.jpg";
+import { PetBlock } from "../../components/Auth/PetBlock/PetBlock";
+import { LoginWrap } from "../Login/Login.styled";
+import { LoginForm } from "../../components/Auth/LoginForm/LoginForm";
 
 const Login = () => {
   return (
