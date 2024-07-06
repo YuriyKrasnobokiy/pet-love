@@ -1,7 +1,14 @@
 import {
+  AddressItem,
+  AdressList,
   BurgerBtn,
+  CopyrightText,
+  FooterNav,
+  FooterWrapper,
   HeaderLogoLink,
   HeaderWrapper,
+  SocialItem,
+  SocialList,
   ThemeBtn,
 } from "./Layout.styled";
 import { MdOutlineWbSunny } from "react-icons/md";
@@ -15,7 +22,11 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserMenu } from "../UserMenu/UserMenu";
 import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
-
+import { Link } from "react-router-dom";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { ImYoutube } from "react-icons/im";
 const Layout = ({ children, toggleTheme, currentTheme }) => {
   const dispatch = useDispatch();
   const isOpenMobMenu = useSelector(selectIsOpenMobMenu);
@@ -58,6 +69,69 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
         </HeaderWrapper>
       </header>
       <main>{children}</main>
+      <footer>
+        <FooterWrapper className="container">
+          <FooterNav>
+            <div>
+              <Link to="/">
+                {currentTheme === "dark" ? (
+                  <Icon
+                    height={20}
+                    width={76}
+                    name="icon-logo-white-small"
+                  ></Icon>
+                ) : (
+                  <Icon height={20} width={76} name="icon-logo-small"></Icon>
+                )}
+              </Link>
+
+              <SocialList>
+                <SocialItem>
+                  <Link href="#">
+                    <FaInstagram />
+                  </Link>
+                </SocialItem>
+                <SocialItem>
+                  <Link href="#">
+                    <ImYoutube />
+                  </Link>
+                </SocialItem>
+                <SocialItem>
+                  <Link href="#">
+                    <FaFacebook />
+                  </Link>
+                </SocialItem>
+              </SocialList>
+            </div>
+
+            <AdressList>
+              <AddressItem>
+                <a href="tel:+380673002030">+38 (067) 300-20-30</a>
+              </AddressItem>
+
+              <AddressItem>
+                <a href="mailto:krasnobokiy.yuriy@gmail.com">
+                  krasnobokiy.yuriy@gmail.com
+                </a>
+              </AddressItem>
+
+              <AddressItem>
+                <a
+                  href="https://www.google.com/maps?q=Kyiv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Kyiv, Ukraine
+                </a>
+              </AddressItem>
+            </AdressList>
+          </FooterNav>
+
+          <CopyrightText>
+            Yurii Krasnobokyi ©PetLove 2024. All rights reserved.
+          </CopyrightText>
+        </FooterWrapper>
+      </footer>
     </>
   );
 };
