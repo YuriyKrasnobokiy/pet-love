@@ -1,17 +1,27 @@
-import { Suspense, lazy, useState } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Suspense, lazy, useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import GlobalStyles from "../GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import Loader from "./Loader/Loader";
-import OurFriends from "../pages/OurFriends/OurFriends";
-import { FindPet } from "../pages/FindPet/FindPet";
-import NotFound from "../pages/NotFound/NotFound";
-import Registration from "../pages/Registration/Registration";
-import Login from "../pages/Login/Login";
+// import OurFriends from "../pages/OurFriends/OurFriends";
+// import { FindPet } from "../pages/FindPet/FindPet";
+// import NotFound from "../pages/NotFound/NotFound";
+// import Registration from "../pages/Registration/Registration";
+// import Login from "../pages/Login/Login";
+import { refresh } from "../redux/auth/authOperations";
+import { useDispatch, useSelector } from "react-redux";
+import { selectIsRefreshing } from "../redux/auth/authSelectors";
+import { RestrictedRoute } from "./RestrictedRoute";
+import { PrivateRoute } from "./PrivateRoute";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const News = lazy(() => import("../pages/News/News"));
+const OurFriends = lazy(() => import("../pages/OurFriends/OurFriends"));
+const FindPet = lazy(() => import("../pages/FindPet/FindPet"));
+const Registration = lazy(() => import("../pages/Registration/Registration"));
+const Login = lazy(() => import("../pages/Login/Login"));
+const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 
 export const themes = {
   light: {
@@ -111,29 +121,69 @@ export const App = () => {
     return savedTheme || "dark";
   });
 
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+
   const toggleTheme = () => {
     const newTheme = currentTheme === "light" ? "dark" : "light";
     setCurrentTheme(newTheme);
     localStorage.setItem("theme", newTheme);
   };
 
-  return (
+  useEffect(() => {
+    dispatch(refresh());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyles />
-      <Layout currentTheme={currentTheme} toggleTheme={toggleTheme}>
-        <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />}>
+        <Layout currentTheme={currentTheme} toggleTheme={toggleTheme}>
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/register" element={<Registration />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/news" element={<News />}></Route>
-            <Route path="/our-friends" element={<OurFriends />}></Route>
-            <Route path="/find-pet" element={<FindPet />}></Route>
-            <Route path="/not-found" element={<NotFound />} />
+            <Route
+              path="/"
+              element={
+                <PrivateRoute redirectTo="/login" component={<Home />} />
+              }
+            />
+
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute redirectTo="/" component={<Registration />} />
+              }
+            />
+
+            <Route
+              path="/login"
+              element={<RestrictedRoute redirectTo="/" component={<Login />} />}
+            />
+
+            <Route
+              path="/news"
+              element={
+                <PrivateRoute redirectTo="/login" component={<News />} />
+              }
+            />
+            <Route
+              path="/our-friends"
+              element={
+                <PrivateRoute redirectTo="/login" component={<OurFriends />} />
+              }
+            />
+            <Route
+              path="/find-pet"
+              element={
+                <PrivateRoute redirectTo="/login" component={<FindPet />} />
+              }
+            />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Suspense>
-      </Layout>
+        </Layout>
+      </Suspense>
     </ThemeProvider>
   );
 };

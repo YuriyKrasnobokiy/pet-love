@@ -16,6 +16,18 @@ export const LoaderContainer = styled.div`
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("./src/assets/imgs/mobile/start-screen-1x-mob.jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("./src/assets/imgs/tablet/start-screen-img-1x-tablet.jpg");
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("./src/assets/imgs/desctop/start-screen-img-1x-desc.jpg");
+  }
 `;
 
 export const ProgressBar = styled.div`

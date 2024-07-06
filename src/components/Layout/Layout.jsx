@@ -13,10 +13,14 @@ import { openMobMenu } from "../../redux/mob-menu/mobMenuSlice";
 import { MobMenu } from "../MobMenu/MobMenu";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { UserMenu } from "../UserMenu/UserMenu";
+import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 
 const Layout = ({ children, toggleTheme, currentTheme }) => {
   const dispatch = useDispatch();
   const isOpenMobMenu = useSelector(selectIsOpenMobMenu);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   return (
     <>
       <ToastContainer
@@ -45,6 +49,8 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
               <MdOutlineWbSunny />
             )}
           </ThemeBtn>
+          {isLoggedIn && <UserMenu />}
+
           <BurgerBtn type="button" onClick={() => dispatch(openMobMenu())}>
             <Icon height={32} width={32} name="icon-burger-menu" />
           </BurgerBtn>

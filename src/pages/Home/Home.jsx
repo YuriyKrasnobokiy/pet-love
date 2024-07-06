@@ -7,8 +7,17 @@ import {
   HomeTextCont,
 } from "./Home.styled";
 import HomeImg from "../../assets/imgs/mobile/home-img-2x-mob.jpg";
+import { useEffect } from "react";
+import { refresh } from "../../redux/auth/authOperations";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refresh());
+  }, [dispatch]);
+
   return (
     <HomeContainer className="container">
       <HomeTextCont>

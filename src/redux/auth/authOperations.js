@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 axios.defaults.baseURL = "https://petlove.b.goit.study/api/users/";
+
 export const setToken = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
@@ -44,3 +45,25 @@ export const login = createAsyncThunk(
     }
   },
 );
+
+export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
+  try {
+    const { data } = await axios.post("/signout");
+    unsetToken();
+
+    return data;
+  } catch (e) {
+    return thunkAPI.rejectWithValue(e.message);
+  }
+});
+
+export const refresh = createAsyncThunk("auth/refresh", async (_, thunkAPI) => {
+  try {
+    const token = thunkAPI.getState().auth.token;
+    setToken(token);
+    const { data } = await axios.get("/current/full");
+    return data;
+  } catch (e) {
+    return thunkAPI.rejectWithValue(e.message);
+  }
+});
