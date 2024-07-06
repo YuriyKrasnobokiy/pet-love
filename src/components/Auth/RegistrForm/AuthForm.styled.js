@@ -85,6 +85,20 @@ export const AuthPasswordBtn = styled.button`
   right: 12px;
 `;
 
+export const AuthInputIconError = styled.div`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: ${(props) => props.theme.colors.Error};
+`;
+
+export const AuthInputIconSuccess = styled.div`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: ${(props) => props.theme.colors.Success};
+`;
+
 export const AuthBtn = styled.button`
   font-weight: 700;
   font-size: 14px;

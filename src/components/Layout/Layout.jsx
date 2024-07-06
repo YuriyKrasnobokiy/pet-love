@@ -34,7 +34,7 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
         pauseOnHover
       />
       <header>
-        <HeaderWrapper className="container">
+        <HeaderWrapper>
           <HeaderLogoLink to="/">
             {currentTheme === "dark" ? (
               <Icon height={20} width={76} name="icon-logo-white-small"></Icon>

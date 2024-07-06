@@ -13,6 +13,8 @@ import {
   AuthFormBottomText,
   AuthFormWrap,
   AuthInput,
+  AuthInputIconError,
+  AuthInputIconSuccess,
   AuthInputWrap,
   AuthPasswordBtn,
   AuthTitle,
@@ -65,6 +67,16 @@ export const LoginForm = () => {
             $isInvalid={errors.email && watch("email")}
           />
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
+          {errors.email && (
+            <AuthInputIconError>
+              <Icon name="icon-cross-small" width="18" height="18" />
+            </AuthInputIconError>
+          )}
+          {!errors.email && watch("email") && (
+            <AuthInputIconSuccess>
+              <Icon name="icon-check" width="18" height="18" />
+            </AuthInputIconSuccess>
+          )}
         </AuthInputWrap>
         <AuthInputWrap>
           <AuthInput

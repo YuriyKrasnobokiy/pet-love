@@ -5,8 +5,10 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 34px;
+  padding-top: 28px;
   padding-bottom: 20px;
+  max-width: 335px;
+  margin: 0 auto;
   @media screen and (min-width: 1200px) {
     display: flex;
     /* width: 1200px; */
