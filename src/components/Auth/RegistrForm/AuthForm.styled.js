@@ -36,7 +36,7 @@ export const AuthInput = styled.input`
   width: 100%;
   border: ${(props) => props.theme.colors.FormInputBorder};
   border-radius: 30px;
-  padding: 12px;
+  padding: 12px 60px 12px 12px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
@@ -85,18 +85,12 @@ export const AuthPasswordBtn = styled.button`
   right: 12px;
 `;
 
-export const AuthInputIconError = styled.div`
+export const AuthInputIcon = styled.div`
   position: absolute;
   top: 12px;
-  right: 12px;
-  color: ${(props) => props.theme.colors.Error};
-`;
-
-export const AuthInputIconSuccess = styled.div`
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  color: ${(props) => props.theme.colors.Success};
+  right: ${(props) => (props.$isPassword ? "36px" : "12px")};
+  color: ${(props) =>
+    props.$isValid ? props.theme.colors.Success : props.theme.colors.Error};
 `;
 
 export const AuthBtn = styled.button`

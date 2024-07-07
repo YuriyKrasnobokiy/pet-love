@@ -57,7 +57,7 @@ const GlobalStyles = createGlobalStyle`
   .container {
     max-width: 335px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 0 20px;
 
     @media screen and (min-width: 768px) {
       max-width: 704px;

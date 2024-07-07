@@ -13,6 +13,7 @@ import {
   AuthFormBottomText,
   AuthFormWrap,
   AuthInput,
+  AuthInputIcon,
   AuthInputWrap,
   AuthPasswordBtn,
   AuthTitle,
@@ -69,6 +70,16 @@ export const RegistrForm = () => {
             $isInvalid={errors.name && watch("name")}
           />
           <ErrorMessage>{errors.name?.message}</ErrorMessage>
+          {errors.name && (
+            <AuthInputIcon $isPassword={false}>
+              <Icon name="icon-cross-small" width="18" height="18" />
+            </AuthInputIcon>
+          )}
+          {!errors.name && watch("name") && (
+            <AuthInputIcon $isPassword={false}>
+              <Icon name="icon-check" width="18" height="18" />
+            </AuthInputIcon>
+          )}
         </AuthInputWrap>
         <AuthInputWrap>
           <AuthInput
@@ -79,6 +90,16 @@ export const RegistrForm = () => {
             $isInvalid={errors.email && watch("email")}
           />
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
+          {errors.email && (
+            <AuthInputIcon $isPassword={false}>
+              <Icon name="icon-cross-small" width="18" height="18" />
+            </AuthInputIcon>
+          )}
+          {!errors.email && watch("email") && (
+            <AuthInputIcon $isPassword={false}>
+              <Icon name="icon-check" width="18" height="18" />
+            </AuthInputIcon>
+          )}
         </AuthInputWrap>
         <AuthInputWrap>
           <AuthInput
@@ -96,6 +117,16 @@ export const RegistrForm = () => {
               name={showPassword ? "icon-eye-off" : "icon-eye"}
             ></Icon>
           </AuthPasswordBtn>
+          {errors.password && (
+            <AuthInputIcon $isPassword={true}>
+              <Icon name="icon-cross-small" width="18" height="18" />
+            </AuthInputIcon>
+          )}
+          {!errors.password && watch("password") && (
+            <AuthInputIcon $isPassword={true}>
+              <Icon name="icon-check" width="18" height="18" />
+            </AuthInputIcon>
+          )}
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
         </AuthInputWrap>
         <AuthInputWrap>
@@ -115,6 +146,16 @@ export const RegistrForm = () => {
             ></Icon>
           </AuthPasswordBtn>
           <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
+          {errors.confirmPassword && (
+            <AuthInputIcon $isPassword={true}>
+              <Icon name="icon-cross-small" width="18" height="18" />
+            </AuthInputIcon>
+          )}
+          {!errors.confirmPassword && watch("confirmPassword") && (
+            <AuthInputIcon $isPassword={true}>
+              <Icon name="icon-check" width="18" height="18" />
+            </AuthInputIcon>
+          )}
         </AuthInputWrap>
 
         <AuthBtn type="submit" onSubmit={handleSubmit(handleFormSubmit)}>

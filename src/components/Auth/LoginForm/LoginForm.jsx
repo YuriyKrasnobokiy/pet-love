@@ -13,8 +13,7 @@ import {
   AuthFormBottomText,
   AuthFormWrap,
   AuthInput,
-  AuthInputIconError,
-  AuthInputIconSuccess,
+  AuthInputIcon,
   AuthInputWrap,
   AuthPasswordBtn,
   AuthTitle,
@@ -68,14 +67,14 @@ export const LoginForm = () => {
           />
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
           {errors.email && (
-            <AuthInputIconError>
+            <AuthInputIcon $isPassword={false}>
               <Icon name="icon-cross-small" width="18" height="18" />
-            </AuthInputIconError>
+            </AuthInputIcon>
           )}
           {!errors.email && watch("email") && (
-            <AuthInputIconSuccess>
+            <AuthInputIcon $isPassword={false}>
               <Icon name="icon-check" width="18" height="18" />
-            </AuthInputIconSuccess>
+            </AuthInputIcon>
           )}
         </AuthInputWrap>
         <AuthInputWrap>
@@ -95,6 +94,16 @@ export const LoginForm = () => {
             ></Icon>
           </AuthPasswordBtn>
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
+          {errors.password && (
+            <AuthInputIcon $isPassword={true}>
+              <Icon name="icon-cross-small" width="18" height="18" />
+            </AuthInputIcon>
+          )}
+          {!errors.password && watch("password") && (
+            <AuthInputIcon $isPassword={true}>
+              <Icon name="icon-check" width="18" height="18" />
+            </AuthInputIcon>
+          )}
         </AuthInputWrap>
 
         <AuthBtn type="submit" onSubmit={handleSubmit(handleFormSubmit)}>
