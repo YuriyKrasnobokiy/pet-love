@@ -18,9 +18,8 @@ export const MobMenuStyled = styled.div`
   top: 0;
   right: 0;
   padding: 40px 20px;
-  /* background: white; */
+  background: ${(props) => props.$bg};
   cursor: auto;
-  /* height: 100vh; */
   height: -webkit-fill-available;
   max-width: 218px;
   display: flex;
@@ -43,9 +42,16 @@ export const CloseBtn = styled.button`
   font-size: 30px;
   background-color: transparent;
   transition: color 0.3s linear;
+  color: ${(props) =>
+    props.$changeColor
+      ? props.theme.colors.mobCloseColorSecondary
+      : props.theme.colors.mobCloseColorPrimary};
 
   &:hover {
-    color: ${(props) => props.theme.colors.accentColor};
+    color: ${(props) =>
+      props.$changeColor
+        ? props.theme.colors.textColor
+        : props.theme.colors.accentColor};
   }
 `;
 
@@ -57,7 +63,10 @@ export const MobNavWrap = styled.div`
 `;
 
 export const MobNavLink = styled(NavLink)`
-  border: ${(props) => props.theme.colors.MobNavLinkBorder};
+  border: ${(props) =>
+    props.$changeColor
+      ? props.theme.colors.MobNavLinkBorderSecondary
+      : props.theme.colors.MobNavLinkBorder};
   border-radius: 30px;
   padding: 15px;
   width: 87px;
@@ -66,11 +75,17 @@ export const MobNavLink = styled(NavLink)`
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.03em;
-  color: ${(props) => props.theme.colors.MobNavLinkColor};
+  color: ${(props) =>
+    props.$changeColor
+      ? props.theme.colors.MobNavLinkColorSecondary
+      : props.theme.colors.MobNavLinkColor};
   transition: border-color 300ms ease-in-out;
 
   &:hover {
-    border-color: ${(props) => props.theme.colors.accentColor};
+    border-color: ${(props) =>
+      props.$changeColor
+        ? props.theme.colors.MobNavLinkBorderHover
+        : props.theme.colors.accentColor};
   }
 
   &:not(:last-child) {

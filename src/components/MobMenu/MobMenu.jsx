@@ -20,20 +20,23 @@ export const MobMenu = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const [bg, setBg] = useState("white");
-  // const [borderColor, setBorderColor] = useState("rgba(38, 38, 38, 0.15)");
+  const [changeColor, setChangeColor] = useState(false);
 
   useEffect(() => {
     switch (location.pathname) {
       case "/login":
         setBg(theme.colors.accentColor);
+        setChangeColor(true);
         // setBorderColor("rgba(255, 255, 255, 0.15)");
         break;
       case "/register":
         setBg(theme.colors.accentColor);
+        setChangeColor(true);
         // setBorderColor("rgba(255, 255, 255, 0.15)");
         break;
       default:
         setBg("#ffffff");
+        setChangeColor(false);
         // setBorderColor("rgba(38, 38, 38, 0.15)");
         break;
     }
@@ -67,21 +70,34 @@ export const MobMenu = () => {
   };
   return (
     <MobMenuOverlay onClick={handleOverlayClick}>
-      <MobMenuStyled style={{ background: bg }}>
-        <CloseBtn onClick={handleCloseClick} type="button">
+      <MobMenuStyled $bg={bg}>
+        <CloseBtn
+          $changeColor={changeColor}
+          onClick={handleCloseClick}
+          type="button"
+        >
           <Icon width={32} height={32} name="icon-cross-small" />
         </CloseBtn>
         <MobNavWrap>
-          <MobNavLink to="/news" onClick={() => dispatch(closeMobMenu())}>
+          <MobNavLink
+            to="/news"
+            $changeColor={changeColor}
+            onClick={() => dispatch(closeMobMenu())}
+          >
             News
           </MobNavLink>
 
-          <MobNavLink to="/find-pet" onClick={() => dispatch(closeMobMenu())}>
+          <MobNavLink
+            to="/find-pet"
+            $changeColor={changeColor}
+            onClick={() => dispatch(closeMobMenu())}
+          >
             Find pet
           </MobNavLink>
 
           <MobNavLink
             to="/our-friends"
+            $changeColor={changeColor}
             onClick={() => dispatch(closeMobMenu())}
           >
             Our friends
