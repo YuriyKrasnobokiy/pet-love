@@ -1,4 +1,4 @@
-import{u as r,j as s,a as p,c as i,r as x,d as h,L as m}from"./index-C8IYawHn.js";const g=e=>e.friendsStore.friends,u=e=>e.friendsStore.isLoading,w=e=>e.friendsStore.error,f=r.div`
+import{u as r,j as s,a as p,c as i,r as h,d as x,L as m}from"./index-CwHoPUjG.js";const g=e=>e.friendsStore.friends,u=e=>e.friendsStore.isLoading,w=e=>e.friendsStore.error,f=r.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,13 +9,11 @@ import{u as r,j as s,a as p,c as i,r as x,d as h,L as m}from"./index-C8IYawHn.js
   grid-template-columns: 1fr;
 
   @media screen and (min-width: 768px) {
-    /* grid-template-columns: 342px 342px; */
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 
   @media screen and (min-width: 1200px) {
-    /* grid-template-columns: 342px 342px; */
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
@@ -88,4 +86,4 @@ import{u as r,j as s,a as p,c as i,r as x,d as h,L as m}from"./index-C8IYawHn.js
   overflow: hidden;
   text-overflow: ellipsis;
   color: ${e=>e.theme.colors.FriendDescrTextAccentColor};
-`,$=({friend:e})=>{const o=e.workDays||[],t=o.filter(d=>d.isOpen),n=t.length>0?`${t[0].from} - ${t[0].to}`:"Open day and night";return s.jsxs(F,{children:[s.jsx(b,{children:o.length===0?"Day and night":n}),s.jsx(y,{children:s.jsx("img",{src:e.imageUrl,alt:""})}),s.jsxs("div",{children:[s.jsx(v,{children:e.title}),s.jsxs("ul",{children:[s.jsx(l,{children:s.jsxs(a,{href:`mailto:${e.email}`,children:[s.jsx(c,{children:"Email: "}),e.email?e.email:"website only"]})}),s.jsx(l,{children:s.jsxs(a,{href:`https://www.google.com/maps?q=${encodeURIComponent(e.address)}`,target:"_blank",rel:"noopener noreferrer",children:[s.jsx(c,{children:"Address: "}),e.address?e.address:"website only"]})}),s.jsx(l,{children:s.jsxs(a,{href:`tel:${e.phone}`,children:[s.jsx(c,{children:"Phone: "}),e.phone?e.phone:e.email?"email only":" website only"]})})]})]})]})},C=()=>{const e=p(),o=i(g),t=i(u);return i(w),x.useEffect(()=>{e(h())},[e]),s.jsx(s.Fragment,{children:t?s.jsx(m,{}):s.jsxs(f,{className:"container",children:[s.jsx("h2",{className:"title",children:"Our Friends"}),s.jsx(j,{children:o.map(n=>s.jsx($,{friend:n},n._id))})]})})};export{C as default};
+`,$=({friend:e})=>{const t=e.workDays||[],o=t.filter(d=>d.isOpen),n=o.length>0?`${o[0].from} - ${o[0].to}`:"Open day and night";return s.jsxs(F,{children:[s.jsx(b,{children:t.length===0?"Day and night":n}),s.jsx(y,{children:s.jsx("img",{src:e.imageUrl,alt:""})}),s.jsxs("div",{children:[s.jsx(v,{children:e.title}),s.jsxs("ul",{children:[s.jsx(l,{children:s.jsxs(a,{href:`mailto:${e.email}`,children:[s.jsx(c,{children:"Email: "}),e.email?e.email:"website only"]})}),s.jsx(l,{children:s.jsxs(a,{href:`https://www.google.com/maps?q=${encodeURIComponent(e.address)}`,target:"_blank",rel:"noopener noreferrer",children:[s.jsx(c,{children:"Address: "}),e.address?e.address:"website only"]})}),s.jsx(l,{children:s.jsxs(a,{href:`tel:${e.phone}`,children:[s.jsx(c,{children:"Phone: "}),e.phone?e.phone:e.email?"email only":" website only"]})})]})]})]})},C=()=>{const e=p(),t=i(g),o=i(u);return i(w),h.useEffect(()=>{e(x())},[e]),s.jsx(s.Fragment,{children:o?s.jsx(m,{}):s.jsxs(f,{className:"container",children:[s.jsx("h2",{className:"title",children:"Our Friends"}),s.jsx(j,{children:t.map(n=>s.jsx($,{friend:n},n._id))})]})})};export{C as default};
