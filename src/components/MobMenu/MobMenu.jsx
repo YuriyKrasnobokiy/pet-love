@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import {
   CloseBtn,
-  MobAuthWrap,
-  MobLoginBtn,
   MobMenuOverlay,
   MobMenuStyled,
   MobNavLink,
   MobNavWrap,
-  MobRegBtn,
 } from "./MobMenu.styled";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { closeMobMenu } from "../../redux/mob-menu/mobMenuSlice";
 import Icon from "../Icon/Icon";
 import { useLocation } from "react-router-dom";
 import { useTheme } from "styled-components";
+import { AuthNav } from "../Auth/AuthNav/AuthNav";
+import { UserMenu } from "../UserMenu/UserMenu";
+import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 
 export const MobMenu = () => {
   const theme = useTheme();
@@ -21,6 +21,7 @@ export const MobMenu = () => {
   const location = useLocation();
   const [bg, setBg] = useState("white");
   const [changeColor, setChangeColor] = useState(false);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     switch (location.pathname) {
@@ -99,14 +100,7 @@ export const MobMenu = () => {
             Our friends
           </MobNavLink>
         </MobNavWrap>
-        <MobAuthWrap>
-          <MobLoginBtn to="/login" onClick={() => dispatch(closeMobMenu())}>
-            Login
-          </MobLoginBtn>
-          <MobRegBtn to="/register" onClick={() => dispatch(closeMobMenu())}>
-            Registration
-          </MobRegBtn>
-        </MobAuthWrap>
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </MobMenuStyled>
     </MobMenuOverlay>
   );

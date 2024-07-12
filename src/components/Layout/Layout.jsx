@@ -20,12 +20,10 @@ import { openMobMenu } from "../../redux/mob-menu/mobMenuSlice";
 import { MobMenu } from "../MobMenu/MobMenu";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { UserMenu } from "../UserMenu/UserMenu";
 import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 import { Link } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
 import { ImYoutube } from "react-icons/im";
 const Layout = ({ children, toggleTheme, currentTheme }) => {
   const dispatch = useDispatch();
@@ -60,7 +58,7 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
               <MdOutlineWbSunny />
             )}
           </ThemeBtn>
-          {isLoggedIn && <UserMenu />}
+          {isLoggedIn && <Icon height={20} width={20} name="icon-user" />}
 
           <BurgerBtn type="button" onClick={() => dispatch(openMobMenu())}>
             <Icon height={32} width={32} name="icon-burger-menu" />
@@ -106,7 +104,7 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
 
             <AdressList>
               <AddressItem>
-                <a href="tel:+380673002030">+38 (067) 300-20-30</a>
+                <a href="tel:+380638213205">+38 (063) 821-32-05</a>
               </AddressItem>
 
               <AddressItem>
