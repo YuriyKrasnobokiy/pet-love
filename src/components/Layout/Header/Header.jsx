@@ -1,10 +1,11 @@
 import React from "react";
+import { MdOutlineNightsStay, MdOutlineWbSunny } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsOpenMobMenu } from "../../../redux/mob-menu/mobMenuSelectors";
 import { selectIsLoggedIn } from "../../../redux/auth/authSelectors";
-import { MdOutlineWbSunny } from "react-icons/md";
-import { MdOutlineNightsStay } from "react-icons/md";
+import { selectIsOpenMobMenu } from "../../../redux/mob-menu/mobMenuSelectors";
+import { openMobMenu } from "../../../redux/mob-menu/mobMenuSlice";
 import Icon from "../../Icon/Icon";
+import { MobMenu } from "../../MobMenu/MobMenu";
 import {
   BurgerBtn,
   HeaderLogoLink,
@@ -12,8 +13,6 @@ import {
   ThemeBtn,
   UserBtn,
 } from "./Header.styled";
-import { MobMenu } from "../../MobMenu/MobMenu";
-import { openMobMenu } from "../../../redux/mob-menu/mobMenuSlice";
 
 export const Header = ({ toggleTheme, currentTheme }) => {
   const dispatch = useDispatch();
