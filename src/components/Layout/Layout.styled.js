@@ -73,6 +73,19 @@ export const BurgerBtn = styled.button`
   }
 `;
 
+//userProfile opener//
+
+export const UserBtn = styled.button`
+  padding: 10px;
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.colors.UserBtnBgColor};
+  transition: background-color 0.3s linear;
+
+  &:hover {
+    background-color: ${(props) => props.theme.colors.UserBtnBgColorHover};
+  }
+`;
+
 //FOOTER//
 
 export const FooterWrapper = styled.div`

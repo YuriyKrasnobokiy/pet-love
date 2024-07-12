@@ -10,6 +10,7 @@ import {
   SocialItem,
   SocialList,
   ThemeBtn,
+  UserBtn,
 } from "./Layout.styled";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { MdOutlineNightsStay } from "react-icons/md";
@@ -58,7 +59,12 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
               <MdOutlineWbSunny />
             )}
           </ThemeBtn>
-          {isLoggedIn && <Icon height={20} width={20} name="icon-user" />}
+
+          {isLoggedIn && (
+            <UserBtn>
+              <Icon height={20} width={20} name="icon-user" />
+            </UserBtn>
+          )}
 
           <BurgerBtn type="button" onClick={() => dispatch(openMobMenu())}>
             <Icon height={32} width={32} name="icon-burger-menu" />

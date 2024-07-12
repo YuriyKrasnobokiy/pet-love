@@ -70,6 +70,8 @@ export const themes = {
       Error: "#ef2447",
       Success: "#08aa83",
       FormBottomTextColor: "rgba(38, 38, 38, 0.5)",
+      UserBtnBgColor: "#FFF4DF",
+      UserBtnBgColorHover: "#fbe7c1",
     },
   },
   dark: {
@@ -117,6 +119,8 @@ export const themes = {
       Error: "#ef2447",
       Success: "#08aa83",
       FormBottomTextColor: "rgba(38, 38, 38, 0.5)",
+      UserBtnBgColor: "#FFF4DF",
+      UserBtnBgColorHover: "#fbe7c1",
     },
   },
 };
