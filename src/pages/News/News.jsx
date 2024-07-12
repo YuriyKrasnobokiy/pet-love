@@ -23,7 +23,6 @@ const News = () => {
   const filteredNews = news.filter((nw) =>
     nw.title.toLowerCase().includes(filterWord.toLowerCase()),
   );
-  // console.log("news: ", news);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const currentPage = useSelector(selectPage);

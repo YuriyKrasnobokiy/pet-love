@@ -50,7 +50,7 @@ export const CloseBtn = styled.button`
   &:hover {
     color: ${(props) =>
       props.$changeColor
-        ? props.theme.colors.textColor
+        ? props.theme.colors.mobCloseColorHoverSec
         : props.theme.colors.accentColor};
   }
 `;
@@ -59,7 +59,6 @@ export const MobNavWrap = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 236px;
-  /* margin-bottom: 280px; */
 `;
 
 export const MobNavLink = styled(NavLink)`
@@ -106,6 +105,10 @@ export const MobLoginBtn = styled(Link)`
   text-transform: uppercase;
   color: #fff;
   border-radius: 30px;
+  border: ${(props) =>
+    props.$changeColor
+      ? props.theme.colors.mobLoginBtnBorder
+      : props.theme.colors.mobLoginBtnBorderSecondary};
   padding: 12px 68px;
   margin-bottom: 8px;
   color: ${(props) => props.theme.colors.mobLoginBtnColor};

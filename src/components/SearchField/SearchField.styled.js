@@ -32,6 +32,5 @@ export const ResetBtn = styled.button`
   top: 13px;
   right: 40px;
   position: absolute;
-  /* color: red; */
   background-color: transparent;
 `;

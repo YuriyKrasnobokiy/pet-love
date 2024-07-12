@@ -27,17 +27,14 @@ export const MobMenu = () => {
       case "/login":
         setBg(theme.colors.accentColor);
         setChangeColor(true);
-        // setBorderColor("rgba(255, 255, 255, 0.15)");
         break;
       case "/register":
         setBg(theme.colors.accentColor);
         setChangeColor(true);
-        // setBorderColor("rgba(255, 255, 255, 0.15)");
         break;
       default:
         setBg("#ffffff");
         setChangeColor(false);
-        // setBorderColor("rgba(38, 38, 38, 0.15)");
         break;
     }
   }, [location.pathname]);
@@ -53,7 +50,6 @@ export const MobMenu = () => {
     document.body.style.overflow = "hidden";
 
     return () => {
-      // componentWillUnmount(
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "auto";
     };

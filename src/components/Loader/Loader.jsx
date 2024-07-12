@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import { CircleStyled, LoaderContainer, ProgressBar } from "./Loader.styled";
 
 const Loader = () => {
-  // Стан для прогрес-бару
   const [progress, setProgress] = useState(0);
 
-  // Імітація збільшення прогрес-бару
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prevProgress) => {
@@ -20,7 +18,6 @@ const Loader = () => {
     <LoaderContainer>
       <ProgressBar>
         <CircleStyled width="292" height="292" viewBox="0 0 292 292">
-          {/* Додаємо елемент defs для створення градієнта */}
           <defs>
             <linearGradient
               id="strokeGradient"
@@ -34,7 +31,6 @@ const Loader = () => {
             </linearGradient>
           </defs>
 
-          {/* Коло з градієнтним кольором stroke */}
           <circle
             cx="146"
             cy="146"

@@ -11,7 +11,6 @@ export const HeaderWrapper = styled.div`
   margin: 0 auto;
   @media screen and (min-width: 1200px) {
     display: flex;
-    /* width: 1200px; */
     padding: 20px 40px;
 
     align-items: center;
@@ -68,6 +67,10 @@ export const BurgerBtn = styled.button`
   margin: 0;
   background-color: transparent;
   color: ${(props) => props.theme.colors.textColor};
+  transition: color 0.3s linear;
+  &:hover {
+    color: ${(props) => props.theme.colors.accentColor};
+  }
 `;
 
 //FOOTER//

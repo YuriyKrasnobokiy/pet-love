@@ -4,11 +4,6 @@ import Layout from "./Layout/Layout";
 import GlobalStyles from "../GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import Loader from "./Loader/Loader";
-// import OurFriends from "../pages/OurFriends/OurFriends";
-// import { FindPet } from "../pages/FindPet/FindPet";
-// import NotFound from "../pages/NotFound/NotFound";
-// import Registration from "../pages/Registration/Registration";
-// import Login from "../pages/Login/Login";
 import { refresh } from "../redux/auth/authOperations";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsRefreshing } from "../redux/auth/authSelectors";
@@ -42,10 +37,13 @@ export const themes = {
       HomeBgColor: "#F6B83D",
       mobCloseColorPrimary: "#262626",
       mobCloseColorSecondary: "#fff",
-
+      mobCloseColorHoverSec: "rgba(255, 255, 255, 0.5)",
       mobLoginBtnBGColor: "#F6B83D",
       mobLoginBtnBGHover: " #f9b020",
       mobLoginBtnColor: "#fff",
+      mobLoginBtnBorder: "none",
+      mobLoginBtnBorderSecondary: "1px solid rgba(255, 255, 255, 0.5)",
+
       mobRegBtnBG: "#FFF4DF",
       mobRegBtnBGHover: "#fbe7c1",
       mobRegBtnColor: "#F6B83D",
@@ -90,6 +88,8 @@ export const themes = {
       mobLoginBtnBGColor: "#F6B83D",
       mobLoginBtnBGHover: "#fff4df",
       mobLoginBtnColor: "#fff",
+      mobLoginBtnBorder: "none",
+      mobLoginBtnBorderSecondary: "1px solid rgba(255, 255, 255, 0.5)",
       mobRegBtnBG: "#FFF4DF",
       mobRegBtnBGHover: "#fbe7c1",
       mobRegBtnColor: "#F6B83D",

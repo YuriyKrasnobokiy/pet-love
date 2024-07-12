@@ -42,5 +42,4 @@ const friendsSlice = createSlice({
   },
 });
 
-// export const { openModal, closeModal } = friendsSlice.actions;
 export default friendsSlice.reducer;
