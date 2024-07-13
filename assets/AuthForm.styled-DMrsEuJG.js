@@ -1,4 +1,4 @@
-import{u as Y,j as dr,R as K,g as hr,h as _t,i as pr}from"./index-CYexOH9q.js";const yr=Y.div`
+import{u as Y,j as dr,R as K,g as hr,h as _t,i as pr}from"./index-CP-t0tfJ.js";const yr=Y.div`
   background-color: ${r=>r.theme.colors.accentColor};
   border-radius: 30px;
   width: 335px;
@@ -46,6 +46,7 @@ attempted value: ${u}
   box-sizing: border-box;
   background-color: transparent;
   transition: border-color 0.3s linear;
+  color: ${r=>r.theme.colors.FormInputColor};
 
   &:hover {
     border-color: ${r=>r.theme.colors.accentColor};
