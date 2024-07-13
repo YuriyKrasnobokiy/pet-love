@@ -8,10 +8,11 @@ export const BtnLogOut = styled.button`
   text-transform: uppercase;
   border-radius: 30px;
   padding: 12px 42px;
+  justify-content: center;
   color: ${(props) => props.theme.colors.mobRegBtnColor};
   background-color: ${(props) => props.theme.colors.mobRegBtnBG};
   transition: background-color 300ms ease-in-out;
-
+  width: 178px;
   &:hover {
     background-color: ${(props) => props.theme.colors.mobRegBtnBGHover};
   }

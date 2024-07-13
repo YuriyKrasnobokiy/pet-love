@@ -16,25 +16,20 @@ import { UserMenu } from "../UserMenu/UserMenu";
 import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 
 export const MobMenu = () => {
-  const theme = useTheme();
   const dispatch = useDispatch();
   const location = useLocation();
-  const [bg, setBg] = useState("white");
   const [changeColor, setChangeColor] = useState(false);
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     switch (location.pathname) {
       case "/login":
-        setBg(theme.colors.accentColor);
         setChangeColor(true);
         break;
       case "/register":
-        setBg(theme.colors.accentColor);
         setChangeColor(true);
         break;
       default:
-        setBg("#ffffff");
         setChangeColor(false);
         break;
     }
@@ -67,7 +62,7 @@ export const MobMenu = () => {
   };
   return (
     <MobMenuOverlay onClick={handleOverlayClick}>
-      <MobMenuStyled $bg={bg}>
+      <MobMenuStyled $changeColor={changeColor}>
         <CloseBtn
           $changeColor={changeColor}
           onClick={handleCloseClick}

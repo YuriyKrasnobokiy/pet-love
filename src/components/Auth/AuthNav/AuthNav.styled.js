@@ -7,6 +7,8 @@ export const MobAuthWrap = styled.div`
 `;
 
 export const MobLoginBtn = styled(Link)`
+  display: flex;
+  justify-content: center;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
@@ -18,7 +20,7 @@ export const MobLoginBtn = styled(Link)`
     props.$changeColor
       ? props.theme.colors.mobLoginBtnBorder
       : props.theme.colors.mobLoginBtnBorderSecondary};
-  padding: 12px 68px;
+  padding: 12px 42px;
   margin-bottom: 8px;
   color: ${(props) => props.theme.colors.mobLoginBtnColor};
   background-color: ${(props) => props.theme.colors.mobLoginBtnBGColor};
@@ -30,6 +32,8 @@ export const MobLoginBtn = styled(Link)`
 `;
 
 export const MobRegBtn = styled(Link)`
+  display: flex;
+  justify-content: center;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;

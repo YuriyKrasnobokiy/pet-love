@@ -18,7 +18,10 @@ export const MobMenuStyled = styled.div`
   top: 0;
   right: 0;
   padding: 40px 20px;
-  background: ${(props) => props.$bg};
+  background: ${(props) =>
+    props.$changeColor
+      ? props.theme.colors.accentColor
+      : props.theme.colors.BurgerBgColor};
   cursor: auto;
   height: -webkit-fill-available;
   max-width: 218px;
