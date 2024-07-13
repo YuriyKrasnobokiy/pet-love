@@ -15,9 +15,21 @@ export const InputStyled = styled.input`
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.03em;
+  background-color: transparent;
+  color: ${(props) => props.theme.colors.searchInputColor};
 
   &::placeholder {
     color: ${(props) => props.theme.colors.searchInputColor};
+  }
+
+  &:focus {
+    border-color: ${(props) => props.theme.colors.searchInputBorderFocus};
+    outline: none;
+  }
+
+  &:hover {
+    border-color: ${(props) => props.theme.colors.accentColor};
+    outline: none;
   }
 `;
 
@@ -26,6 +38,7 @@ export const FilterBtn = styled.button`
   right: 12px;
   position: absolute;
   background-color: transparent;
+  color: ${(props) => props.theme.colors.searchInputIconColor};
 `;
 
 export const ResetBtn = styled.button`
@@ -33,4 +46,5 @@ export const ResetBtn = styled.button`
   right: 40px;
   position: absolute;
   background-color: transparent;
+  color: ${(props) => props.theme.colors.searchInputIconColor};
 `;

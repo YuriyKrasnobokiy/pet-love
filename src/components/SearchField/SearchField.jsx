@@ -32,7 +32,7 @@ export const SearchField = () => {
     <FormStyled onSubmit={onSubmit}>
       <InputStyled
         type="text"
-        placeholder="Enter filter word"
+        placeholder="Search"
         value={inputValue}
         onChange={onInputChange}
       />
@@ -43,7 +43,7 @@ export const SearchField = () => {
         </ResetBtn>
       )}
 
-      <FilterBtn type="submit">
+      <FilterBtn type="submit" onSubmit={onSubmit}>
         <Icon height={18} width={18} name="icon-search"></Icon>
       </FilterBtn>
     </FormStyled>
