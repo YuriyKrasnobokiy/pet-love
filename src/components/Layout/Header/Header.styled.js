@@ -1,13 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+export const StyledHeader = styled.header`
+  position: ${(props) => (props.$isHome ? "absolute" : "static")};
+  width: ${(props) => (props.$isHome ? "100%" : "inherit")};
+`;
+
 export const HeaderWrapper = styled.div`
+  position: ${(props) => (props.$isHome ? "relative" : "static")};
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 28px;
   padding-bottom: 20px;
-  max-width: 335px;
+  max-width: ${(props) => (props.$isHome ? "295px" : "335px")};
   margin: 0 auto;
   @media screen and (min-width: 1200px) {
     display: flex;
@@ -56,8 +62,19 @@ export const ThemeBtn = styled.button`
   height: 40px;
   justify-content: center;
   background-color: transparent;
-  color: ${(props) => props.theme.colors.textColor};
+  color: ${(props) =>
+    props.$isHome
+      ? props.theme.colors.HomeTextColor
+      : props.theme.colors.textColor};
   margin: 0;
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: ${(props) =>
+      props.$isHome
+        ? props.theme.colors.HomeTextAccentColor
+        : props.theme.colors.accentColor};
+  }
 `;
 
 export const BurgerBtn = styled.button`
@@ -66,14 +83,18 @@ export const BurgerBtn = styled.button`
   align-items: center;
   margin: 0;
   background-color: transparent;
-  color: ${(props) => props.theme.colors.textColor};
+  color: ${(props) =>
+    props.$isHome
+      ? props.theme.colors.HomeTextColor
+      : props.theme.colors.textColor};
   transition: color 0.3s linear;
   &:hover {
-    color: ${(props) => props.theme.colors.accentColor};
+    color: ${(props) =>
+      props.$isHome
+        ? props.theme.colors.HomeTextAccentColor
+        : props.theme.colors.accentColor};
   }
 `;
-
-//userProfile opener//
 
 export const UserBtn = styled.button`
   padding: 10px;
@@ -81,6 +102,7 @@ export const UserBtn = styled.button`
   background-color: ${(props) => props.theme.colors.UserBtnBgColor};
   transition: background-color 0.3s linear;
   margin: 0;
+  margin-right: 12px;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.UserBtnBgColorHover};

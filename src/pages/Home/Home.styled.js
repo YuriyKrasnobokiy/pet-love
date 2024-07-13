@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.div`
-  padding: 0 20px 10px;
+  padding: 10px 20px 10px;
 `;
 
 export const HomeTextCont = styled.div`
-  padding: 50px 20px;
+  padding: 118px 20px 50px;
   border-radius: 30px;
   text-align: start;
   background-color: ${(props) => props.theme.colors.HomeBgColor};

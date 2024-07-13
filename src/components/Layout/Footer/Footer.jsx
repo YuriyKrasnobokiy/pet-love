@@ -19,7 +19,7 @@ export const Footer = ({ currentTheme }) => {
       <FooterWrapper className="container">
         <FooterNav>
           <div>
-            <Link to="/">
+            <Link to="/home">
               {currentTheme === "dark" ? (
                 <Icon
                   height={20}
@@ -33,17 +33,17 @@ export const Footer = ({ currentTheme }) => {
 
             <SocialList>
               <SocialItem>
-                <Link href="#">
+                <Link to="https://www.instagram.com">
                   <FaInstagram />
                 </Link>
               </SocialItem>
               <SocialItem>
-                <Link href="#">
+                <Link to="https://www.youtube.com">
                   <ImYoutube />
                 </Link>
               </SocialItem>
               <SocialItem>
-                <Link href="#">
+                <Link to="https://www.facebook.com">
                   <FaFacebook />
                 </Link>
               </SocialItem>
