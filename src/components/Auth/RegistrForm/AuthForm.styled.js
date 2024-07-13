@@ -44,6 +44,7 @@ export const AuthInput = styled.input`
   box-sizing: border-box;
   background-color: transparent;
   transition: border-color 0.3s linear;
+  color: ${(props) => props.theme.colors.FormInputColor};
 
   &:hover {
     border-color: ${(props) => props.theme.colors.accentColor};

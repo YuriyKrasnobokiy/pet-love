@@ -52,22 +52,22 @@ export const Footer = ({ currentTheme }) => {
 
           <AdressList>
             <AddressItem>
-              <a href="tel:+380638213205">+38 (063) 821-32-05</a>
-            </AddressItem>
-
-            <AddressItem>
-              <a href="mailto:krasnobokiy.yuriy@gmail.com">
-                krasnobokiy.yuriy@gmail.com
-              </a>
-            </AddressItem>
-
-            <AddressItem>
               <a
                 href="https://www.google.com/maps?q=Kyiv"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Kyiv, Ukraine
+              </a>
+            </AddressItem>
+
+            <AddressItem>
+              <a href="tel:+380638213205">+38 (063) 821-32-05</a>
+            </AddressItem>
+
+            <AddressItem>
+              <a href="mailto:krasnobokiy.yuriy@gmail.com">
+                krasnobokiy.yuriy@gmail.com
               </a>
             </AddressItem>
           </AdressList>
