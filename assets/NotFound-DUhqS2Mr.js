@@ -1,4 +1,4 @@
-import{u as e,j as t,i as n}from"./index-C30zw_TH.js";const r=e.div`
+import{u as e,j as t,i as n}from"./index-CYexOH9q.js";const r=e.div`
   width: 335px;
   padding: 0 20px 20px;
   margin: 0 auto;
@@ -49,4 +49,4 @@ import{u as e,j as t,i as n}from"./index-C30zw_TH.js";const r=e.div`
   &:hover {
     background-color: #fbe7c1;
   }
-`,h=()=>t.jsx(r,{children:t.jsxs(i,{children:[t.jsxs(s,{children:["4",t.jsx(d,{children:t.jsx(c,{src:"./src/assets/imgs/mobile/404-img-1x-mob.jpg",alt:"cat"})}),"4"]}),t.jsx(l,{children:"Ooops! This page not found :("}),t.jsx(n,{to:"/",children:t.jsx(a,{type:"button",children:"To home page"})})]})});export{h as default};
+`,h=()=>t.jsx(r,{children:t.jsxs(i,{children:[t.jsxs(s,{children:["4",t.jsx(d,{children:t.jsx(c,{src:"./src/assets/imgs/mobile/404-img-1x-mob.jpg",alt:"cat"})}),"4"]}),t.jsx(l,{children:"Ooops! This page not found :("}),t.jsx(n,{to:"/home",children:t.jsx(a,{type:"button",children:"To home page"})})]})});export{h as default};
