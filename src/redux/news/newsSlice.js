@@ -5,10 +5,10 @@ export const API_URL = "https://petlove.b.goit.study/api/";
 
 export const fetchNews = createAsyncThunk(
   "news/fetchNews",
-  async ({ page, limit }) => {
+  async ({ page, limit, filterWord }) => {
     try {
       const response = await axios.get(
-        `${API_URL}news?page=${page}&limit=${limit}`,
+        `${API_URL}news?page=${page}&limit=${limit}&keyword=${filterWord}`,
       );
       return response.data;
     } catch (error) {
@@ -26,7 +26,6 @@ const initialState = {
   page: 1,
   perPage: 6,
   totalPages: 0,
-  results: [],
 };
 
 const newsSlice = createSlice({
@@ -35,6 +34,9 @@ const newsSlice = createSlice({
   reducers: {
     setFilterTerm(state, action) {
       state.filterTerm = action.payload;
+    },
+    setPage(state, action) {
+      state.page = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -46,8 +48,6 @@ const newsSlice = createSlice({
       .addCase(fetchNews.fulfilled, (state, action) => {
         state.isLoading = false;
         state.news = action.payload.results;
-        state.page = action.payload.page;
-        state.perPage = action.payload.perPage;
         state.totalPages = action.payload.totalPages;
       })
       .addCase(fetchNews.rejected, (state, action) => {
@@ -56,5 +56,6 @@ const newsSlice = createSlice({
       });
   },
 });
-export const { setFilterTerm } = newsSlice.actions;
+
+export const { setFilterTerm, setPage } = newsSlice.actions;
 export default newsSlice.reducer;

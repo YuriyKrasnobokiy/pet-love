@@ -9,7 +9,7 @@ import {
   selectPerPage,
   selectTotalPages,
 } from "../../redux/news/newsSelectors";
-import { fetchNews } from "../../redux/news/newsSlice";
+import { fetchNews, setPage } from "../../redux/news/newsSlice";
 import Loader from "../../components/Loader/Loader";
 import { NwCard } from "../../components/NwCard/NwCard";
 import { NewsList, NewsTitle, NewsWrap } from "./News.styled";
@@ -20,9 +20,6 @@ const News = () => {
   const dispatch = useDispatch();
   const news = useSelector(selectNews);
   const filterWord = useSelector(selectFilterTerm);
-  const filteredNews = news.filter((nw) =>
-    nw.title.toLowerCase().includes(filterWord.toLowerCase()),
-  );
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const currentPage = useSelector(selectPage);
@@ -30,11 +27,12 @@ const News = () => {
   const totalPages = useSelector(selectTotalPages);
 
   useEffect(() => {
-    dispatch(fetchNews({ page: currentPage, limit: perPage }));
-  }, [dispatch, currentPage, perPage]);
+    dispatch(fetchNews({ page: currentPage, limit: perPage, filterWord }));
+  }, [dispatch, currentPage, perPage, filterWord]);
 
   const handlePageChange = (newPage) => {
-    dispatch(fetchNews({ page: newPage, limit: perPage }));
+    dispatch(setPage(newPage));
+    dispatch(fetchNews({ page: newPage, limit: perPage, filterWord }));
   };
 
   return (
@@ -46,7 +44,7 @@ const News = () => {
           <NewsTitle className="title">News</NewsTitle>
           <SearchField />
           <NewsList>
-            {filteredNews.map((nw) => (
+            {news.map((nw) => (
               <NwCard nw={nw} key={nw._id} />
             ))}
           </NewsList>

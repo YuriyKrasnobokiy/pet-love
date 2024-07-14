@@ -13,9 +13,18 @@ export const PaginationBtn = styled.button`
   height: 40px;
   justify-content: center;
   margin: 0;
-  border: 1px solid ${(props) => props.theme.colors.PaginationBtnBorderColor};
+  border: 1px solid
+    ${(props) =>
+      props.$isCurrentPage
+        ? "none"
+        : props.theme.colors.PaginationBtnBorderColor};
   border-radius: 50%;
-  background-color: transparent;
+  background-color: ${(props) =>
+    props.$isCurrentPage ? props.theme.colors.accentColor : "transparent"};
+  color: ${(props) =>
+    props.$isCurrentPage
+      ? props.theme.colors.white
+      : props.theme.colors.textColor};
 
   &:first-child {
     transform: rotate(180deg);
@@ -25,8 +34,14 @@ export const PaginationBtn = styled.button`
     transform: rotate(180deg);
   }
 
+  &:hover {
+    border-color: ${(props) => props.theme.colors.accentColor};
+  }
+
   &:disabled {
     fill: ${(props) => props.theme.colors.PaginationBtnFill};
     color: ${(props) => props.theme.colors.PaginationBtnColor};
+    border: 1px solid
+      ${(props) => props.theme.colors.PaginationBtnBorderColorDisabled};
   }
 `;
