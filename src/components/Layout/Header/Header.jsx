@@ -9,6 +9,7 @@ import { MobMenu } from "../../MobMenu/MobMenu";
 import {
   BurgerBtn,
   HeaderLogoLink,
+  HeaderNav,
   HeaderWrapper,
   StyledHeader,
   ThemeBtn,
@@ -16,6 +17,7 @@ import {
 } from "./Header.styled";
 import { useLocation } from "react-router-dom";
 import { AuthNav } from "../../Auth/AuthNav/AuthNav";
+import { HeaderNavComponent } from "./HeaderNav/HeaderNav";
 
 export const Header = ({ toggleTheme, currentTheme }) => {
   const dispatch = useDispatch();
@@ -69,6 +71,8 @@ export const Header = ({ toggleTheme, currentTheme }) => {
           )}
         </HeaderLogoLink>
 
+        <HeaderNavComponent />
+
         <ThemeBtn type="button" $isHome={isHome} onClick={toggleTheme}>
           {currentTheme === "dark" ? (
             <MdOutlineNightsStay />
@@ -79,9 +83,11 @@ export const Header = ({ toggleTheme, currentTheme }) => {
 
         <div style={{ display: "flex" }}>
           {isLoggedIn ? (
-            <UserBtn>
-              <Icon height={20} width={20} name="icon-user" />
-            </UserBtn>
+            <>
+              <UserBtn>
+                <Icon height={20} width={20} name="icon-user" />
+              </UserBtn>
+            </>
           ) : isTablet ? (
             <AuthNav />
           ) : null}
