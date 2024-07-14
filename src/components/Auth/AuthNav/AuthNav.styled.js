@@ -4,6 +4,11 @@ import styled from "styled-components";
 export const MobAuthWrap = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 8px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const MobLoginBtn = styled(Link)`
@@ -21,13 +26,19 @@ export const MobLoginBtn = styled(Link)`
       ? props.theme.colors.mobLoginBtnBorder
       : props.theme.colors.mobLoginBtnBorderSecondary};
   padding: 12px 42px;
-  margin-bottom: 8px;
   color: ${(props) => props.theme.colors.mobLoginBtnColor};
   background-color: ${(props) => props.theme.colors.mobLoginBtnBGColor};
   transition: background-color 300ms ease-in-out;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.mobLoginBtnBGHover};
+  }
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    padding: 15px 37px;
+    font-size: 16px;
+    line-height: 1.25;
+    border: none;
   }
 `;
 
@@ -47,5 +58,11 @@ export const MobRegBtn = styled(Link)`
 
   &:hover {
     background-color: ${(props) => props.theme.colors.mobRegBtnBGHover};
+  }
+
+  @media (min-width: 768px) {
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 1.25;
   }
 `;

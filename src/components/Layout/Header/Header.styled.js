@@ -11,15 +11,24 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 28px;
-  padding-bottom: 20px;
+  padding: 28px 20px 20px;
+  /* padding-top: 28px;
+  padding-bottom: 20px; */
   max-width: ${(props) => (props.$isHome ? "295px" : "335px")};
   margin: 0 auto;
-  @media screen and (min-width: 1200px) {
-    display: flex;
-    padding: 20px 40px;
+  /* @media screen and (min-width: 1280px) {
+    max-width: 1152px;
+    padding: 32px 64px;
+  } */
 
-    align-items: center;
+  @media screen and (min-width: 768px) {
+    max-width: 704px;
+    padding: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1152px;
+    padding: 32px 64px;
   }
 `;
 
@@ -93,6 +102,10 @@ export const BurgerBtn = styled.button`
       props.$isHome
         ? props.theme.colors.HomeTextAccentColor
         : props.theme.colors.accentColor};
+  }
+
+  @media screen and (min-width: 1280px) {
+    display: none;
   }
 `;
 

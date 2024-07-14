@@ -15,6 +15,7 @@ import {
   UserBtn,
 } from "./Header.styled";
 import { useLocation } from "react-router-dom";
+import { AuthNav } from "../../Auth/AuthNav/AuthNav";
 
 export const Header = ({ toggleTheme, currentTheme }) => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ export const Header = ({ toggleTheme, currentTheme }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
   const [isHome, setIsHome] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     switch (location.pathname) {
@@ -35,11 +37,30 @@ export const Header = ({ toggleTheme, currentTheme }) => {
     }
   }, [location.pathname]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTablet(window.innerWidth >= 768);
+    };
+    setIsTablet(window.innerWidth >= 768);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <StyledHeader $isHome={isHome}>
       <HeaderWrapper $isHome={isHome}>
         <HeaderLogoLink $isHome={isHome} to="/home">
-          {isHome ? (
+          {isTablet ? (
+            isHome ? (
+              <Icon height={28} width={105} name="icon-logo-white-big" />
+            ) : currentTheme === "dark" ? (
+              <Icon height={28} width={105} name="icon-logo-white-big" />
+            ) : (
+              <Icon height={28} width={105} name="icon-logo-big" />
+            )
+          ) : isHome ? (
             <Icon height={20} width={76} name="icon-logo-white-small" />
           ) : currentTheme === "dark" ? (
             <Icon height={20} width={76} name="icon-logo-white-small" />
@@ -57,18 +78,24 @@ export const Header = ({ toggleTheme, currentTheme }) => {
         </ThemeBtn>
 
         <div style={{ display: "flex" }}>
-          {isLoggedIn && (
+          {isLoggedIn ? (
             <UserBtn>
               <Icon height={20} width={20} name="icon-user" />
             </UserBtn>
-          )}
+          ) : isTablet ? (
+            <AuthNav />
+          ) : null}
 
           <BurgerBtn
             type="button"
             $isHome={isHome}
             onClick={() => dispatch(openMobMenu())}
           >
-            <Icon height={32} width={32} name="icon-burger-menu" />
+            {isTablet ? (
+              <Icon height={36} width={36} name="icon-burger-menu" />
+            ) : (
+              <Icon height={32} width={32} name="icon-burger-menu" />
+            )}
           </BurgerBtn>
         </div>
 
