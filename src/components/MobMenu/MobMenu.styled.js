@@ -39,7 +39,7 @@ export const MobMenuStyled = styled.div`
 
   @media screen and (min-width: 768px) {
     max-width: 276px;
-    padding-inline: 49px;
+    padding: 40px 49px;
   }
 `;
 

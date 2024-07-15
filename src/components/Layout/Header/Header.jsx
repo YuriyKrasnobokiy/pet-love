@@ -43,7 +43,7 @@ export const Header = ({ toggleTheme, currentTheme }) => {
     <StyledHeader $isHome={isHome}>
       <HeaderWrapper $isHome={isHome}>
         <Logo isHome={isHome} currentTheme={currentTheme} />
-        <HeaderNavComponent />
+        <HeaderNavComponent isHome={isHome} />
         <ThemeBtn type="button" $isHome={isHome} onClick={toggleTheme}>
           {currentTheme === "dark" ? (
             <MdOutlineNightsStay />

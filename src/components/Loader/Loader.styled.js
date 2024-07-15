@@ -7,19 +7,19 @@ export const LoaderContainer = styled.div`
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("./src/assets/imgs/mobile/start-screen-1x-mob.jpg");
+    url("./src/assets/imgs/mobile/start-screen-2x-mob.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url("./src/assets/imgs/tablet/start-screen-img-1x-tablet.jpg");
+      url("./src/assets/imgs/tablet/start-screen-img-2x-tablet.jpg");
   }
 
   @media screen and (min-width: 1280px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url("./src/assets/imgs/desctop/start-screen-img-1x-desc.jpg");
+      url("./src/assets/imgs/desctop/start-screen-img-2x-desc.jpg");
   }
 `;
 

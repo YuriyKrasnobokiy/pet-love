@@ -11,9 +11,8 @@ export const themes = {
       HeaderNavLinkColor: "#262626",
       HeaderNavLinkColorSecondary: "#fff",
       HeaderNavLinkBorder: "1px solid rgba(38, 38, 38, 0.15)",
-      HeaderNavLinkBorderSecondary: "1px solid rgba(255, 255, 255, 0.15)",
+      HeaderNavLinkBorderSecondary: "1px solid rgba(255, 255, 255, 0.4)",
       HeaderNavLinkBorderHover: "rgba(255, 255, 255, 0.5)",
-
       MobNavLinkColor: "#262626",
       MobNavLinkColorSecondary: "#fff",
       MobNavLinkBorder: "1px solid rgba(38, 38, 38, 0.15)",
@@ -80,12 +79,11 @@ export const themes = {
       MobNavLinkBorder: "1px solid rgba(255, 255, 255, 0.3)",
       MobNavLinkBorderSecondary: "1px solid rgba(255, 255, 255, 0.15)",
       MobNavLinkBorderHover: "rgba(255, 255, 255, 0.5)",
-
       HeaderNavLinkColor: "#F6B83D",
       HeaderNavLinkBorder: "1px solid rgba(255, 255, 255, 0.3)",
-      HeaderNavLinkBorderSecondary: "1px solid rgba(255, 255, 255, 0.15)",
+      HeaderNavLinkBorderSecondary: "1px solid rgba(255, 255, 255, 0.4)",
       HeaderNavLinkBorderHover: "rgba(255, 255, 255, 0.5)",
-
+      HeaderNavLinkColorSecondary: "#fff",
       HomeTextColor: "#FFF",
       HomeTextAccentColor: "rgba(255, 255, 255, 0.4)",
       HomeBgColor: "#F6B83D",

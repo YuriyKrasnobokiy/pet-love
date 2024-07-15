@@ -1,5 +1,7 @@
 import React from "react";
 
-export const FindPet = () => {
-  return <div>FindPet</div>;
+const FindPet = () => {
+  return <>Find Your Pet</>;
 };
+
+export default FindPet;
