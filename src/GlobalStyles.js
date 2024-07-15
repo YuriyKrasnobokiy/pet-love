@@ -61,10 +61,12 @@ const GlobalStyles = createGlobalStyle`
 
     @media screen and (min-width: 768px) {
       max-width: 704px;
+      padding: 0 32px;
     }
 
-    @media screen and (min-width: 1200px) {
-      max-width: 1136px;
+    @media screen and (min-width: 1280px) {
+      max-width: 1216px;
+      
     }
   }
 
@@ -74,37 +76,13 @@ const GlobalStyles = createGlobalStyle`
   line-height: 1;
   letter-spacing: -0.03em;
   margin-bottom: 40px;
-  }
 
-  @media screen and (max-width: 767px) {
-    .container { 
-      width: 335px;
-    }
-  }
-
-    @media screen and (min-width: 768px) {
-    .title {
+  @media screen and (min-width: 768px) {
       font-weight: 700;
       font-size: 54px;
       margin-bottom: 44px;
     }
   }
-
-  @media screen and (min-width: 768px) {
-  .container { 
-  width: 704px;
-  padding: 0 32px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .container { 
-  width: 1136px;
-  padding: 0 32px;
-  }
-}
-
-
 `;
 
 export default GlobalStyles;

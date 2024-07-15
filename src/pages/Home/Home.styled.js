@@ -9,6 +9,11 @@ export const HomeTextCont = styled.div`
   border-radius: 30px;
   text-align: start;
   background-color: ${(props) => props.theme.colors.HomeBgColor};
+
+  @media screen and (min-width: 768px) {
+    border-radius: 60px;
+    padding: 178px 32px 44px;
+  }
 `;
 
 export const HomeText = styled.h1`
@@ -18,6 +23,14 @@ export const HomeText = styled.h1`
   letter-spacing: -0.03em;
   color: ${(props) => props.theme.colors.HomeTextColor};
   margin-bottom: 24px;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 0.9625;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+  }
 `;
 
 export const HomeTextAccent = styled.span`
@@ -30,6 +43,15 @@ export const HomeDescr = styled.p`
   line-height: 1.28571;
   letter-spacing: -0.02em;
   color: ${(props) => props.theme.colors.HomeTextColor};
+
+  @media screen and (min-width: 768px) {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22222;
+    letter-spacing: -0.02em;
+    width: 255px;
+    margin-left: auto;
+  }
 `;
 
 export const HomeImgStyled = styled.img`

@@ -7,12 +7,16 @@ import {
   HomeTextCont,
 } from "./Home.styled";
 import HomeImg from "../../assets/imgs/mobile/home-img-2x-mob.jpg";
+import HomeImgTabl from "../../assets/imgs/tablet/home-img-2x-tablet.jpg";
+import HomeImgDesk from "../../assets/imgs/desctop/home-img-2x-desc.jpg";
 import { useEffect } from "react";
 import { refresh } from "../../redux/auth/authOperations";
 import { useDispatch } from "react-redux";
+import { useDeviceType } from "../../hooks/useDeviceType";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const deviceType = useDeviceType();
 
   useEffect(() => {
     dispatch(refresh());
@@ -30,7 +34,13 @@ const Home = () => {
         </HomeDescr>
       </HomeTextCont>
       <div>
-        <HomeImgStyled src={HomeImg} alt="pet" />
+        {deviceType === "desktop" ? (
+          <HomeImgStyled src={HomeImgDesk} alt="pet" />
+        ) : deviceType === "tablet" ? (
+          <HomeImgStyled src={HomeImgTabl} alt="pet" />
+        ) : (
+          <HomeImgStyled src={HomeImg} alt="pet" />
+        )}
       </div>
     </HomeContainer>
   );
