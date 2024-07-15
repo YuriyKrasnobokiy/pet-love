@@ -13,13 +13,13 @@ import {
 } from "./Footer.styled";
 import { Logo } from "../Logo/Logo";
 
-export const Footer = ({ currentTheme, isHome }) => {
+export const Footer = ({ currentTheme }) => {
   return (
     <footer>
       <FooterWrapper className="container">
         <FooterNav>
           <div>
-            <Logo currentTheme={currentTheme} $isHome={isHome} />
+            <Logo currentTheme={currentTheme} />
 
             <SocialList>
               <SocialItem>

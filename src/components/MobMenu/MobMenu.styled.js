@@ -36,6 +36,11 @@ export const MobMenuStyled = styled.div`
   &.open {
     transform: translateX(100%);
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: 276px;
+    padding-inline: 49px;
+  }
 `;
 
 export const CloseBtn = styled.button`

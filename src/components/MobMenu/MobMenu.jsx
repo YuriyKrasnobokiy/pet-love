@@ -14,6 +14,7 @@ import { useTheme } from "styled-components";
 import { AuthNav } from "../Auth/AuthNav/AuthNav";
 import { UserMenu } from "../UserMenu/UserMenu";
 import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
+import { toast } from "react-toastify";
 
 export const MobMenu = () => {
   const dispatch = useDispatch();
@@ -60,6 +61,17 @@ export const MobMenu = () => {
   const handleCloseClick = () => {
     dispatch(closeMobMenu());
   };
+
+  const handleNavClick = (e) => {
+    if (!isLoggedIn) {
+      e.preventDefault();
+      toast.warning("You need to be logged in 😕");
+      dispatch(closeMobMenu());
+    } else {
+      dispatch(closeMobMenu());
+    }
+  };
+
   return (
     <MobMenuOverlay onClick={handleOverlayClick}>
       <MobMenuStyled $changeColor={changeColor}>
@@ -74,7 +86,7 @@ export const MobMenu = () => {
           <MobNavLink
             to="/news"
             $changeColor={changeColor}
-            onClick={() => dispatch(closeMobMenu())}
+            onClick={handleNavClick}
           >
             News
           </MobNavLink>
@@ -82,7 +94,7 @@ export const MobMenu = () => {
           <MobNavLink
             to="/find-pet"
             $changeColor={changeColor}
-            onClick={() => dispatch(closeMobMenu())}
+            onClick={handleNavClick}
           >
             Find pet
           </MobNavLink>
@@ -90,7 +102,7 @@ export const MobMenu = () => {
           <MobNavLink
             to="/our-friends"
             $changeColor={changeColor}
-            onClick={() => dispatch(closeMobMenu())}
+            onClick={handleNavClick}
           >
             Our friends
           </MobNavLink>

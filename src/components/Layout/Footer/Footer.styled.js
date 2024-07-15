@@ -4,6 +4,7 @@ export const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
 `;
 
 export const FooterNav = styled.nav`
