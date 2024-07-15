@@ -47,10 +47,18 @@ export const AddressItem = styled.li`
   &:hover {
     color: ${(props) => props.theme.colors.accentColor};
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const CopyrightText = styled.p`
   font-size: 12px;
   line-height: 1.16667;
   letter-spacing: -0.03em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
 `;

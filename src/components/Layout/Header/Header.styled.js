@@ -32,11 +32,6 @@ export const HeaderWrapper = styled.div`
   }
 `;
 
-export const HeaderLogoLink = styled(Link)`
-  display: flex;
-  align-items: center;
-`;
-
 export const HeaderNav = styled.div`
   display: flex;
   justify-content: center;

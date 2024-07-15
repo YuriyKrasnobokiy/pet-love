@@ -2,7 +2,6 @@ import React from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { ImYoutube } from "react-icons/im";
 import { Link } from "react-router-dom";
-import Icon from "../../Icon/Icon";
 import {
   AddressItem,
   AdressList,
@@ -12,24 +11,15 @@ import {
   SocialItem,
   SocialList,
 } from "./Footer.styled";
+import { Logo } from "../Logo/Logo";
 
-export const Footer = ({ currentTheme }) => {
+export const Footer = ({ currentTheme, isHome }) => {
   return (
     <footer>
       <FooterWrapper className="container">
         <FooterNav>
           <div>
-            <Link to="/home">
-              {currentTheme === "dark" ? (
-                <Icon
-                  height={20}
-                  width={76}
-                  name="icon-logo-white-small"
-                ></Icon>
-              ) : (
-                <Icon height={20} width={76} name="icon-logo-small"></Icon>
-              )}
-            </Link>
+            <Logo currentTheme={currentTheme} $isHome={isHome} />
 
             <SocialList>
               <SocialItem>

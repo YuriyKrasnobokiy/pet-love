@@ -8,6 +8,7 @@ export const MobAuthWrap = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
+    margin-right: 16px;
   }
 `;
 

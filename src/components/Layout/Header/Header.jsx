@@ -8,8 +8,6 @@ import Icon from "../../Icon/Icon";
 import { MobMenu } from "../../MobMenu/MobMenu";
 import {
   BurgerBtn,
-  HeaderLogoLink,
-  HeaderNav,
   HeaderWrapper,
   StyledHeader,
   ThemeBtn,
@@ -18,6 +16,8 @@ import {
 import { useLocation } from "react-router-dom";
 import { AuthNav } from "../../Auth/AuthNav/AuthNav";
 import { HeaderNavComponent } from "./HeaderNav/HeaderNav";
+import { useDeviceType } from "../../../hooks/useDeviceType";
+import { Logo } from "../Logo/Logo";
 
 export const Header = ({ toggleTheme, currentTheme }) => {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ export const Header = ({ toggleTheme, currentTheme }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
   const [isHome, setIsHome] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
+  const deviceType = useDeviceType();
 
   useEffect(() => {
     switch (location.pathname) {
@@ -39,40 +39,11 @@ export const Header = ({ toggleTheme, currentTheme }) => {
     }
   }, [location.pathname]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsTablet(window.innerWidth >= 768);
-    };
-    setIsTablet(window.innerWidth >= 768);
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <StyledHeader $isHome={isHome}>
       <HeaderWrapper $isHome={isHome}>
-        <HeaderLogoLink $isHome={isHome} to="/home">
-          {isTablet ? (
-            isHome ? (
-              <Icon height={28} width={105} name="icon-logo-white-big" />
-            ) : currentTheme === "dark" ? (
-              <Icon height={28} width={105} name="icon-logo-white-big" />
-            ) : (
-              <Icon height={28} width={105} name="icon-logo-big" />
-            )
-          ) : isHome ? (
-            <Icon height={20} width={76} name="icon-logo-white-small" />
-          ) : currentTheme === "dark" ? (
-            <Icon height={20} width={76} name="icon-logo-white-small" />
-          ) : (
-            <Icon height={20} width={76} name="icon-logo-small" />
-          )}
-        </HeaderLogoLink>
-
+        <Logo $isHome={isHome} currentTheme={currentTheme} />
         <HeaderNavComponent />
-
         <ThemeBtn type="button" $isHome={isHome} onClick={toggleTheme}>
           {currentTheme === "dark" ? (
             <MdOutlineNightsStay />
@@ -88,7 +59,7 @@ export const Header = ({ toggleTheme, currentTheme }) => {
                 <Icon height={20} width={20} name="icon-user" />
               </UserBtn>
             </>
-          ) : isTablet ? (
+          ) : deviceType === "tablet" || deviceType === "desktop" ? (
             <AuthNav />
           ) : null}
 
@@ -97,7 +68,7 @@ export const Header = ({ toggleTheme, currentTheme }) => {
             $isHome={isHome}
             onClick={() => dispatch(openMobMenu())}
           >
-            {isTablet ? (
+            {deviceType === "tablet" || deviceType === "desktop" ? (
               <Icon height={36} width={36} name="icon-burger-menu" />
             ) : (
               <Icon height={32} width={32} name="icon-burger-menu" />
