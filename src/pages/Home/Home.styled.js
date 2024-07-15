@@ -14,6 +14,13 @@ export const HomeTextCont = styled.div`
     border-radius: 60px;
     padding: 178px 32px 44px;
   }
+
+  @media screen and (min-width: 1280px) {
+    padding: 178px 64px 32px;
+    display: flex;
+    align-items: flex-end;
+    gap: 73px;
+  }
 `;
 
 export const HomeText = styled.h1`
@@ -25,11 +32,16 @@ export const HomeText = styled.h1`
   margin-bottom: 24px;
 
   @media screen and (min-width: 768px) {
-    font-weight: 700;
     font-size: 80px;
     line-height: 0.9625;
-    letter-spacing: -0.03em;
     margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 90px;
+    line-height: 0.96667;
+    margin-bottom: 0;
+    width: 760px;
   }
 `;
 
@@ -51,6 +63,13 @@ export const HomeDescr = styled.p`
     letter-spacing: -0.02em;
     width: 255px;
     margin-left: auto;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22222;
+    letter-spacing: -0.02em;
   }
 `;
 
