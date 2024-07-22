@@ -10,7 +10,6 @@ import DesrImg from "../../assets/imgs/tablet/login-descr-img-1x-tablet.jpg";
 
 const Login = () => {
   const deviceType = useDeviceType();
-  console.log("deviceType: ", deviceType);
   return (
     <LoginWrap className="container">
       <PetBlock
