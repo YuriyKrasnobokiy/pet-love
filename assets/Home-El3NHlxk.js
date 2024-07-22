@@ -1,5 +1,8 @@
-import{u as o,a as n,b as a,r,c as p,j as t}from"./index-8Pj2LHtV.js";const m=o.div`
+import{u as o,a as n,b as a,r as p,c as r,j as t}from"./index-Bk9N2TfI.js";const m=o.div`
   padding: 10px 20px 10px;
+  @media screen and (min-width: 768px) {
+    padding: 20px 32px 20px;
+  }
 `,c=o.div`
   padding: 118px 20px 50px;
   border-radius: 30px;
@@ -17,7 +20,7 @@ import{u as o,a as n,b as a,r,c as p,j as t}from"./index-8Pj2LHtV.js";const m=o.
     align-items: flex-end;
     gap: 73px;
   }
-`,x=o.h1`
+`,d=o.h1`
   font-weight: 700;
   font-size: 50px;
   line-height: 0.96;
@@ -37,7 +40,7 @@ import{u as o,a as n,b as a,r,c as p,j as t}from"./index-8Pj2LHtV.js";const m=o.
     margin-bottom: 0;
     width: 760px;
   }
-`,d=o.span`
+`,x=o.span`
   color: ${e=>e.theme.colors.HomeTextAccentColor};
 `,l=o.p`
   font-weight: 500;
@@ -63,4 +66,4 @@ import{u as o,a as n,b as a,r,c as p,j as t}from"./index-8Pj2LHtV.js";const m=o.
   }
 `,s=o.img`
   border-radius: 30px;
-`,h="/pet-love/assets/home-img-2x-mob-BdNO4UoT.jpg",g="/pet-love/assets/home-img-2x-tablet-DXLqc3sb.jpg",f="/pet-love/assets/home-img-2x-desc-CoJHKEcj.jpg",j=()=>{const e=n(),i=a();return r.useEffect(()=>{e(p())},[e]),t.jsxs(m,{className:"container",children:[t.jsxs(c,{children:[t.jsxs(x,{children:["Take good ",t.jsx(d,{children:"care"})," of your small pets"]}),t.jsx(l,{children:"Choosing a pet for your home is a choice that is meant to enrich your life with immeasurable joy and tenderness."})]}),t.jsx("div",{children:i==="desktop"?t.jsx(s,{src:f,alt:"pet"}):i==="tablet"?t.jsx(s,{src:g,alt:"pet"}):t.jsx(s,{src:h,alt:"pet"})})]})};export{j as default};
+`,h="/pet-love/assets/home-img-2x-mob-BdNO4UoT.jpg",g="/pet-love/assets/home-img-2x-tablet-DXLqc3sb.jpg",f="/pet-love/assets/home-img-2x-desc-CoJHKEcj.jpg",j=()=>{const e=n(),i=a();return p.useEffect(()=>{e(r())},[e]),t.jsxs(m,{className:"container",children:[t.jsxs(c,{children:[t.jsxs(d,{children:["Take good ",t.jsx(x,{children:"care"})," of your small pets"]}),t.jsx(l,{children:"Choosing a pet for your home is a choice that is meant to enrich your life with immeasurable joy and tenderness."})]}),t.jsx("div",{children:i==="desktop"?t.jsx(s,{src:f,alt:"pet"}):i==="tablet"?t.jsx(s,{src:g,alt:"pet"}):t.jsx(s,{src:h,alt:"pet"})})]})};export{j as default};

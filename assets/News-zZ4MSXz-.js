@@ -1,4 +1,4 @@
-import{u as r,j as t,a as j,r as w,I as x,s as u,d as m,f as g,G as C,e as c,L as $}from"./index-8Pj2LHtV.js";const k=e=>e.newsStore.news,N=e=>e.newsStore.isLoading,S=e=>e.newsStore.error,v=e=>e.newsStore.filterTerm,I=e=>e.newsStore.page,y=e=>e.newsStore.perPage,B=e=>e.newsStore.totalPages,P=e=>{const o=new Date(e),n=o.getDate().toString().padStart(2,"0"),l=(o.getMonth()+1).toString().padStart(2,"0"),i=o.getFullYear();return`${n}/${l}/${i}`},D=r.img`
+import{u as r,j as t,a as j,r as w,I as x,s as u,d as m,f as g,G as C,e as c,L as $}from"./index-Bk9N2TfI.js";const k=e=>e.newsStore.news,N=e=>e.newsStore.isLoading,S=e=>e.newsStore.error,v=e=>e.newsStore.filterTerm,I=e=>e.newsStore.page,y=e=>e.newsStore.perPage,B=e=>e.newsStore.totalPages,P=e=>{const o=new Date(e),n=o.getDate().toString().padStart(2,"0"),l=(o.getMonth()+1).toString().padStart(2,"0"),i=o.getFullYear();return`${n}/${l}/${i}`},D=r.img`
   height: 190px;
   max-width: 335px;
   width: 100%;
@@ -52,7 +52,7 @@ import{u as r,j as t,a as j,r as w,I as x,s as u,d as m,f as g,G as C,e as c,L a
   }
 
   @media screen and (min-width: 1200px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 32px 24px;
   }
 `,G=r.form`
