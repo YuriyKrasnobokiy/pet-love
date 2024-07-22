@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
   padding: 10px 20px 10px;
+  @media screen and (min-width: 768px) {
+    padding: 20px 32px 20px;
+  }
 `;
 
 export const HomeTextCont = styled.div`

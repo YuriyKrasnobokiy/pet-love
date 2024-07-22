@@ -24,6 +24,13 @@ export const themes = {
       mobCloseColorPrimary: "#262626",
       mobCloseColorSecondary: "#fff",
       mobCloseColorHoverSec: "rgba(255, 255, 255, 0.5)",
+
+      LoginDescrTextColor: "rgba(38, 38, 38, 0.8)",
+      LoginDescrTitleColor: " #f6b83d",
+      LoginDescrBirthTitleColor: "rgba(38, 38, 38, 0.5)",
+      LoginDescrBirthColor: "#262626",
+      LoginImgBGColor: "#fff4df",
+
       mobLoginBtnBGColor: "#F6B83D",
       mobLoginBtnBGHover: " #f9b020",
       mobLoginBtnColor: "#fff",
@@ -87,6 +94,13 @@ export const themes = {
       HomeTextColor: "#FFF",
       HomeTextAccentColor: "rgba(255, 255, 255, 0.4)",
       HomeBgColor: "#F6B83D",
+
+      LoginDescrTextColor: "rgba(38, 38, 38, 0.8)",
+      LoginDescrTitleColor: " #f6b83d",
+      LoginDescrBirthTitleColor: "rgba(38, 38, 38, 0.5)",
+      LoginDescrBirthColor: "#262626",
+      LoginImgBGColor: "#fff4df",
+
       mobLoginBtnBGColor: "#F6B83D",
       mobLoginBtnBGHover: "#f9b020",
       mobLoginBtnColor: "#fff",

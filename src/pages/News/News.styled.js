@@ -20,7 +20,7 @@ export const NewsList = styled.ul`
   }
 
   @media screen and (min-width: 1200px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 32px 24px;
   }
 `;
