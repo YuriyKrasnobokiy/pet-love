@@ -18,7 +18,6 @@ import {
   AuthTitle,
   ErrorMessage,
 } from "../RegistrForm/AuthForm.styled";
-import { useDeviceType } from "../../../hooks/useDeviceType";
 import FormIcon from "../FormIcon";
 
 const LoginSchema = Yup.object().shape({
@@ -51,7 +50,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <AuthFormWrap>
+    <AuthFormWrap $login="true">
       <AuthTitle>Login</AuthTitle>
       <AuthDescr>
         Welcome! Please enter your credentials to login to the platform:

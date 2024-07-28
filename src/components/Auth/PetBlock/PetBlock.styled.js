@@ -18,6 +18,13 @@ export const ImgBox = styled.div`
     background-size: contain;
     margin-bottom: 16px;
   }
+
+  @media screen and (min-width: 1280px) {
+    height: 654px;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0;
+  }
 `;
 
 export const DescriptionBlock = styled.div`
@@ -33,6 +40,12 @@ export const DescriptionBlock = styled.div`
     position: absolute;
     bottom: 32px;
     left: 32px;
+  }
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    position: absolute;
+    bottom: 97px;
+    left: 61px;
   }
 `;
 

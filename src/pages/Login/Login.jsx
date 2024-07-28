@@ -1,7 +1,7 @@
 import React from "react";
 import dogLoginImgDesktop from "../../assets/imgs/desctop/login-img-2x-desc.jpg";
-import dogLoginImg from "../../assets/imgs/mobile/login-img-2x-mob.jpg";
 import dogLoginImgTablet from "../../assets/imgs/tablet/login-img-2x-tablet.jpg";
+import dogLoginImg from "../../assets/imgs/mobile/login-img-2x-mob.jpg";
 import { LoginForm } from "../../components/Auth/LoginForm/LoginForm";
 import { PetBlock } from "../../components/Auth/PetBlock/PetBlock";
 import { useDeviceType } from "../../hooks/useDeviceType";
