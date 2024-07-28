@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { emailRegExp } from "../../../helpers/emailRegExp";
 import { registration } from "../../../redux/auth/authOperations";
-import Icon from "../../Icon/Icon";
 import {
   AuthBtn,
   AuthDescr,
@@ -19,6 +18,8 @@ import {
   AuthTitle,
   ErrorMessage,
 } from "./AuthForm.styled";
+import { useDeviceType } from "../../../hooks/useDeviceType";
+import FormIcon from "../FormIcon";
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string().min(2, "Name must be at least 2 characters").required(),
@@ -72,12 +73,12 @@ export const RegistrForm = () => {
           <ErrorMessage>{errors.name?.message}</ErrorMessage>
           {errors.name && (
             <AuthInputIcon $isPassword={false}>
-              <Icon name="icon-cross-small" width="18" height="18" />
+              <FormIcon name="icon-cross-small" />
             </AuthInputIcon>
           )}
           {!errors.name && watch("name") && (
             <AuthInputIcon $isPassword={false}>
-              <Icon name="icon-check" width="18" height="18" />
+              <FormIcon name="icon-check" />
             </AuthInputIcon>
           )}
         </AuthInputWrap>
@@ -92,12 +93,12 @@ export const RegistrForm = () => {
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
           {errors.email && (
             <AuthInputIcon $isPassword={false}>
-              <Icon name="icon-cross-small" width="18" height="18" />
+              <FormIcon name="icon-cross-small" />
             </AuthInputIcon>
           )}
           {!errors.email && watch("email") && (
             <AuthInputIcon $isPassword={false}>
-              <Icon name="icon-check" width="18" height="18" />
+              <FormIcon name="icon-check" />
             </AuthInputIcon>
           )}
         </AuthInputWrap>
@@ -111,20 +112,16 @@ export const RegistrForm = () => {
             $isInvalid={errors.password && watch("password")}
           />
           <AuthPasswordBtn type="button" onClick={handlePasswordClick}>
-            <Icon
-              height={18}
-              width={18}
-              name={showPassword ? "icon-eye-off" : "icon-eye"}
-            ></Icon>
+            <FormIcon name={showPassword ? "icon-eye-off" : "icon-eye"} />
           </AuthPasswordBtn>
           {errors.password && (
             <AuthInputIcon $isPassword={true}>
-              <Icon name="icon-cross-small" width="18" height="18" />
+              <FormIcon name="icon-cross-small" />
             </AuthInputIcon>
           )}
           {!errors.password && watch("password") && (
             <AuthInputIcon $isPassword={true}>
-              <Icon name="icon-check" width="18" height="18" />
+              <FormIcon name="icon-check" />
             </AuthInputIcon>
           )}
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
@@ -139,21 +136,19 @@ export const RegistrForm = () => {
             $isInvalid={errors.confirmPassword && watch("confirmPassword")}
           />
           <AuthPasswordBtn type="button" onClick={handleConfirmPasswordClick}>
-            <Icon
-              height={18}
-              width={18}
+            <FormIcon
               name={showConfirmPassword ? "icon-eye-off" : "icon-eye"}
-            ></Icon>
+            />
           </AuthPasswordBtn>
           <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
           {errors.confirmPassword && (
             <AuthInputIcon $isPassword={true}>
-              <Icon name="icon-cross-small" width="18" height="18" />
+              <FormIcon name="icon-cross-small" />
             </AuthInputIcon>
           )}
           {!errors.confirmPassword && watch("confirmPassword") && (
             <AuthInputIcon $isPassword={true}>
-              <Icon name="icon-check" width="18" height="18" />
+              <FormIcon name="icon-check" />
             </AuthInputIcon>
           )}
         </AuthInputWrap>

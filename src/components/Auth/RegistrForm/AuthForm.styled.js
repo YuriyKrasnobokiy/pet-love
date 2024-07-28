@@ -6,6 +6,12 @@ export const AuthFormWrap = styled.div`
   border-radius: 30px;
   width: 295px;
   background-color: ${(props) => props.theme.colors.RegistrFormBG};
+
+  @media screen and (min-width: 768px) {
+    padding: 71px 140px;
+    width: 424px;
+    border-radius: 60px;
+  }
 `;
 
 export const AuthTitle = styled.h2`
@@ -14,6 +20,11 @@ export const AuthTitle = styled.h2`
   line-height: 1;
   letter-spacing: -0.04em;
   margin-bottom: 12px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 54px;
+    margin-bottom: 16px;
+  }
 `;
 
 export const AuthDescr = styled.p`
@@ -22,13 +33,26 @@ export const AuthDescr = styled.p`
   line-height: 1.28571;
   letter-spacing: -0.02em;
   margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.22222;
+    margin-bottom: 32px;
+  }
 `;
 
 export const AuthInputWrap = styled.div`
   position: relative;
   margin-bottom: 14px;
   &:last-of-type {
-    margin-bottom: 32px;
+    margin-bottom: ${(props) => (props.login ? "40px" : "24px")};
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 16px;
+    &:last-of-type {
+      margin-bottom: ${(props) => (props.login ? "64px" : "32px")};
+    }
   }
 `;
 
@@ -45,6 +69,12 @@ export const AuthInput = styled.input`
   background-color: transparent;
   transition: border-color 0.3s linear;
   color: ${(props) => props.theme.colors.FormInputColor};
+
+  @media screen and (min-width: 768px) {
+    padding: 15px 60px 15px 16px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 
   &:hover {
     border-color: ${(props) => props.theme.colors.accentColor};
@@ -79,19 +109,31 @@ export const AuthInput = styled.input`
     `}
 `;
 
+//ToDo: mob and tablet styles
+
 export const AuthPasswordBtn = styled.button`
   background-color: transparent;
   position: absolute;
   top: 12px;
   right: 12px;
+
+  @media screen and (min-width: 768px) {
+    top: 15px;
+    right: 16px;
+  }
 `;
 
 export const AuthInputIcon = styled.div`
   position: absolute;
   top: 12px;
-  right: ${(props) => (props.$isPassword ? "36px" : "12px")};
+  right: ${(props) => (props.$isPassword ? "38px" : "12px")};
   color: ${(props) =>
     props.$isValid ? props.theme.colors.Success : props.theme.colors.Error};
+
+  @media screen and (min-width: 768px) {
+    top: 15px;
+    right: ${(props) => (props.$isPassword ? "50px" : "16px")};
+  }
 `;
 
 export const AuthBtn = styled.button`
@@ -111,6 +153,12 @@ export const AuthBtn = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.colors.FormBtnBgHover};
   }
+
+  @media screen and (min-width: 768px) {
+    padding: 16px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const ErrorMessage = styled.p`
@@ -118,10 +166,17 @@ export const ErrorMessage = styled.p`
   top: 44px;
   left: 14px;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 1.16667;
+  font-size: 10px;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   color: ${(props) => props.theme.colors.Error};
+
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+    line-height: 1.16667;
+    top: 53px;
+    left: 16px;
+  }
 `;
 
 export const AuthFormBottomText = styled.p`
@@ -132,6 +187,12 @@ export const AuthFormBottomText = styled.p`
   line-height: 1.16667;
   letter-spacing: -0.03em;
   color: ${(props) => props.theme.colors.FormBottomTextColor};
+
+  @media screen and (min-width: 768px) {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.42857;
+  }
 `;
 
 export const AuthFormBottomLink = styled(Link)`

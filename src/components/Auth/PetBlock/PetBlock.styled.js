@@ -16,6 +16,7 @@ export const ImgBox = styled.div`
     height: 302px;
     background-position: right;
     background-size: contain;
+    margin-bottom: 16px;
   }
 `;
 
