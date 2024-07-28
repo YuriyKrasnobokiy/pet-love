@@ -34,4 +34,8 @@ export const HeaderNavLink = styled(NavLink)`
         ? props.theme.colors.HeaderNavLinkColorSecondary
         : props.theme.colors.accentColor};
   }
+
+  &.active {
+    border-color: ${(props) => props.theme.colors.accentColor};
+  }
 `;

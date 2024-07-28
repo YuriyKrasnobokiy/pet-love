@@ -57,7 +57,7 @@ export const LoginForm = () => {
         Welcome! Please enter your credentials to login to the platform:
       </AuthDescr>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
-        <AuthInputWrap>
+        <AuthInputWrap $login="true">
           <AuthInput
             {...register("email")}
             type="email"
@@ -77,7 +77,7 @@ export const LoginForm = () => {
             </AuthInputIcon>
           )}
         </AuthInputWrap>
-        <AuthInputWrap login>
+        <AuthInputWrap $login="true">
           <AuthInput
             {...register("password")}
             type={showPassword ? "text" : "password"}

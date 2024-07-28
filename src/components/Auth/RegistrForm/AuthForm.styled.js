@@ -45,13 +45,13 @@ export const AuthInputWrap = styled.div`
   position: relative;
   margin-bottom: 14px;
   &:last-of-type {
-    margin-bottom: ${(props) => (props.login ? "40px" : "24px")};
+    margin-bottom: ${(props) => (props.$login ? "40px" : "24px")};
   }
 
   @media screen and (min-width: 768px) {
     margin-bottom: 16px;
     &:last-of-type {
-      margin-bottom: ${(props) => (props.login ? "64px" : "32px")};
+      margin-bottom: ${(props) => (props.$login ? "64px" : "32px")};
     }
   }
 `;
@@ -108,8 +108,6 @@ export const AuthInput = styled.input`
       }
     `}
 `;
-
-//ToDo: mob and tablet styles
 
 export const AuthPasswordBtn = styled.button`
   background-color: transparent;

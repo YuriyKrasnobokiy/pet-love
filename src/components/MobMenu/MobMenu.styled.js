@@ -98,4 +98,8 @@ export const MobNavLink = styled(NavLink)`
   &:not(:last-child) {
     margin-bottom: 10px;
   }
+
+  &.active {
+    border-color: ${(props) => props.theme.colors.accentColor};
+  }
 `;
