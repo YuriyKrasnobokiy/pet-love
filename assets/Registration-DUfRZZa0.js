@@ -1,4 +1,4 @@
-import{u as F,a as R,r as f,j as s,h as E}from"./index-CM9CB-lW.js";import{c as q,a as n,e as B,b as D,u as T,A as V,d as N,f as W,g as t,h as c,E as d,i as o,F as r,j as g,k as J,l as L,m as H,o as K,P as M}from"./FormIcon-DPwlh70L.js";const O="/pet-love/assets/registr-img-2x-mob-y8_vE3Pm.jpg",U=F.div`
+import{u as F,a as R,r as f,j as s,h as E}from"./index-B7tR2VYu.js";import{c as q,a as n,e as B,b as D,u as T,A as V,d as N,f as W,g as t,h as c,E as d,i as o,F as r,j as g,k as J,l as L,m as H,o as K,P as M}from"./FormIcon-BtU7_2l_.js";const O="/pet-love/assets/registr-img-2x-mob-y8_vE3Pm.jpg",U=F.div`
   padding: 6px 0 20px;
   display: flex;
   flex-direction: column;
