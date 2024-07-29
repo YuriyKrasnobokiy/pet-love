@@ -14,6 +14,6 @@ export const UserMenu = () => {
   };
 
   return (
-    <>{user ? <BtnLogOut onClick={logoutHandler}>Logout</BtnLogOut> : null}</>
+    <>{user ? <BtnLogOut onClick={logoutHandler}>Log out</BtnLogOut> : null}</>
   );
 };

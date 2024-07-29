@@ -18,6 +18,7 @@ import { AuthNav } from "../../Auth/AuthNav/AuthNav";
 import { HeaderNavComponent } from "./HeaderNav/HeaderNav";
 import { useDeviceType } from "../../../hooks/useDeviceType";
 import { Logo } from "../Logo/Logo";
+import { UserMenu } from "../../UserMenu/UserMenu";
 
 export const Header = ({ toggleTheme, currentTheme }) => {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ export const Header = ({ toggleTheme, currentTheme }) => {
         <div style={{ display: "flex" }}>
           {isLoggedIn ? (
             <>
+              {deviceType !== "mobile" && <UserMenu />}
               <UserBtn>
                 <Icon height={20} width={20} name="icon-user" />
               </UserBtn>

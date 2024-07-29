@@ -65,7 +65,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     @media screen and (min-width: 1280px) {
-      max-width: 1216px;
+      max-width: 1153px;
+      padding: 0 63px 0 64px;
       
     }
   }
@@ -80,7 +81,7 @@ const GlobalStyles = createGlobalStyle`
   @media screen and (min-width: 768px) {
       font-weight: 700;
       font-size: 54px;
-      margin-bottom: 44px;
+      margin-bottom: 0;
     }
   }
 `;

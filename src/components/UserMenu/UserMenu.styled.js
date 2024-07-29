@@ -16,4 +16,12 @@ export const BtnLogOut = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.colors.mobRegBtnBGHover};
   }
+
+  @media screen and (min-width: 768px) {
+    padding: 15px 35px;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-right: 8px;
+    width: auto;
+  }
 `;

@@ -12,7 +12,7 @@ import {
 import { fetchNews, setPage } from "../../redux/news/newsSlice";
 import Loader from "../../components/Loader/Loader";
 import { NwCard } from "../../components/NwCard/NwCard";
-import { NewsList, NewsTitle, NewsWrap } from "./News.styled";
+import { NewsHeaderWrap, NewsList, NewsTitle, NewsWrap } from "./News.styled";
 import { SearchField } from "../../components/SearchField/SearchField";
 import PaginationControls from "../../components/PaginationControls/PaginationControls";
 
@@ -41,8 +41,10 @@ const News = () => {
         <Loader />
       ) : (
         <NewsWrap className="container">
-          <NewsTitle className="title">News</NewsTitle>
-          <SearchField />
+          <NewsHeaderWrap>
+            <NewsTitle className="title">News</NewsTitle>
+            <SearchField />
+          </NewsHeaderWrap>
           <NewsList>
             {news.map((nw) => (
               <NwCard nw={nw} key={nw._id} />

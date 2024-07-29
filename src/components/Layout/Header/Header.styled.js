@@ -105,6 +105,14 @@ export const UserBtn = styled.button`
   transition: background-color 0.3s linear;
   margin: 0;
   margin-right: 12px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
 
   &:hover {
     background-color: ${(props) => props.theme.colors.UserBtnBgColorHover};
