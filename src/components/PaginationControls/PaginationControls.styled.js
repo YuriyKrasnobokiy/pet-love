@@ -3,6 +3,24 @@ import styled from "styled-components";
 export const PagContrlsWrap = styled.div`
   display: flex;
   justify-content: space-between;
+  @media screen and (min-width: 768px) {
+    max-width: 446px;
+    margin: 0 auto;
+  }
+`;
+
+export const ArrowBtnsWrap = styled.div`
+  display: flex;
+  gap: 6px;
+
+  @media screen and (min-width: 768px) {
+    gap: 8px;
+  }
+`;
+
+export const NumberBtnsWrap = styled.div`
+  display: flex;
+  gap: 10px;
 `;
 
 export const PaginationBtn = styled.button`
@@ -26,12 +44,22 @@ export const PaginationBtn = styled.button`
       ? props.theme.colors.white
       : props.theme.colors.textColor};
 
-  &:first-child {
+  @media screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    line-height: 1.22222;
+  }
+
+  &.left {
     transform: rotate(180deg);
   }
 
-  &:nth-child(2) {
-    transform: rotate(180deg);
+  &.icon {
+    font-size: 20px;
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   &:hover {

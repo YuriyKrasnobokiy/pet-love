@@ -1,12 +1,20 @@
 import React from "react";
-import { PagContrlsWrap, PaginationBtn } from "./PaginationControls.styled";
+import {
+  ArrowBtnsWrap,
+  NumberBtnsWrap,
+  PagContrlsWrap,
+  PaginationBtn,
+} from "./PaginationControls.styled";
 import { HiOutlineChevronRight } from "react-icons/hi";
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
+import { useDeviceType } from "../../hooks/useDeviceType";
 
 const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
   const renderPageNumbers = () => {
+    const deviceType = useDeviceType();
     const pages = [];
-    const maxVisiblePages = 2;
+    const maxVisiblePages =
+      deviceType === "desktop" ? 3 : deviceType === "tablet" ? 3 : 2;
     const startPage = Math.max(
       1,
       Math.min(
@@ -15,14 +23,6 @@ const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
       ),
     );
     const endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
-
-    // if (startPage > 1) {
-    //   pages.push(
-    //     <PaginationBtn key="start-ellipsis" disabled>
-    //       ...
-    //     </PaginationBtn>,
-    //   );
-    // }
 
     for (let i = startPage; i <= endPage; i++) {
       pages.push(
@@ -49,31 +49,39 @@ const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <PagContrlsWrap>
-      <PaginationBtn
-        disabled={currentPage === 1}
-        onClick={() => onPageChange(1)}
-      >
-        <HiOutlineChevronDoubleRight />
-      </PaginationBtn>
-      <PaginationBtn
-        disabled={currentPage === 1}
-        onClick={() => onPageChange(currentPage - 1)}
-      >
-        <HiOutlineChevronRight />
-      </PaginationBtn>
-      {renderPageNumbers()}
-      <PaginationBtn
-        disabled={currentPage === totalPages}
-        onClick={() => onPageChange(currentPage + 1)}
-      >
-        <HiOutlineChevronRight />
-      </PaginationBtn>
-      <PaginationBtn
-        disabled={currentPage === totalPages}
-        onClick={() => onPageChange(totalPages)}
-      >
-        <HiOutlineChevronDoubleRight />
-      </PaginationBtn>
+      <ArrowBtnsWrap>
+        <PaginationBtn
+          className="left icon"
+          disabled={currentPage === 1}
+          onClick={() => onPageChange(1)}
+        >
+          <HiOutlineChevronDoubleRight />
+        </PaginationBtn>
+        <PaginationBtn
+          className="left icon"
+          disabled={currentPage === 1}
+          onClick={() => onPageChange(currentPage - 1)}
+        >
+          <HiOutlineChevronRight />
+        </PaginationBtn>
+      </ArrowBtnsWrap>
+      <NumberBtnsWrap>{renderPageNumbers()}</NumberBtnsWrap>
+      <ArrowBtnsWrap>
+        <PaginationBtn
+          className="icon"
+          disabled={currentPage === totalPages}
+          onClick={() => onPageChange(currentPage + 1)}
+        >
+          <HiOutlineChevronRight />
+        </PaginationBtn>
+        <PaginationBtn
+          className="icon"
+          disabled={currentPage === totalPages}
+          onClick={() => onPageChange(totalPages)}
+        >
+          <HiOutlineChevronDoubleRight />
+        </PaginationBtn>
+      </ArrowBtnsWrap>
     </PagContrlsWrap>
   );
 };
