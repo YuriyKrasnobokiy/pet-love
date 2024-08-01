@@ -1,4 +1,4 @@
-import{u as o,a as n,b as a,r as p,c as r,j as t}from"./index-C6ysIy_X.js";const m=o.div`
+import{u as o,a as n,b as a,r as p,c as r,j as t}from"./index-M8X_aluw.js";const m=o.div`
   padding: 10px 20px 10px;
   @media screen and (min-width: 768px) {
     padding: 20px 32px 20px;
