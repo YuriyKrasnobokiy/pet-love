@@ -1,5 +1,5 @@
 import React from "react";
-const spriteURL = "./src/assets/sprite.svg";
+const spriteURL = "./sprite.svg";
 
 const Icon = ({ name, width, height }) => {
   return (
