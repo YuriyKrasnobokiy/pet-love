@@ -14,7 +14,6 @@ import { useTheme } from "styled-components";
 import { AuthNav } from "../Auth/AuthNav/AuthNav";
 import { UserMenu } from "../UserMenu/UserMenu";
 import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
-import { toast } from "react-toastify";
 
 export const MobMenu = () => {
   const dispatch = useDispatch();
@@ -63,13 +62,7 @@ export const MobMenu = () => {
   };
 
   const handleNavClick = (e) => {
-    if (!isLoggedIn) {
-      e.preventDefault();
-      toast.warning("You need to be logged in 😕");
-      dispatch(closeMobMenu());
-    } else {
-      dispatch(closeMobMenu());
-    }
+    dispatch(closeMobMenu());
   };
 
   return (
