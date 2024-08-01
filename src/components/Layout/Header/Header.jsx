@@ -30,7 +30,7 @@ export const Header = ({ toggleTheme, currentTheme }) => {
 
   useEffect(() => {
     switch (location.pathname) {
-      case "/home":
+      case "/":
         setIsHome(true);
         break;
 

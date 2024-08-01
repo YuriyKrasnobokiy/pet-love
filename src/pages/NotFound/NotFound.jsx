@@ -25,7 +25,7 @@ const NotFound = () => {
           4
         </NotFoundTitle>
         <NotFoundDescr>Ooops! This page not found :(</NotFoundDescr>
-        <Link to="/home">
+        <Link to="/">
           <NotFoundBtn type="button">To home page</NotFoundBtn>
         </Link>
       </NotFoundTextWrap>

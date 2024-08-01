@@ -46,54 +46,24 @@ export const App = () => {
       <Suspense fallback={<Loader />}>
         <Layout currentTheme={currentTheme} toggleTheme={toggleTheme}>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <PrivateRoute redirectTo="/login" component={<Home />} />
-              }
-            />
+            <Route path="/" element={<Home />} />
 
-            <Route
-              path="/home"
-              element={
-                <PrivateRoute redirectTo="/login" component={<Home />} />
-              }
-            />
+            <Route path="/news" element={<News />} />
+
+            <Route path="/our-friends" element={<OurFriends />} />
+
+            <Route path="/find-pet" element={<FindPet />} />
 
             <Route
               path="/register"
               element={
-                <RestrictedRoute
-                  redirectTo="/home"
-                  component={<Registration />}
-                />
+                <RestrictedRoute redirectTo="/" component={<Registration />} />
               }
             />
 
             <Route
               path="/login"
-              element={
-                <RestrictedRoute redirectTo="/home" component={<Login />} />
-              }
-            />
-
-            <Route
-              path="/news"
-              element={
-                <PrivateRoute redirectTo="/login" component={<News />} />
-              }
-            />
-            <Route
-              path="/our-friends"
-              element={
-                <PrivateRoute redirectTo="/login" component={<OurFriends />} />
-              }
-            />
-            <Route
-              path="/find-pet"
-              element={
-                <PrivateRoute redirectTo="/login" component={<FindPet />} />
-              }
+              element={<RestrictedRoute redirectTo="/" component={<Login />} />}
             />
 
             <Route path="*" element={<NotFound />} />

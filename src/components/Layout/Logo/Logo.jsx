@@ -6,7 +6,7 @@ import Icon from "../../Icon/Icon";
 export const Logo = ({ isHome, currentTheme }) => {
   const deviceType = useDeviceType();
   return (
-    <LogoLink $isHome={isHome} to="/home">
+    <LogoLink $isHome={isHome} to="/">
       {deviceType === "tablet" || deviceType === "desktop" ? (
         isHome ? (
           <Icon height={28} width={105} name="icon-logo-white-big" />
