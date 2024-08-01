@@ -2,7 +2,7 @@
   "name": "pet-love",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://YuriyKrasnobokiy.github.io/pet-love/",
+  "homepage": "https://YuriyKrasnobokiy.github.io/pet-love",
   "type": "module",
   "scripts": {
     "dev": "vite",
