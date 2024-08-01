@@ -12,7 +12,7 @@ export const FriendCarWrap = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    padding: 40px 22px 40px 20px;
+    padding: 40px 20px;
 
     &:not(:last-child) {
       margin-bottom: 0;
@@ -33,12 +33,25 @@ export const WorkHoursBage = styled.p`
   border-radius: 30px;
   text-align: center;
   background-color: ${(props) => props.theme.colors.FriendWorkHoursBGColor};
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.286;
+  }
 `;
 
 export const ImgThumb = styled.div`
   width: 80px;
   height: 80px;
   margin-right: 14px;
+  @media screen and (min-width: 768px) {
+    width: 90px;
+    height: 90px;
+    margin-right: 16px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-right: 20px;
+  }
 `;
 
 export const FriendTitleStyled = styled.h3`
@@ -47,6 +60,12 @@ export const FriendTitleStyled = styled.h3`
   line-height: 1.25;
   letter-spacing: -0.04em;
   margin-bottom: 14px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
 `;
 
 export const FriendDescrListLi = styled.li`

@@ -81,7 +81,11 @@ const GlobalStyles = createGlobalStyle`
   @media screen and (min-width: 768px) {
       font-weight: 700;
       font-size: 54px;
-      margin-bottom: 0;
+      margin-bottom: 44px;
+    };
+
+    @media screen and (min-width: 1280px) {
+      margin-bottom: 60px;
     }
   }
 `;
