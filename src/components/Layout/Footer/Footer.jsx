@@ -1,7 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { ImYoutube } from "react-icons/im";
-import { Link } from "react-router-dom";
 import {
   AddressItem,
   AdressList,
@@ -23,19 +22,31 @@ export const Footer = ({ currentTheme }) => {
 
             <SocialList>
               <SocialItem>
-                <Link to="https://www.instagram.com">
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaInstagram />
-                </Link>
+                </a>
               </SocialItem>
               <SocialItem>
-                <Link to="https://www.youtube.com">
+                <a
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <ImYoutube />
-                </Link>
+                </a>
               </SocialItem>
               <SocialItem>
-                <Link to="https://www.facebook.com">
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaFacebook />
-                </Link>
+                </a>
               </SocialItem>
             </SocialList>
           </div>
