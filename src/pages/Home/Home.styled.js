@@ -44,7 +44,6 @@ export const HomeText = styled.h1`
     font-size: 90px;
     line-height: 0.96667;
     margin-bottom: 0;
-    width: 760px;
   }
 `;
 
@@ -78,4 +77,8 @@ export const HomeDescr = styled.p`
 
 export const HomeImgStyled = styled.img`
   border-radius: 30px;
+
+  @media screen and (min-width: 768px) {
+    border-radius: 60px;
+  }
 `;

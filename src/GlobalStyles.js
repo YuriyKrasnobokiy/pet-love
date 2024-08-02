@@ -71,6 +71,25 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .container-auth {
+    max-width: 335px;
+    margin: 0 auto;
+    padding: 0 0 20px;
+
+    @media screen and (min-width: 768px) {
+      max-width: 704px;
+      padding: 0 32px;
+    }
+
+    @media screen and (min-width: 1280px) {
+     max-width: 1216px;
+      padding: 0 32px;
+      
+    }
+  }
+
+
+
   .title {
   font-weight: 700;
   font-size: 28px;

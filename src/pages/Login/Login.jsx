@@ -11,7 +11,7 @@ import DesrImg from "../../assets/imgs/tablet/login-descr-img-1x-tablet.jpg";
 const Login = () => {
   const deviceType = useDeviceType();
   return (
-    <LoginWrap className="container">
+    <LoginWrap className="container-auth">
       <PetBlock
         imageUrl={
           deviceType === "desktop"

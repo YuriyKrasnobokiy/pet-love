@@ -13,6 +13,7 @@ export const ImgBox = styled.div`
   position: relative;
 
   @media screen and (min-width: 768px) {
+    border-radius: 60px;
     height: 302px;
     background-position: right;
     background-size: contain;
