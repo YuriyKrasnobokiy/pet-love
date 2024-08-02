@@ -1,4 +1,4 @@
-import{u as N,j as K,R as X,i as hr,k as _t,m as pr,b as yr,I as mr}from"./index-M8X_aluw.js";const gr=N.div`
+import{u as N,j as K,R as X,i as hr,k as _t,m as pr,b as yr,I as mr}from"./index-CH1d5xFy.js";const gr=N.div`
   background-color: ${e=>e.theme.colors.accentColor};
   border-radius: 30px;
   width: 100%;
@@ -11,6 +11,7 @@ import{u as N,j as K,R as X,i as hr,k as _t,m as pr,b as yr,I as mr}from"./index
   position: relative;
 
   @media screen and (min-width: 768px) {
+    border-radius: 60px;
     height: 302px;
     background-position: right;
     background-size: contain;
