@@ -29,6 +29,10 @@ export const SocialItem = styled.li`
   &:hover {
     color: ${(props) => props.theme.colors.accentColor};
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 export const AdressList = styled.ul`
