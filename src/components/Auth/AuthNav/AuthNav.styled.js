@@ -8,7 +8,11 @@ export const MobAuthWrap = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    margin-right: 16px;
+    margin-right: ${(props) => (props.$isBurger ? 0 : "16px")};
+  }
+
+  @media (min-width: 1280px) {
+    margin-right: 0;
   }
 `;
 
@@ -29,17 +33,16 @@ export const MobLoginBtn = styled(Link)`
   padding: 12px 42px;
   color: ${(props) => props.theme.colors.mobLoginBtnColor};
   background-color: ${(props) => props.theme.colors.mobLoginBtnBGColor};
-  transition: background-color 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.mobLoginBtnBGHover};
   }
   @media (min-width: 768px) {
     margin-bottom: 0;
-    padding: 15px 37px;
+    padding: 14px 36px;
     font-size: 16px;
     line-height: 1.25;
-    border: none;
   }
 `;
 

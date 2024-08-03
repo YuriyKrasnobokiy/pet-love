@@ -91,8 +91,8 @@ export const themes = {
       HeaderNavLinkBorderSecondary: "1px solid rgba(255, 255, 255, 0.4)",
       HeaderNavLinkBorderHover: "rgba(255, 255, 255, 0.5)",
       HeaderNavLinkColorSecondary: "#fff",
-      HomeTextColor: "#FFF",
-      HomeTextAccentColor: "rgba(255, 255, 255, 0.4)",
+      HomeTextColor: "#121212",
+      HomeTextAccentColor: "rgba(255, 255, 255, 0.8)",
       HomeBgColor: "#F6B83D",
 
       LoginDescrTextColor: "rgba(38, 38, 38, 0.8)",

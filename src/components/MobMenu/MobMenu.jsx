@@ -100,7 +100,7 @@ export const MobMenu = () => {
             Our friends
           </MobNavLink>
         </MobNavWrap>
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+        {isLoggedIn ? <UserMenu /> : <AuthNav burger />}
       </MobMenuStyled>
     </MobMenuOverlay>
   );

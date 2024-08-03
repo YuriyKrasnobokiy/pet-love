@@ -5,6 +5,9 @@ export const HomeContainer = styled.div`
   @media screen and (min-width: 768px) {
     padding: 20px 32px 20px;
   }
+  @media screen and (min-width: 1280px) {
+    max-width: 1216px;
+  }
 `;
 
 export const HomeTextCont = styled.div`
