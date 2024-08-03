@@ -1,4 +1,4 @@
-import{u as S,a as D,r as g,j as s,h as E,b as F}from"./index-CxP5G-2a.js";import{c as T,a as t,e as q,b as B,u as N,A as V,d as Q,f as W,g as n,h as c,E as d,i as o,F as r,j as f,k as J,l as L,m as H,o as K,P as M}from"./FormIcon-LN8YoM14.js";const O="/pet-love/assets/registr-img-2x-mob-y8_vE3Pm.jpg",U="/pet-love/assets/registr-img-2x-tablet-BErQsYND.jpg",Y="/pet-love/assets/registr-img-2x-desc-fQuQm1q5.jpg",Z=S.div`
+import{u as S,a as D,r as g,j as s,h as E,b as F}from"./index-BOwNCE4v.js";import{c as T,a as t,e as q,b as B,u as N,A as V,d as Q,f as W,g as n,h as c,E as d,i as o,F as r,j as f,k as J,l as L,m as H,o as K,P as M}from"./FormIcon-DL4Q7Eji.js";const O="/pet-love/assets/registr-img-2x-mob-y8_vE3Pm.jpg",U="/pet-love/assets/registr-img-2x-tablet-BErQsYND.jpg",Y="/pet-love/assets/registr-img-2x-desc-fQuQm1q5.jpg",Z=S.div`
   padding: 6px 0 20px;
   display: flex;
   flex-direction: column;
