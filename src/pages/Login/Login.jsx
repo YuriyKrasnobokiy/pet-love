@@ -7,8 +7,6 @@ import { PetBlock } from "../../components/Auth/PetBlock/PetBlock";
 import { useDeviceType } from "../../hooks/useDeviceType";
 import { LoginWrap } from "../Login/Login.styled";
 import DesrImg from "../../assets/imgs/tablet/login-descr-img-1x-tablet.jpg";
-import { selectUser } from "../../redux/auth/authSelectors";
-import { useSelector } from "react-redux";
 
 const Login = () => {
   const deviceType = useDeviceType();

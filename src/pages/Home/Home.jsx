@@ -13,17 +13,17 @@ import { useEffect } from "react";
 import { refresh } from "../../redux/auth/authOperations";
 import { useDispatch, useSelector } from "react-redux";
 import { useDeviceType } from "../../hooks/useDeviceType";
-import { selectUser } from "../../redux/auth/authSelectors";
+import { selectToken } from "../../redux/auth/authSelectors";
 
 const Home = () => {
   const dispatch = useDispatch();
   const deviceType = useDeviceType();
-  const currentUser = useSelector(selectUser);
+  const currentToken = useSelector(selectToken);
 
   useEffect(() => {
-    if (!currentUser.name) return;
+    if (!currentToken) return;
     dispatch(refresh());
-  }, [dispatch, currentUser]);
+  }, [dispatch, currentToken]);
 
   return (
     <HomeContainer className="container">
