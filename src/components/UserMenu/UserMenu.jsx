@@ -5,7 +5,7 @@ import { logout } from "../../redux/auth/authOperations";
 import { BtnLogOut } from "./UserMenu.styled";
 import { closeMobMenu } from "../../redux/mob-menu/mobMenuSlice";
 
-export const UserMenu = () => {
+export const UserMenu = ({ burger }) => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const logoutHandler = () => {
@@ -14,6 +14,12 @@ export const UserMenu = () => {
   };
 
   return (
-    <>{user ? <BtnLogOut onClick={logoutHandler}>Log out</BtnLogOut> : null}</>
+    <>
+      {user ? (
+        <BtnLogOut $isBurger={burger} onClick={logoutHandler}>
+          Log out
+        </BtnLogOut>
+      ) : null}
+    </>
   );
 };

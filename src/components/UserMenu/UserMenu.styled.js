@@ -21,7 +21,7 @@ export const BtnLogOut = styled.button`
     padding: 15px 35px;
     font-size: 16px;
     line-height: 1.25;
-    margin-right: 8px;
+    margin-right: ${(props) => (props.$isBurger ? 0 : "8px")};
     width: auto;
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   CloseBtn,
   MobMenuOverlay,
@@ -20,36 +20,92 @@ export const MobMenu = () => {
   const location = useLocation();
   const [changeColor, setChangeColor] = useState(false);
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const [isScrollable, setIsScrollable] = useState(false);
+  const contentRef = useRef(null);
+
+  // useEffect(() => {
+  //   const checkScrollable = () => {
+  //     if (contentRef.current) {
+  //       const isContentOverflowing =
+  //         contentRef.current.scrollHeight > window.innerHeight;
+  //       setIsScrollable(isContentOverflowing);
+  //     }
+  //   };
+
+  //   checkScrollable();
+  //   window.addEventListener("resize", checkScrollable);
+
+  //   return () => {
+  //     window.removeEventListener("resize", checkScrollable);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   switch (location.pathname) {
+  //     case "/login":
+  //       setChangeColor(true);
+  //       break;
+  //     case "/register":
+  //       setChangeColor(true);
+  //       break;
+  //     default:
+  //       setChangeColor(false);
+  //       break;
+  //   }
+  // }, [location.pathname]);
+
+  // useEffect(() => {
+  //   const handleKeyDown = (evt) => {
+  //     if (evt.code === "Escape") {
+  //       dispatch(closeMobMenu());
+  //     }
+  //   };
+
+  //   window.addEventListener("keydown", handleKeyDown);
+  //   document.body.style.overflow = "hidden";
+
+  //   return () => {
+  //     window.removeEventListener("keydown", handleKeyDown);
+  //     document.body.style.overflow = "auto";
+  //   };
+  // }, [dispatch]);
 
   useEffect(() => {
-    switch (location.pathname) {
-      case "/login":
-        setChangeColor(true);
-        break;
-      case "/register":
-        setChangeColor(true);
-        break;
-      default:
-        setChangeColor(false);
-        break;
-    }
-  }, [location.pathname]);
+    const checkScrollable = () => {
+      if (contentRef.current) {
+        const isContentOverflowing =
+          contentRef.current.scrollHeight > window.innerHeight;
+        setIsScrollable(isContentOverflowing);
+      }
+    };
 
-  useEffect(() => {
+    const handleResize = () => checkScrollable();
     const handleKeyDown = (evt) => {
       if (evt.code === "Escape") {
         dispatch(closeMobMenu());
       }
     };
 
+    const updateColor = () => {
+      const shouldChangeColor = ["/login", "/register"].includes(
+        location.pathname,
+      );
+      setChangeColor(shouldChangeColor);
+    };
+
+    checkScrollable();
+    updateColor();
+
+    window.addEventListener("resize", handleResize);
     window.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "auto";
     };
-  }, [dispatch]);
+  }, [location.pathname, dispatch]);
 
   const handleOverlayClick = (evt) => {
     if (evt.target === evt.currentTarget) {
@@ -67,7 +123,11 @@ export const MobMenu = () => {
 
   return (
     <MobMenuOverlay onClick={handleOverlayClick}>
-      <MobMenuStyled $changeColor={changeColor}>
+      <MobMenuStyled
+        $isScrollable={isScrollable}
+        ref={contentRef}
+        $changeColor={changeColor}
+      >
         <CloseBtn
           $changeColor={changeColor}
           onClick={handleCloseClick}
@@ -100,7 +160,7 @@ export const MobMenu = () => {
             Our friends
           </MobNavLink>
         </MobNavWrap>
-        {isLoggedIn ? <UserMenu /> : <AuthNav burger />}
+        {isLoggedIn ? <UserMenu burger /> : <AuthNav burger />}
       </MobMenuStyled>
     </MobMenuOverlay>
   );

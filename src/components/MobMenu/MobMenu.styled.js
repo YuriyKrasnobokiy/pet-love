@@ -24,12 +24,14 @@ export const MobMenuStyled = styled.div`
       : props.theme.colors.BurgerBgColor};
   cursor: auto;
   height: -webkit-fill-available;
+  max-height: 100vh;
   max-width: 218px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  overflow-y: ${(props) => (props.$isScrollable ? "scroll" : "hidden")};
 
   transform: translateX(0%);
   transition: transform 0.5s ease;
@@ -87,6 +89,12 @@ export const MobNavLink = styled(NavLink)`
       ? props.theme.colors.MobNavLinkColorSecondary
       : props.theme.colors.MobNavLinkColor};
   transition: border-color 300ms ease-in-out;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 14px 15px;
+  }
 
   &:hover {
     border-color: ${(props) =>

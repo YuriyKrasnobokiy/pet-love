@@ -2,19 +2,20 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const AuthFormWrap = styled.div`
-  padding: ${(props) => (props.$login ? "60px 20px" : "27px 20px")};
+  padding: ${(props) => (props.$login ? "59px 19px" : "26px 19px")};
   border-radius: 30px;
   width: 295px;
   background-color: ${(props) => props.theme.colors.RegistrFormBG};
+  border: 1px solid ${(props) => props.theme.colors.AuthWrapBorderColor};
 
   @media screen and (min-width: 768px) {
-    padding: ${(props) => (props.$login ? "71px 140px" : "30px 140px")};
+    padding: ${(props) => (props.$login ? "70px 139px" : "29px 139px")};
     width: 424px;
     border-radius: 60px;
   }
 
   @media screen and (min-width: 1280px) {
-    padding: ${(props) => (props.$login ? "118px 84px" : "77px 84px")};
+    padding: ${(props) => (props.$login ? "117px 83px" : "76px 83px")};
     width: 424px;
     border-radius: 60px;
   }
