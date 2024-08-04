@@ -1,4 +1,4 @@
-import{u as t,j as i,a as p,c as o,r as h,h as x,L as m}from"./index-B4C_ULs7.js";const g=e=>e.friendsStore.friends,w=e=>e.friendsStore.isLoading,u=e=>e.friendsStore.error,f=t.div`
+import{u as t,j as i,a as p,c as o,r as h,h as x,L as m}from"./index-Cb26m6-V.js";const g=e=>e.friendsStore.friends,w=e=>e.friendsStore.isLoading,u=e=>e.friendsStore.error,f=t.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
