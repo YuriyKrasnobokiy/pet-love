@@ -18,9 +18,9 @@ const Home = () => {
   const dispatch = useDispatch();
   const deviceType = useDeviceType();
 
-  useEffect(() => {
-    dispatch(refresh());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(refresh());
+  // }, [dispatch]);
 
   return (
     <HomeContainer className="container">
