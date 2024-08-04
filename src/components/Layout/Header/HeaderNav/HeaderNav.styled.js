@@ -31,7 +31,7 @@ export const HeaderNavLink = styled(NavLink)`
   &:hover {
     border-color: ${(props) =>
       props.$isHome
-        ? props.theme.colors.HeaderNavLinkColorSecondary
+        ? props.theme.colors.HeaderNavLinkBorderHover
         : props.theme.colors.accentColor};
   }
 
