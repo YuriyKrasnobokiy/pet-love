@@ -10,13 +10,15 @@ import { selectIsRefreshing } from "../redux/auth/authSelectors";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { PrivateRoute } from "./PrivateRoute";
 import { themes } from "../themes";
+import Registration from "../pages/Registration/Registration";
+import Login from "../pages/Login/Login";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const News = lazy(() => import("../pages/News/News"));
 const OurFriends = lazy(() => import("../pages/OurFriends/OurFriends"));
 const FindPet = lazy(() => import("../pages/FindPet/FindPet"));
-const Registration = lazy(() => import("../pages/Registration/Registration"));
-const Login = lazy(() => import("../pages/Login/Login"));
+// const Registration = lazy(() => import("../pages/Registration/Registration"));
+// const Login = lazy(() => import("../pages/Login/Login"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 
 export const App = () => {
