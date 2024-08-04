@@ -34,10 +34,6 @@ export const App = () => {
     localStorage.setItem("theme", newTheme);
   };
 
-  useEffect(() => {
-    dispatch(refresh());
-  }, [dispatch]);
-
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
