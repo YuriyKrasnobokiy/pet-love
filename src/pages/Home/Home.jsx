@@ -11,16 +11,19 @@ import HomeImgTabl from "../../assets/imgs/tablet/home-img-2x-tablet.jpg";
 import HomeImgDesk from "../../assets/imgs/desctop/home-img-2x-desc.jpg";
 import { useEffect } from "react";
 import { refresh } from "../../redux/auth/authOperations";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useDeviceType } from "../../hooks/useDeviceType";
+import { selectUser } from "../../redux/auth/authSelectors";
 
 const Home = () => {
   const dispatch = useDispatch();
   const deviceType = useDeviceType();
+  const currentUser = useSelector(selectUser);
 
-  // useEffect(() => {
-  //   dispatch(refresh());
-  // }, [dispatch]);
+  useEffect(() => {
+    if (!currentUser.name) return;
+    dispatch(refresh());
+  }, [dispatch, currentUser]);
 
   return (
     <HomeContainer className="container">

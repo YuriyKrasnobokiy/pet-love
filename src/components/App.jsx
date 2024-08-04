@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 import Loader from "./Loader/Loader";
 import { refresh } from "../redux/auth/authOperations";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsRefreshing } from "../redux/auth/authSelectors";
+import { selectIsRefreshing, selectUser } from "../redux/auth/authSelectors";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { PrivateRoute } from "./PrivateRoute";
 import { themes } from "../themes";
@@ -26,7 +26,7 @@ export const App = () => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme || "dark";
   });
-
+  const currentUser = useSelector(selectUser);
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
 
@@ -36,18 +36,19 @@ export const App = () => {
     localStorage.setItem("theme", newTheme);
   };
 
+  useEffect(() => {
+    if (!currentUser.name) return;
+    dispatch(refresh());
+  }, [dispatch, currentUser]);
+
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
     <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyles />
       <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route
-            element={
-              <Layout currentTheme={currentTheme} toggleTheme={toggleTheme} />
-            }
-          >
+        <Layout currentTheme={currentTheme} toggleTheme={toggleTheme}>
+          <Routes>
             <Route path="/" element={<Home />} />
 
             <Route path="/news" element={<News />} />
@@ -56,26 +57,21 @@ export const App = () => {
 
             <Route path="/find-pet" element={<FindPet />} />
 
-            <Route path="/register" element={<News />} />
-
-            <Route path="/login" element={<Login />} />
-
-            {/* <Route
+            <Route
               path="/register"
               element={
                 <RestrictedRoute redirectTo="/" component={<Registration />} />
               }
-            /> */}
+            />
 
-            {/* <Route
+            <Route
               path="/login"
               element={<RestrictedRoute redirectTo="/" component={<Login />} />}
-            /> */}
+            />
 
             <Route path="*" element={<NotFound />} />
-            {/* </Layout> */}
-          </Route>
-        </Routes>
+          </Routes>
+        </Layout>
       </Suspense>
     </ThemeProvider>
   );
