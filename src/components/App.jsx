@@ -52,17 +52,21 @@ export const App = () => {
 
             <Route path="/find-pet" element={<FindPet />} />
 
-            <Route
+            <Route path="/register" element={<Registration />} />
+
+            <Route path="/login" element={<Login />} />
+
+            {/* <Route
               path="/register"
               element={
                 <RestrictedRoute redirectTo="/" component={<Registration />} />
               }
-            />
+            /> */}
 
-            <Route
+            {/* <Route
               path="/login"
               element={<RestrictedRoute redirectTo="/" component={<Login />} />}
-            />
+            /> */}
 
             <Route path="*" element={<NotFound />} />
           </Routes>
