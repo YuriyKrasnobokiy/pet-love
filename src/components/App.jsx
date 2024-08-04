@@ -1,5 +1,5 @@
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { Suspense, lazy, useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import GlobalStyles from "../GlobalStyles";
 import { ThemeProvider } from "styled-components";
@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsRefreshing, selectToken } from "../redux/auth/authSelectors";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { themes } from "../themes";
-import Registration from "../pages/Registration/Registration";
 import Login from "../pages/Login/Login";
+import Registration from "../pages/Registration/Registration";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const News = lazy(() => import("../pages/News/News"));
@@ -44,31 +44,38 @@ export const App = () => {
     <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyles />
       <Suspense fallback={<Loader />}>
-        <Layout currentTheme={currentTheme} toggleTheme={toggleTheme}>
-          <Routes>
-            <Route path="/" element={<Home />} />
+        <Router>
+          <Layout currentTheme={currentTheme} toggleTheme={toggleTheme}>
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-            <Route path="/news" element={<News />} />
+              <Route path="/news" element={<News />} />
 
-            <Route path="/our-friends" element={<OurFriends />} />
+              <Route path="/our-friends" element={<OurFriends />} />
 
-            <Route path="/find-pet" element={<FindPet />} />
+              <Route path="/find-pet" element={<FindPet />} />
 
-            <Route
-              path="/register"
-              element={
-                <RestrictedRoute redirectTo="/" component={<Registration />} />
-              }
-            />
+              <Route
+                path="/register"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/"
+                    component={<Registration />}
+                  />
+                }
+              />
 
-            <Route
-              path="/login"
-              element={<RestrictedRoute redirectTo="/" component={<Login />} />}
-            />
+              <Route
+                path="/login"
+                element={
+                  <RestrictedRoute redirectTo="/" component={<Login />} />
+                }
+              />
 
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </Router>
       </Suspense>
     </ThemeProvider>
   );
