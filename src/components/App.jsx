@@ -42,8 +42,12 @@ export const App = () => {
     <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyles />
       <Suspense fallback={<Loader />}>
-        <Layout currentTheme={currentTheme} toggleTheme={toggleTheme}>
-          <Routes>
+        <Routes>
+          <Route
+            element={
+              <Layout currentTheme={currentTheme} toggleTheme={toggleTheme} />
+            }
+          >
             <Route path="/" element={<Home />} />
 
             <Route path="/news" element={<News />} />
@@ -69,8 +73,9 @@ export const App = () => {
             /> */}
 
             <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+            {/* </Layout> */}
+          </Route>
+        </Routes>
       </Suspense>
     </ThemeProvider>
   );

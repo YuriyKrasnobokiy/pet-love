@@ -2,8 +2,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Footer } from "./Footer/Footer";
 import { Header } from "./Header/Header";
+import { Outlet } from "react-router-dom";
 
-const Layout = ({ children, toggleTheme, currentTheme }) => {
+const Layout = ({ toggleTheme, currentTheme }) => {
   return (
     <>
       <ToastContainer
@@ -17,7 +18,7 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
         pauseOnHover
       />
       <Header toggleTheme={toggleTheme} currentTheme={currentTheme} />
-      <main>{children}</main>
+      <Outlet />
       <Footer currentTheme={currentTheme} />
     </>
   );
