@@ -1,4 +1,4 @@
-import{u as n,j as t,a as C,r as k,I as u,e as w,f as g,g as m,G as v,b as N,c as d,L as y}from"./index-BpPBYf99.js";const $=e=>e.newsStore.news,S=e=>e.newsStore.isLoading,B=e=>e.newsStore.error,I=e=>e.newsStore.filterTerm,z=e=>e.newsStore.page,W=e=>e.newsStore.perPage,D=e=>e.newsStore.totalPages,L=e=>{const o=new Date(e),i=o.getDate().toString().padStart(2,"0"),c=(o.getMonth()+1).toString().padStart(2,"0"),s=o.getFullYear();return`${i}/${c}/${s}`},M=n.li`
+import{u as n,j as t,a as C,r as k,I as u,e as w,f as g,g as m,G as v,b as N,c as d,L as y}from"./index-BSPl3Dk5.js";const $=e=>e.newsStore.news,S=e=>e.newsStore.isLoading,B=e=>e.newsStore.error,I=e=>e.newsStore.filterTerm,z=e=>e.newsStore.page,W=e=>e.newsStore.perPage,D=e=>e.newsStore.totalPages,L=e=>{const o=new Date(e),i=o.getDate().toString().padStart(2,"0"),c=(o.getMonth()+1).toString().padStart(2,"0"),s=o.getFullYear();return`${i}/${c}/${s}`},M=n.li`
   @media screen and (min-width: 768px) {
     padding-bottom: 28px;
     display: flex;
