@@ -1,8 +1,10 @@
 import React from "react";
 import {
   PetCardAccentProperty,
+  PetCardBtnsWrap,
   PetCardButton,
   PetCardComment,
+  PetCardFavorBtn,
   PetCardImg,
   PetCardProperty,
   PetCardPropertyList,
@@ -11,6 +13,7 @@ import {
   PetCardWrap,
   PropertyText,
 } from "./PetCard.styled";
+import Icon from "../Icon/Icon";
 
 export const PetCard = ({ pet }) => {
   return (
@@ -48,7 +51,12 @@ export const PetCard = ({ pet }) => {
         <PetCardComment>{pet.comment}</PetCardComment>
       </PetCardTextBlock>
 
-      <PetCardButton type="button">Learn more</PetCardButton>
+      <PetCardBtnsWrap>
+        <PetCardButton type="button">Learn more</PetCardButton>
+        <PetCardFavorBtn>
+          <Icon name="icon-heart" width={18} height={18} />
+        </PetCardFavorBtn>
+      </PetCardBtnsWrap>
     </PetCardWrap>
   );
 };

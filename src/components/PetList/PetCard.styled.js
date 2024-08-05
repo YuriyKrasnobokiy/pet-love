@@ -4,7 +4,8 @@ export const PetCardWrap = styled.li`
   padding: 24px;
   max-width: 287px;
   border-radius: 16px;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.PetCardBGColor};
+  margin: 0 auto;
 `;
 
 export const PetCardImg = styled.img`
@@ -55,8 +56,19 @@ export const PetCardAccentProperty = styled.span`
   color: ${(props) => props.theme.colors.PetCardAccentPropertyColor};
 `;
 
+export const PropertyText = styled.p`
+  &::first-letter {
+    text-transform: uppercase;
+  }
+`;
+
 export const PetCardComment = styled.p`
   color: ${(props) => props.theme.colors.PetCardCommentColor};
+`;
+
+export const PetCardBtnsWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const PetCardButton = styled.button`
@@ -68,10 +80,27 @@ export const PetCardButton = styled.button`
   letter-spacing: -0.03em;
   justify-content: center;
   width: 231px;
+  margin: 0;
+  color: ${(props) => props.theme.colors.PetCardBtnColor};
+  background-color: ${(props) => props.theme.colors.PetCardBtnBGColor};
+  transition: background-color 300ms linear;
+
+  &:hover {
+    background-color: ${(props) => props.theme.colors.PetCardBtnBGHoverColor};
+  }
 `;
 
-export const PropertyText = styled.p`
-  &::first-letter {
-    text-transform: uppercase;
+export const PetCardFavorBtn = styled.button`
+  border-radius: 100%;
+  width: 46px;
+  height: 46px;
+  justify-content: center;
+  margin: 0;
+  background-color: ${(props) => props.theme.colors.PetCardFavBtnBGColor};
+  transition: background-color 300ms linear;
+
+  &:hover {
+    background-color: ${(props) =>
+      props.theme.colors.PetCardFavBtnBGHoverColor};
   }
 `;
