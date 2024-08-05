@@ -23,7 +23,7 @@ export const FriendsCard = ({ friend }) => {
         {workDays.length === 0 ? "Day and night" : workHours}
       </WorkHoursBage>
       <ImgThumb>
-        <img src={friend.imageUrl} alt="" />
+        <img src={friend.imageUrl} alt="vet" />
       </ImgThumb>
       <div>
         <FriendTitleStyled>{friend.title}</FriendTitleStyled>

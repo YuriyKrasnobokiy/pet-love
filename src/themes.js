@@ -67,6 +67,12 @@ export const themes = {
       FormBottomTextColor: "rgba(38, 38, 38, 0.5)",
       UserBtnBgColor: "#FFF4DF",
       UserBtnBgColorHover: "#fbe7c1",
+
+      PetCardTitleColor: "#2b2b2a",
+      PetCardPropertyColor: "#262626",
+      PetCardAccentPropertyColor: "rgba(38, 38, 38, 0.5)",
+      PetCardCommentColor: "#2b2b2a",
+
       white: "#fff",
     },
   },
@@ -139,6 +145,12 @@ export const themes = {
       FormBottomTextColor: "rgba(255, 255, 255, 0.7)",
       UserBtnBgColor: "#FFF4DF",
       UserBtnBgColorHover: "#fbe7c1",
+
+      PetCardTitleColor: "#2b2b2a",
+      PetCardPropertyColor: "#262626",
+      PetCardAccentPropertyColor: "rgba(38, 38, 38, 0.5)",
+      PetCardCommentColor: "#2b2b2a",
+
       white: "#fff",
     },
   },

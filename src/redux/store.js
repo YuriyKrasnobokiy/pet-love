@@ -3,6 +3,7 @@ import mobMenuReducer from "./mob-menu/mobMenuSlice";
 import modalReducer from "./modal/modalSlice";
 import newsReducer from "./news/newsSlice";
 import friendsReducer from "./our-friends/friendsSlice";
+import petsReducer from "./pets/petsSlice";
 
 import {
   FLUSH,
@@ -28,6 +29,7 @@ export const store = configureStore({
     modal: modalReducer,
     mobMenu: mobMenuReducer,
     friendsStore: friendsReducer,
+    petsStore: petsReducer,
     newsStore: newsReducer,
     auth: persistReducer(authPersistConfig, authReducer),
   },
