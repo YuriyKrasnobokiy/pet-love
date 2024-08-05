@@ -1,4 +1,4 @@
-import{u as o,i as d,b as s,j as t}from"./index-CpyblWk5.js";const a="/pet-love/assets/404-img-2x-desc-CGetih0-.jpg",p="/pet-love/assets/404-img-2x-mob-povfoPSw.jpg",r="/pet-love/assets/404-img-2x-desc-CGetih0-.jpg",c=o.div`
+import{u as o,k as d,b as s,j as t}from"./index-r0SON_hS.js";const a="/pet-love/assets/404-img-2x-desc-CGetih0-.jpg",p="/pet-love/assets/404-img-2x-mob-povfoPSw.jpg",r="/pet-love/assets/404-img-2x-desc-CGetih0-.jpg",c=o.div`
   max-width: 335px;
   padding: 0 20px 20px;
   margin: 0 auto;
