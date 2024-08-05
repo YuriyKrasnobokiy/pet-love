@@ -110,7 +110,7 @@ export const themes = {
       mobRegBtnBG: "#FFF4DF",
       mobRegBtnBGHover: "#fbe7c1",
       mobRegBtnColor: "#121212",
-      notFoundTextColor: "#FFF",
+      notFoundTextColor: "#121212",
       notFoundImgThumbBGC: "#f7bf50",
       notFoundBtnBGC: "#fff4df",
       notFoundBtnColor: "#f6b83d",

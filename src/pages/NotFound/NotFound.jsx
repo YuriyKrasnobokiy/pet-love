@@ -1,5 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import CatDesk from "../../assets/imgs/desctop/404-img-2x-desc.jpg";
+import CatMob from "../../assets/imgs/mobile/404-img-2x-mob.jpg";
+import CatTab from "../../assets/imgs/tablet/404-img-2x-tablet.jpg";
+import { useDeviceType } from "../../hooks/useDeviceType";
 import {
   ImgStyled,
   ImgThumb,
@@ -11,6 +15,11 @@ import {
 } from "./NotFound.styled";
 
 const NotFound = () => {
+  const navigate = useNavigate();
+  const deviceType = useDeviceType();
+  const handleClick = () => {
+    navigate("/");
+  };
   return (
     <NotFoundCont>
       <NotFoundTextWrap>
@@ -18,16 +27,22 @@ const NotFound = () => {
           4
           <ImgThumb>
             <ImgStyled
-              src="./src/assets/imgs/mobile/404-img-1x-mob.jpg"
+              src={
+                deviceType === "desktop"
+                  ? CatDesk
+                  : deviceType === "tablet"
+                  ? CatTab
+                  : CatMob
+              }
               alt="cat"
             />
           </ImgThumb>
           4
         </NotFoundTitle>
         <NotFoundDescr>Ooops! This page not found :(</NotFoundDescr>
-        <Link to="/">
-          <NotFoundBtn type="button">To home page</NotFoundBtn>
-        </Link>
+        <NotFoundBtn type="button" onClick={handleClick}>
+          To home page
+        </NotFoundBtn>
       </NotFoundTextWrap>
     </NotFoundCont>
   );
