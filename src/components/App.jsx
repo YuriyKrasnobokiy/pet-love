@@ -66,6 +66,7 @@ export const App = () => {
               element={<RestrictedRoute redirectTo="/" component={<Login />} />}
             />
 
+            <Route path="/404" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
