@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; URL=/pet-love/404" />
-    <script>
-      var path = window.location.pathname;
-      if (path !== "/" && path !== "/pet-love/404") {
-        window.location.href = "/pet-love/404";
-      }
-    </script>
-    <title>Page Not Found</title>
+    <meta charset="utf-8" />
+    <title>404 Not Found</title>
   </head>
   <body>
-    <h1>Page not found. Redirecting...</h1>
+    <script>
+      window.location.replace("/pet-love/404");
+    </script>
   </body>
 </html>
