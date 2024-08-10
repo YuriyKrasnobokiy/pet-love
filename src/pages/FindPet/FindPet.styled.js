@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NewsWrap = styled.div`
+export const PetsWrap = styled.div`
   padding-top: 34px;
 
   @media screen and (min-width: 768px) {
@@ -8,7 +8,7 @@ export const NewsWrap = styled.div`
   }
 `;
 
-export const NewsHeaderWrap = styled.div`
+export const PetsHeaderWrap = styled.div`
   display: block;
   @media screen and (min-width: 768px) {
     display: flex;
@@ -18,7 +18,7 @@ export const NewsHeaderWrap = styled.div`
   }
 `;
 
-export const NewsTitle = styled.h2`
+export const PetsTitle = styled.h2`
   margin-bottom: 0;
   margin-bottom: 20px;
   @media screen and (min-width: 768px) {

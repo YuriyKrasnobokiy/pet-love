@@ -15,19 +15,35 @@ export const PetCardImg = styled.img`
   height: 178px;
   margin-bottom: 24px;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 `;
 
 export const PetCardTextBlock = styled.div`
   margin-bottom: 42px;
+`;
+export const PetCardTitleBlock = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 8px;
 `;
 
 export const PetCardTitle = styled.h2`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
-  margin-bottom: 8px;
   color: ${(props) => props.theme.colors.PetCardTitleColor};
+`;
+
+export const PetCardPopularWrap = styled.div`
+  display: flex;
+`;
+
+export const PetCardPopularNumber = styled.p`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  color: ${(props) => props.theme.colors.PetCardPopularNumb};
 `;
 
 export const PetCardPropertyList = styled.ul`

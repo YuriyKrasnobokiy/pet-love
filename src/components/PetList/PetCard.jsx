@@ -6,10 +6,13 @@ import {
   PetCardComment,
   PetCardFavorBtn,
   PetCardImg,
+  PetCardPopularNumber,
+  PetCardPopularWrap,
   PetCardProperty,
   PetCardPropertyList,
   PetCardTextBlock,
   PetCardTitle,
+  PetCardTitleBlock,
   PetCardWrap,
   PropertyText,
 } from "./PetCard.styled";
@@ -23,7 +26,13 @@ export const PetCard = ({ pet }) => {
       </div>
 
       <PetCardTextBlock>
-        <PetCardTitle>{pet.title}</PetCardTitle>
+        <PetCardTitleBlock>
+          <PetCardTitle>{pet.title}</PetCardTitle>
+          <PetCardPopularWrap>
+            <Icon name="icon-star" width={16} height={16} />
+            <PetCardPopularNumber>{pet.popularity}</PetCardPopularNumber>
+          </PetCardPopularWrap>
+        </PetCardTitleBlock>
 
         <PetCardPropertyList>
           <PetCardProperty>

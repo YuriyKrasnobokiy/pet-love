@@ -70,6 +70,7 @@ export const themes = {
 
       PetCardBGColor: "#fff",
       PetCardTitleColor: "#2b2b2a",
+      PetCardPopularNumb: "#2b2b2a",
       PetCardPropertyColor: "#262626",
       PetCardAccentPropertyColor: "rgba(38, 38, 38, 0.5)",
       PetCardCommentColor: "#2b2b2a",
@@ -154,6 +155,7 @@ export const themes = {
 
       PetCardBGColor: "#181818",
       PetCardTitleColor: "#fff",
+      PetCardPopularNumb: "rgba(255, 255, 255, 0.5)",
       PetCardPropertyColor: "#f6b83d",
       PetCardAccentPropertyColor: "rgba(255, 255, 255, 0.5)",
       PetCardCommentColor: "rgba(255, 255, 255, 0.8)",
