@@ -1,6 +1,6 @@
 import React from "react";
-import { PetCard } from "./PetCard";
 import { PetsList } from "./PetList.styled";
+import { PetCard } from "./PetCard/PetCard";
 
 export const PetList = ({ pets }) => {
   return (

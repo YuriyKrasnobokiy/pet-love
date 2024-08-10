@@ -1,5 +1,4 @@
 import React from "react";
-import { formatDate } from "../../helpers/dateFunc";
 import {
   NwCardBottomWrap,
   NwCardDate,
@@ -9,6 +8,7 @@ import {
   NWCardWrap,
   NwImgStyled,
 } from "./NwCard.styled";
+import { formatDate } from "../../../helpers/dateFunc";
 
 export const NwCard = ({ nw }) => {
   return (

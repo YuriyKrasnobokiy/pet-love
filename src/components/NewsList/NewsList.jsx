@@ -1,6 +1,6 @@
 import React from "react";
-import { NwCard } from "../../components/NwCard/NwCard";
 import { NewsListStyled } from "./NewsList.styled";
+import { NwCard } from "./NwCard/NwCard";
 
 export const NewsList = ({ news }) => {
   return (

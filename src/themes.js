@@ -80,6 +80,8 @@ export const themes = {
       PetCardFavBtnBGColor: "#fff4df",
       PetCardFavBtnBGHoverColor: " #fbe7c1",
 
+      FiltersWrapBGColor: "#fff4df",
+
       white: "#fff",
     },
   },
@@ -164,6 +166,8 @@ export const themes = {
       PetCardBtnBGHoverColor: "#f9b020",
       PetCardFavBtnBGColor: "#fff4df",
       PetCardFavBtnBGHoverColor: "#fbe7c1",
+
+      FiltersWrapBGColor: "#fff4df",
 
       white: "#fff",
     },

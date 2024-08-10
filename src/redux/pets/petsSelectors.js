@@ -4,3 +4,6 @@ export const selectError = (state) => state.petsStore.error;
 export const selectPage = (state) => state.petsStore.page;
 export const selectPerPage = (state) => state.petsStore.perPage;
 export const selectTotalPages = (state) => state.petsStore.totalPages;
+export const selectGenders = (state) => state.petsStore.genders;
+export const selectCategories = (state) => state.petsStore.categories;
+export const selectSpecies = (state) => state.petsStore.species;

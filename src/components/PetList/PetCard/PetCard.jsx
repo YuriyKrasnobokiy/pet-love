@@ -16,7 +16,7 @@ import {
   PetCardWrap,
   PropertyText,
 } from "./PetCard.styled";
-import Icon from "../Icon/Icon";
+import Icon from "../../Icon/Icon";
 
 export const PetCard = ({ pet }) => {
   return (

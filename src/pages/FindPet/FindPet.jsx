@@ -3,16 +3,26 @@ import { PetList } from "../../components/PetList/PetList";
 import PaginationControls from "../../components/PaginationControls/PaginationControls";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  selectCategories,
   selectError,
+  selectGenders,
   selectPage,
   selectPerPage,
   selectPets,
+  selectSpecies,
   selectTotalPages,
 } from "../../redux/pets/petsSelectors";
 import { selectIsLoading } from "../../redux/pets/petsSelectors";
-import { fetchPets, setPage } from "../../redux/pets/petsSlice";
+import {
+  fetchCategories,
+  fetchGenders,
+  fetchPets,
+  fetchSpecies,
+  setPage,
+} from "../../redux/pets/petsSlice";
 import Loader from "../../components/Loader/Loader";
 import { PetsHeaderWrap, PetsTitle, PetsWrap } from "./FindPet.styled";
+import { Filters } from "../../components/Filters/Filters";
 
 const FindPet = () => {
   const dispatch = useDispatch();
@@ -22,8 +32,15 @@ const FindPet = () => {
   const currentPage = useSelector(selectPage);
   const perPage = useSelector(selectPerPage);
   const totalPages = useSelector(selectTotalPages);
+  const genders = useSelector(selectGenders);
+  const categories = useSelector(selectCategories);
+  const species = useSelector(selectSpecies);
+  const filterSets = [genders, categories, species];
 
   useEffect(() => {
+    dispatch(fetchGenders());
+    dispatch(fetchCategories());
+    dispatch(fetchSpecies());
     dispatch(fetchPets({ page: currentPage, limit: perPage }));
   }, [dispatch, currentPage, perPage]);
 
@@ -39,6 +56,7 @@ const FindPet = () => {
       <PetsHeaderWrap>
         <PetsTitle className="title">Find your favorite pet</PetsTitle>
       </PetsHeaderWrap>
+      <Filters filterSets={filterSets} />
       <PetList pets={pets} />
       {totalPages > 1 ? (
         <PaginationControls
