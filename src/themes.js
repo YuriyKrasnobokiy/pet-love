@@ -81,6 +81,11 @@ export const themes = {
       PetCardFavBtnBGHoverColor: " #fbe7c1",
 
       FiltersWrapBGColor: "#fff4df",
+      RadioBtnsBorderColor: " rgba(38, 38, 38, 0.1)",
+      RadioBtnLabelColor: "#262626",
+      RadioBtnLabelColorHover: "#fff",
+      RadioBtnLabelBGColor: "#fff",
+      RadioBtnLabelBGColorHover: "#F6B83D",
 
       white: "#fff",
     },
@@ -168,6 +173,11 @@ export const themes = {
       PetCardFavBtnBGHoverColor: "#fbe7c1",
 
       FiltersWrapBGColor: "#fff4df",
+      RadioBtnsBorderColor: " rgba(38, 38, 38, 0.1)",
+      RadioBtnLabelColor: "#262626",
+      RadioBtnLabelColorHover: "#fff",
+      RadioBtnLabelBGColor: "#fff",
+      RadioBtnLabelBGColorHover: "#F6B83D",
 
       white: "#fff",
     },

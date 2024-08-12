@@ -11,7 +11,10 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${(p) => p.theme.colors.mainBgColor};
   }
 
-
+  /* Прибирає бекграунд при натисненні на моб пристроях */
+  * {
+  -webkit-tap-highlight-color: transparent;
+  }
 
   p,
   h1,

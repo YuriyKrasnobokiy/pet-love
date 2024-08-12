@@ -10,6 +10,7 @@ export const customStyles = {
     width: "100%",
     height: "42px",
     borderColor: "transparent",
+    cursor: "pointer",
 
     "&:hover": {
       borderColor: "transparent",
@@ -49,10 +50,12 @@ export const customStyles = {
     backgroundColor: "#fff",
     borderRadius: "14px",
     paddingRight: "10px",
+
     // width: "auto",
   }),
   menuList: (provided) => ({
     ...provided,
+
     "&::-webkit-scrollbar": {
       width: "8px",
       paddingRight: "8px",
@@ -82,6 +85,7 @@ export const customStyles = {
     "&:active": {
       backgroundColor: "transparent",
     },
+    cursor: "pointer",
   }),
   indicatorSeparator: () => ({
     display: "none",

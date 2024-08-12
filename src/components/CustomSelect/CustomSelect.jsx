@@ -19,6 +19,7 @@ export const CustomSelect = ({ options }) => {
       onChange={setSelectedOption}
       options={options}
       styles={customStyles}
+      isSearchable={false}
     />
   );
 };
