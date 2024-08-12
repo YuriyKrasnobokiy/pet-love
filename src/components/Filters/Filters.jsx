@@ -1,18 +1,17 @@
 import React from "react";
-import { FiltersWrap } from "./Filters.styled";
+import { FiltersWrap, FirstSelectsWrap, SelectsWrap } from "./Filters.styled";
 import { CustomSelect } from "../CustomSelect/CustomSelect";
 
-export const Filters = ({ filterSets }) => {
+export const Filters = ({ genders, species, categories }) => {
   return (
     <FiltersWrap>
-      {filterSets.map((filterSet, index) => {
-        const options = filterSet.map((filterOption) => ({
-          value: filterOption,
-          label: filterOption.charAt(0).toUpperCase() + filterOption.slice(1),
-        }));
-
-        return <CustomSelect key={index} options={options} />;
-      })}
+      <SelectsWrap>
+        <FirstSelectsWrap>
+          <CustomSelect options={categories} />
+          <CustomSelect options={genders} />
+        </FirstSelectsWrap>
+        <CustomSelect options={species} />
+      </SelectsWrap>
     </FiltersWrap>
   );
 };

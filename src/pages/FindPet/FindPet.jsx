@@ -35,7 +35,6 @@ const FindPet = () => {
   const genders = useSelector(selectGenders);
   const categories = useSelector(selectCategories);
   const species = useSelector(selectSpecies);
-  const filterSets = [genders, categories, species];
 
   useEffect(() => {
     dispatch(fetchGenders());
@@ -56,7 +55,7 @@ const FindPet = () => {
       <PetsHeaderWrap>
         <PetsTitle className="title">Find your favorite pet</PetsTitle>
       </PetsHeaderWrap>
-      <Filters filterSets={filterSets} />
+      <Filters genders={genders} categories={categories} species={species} />
       <PetList pets={pets} />
       {totalPages > 1 ? (
         <PaginationControls
