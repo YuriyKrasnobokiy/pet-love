@@ -18,6 +18,19 @@ export const fetchPets = createAsyncThunk(
   },
 );
 
+export const fetchPetsById = createAsyncThunk(
+  "pets/fetchPetsById",
+  async (id) => {
+    try {
+      const response = await axios.get(`${API_URL}notices/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching pet by id:", error);
+      throw error;
+    }
+  },
+);
+
 export const fetchGenders = createAsyncThunk("pets/fetchGenders", async () => {
   try {
     const response = await axios.get(`${API_URL}notices/sex`);
@@ -52,6 +65,7 @@ export const fetchSpecies = createAsyncThunk("pets/fetchSpecies", async () => {
 });
 
 const initialState = {
+  pet: {},
   pets: [],
   genders: [],
   species: [],
@@ -82,6 +96,10 @@ const petsSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
+      .addCase(fetchPetsById.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
       .addCase(fetchGenders.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -100,6 +118,10 @@ const petsSlice = createSlice({
         state.pets = action.payload.results;
         state.totalPages = action.payload.totalPages;
       })
+      .addCase(fetchPetsById.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.pet = action.payload;
+      })
       .addCase(fetchGenders.fulfilled, (state, action) => {
         state.isLoading = false;
         state.genders = action.payload;
@@ -114,6 +136,10 @@ const petsSlice = createSlice({
       })
 
       .addCase(fetchPets.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+      .addCase(fetchPetsById.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
       })

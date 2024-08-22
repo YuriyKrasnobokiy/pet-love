@@ -17,12 +17,14 @@ import {
   fetchCategories,
   fetchGenders,
   fetchPets,
+  // fetchPetsById,
   fetchSpecies,
   setPage,
 } from "../../redux/pets/petsSlice";
 import Loader from "../../components/Loader/Loader";
 import { PetsHeaderWrap, PetsTitle, PetsWrap } from "./FindPet.styled";
 import { Filters } from "../../components/Filters/Filters";
+// import { selectModalData } from "../../redux/modal/modalSelectors";
 
 const FindPet = () => {
   const dispatch = useDispatch();
@@ -35,11 +37,13 @@ const FindPet = () => {
   const genders = useSelector(selectGenders);
   const categories = useSelector(selectCategories);
   const species = useSelector(selectSpecies);
+  // const petId = useSelector(selectModalData);
 
   useEffect(() => {
     dispatch(fetchGenders());
     dispatch(fetchCategories());
     dispatch(fetchSpecies());
+    // dispatch(fetchPetsById({ id: petId }));
     dispatch(fetchPets({ page: currentPage, limit: perPage }));
   }, [dispatch, currentPage, perPage]);
 

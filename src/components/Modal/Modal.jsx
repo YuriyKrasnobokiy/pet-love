@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { CloseBtn, ModalOverlay, ModalStyled } from "./Modal.styled";
 import { closeModal } from "../../redux/modal/modalSlice";
+import Icon from "../Icon/Icon";
 
 export const Modal = ({ children }) => {
   const dispatch = useDispatch();
@@ -29,16 +30,16 @@ export const Modal = ({ children }) => {
   };
 
   const handleCloseClick = (evt) => {
-    if (evt.target === evt.currentTarget) {
-      dispatch(closeModal());
-    }
+    // if (evt.target === evt.currentTarget) {
+    dispatch(closeModal());
+    // }
   };
 
   return (
     <ModalOverlay onClick={handleOverlayClick}>
       <ModalStyled>
         <CloseBtn onClick={handleCloseClick} type="button">
-          &times;
+          <Icon name="icon-cross-small" width={24} height={24} />
         </CloseBtn>
         {children}
       </ModalStyled>

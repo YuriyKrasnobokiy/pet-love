@@ -7,7 +7,7 @@ export const ModalOverlay = styled.div`
   bottom: 0;
   left: 0;
   z-index: 99;
-  background-color: ${(props) => props.theme.colors.ModalBgColor};
+  background-color: ${(props) => props.theme.colors.ModalBDBGColor};
   &:hover {
     cursor: pointer;
   }
@@ -18,10 +18,10 @@ export const ModalStyled = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 64px;
-  max-width: 438px;
+  padding: 28px 40px;
+  max-width: 335px;
   background: white;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: auto;
   max-height: 80vh;
   overflow-y: auto;
@@ -31,7 +31,7 @@ export const CloseBtn = styled.button`
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 30px;
+  font-size: 24px;
   background-color: transparent;
   transition: color 0.3s linear;
 
