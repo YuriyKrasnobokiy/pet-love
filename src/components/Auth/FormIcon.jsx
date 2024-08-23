@@ -1,6 +1,6 @@
 import React from "react";
-import Icon from "../Icon/Icon";
 import { useDeviceType } from "../../hooks/useDeviceType";
+import Icon from "../Icon/Icon";
 
 const FormIcon = ({ name }) => {
   const deviceType = useDeviceType();

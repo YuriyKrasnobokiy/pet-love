@@ -1,7 +1,7 @@
 import React from "react";
-import { MobAuthWrap, MobLoginBtn, MobRegBtn } from "./AuthNav.styled";
 import { useDispatch } from "react-redux";
 import { closeMobMenu } from "../../../redux/mob-menu/mobMenuSlice";
+import { MobAuthWrap, MobLoginBtn, MobRegBtn } from "./AuthNav.styled";
 
 export const AuthNav = ({ burger }) => {
   const dispatch = useDispatch();

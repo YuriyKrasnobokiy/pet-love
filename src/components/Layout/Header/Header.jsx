@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { MdOutlineNightsStay, MdOutlineWbSunny } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { useDeviceType } from "../../../hooks/useDeviceType";
 import { selectIsLoggedIn } from "../../../redux/auth/authSelectors";
 import { selectIsOpenMobMenu } from "../../../redux/mob-menu/mobMenuSelectors";
 import { openMobMenu } from "../../../redux/mob-menu/mobMenuSlice";
+import { AuthNav } from "../../Auth/AuthNav/AuthNav";
 import Icon from "../../Icon/Icon";
 import { MobMenu } from "../../MobMenu/MobMenu";
+import { UserMenu } from "../../UserMenu/UserMenu";
+import { Logo } from "../Logo/Logo";
 import {
   BurgerBtn,
   HeaderWrapper,
@@ -13,12 +18,7 @@ import {
   ThemeBtn,
   UserBtn,
 } from "./Header.styled";
-import { useLocation } from "react-router-dom";
-import { AuthNav } from "../../Auth/AuthNav/AuthNav";
 import { HeaderNavComponent } from "./HeaderNav/HeaderNav";
-import { useDeviceType } from "../../../hooks/useDeviceType";
-import { Logo } from "../Logo/Logo";
-import { UserMenu } from "../../UserMenu/UserMenu";
 
 export const Header = ({ toggleTheme, currentTheme }) => {
   const dispatch = useDispatch();

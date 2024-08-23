@@ -1,13 +1,15 @@
 import React from "react";
 import {
+  HiOutlineChevronDoubleRight,
+  HiOutlineChevronRight,
+} from "react-icons/hi";
+import { useDeviceType } from "../../hooks/useDeviceType";
+import {
   ArrowBtnsWrap,
   NumberBtnsWrap,
   PagContrlsWrap,
   PaginationBtn,
 } from "./PaginationControls.styled";
-import { HiOutlineChevronRight } from "react-icons/hi";
-import { HiOutlineChevronDoubleRight } from "react-icons/hi";
-import { useDeviceType } from "../../hooks/useDeviceType";
 
 const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
   const renderPageNumbers = () => {

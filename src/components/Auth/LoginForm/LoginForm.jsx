@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { emailRegExp } from "../../../helpers/emailRegExp";
 import { login } from "../../../redux/auth/authOperations";
+import FormIcon from "../FormIcon";
 import {
   AuthBtn,
   AuthDescr,
@@ -18,7 +19,6 @@ import {
   AuthTitle,
   ErrorMessage,
 } from "../RegistrForm/AuthForm.styled";
-import FormIcon from "../FormIcon";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().matches(emailRegExp, "Invalid email").required(),

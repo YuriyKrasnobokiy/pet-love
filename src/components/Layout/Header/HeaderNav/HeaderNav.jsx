@@ -1,7 +1,7 @@
 import React from "react";
-import { HeaderNavLink, HeaderNavWrap } from "./HeaderNav.styled";
-import { closeMobMenu } from "../../../../redux/mob-menu/mobMenuSlice";
 import { useDispatch } from "react-redux";
+import { closeMobMenu } from "../../../../redux/mob-menu/mobMenuSlice";
+import { HeaderNavLink, HeaderNavWrap } from "./HeaderNav.styled";
 
 export const HeaderNavComponent = ({ isHome }) => {
   const dispatch = useDispatch();

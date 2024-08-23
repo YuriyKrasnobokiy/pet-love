@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { ImYoutube } from "react-icons/im";
+import { Logo } from "../Logo/Logo";
 import {
   AddressItem,
   AdressList,
@@ -10,7 +11,6 @@ import {
   SocialItem,
   SocialList,
 } from "./Footer.styled";
-import { Logo } from "../Logo/Logo";
 
 export const Footer = ({ currentTheme }) => {
   return (

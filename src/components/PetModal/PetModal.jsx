@@ -1,18 +1,18 @@
 import React from "react";
-import { selectModalData } from "../../redux/modal/modalSelectors";
 import { useSelector } from "react-redux";
-import { selectPets } from "../../redux/pets/petsSelectors";
+import { selectPet } from "../../redux/pets/petsSelectors";
+import { CategoryBage } from "./PetModal.styled";
 
 export const PetModal = () => {
-  const petId = useSelector(selectModalData);
-  // const pets = useSelector(selectPets);
-  // const pet = pets.find((pet) => pet._id === petId);
-  // const pet = useSelector(selectPet);
+  const pet = useSelector(selectPet);
 
   return (
     <div>
-      <h3>{petId}</h3>
-      {/* <p>{pet.name}</p> */}
+      <div>
+        <CategoryBage>{pet.category}</CategoryBage>
+        <img src={pet.imgURL} alt="pet" />
+      </div>
+      <h2 style={{ color: "black" }}>{pet.title} </h2>
     </div>
   );
 };

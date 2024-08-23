@@ -1,12 +1,12 @@
 import React from "react";
+import { CustomRadioButton } from "../CustomRadioButton/CustomRadioButton";
+import { CustomSelect } from "../CustomSelect/CustomSelect";
 import {
   FiltersWrap,
   FirstSelectsWrap,
   RadioWrap,
   SelectsWrap,
 } from "./Filters.styled";
-import { CustomSelect } from "../CustomSelect/CustomSelect";
-import { CustomRadioButton } from "../CustomRadioButton/CustomRadioButton";
 
 export const Filters = ({ genders, species, categories }) => {
   return (

@@ -1,4 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
+import { closeMobMenu } from "../../redux/mob-menu/mobMenuSlice";
+import { AuthNav } from "../Auth/AuthNav/AuthNav";
+import Icon from "../Icon/Icon";
+import { UserMenu } from "../UserMenu/UserMenu";
 import {
   CloseBtn,
   MobMenuOverlay,
@@ -6,14 +13,6 @@ import {
   MobNavLink,
   MobNavWrap,
 } from "./MobMenu.styled";
-import { useDispatch, useSelector } from "react-redux";
-import { closeMobMenu } from "../../redux/mob-menu/mobMenuSlice";
-import Icon from "../Icon/Icon";
-import { useLocation } from "react-router-dom";
-import { useTheme } from "styled-components";
-import { AuthNav } from "../Auth/AuthNav/AuthNav";
-import { UserMenu } from "../UserMenu/UserMenu";
-import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 
 export const MobMenu = () => {
   const dispatch = useDispatch();

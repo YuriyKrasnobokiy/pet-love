@@ -22,10 +22,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsOpenModal } from "../../../redux/modal/modalSelectors";
 import { Modal } from "../../Modal/Modal";
 import { PetModal } from "../../PetModal/PetModal";
+import { fetchPetsById } from "../../../redux/pets/petsSlice";
 
 export const PetCard = ({ pet }) => {
   const dispatch = useDispatch();
   const isOpenModal = useSelector(selectIsOpenModal);
+
+  const handleClick = () => {
+    dispatch(openModal(pet._id));
+    dispatch(fetchPetsById({ _id: pet._id }));
+  };
 
   return (
     <>
@@ -70,10 +76,7 @@ export const PetCard = ({ pet }) => {
         </PetCardTextBlock>
 
         <PetCardBtnsWrap>
-          <PetCardButton
-            type="button"
-            onClick={() => dispatch(openModal(pet._id))}
-          >
+          <PetCardButton type="button" onClick={handleClick}>
             Learn more
           </PetCardButton>
           <PetCardFavorBtn>

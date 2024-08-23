@@ -1,4 +1,5 @@
 export const selectPets = (state) => state.petsStore.pets;
+export const selectPet = (state) => state.petsStore.pet;
 export const selectIsLoading = (state) => state.petsStore.isLoading;
 export const selectError = (state) => state.petsStore.error;
 export const selectPage = (state) => state.petsStore.page;

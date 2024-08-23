@@ -20,9 +20,9 @@ export const fetchPets = createAsyncThunk(
 
 export const fetchPetsById = createAsyncThunk(
   "pets/fetchPetsById",
-  async (id) => {
+  async ({ _id }) => {
     try {
-      const response = await axios.get(`${API_URL}notices/${id}`);
+      const response = await axios.get(`${API_URL}notices/${_id}`);
       return response.data;
     } catch (error) {
       console.error("Error fetching pet by id:", error);

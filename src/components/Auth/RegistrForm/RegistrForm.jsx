@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { emailRegExp } from "../../../helpers/emailRegExp";
 import { registration } from "../../../redux/auth/authOperations";
+import FormIcon from "../FormIcon";
 import {
   AuthBtn,
   AuthDescr,
@@ -18,8 +19,6 @@ import {
   AuthTitle,
   ErrorMessage,
 } from "./AuthForm.styled";
-import { useDeviceType } from "../../../hooks/useDeviceType";
-import FormIcon from "../FormIcon";
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string().min(2, "Name must be at least 2 characters").required(),
