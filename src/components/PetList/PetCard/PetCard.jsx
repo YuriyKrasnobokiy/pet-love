@@ -23,14 +23,19 @@ import { selectIsOpenModal } from "../../../redux/modal/modalSelectors";
 import { Modal } from "../../Modal/Modal";
 import { PetModal } from "../../PetModal/PetModal";
 import { fetchPetsById } from "../../../redux/pets/petsSlice";
+import { selectIsLoggedIn } from "../../../redux/auth/authSelectors";
 
 export const PetCard = ({ pet }) => {
   const dispatch = useDispatch();
   const isOpenModal = useSelector(selectIsOpenModal);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const handleClick = () => {
-    dispatch(openModal(pet._id));
-    dispatch(fetchPetsById({ _id: pet._id }));
+    if (isLoggedIn) {
+      dispatch(openModal(pet._id));
+      dispatch(fetchPetsById({ _id: pet._id }));
+    }
+    dispatch(openModal());
   };
 
   return (
@@ -83,12 +88,13 @@ export const PetCard = ({ pet }) => {
             <Icon name="icon-heart" width={18} height={18} />
           </PetCardFavorBtn>
         </PetCardBtnsWrap>
+        {isOpenModal && (
+          // <Modal>{isLoggedIn ? <PetModal /> : <h2>WHO ARE YOU?!</h2>}</Modal>
+          <Modal>
+            <PetModal />
+          </Modal>
+        )}
       </PetCardWrap>
-      {isOpenModal && (
-        <Modal>
-          <PetModal />
-        </Modal>
-      )}
     </>
   );
 };

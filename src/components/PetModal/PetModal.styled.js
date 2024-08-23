@@ -1,12 +1,10 @@
-import { BiGitCommit } from "react-icons/bi";
 import styled from "styled-components";
-import Icon from "../Icon/Icon";
 
 export const PetModalWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 28px;
+  padding: ${(props) => (props.$isLoggedIn ? "40px 28px " : "40px 20px")};
 `;
 
 export const PetModalImgWrap = styled.div`
@@ -15,8 +13,8 @@ export const PetModalImgWrap = styled.div`
 `;
 
 export const PetModalImg = styled.img`
-  width: 120px;
-  height: 120px;
+  width: ${(props) => (props.$isLoggedIn ? "120px" : "80px")};
+  height: ${(props) => (props.$isLoggedIn ? "120px" : "80px")};
   border-radius: 50%;
 `;
 
@@ -49,15 +47,19 @@ export const PetModalTextBlock = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: ${(props) => (props.$isLoggedIn ? "40px" : "24px")};
 `;
 
 export const PetModalTitle = styled.h2`
   font-weight: 700;
-  font-size: 16px;
-  line-height: 1.25;
-  color: ${(props) => props.theme.colors.PetModalTitleColor};
-  margin-bottom: 10px;
+  font-size: ${(props) => (props.$isLoggedIn ? "16px" : "20px")};
+  line-height: ${(props) => (props.$isLoggedIn ? 1.25 : 1)};
+  letter-spacing: ${(props) => (props.$isLoggedIn ? "unset" : "-0.03em")};
+  color: ${(props) =>
+    props.$isLoggedIn
+      ? props.theme.colors.PetModalTitleColor
+      : props.theme.colors.PetModalAttentionTitleColor};
+  margin-bottom: ${(props) => (props.$isLoggedIn ? "10px" : "20px")};
 `;
 
 export const PetModalPopularityWrap = styled.div`
@@ -130,18 +132,18 @@ export const PetModalComment = styled.p`
 
 export const PetModalBtnsWrap = styled.div`
   display: flex;
-  gap: 10px;
-  width: 100%;
+  gap: ${(props) => (props.$isLoggedIn ? "10px" : "8px")};
+  width: ${(props) => (props.$isLoggedIn ? "100%" : "272px")};
 `;
 
 export const PetModalBtn = styled.button`
   border-radius: 30px;
-  padding: 12px 30px;
+  padding: ${(props) => (props.$isLoggedIn ? "12px 30px" : "12px 24px")};
   width: 100%;
   margin: 0;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
+  font-weight: ${(props) => (props.$isLoggedIn ? 500 : 700)};
+  font-size: ${(props) => (props.$isLoggedIn ? "16px" : "14px")};
+  line-height: ${(props) => (props.$isLoggedIn ? 1.25 : 1.286)};
   letter-spacing: -0.03em;
   justify-content: center;
   color: ${(props) => props.theme.colors.PetModalBtnColor};
