@@ -37,6 +37,7 @@ export const PetCardTitle = styled.h2`
 
 export const PetCardPopularWrap = styled.div`
   display: flex;
+  color: ${(props) => props.theme.colors.IconStarAccentColor};
 `;
 
 export const PetCardPopularNumber = styled.p`
@@ -112,6 +113,7 @@ export const PetCardFavorBtn = styled.button`
   height: 46px;
   justify-content: center;
   margin: 0;
+  color: ${(props) => props.theme.colors.PetCardFavBtnColor};
   background-color: ${(props) => props.theme.colors.PetCardFavBtnBGColor};
   transition: background-color 300ms linear;
 

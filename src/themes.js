@@ -79,6 +79,20 @@ export const themes = {
       PetCardBtnBGHoverColor: "#f9b020",
       PetCardFavBtnBGColor: "#fff4df",
       PetCardFavBtnBGHoverColor: " #fbe7c1",
+      PetCardFavBtnColor: "#F6B83D",
+
+      PetModalCategoryBG: "#fff4df",
+      PetModalCategoryColor: "#f6b83d",
+      PetModalTitleColor: "#2b2b2a",
+      PetModalCommentColor: "#2b2b2a",
+      PetModalRatingItemColor: "rgba(38, 38, 38, 0.05)",
+      PetModalPopularityNumber: "#2b2b2a",
+      PetModalBtnColor: "#fff",
+      PetModalBtnBGColor: "#f6b83d",
+      PetModalBtnBGHoverColor: "#f9b020",
+      PetModalContBtnColor: "#f6b83d",
+      PetModalContBtnBGColor: "#fff4df",
+      PetModalContBtnBGHoverColor: "#fbe7c1",
 
       FiltersWrapBGColor: "#fff4df",
       RadioBtnsBorderColor: " rgba(38, 38, 38, 0.1)",
@@ -88,6 +102,7 @@ export const themes = {
       RadioBtnLabelBGColorHover: "#F6B83D",
 
       white: "#fff",
+      IconStarAccentColor: "#ffc531",
     },
   },
   dark: {
@@ -171,6 +186,20 @@ export const themes = {
       PetCardBtnBGHoverColor: "#f9b020",
       PetCardFavBtnBGColor: "#fff4df",
       PetCardFavBtnBGHoverColor: "#fbe7c1",
+      PetCardFavBtnColor: "#F6B83D",
+
+      PetModalCategoryBG: "#fff4df",
+      PetModalCategoryColor: "#f6b83d",
+      PetModalTitleColor: "#2b2b2a",
+      PetModalCommentColor: "#2b2b2a",
+      PetModalRatingItemColor: "rgba(38, 38, 38, 0.05)",
+      PetModalPopularityNumber: "#2b2b2a",
+      PetModalBtnColor: "#fff",
+      PetModalBtnBGColor: "#f6b83d",
+      PetModalBtnBGHoverColor: "#f9b020",
+      PetModalContBtnColor: "#f6b83d",
+      PetModalContBtnBGColor: "#fff4df",
+      PetModalContBtnBGHoverColor: "#fbe7c1",
 
       FiltersWrapBGColor: "#fff4df",
       RadioBtnsBorderColor: " rgba(38, 38, 38, 0.1)",
@@ -180,6 +209,7 @@ export const themes = {
       RadioBtnLabelBGColorHover: "#F6B83D",
 
       white: "#fff",
+      IconStarAccentColor: "#ffc531",
     },
   },
 };

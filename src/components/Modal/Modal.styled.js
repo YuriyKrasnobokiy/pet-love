@@ -18,8 +18,7 @@ export const ModalStyled = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 28px 40px;
-  max-width: 335px;
+  width: 335px;
   background: white;
   border-radius: 30px;
   cursor: auto;
