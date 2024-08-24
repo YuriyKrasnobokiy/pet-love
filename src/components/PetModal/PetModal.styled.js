@@ -114,7 +114,7 @@ export const PetModalPopularityNumber = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.42857;
-  color: #2b2b2a;
+  color: ${(props) => props.theme.colors.PetModalPopularityNumber};
 `;
 
 export const PetModalPropertyList = styled.ul`

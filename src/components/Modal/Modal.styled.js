@@ -22,8 +22,9 @@ export const ModalStyled = styled.div`
   background: white;
   border-radius: 30px;
   cursor: auto;
-  max-height: 80vh;
+  max-height: 100vh;
   overflow-y: auto;
+  background-color: ${(props) => props.theme.colors.ModalBGColor};
 `;
 
 export const CloseBtn = styled.button`
@@ -33,6 +34,7 @@ export const CloseBtn = styled.button`
   font-size: 24px;
   background-color: transparent;
   transition: color 0.3s linear;
+  color: ${(props) => props.theme.colors.ModalCloseBtnColor};
 
   &:hover {
     color: ${(props) => props.theme.colors.accentColor};
