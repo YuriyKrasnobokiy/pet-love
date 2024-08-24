@@ -46,7 +46,7 @@ export const PetModal = () => {
 
   return (
     <PetModalWrap $isLoggedIn={isLoggedIn}>
-      <PetModalImgWrap>
+      <PetModalImgWrap $isLoggedIn={isLoggedIn}>
         {isLoggedIn && <CategoryBage>{pet.category}</CategoryBage>}
         <PetModalImg
           $isLoggedIn={isLoggedIn}

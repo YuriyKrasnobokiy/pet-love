@@ -4,18 +4,33 @@ export const PetModalWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 279px;
   padding: ${(props) => (props.$isLoggedIn ? "40px 28px " : "40px 20px")};
+
+  @media screen and (min-width: 768px) {
+    padding: ${(props) => (props.$isLoggedIn ? "40px 72px " : "60px")};
+    width: ${(props) => (props.$isLoggedIn ? "330px" : "346px")};
+  }
 `;
 
 export const PetModalImgWrap = styled.div`
   position: relative;
   margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: ${(props) => (props.$isLoggedIn ? "16px" : "20px")};
+  }
 `;
 
 export const PetModalImg = styled.img`
   width: ${(props) => (props.$isLoggedIn ? "120px" : "80px")};
   height: ${(props) => (props.$isLoggedIn ? "120px" : "80px")};
   border-radius: 50%;
+
+  @media screen and (min-width: 768px) {
+    width: ${(props) => (props.$isLoggedIn ? "150px" : "80px")};
+    height: ${(props) => (props.$isLoggedIn ? "150px" : "80px")};
+  }
 `;
 
 export const CategoryBage = styled.p`
@@ -40,6 +55,11 @@ export const CategoryBage = styled.p`
   &::first-letter {
     text-transform: uppercase;
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.286;
+  }
 `;
 
 export const PetModalTextBlock = styled.div`
@@ -48,6 +68,10 @@ export const PetModalTextBlock = styled.div`
   align-items: center;
   text-align: center;
   margin-bottom: ${(props) => (props.$isLoggedIn ? "40px" : "24px")};
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: ${(props) => (props.$isLoggedIn ? "40px" : "28px")};
+  }
 `;
 
 export const PetModalTitle = styled.h2`
@@ -60,6 +84,11 @@ export const PetModalTitle = styled.h2`
       ? props.theme.colors.PetModalTitleColor
       : props.theme.colors.PetModalAttentionTitleColor};
   margin-bottom: ${(props) => (props.$isLoggedIn ? "10px" : "20px")};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(props) => (props.$isLoggedIn ? "18px" : "24px")};
+    line-height: ${(props) => (props.$isLoggedIn ? 1.33333 : 1.16667)};
+  }
 `;
 
 export const PetModalPopularityWrap = styled.div`
@@ -92,6 +121,10 @@ export const PetModalPropertyList = styled.ul`
   display: flex;
   gap: 26px;
   margin-bottom: 18px;
+
+  @media screen and (min-width: 768px) {
+    gap: 27px;
+  }
 `;
 
 export const PetModalProperty = styled.li`
@@ -150,6 +183,12 @@ export const PetModalBtn = styled.button`
   background-color: ${(props) => props.theme.colors.PetModalBtnBGColor};
   transition: background-color 0.3s ease-in-out;
   gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    padding: ${(props) => (props.$isLoggedIn ? "14px 42px" : "14px 24px")};
+    font-size: 16px;
+    line-height: 1.25;
+  }
 
   &:hover,
   :focus {
