@@ -103,7 +103,7 @@ export const themes = {
       ModalApproveBtnBGHoverColor: "#f9b020",
       ModalApproveCancelBtnColor: "#262626",
       ModalApproveCancelBtnBGColor: "rgba(38, 38, 38, 0.05)",
-      ModalApproveCancelBtnBGHoverColor: "rgba(38, 38, 38, 0.3)",
+      ModalApproveCancelBtnBGHoverColor: "rgba(38, 38, 38, 0.1)",
 
       FiltersWrapBGColor: "#fff4df",
       RadioBtnsBorderColor: " rgba(38, 38, 38, 0.1)",
@@ -220,8 +220,8 @@ export const themes = {
       ModalApproveBtnBGColor: "#f6b83d",
       ModalApproveBtnBGHoverColor: "#f9b020",
       ModalApproveCancelBtnColor: "#262626",
-      ModalApproveCancelBtnBGColor: "rgba(38, 38, 38, 0.05)",
-      ModalApproveCancelBtnBGHoverColor: "rgba(38, 38, 38, 0.3)",
+      ModalApproveCancelBtnBGColor: "rgba(255, 255, 255, 0.8)",
+      ModalApproveCancelBtnBGHoverColor: "rgba(255, 255, 255, 0.85)",
 
       FiltersWrapBGColor: "#fff4df",
       RadioBtnsBorderColor: " rgba(38, 38, 38, 0.1)",

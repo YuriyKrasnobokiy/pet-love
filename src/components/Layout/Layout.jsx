@@ -4,8 +4,16 @@ import { Footer } from "./Footer/Footer";
 import { Header } from "./Header/Header";
 import Login from "../../pages/Login/Login";
 import Registration from "../../pages/Registration/Registration";
+import { Modal } from "../Modal/Modal";
+import { PetModal } from "../PetModal/PetModal";
+import { selectIsOpenModal } from "../../redux/modal/modalSelectors";
+import { selectIsApproveModalOpen } from "../../redux/modal/modalSelectors";
+import { useSelector } from "react-redux";
+import { ModalApproveAction } from "../ModalApproveAction/ModalApproveAction";
 
 const Layout = ({ children, toggleTheme, currentTheme }) => {
+  const isOpenModal = useSelector(selectIsOpenModal);
+  const isApproveModalOpen = useSelector(selectIsApproveModalOpen);
   return (
     <>
       <ToastContainer
@@ -23,6 +31,11 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
         <Registration />
       </Header>
       <main>{children}</main>
+      {isOpenModal && (
+        <Modal>
+          {isApproveModalOpen ? <ModalApproveAction /> : <PetModal />}
+        </Modal>
+      )}
       <Footer currentTheme={currentTheme} />
     </>
   );
