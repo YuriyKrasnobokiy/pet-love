@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setFilterTerm, fetchNews, setPage } from "../../redux/news/newsSlice";
 import Icon from "../Icon/Icon";
 import {
   FilterBtn,
@@ -9,23 +7,27 @@ import {
   ResetBtn,
 } from "./SearchField.styled";
 
-export const SearchField = () => {
-  const dispatch = useDispatch();
-  const [inputValue, setInputValue] = useState("");
+export const SearchField = ({
+  onFilterChange,
+  onFetch,
+  onPageChange,
+  filterWord,
+}) => {
+  const [inputValue, setInputValue] = useState(filterWord || "");
 
   const onSubmit = (evt) => {
     evt.preventDefault();
-    dispatch(setFilterTerm(inputValue));
-    dispatch(setPage(1));
-    dispatch(fetchNews({ page: 1, limit: 6, filterWord: inputValue }));
+    onFilterChange(inputValue);
+    onPageChange(1);
+    onFetch({ page: 1, limit: 6, filterWord: inputValue });
   };
 
   const onReset = (evt) => {
     evt.preventDefault();
     setInputValue("");
-    dispatch(setFilterTerm(""));
-    dispatch(setPage(1));
-    dispatch(fetchNews({ page: 1, limit: 6, filterWord: "" }));
+    onFilterChange("");
+    onPageChange(1);
+    onFetch({ page: 1, limit: 6, filterWord: "" });
   };
 
   const onInputChange = (evt) => {

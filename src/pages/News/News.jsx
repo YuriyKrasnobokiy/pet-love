@@ -9,7 +9,7 @@ import {
   selectPerPage,
   selectTotalPages,
 } from "../../redux/news/newsSelectors";
-import { fetchNews, setPage } from "../../redux/news/newsSlice";
+import { fetchNews, setFilterTerm, setPage } from "../../redux/news/newsSlice";
 import Loader from "../../components/Loader/Loader";
 
 import { NewsHeaderWrap, NewsTitle, NewsWrap } from "./News.styled";
@@ -38,11 +38,18 @@ const News = () => {
 
   return isLoading ? (
     <Loader />
-  ) : error ? null : (
+  ) : error ? (
+    <p>Ooops...Please try to reload page</p>
+  ) : (
     <NewsWrap className="container">
       <NewsHeaderWrap>
         <NewsTitle className="title">News</NewsTitle>
-        <SearchField />
+        <SearchField
+          onFilterChange={(term) => dispatch(setFilterTerm(term))}
+          onFetch={(params) => dispatch(fetchNews(params))}
+          onPageChange={(page) => dispatch(setPage(page))}
+          filterWord={filterWord}
+        />
       </NewsHeaderWrap>
       <NewsList news={news} />
       {totalPages > 1 ? (
