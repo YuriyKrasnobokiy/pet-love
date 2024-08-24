@@ -97,6 +97,14 @@ export const themes = {
       PetModalContBtnBGColor: "#fff4df",
       PetModalContBtnBGHoverColor: "#fbe7c1",
 
+      ModalApproveTitleColor: "#262626",
+      ModalApproveBtnColor: "#fff",
+      ModalApproveBtnBGColor: "#f6b83d",
+      ModalApproveBtnBGHoverColor: "#f9b020",
+      ModalApproveCancelBtnColor: "#262626",
+      ModalApproveCancelBtnBGColor: "rgba(38, 38, 38, 0.05)",
+      ModalApproveCancelBtnBGHoverColor: "rgba(38, 38, 38, 0.3)",
+
       FiltersWrapBGColor: "#fff4df",
       RadioBtnsBorderColor: " rgba(38, 38, 38, 0.1)",
       RadioBtnLabelColor: "#262626",
@@ -206,6 +214,14 @@ export const themes = {
       PetModalContBtnColor: "#262626",
       PetModalContBtnBGColor: "#fff4df",
       PetModalContBtnBGHoverColor: "#fbe7c1",
+
+      ModalApproveTitleColor: "#fff",
+      ModalApproveBtnColor: "#262626",
+      ModalApproveBtnBGColor: "#f6b83d",
+      ModalApproveBtnBGHoverColor: "#f9b020",
+      ModalApproveCancelBtnColor: "#262626",
+      ModalApproveCancelBtnBGColor: "rgba(38, 38, 38, 0.05)",
+      ModalApproveCancelBtnBGHoverColor: "rgba(38, 38, 38, 0.3)",
 
       FiltersWrapBGColor: "#fff4df",
       RadioBtnsBorderColor: " rgba(38, 38, 38, 0.1)",

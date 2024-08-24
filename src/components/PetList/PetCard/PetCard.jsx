@@ -90,7 +90,6 @@ export const PetCard = ({ pet }) => {
           </PetCardFavorBtn>
         </PetCardBtnsWrap>
         {isOpenModal && (
-          // <Modal>{isLoggedIn ? <PetModal /> : <h2>WHO ARE YOU?!</h2>}</Modal>
           <Modal>
             <PetModal />
           </Modal>
