@@ -4,7 +4,7 @@ export const PetModalWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 279px;
+  width: ${(props) => (props.$isLoggedIn ? "279px" : "295px")};
   padding: ${(props) => (props.$isLoggedIn ? "40px 28px " : "40px 20px")};
 
   @media screen and (min-width: 768px) {

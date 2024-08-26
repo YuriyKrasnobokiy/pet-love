@@ -5,10 +5,10 @@ export const API_URL = "https://petlove.b.goit.study/api/";
 
 export const fetchPets = createAsyncThunk(
   "pets/fetchPets",
-  async ({ page, limit }) => {
+  async ({ page, limit, filterWord }) => {
     try {
       const response = await axios.get(
-        `${API_URL}notices?page=${page}&limit=${limit}`,
+        `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}`,
       );
       return response.data;
     } catch (error) {
@@ -64,6 +64,16 @@ export const fetchSpecies = createAsyncThunk("pets/fetchSpecies", async () => {
   }
 });
 
+// export const fetchCities = createAsyncThunk("pets/fetchCities", async () => {
+//   try {
+//     const response = await axios.get(`${API_URL}cities`);
+//     return response.data;
+//   } catch (error) {
+//     console.error("Error fetching cities:", error);
+//     throw error;
+//   }
+// });
+
 const initialState = {
   pet: {},
   pets: [],
@@ -76,6 +86,7 @@ const initialState = {
   page: 1,
   perPage: 6,
   totalPages: 0,
+  // cities: [],
 };
 
 const petsSlice = createSlice({
@@ -108,10 +119,10 @@ const petsSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(fetchSpecies.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
+      // .addCase(fetchCities.pending, (state) => {
+      //   state.isLoading = true;
+      //   state.error = null;
+      // })
 
       .addCase(fetchPets.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -134,6 +145,10 @@ const petsSlice = createSlice({
         state.isLoading = false;
         state.species = action.payload;
       })
+      // .addCase(fetchCities.fulfilled, (state, action) => {
+      //   state.isLoading = false;
+      //   state.cities = action.payload;
+      // })
 
       .addCase(fetchPets.rejected, (state, action) => {
         state.isLoading = false;
@@ -155,6 +170,10 @@ const petsSlice = createSlice({
         state.isLoading = false;
         state.error = action.error.message;
       });
+    // .addCase(fetchCities.rejected, (state) => {
+    //   state.isLoading = false;
+    //   state.error = action.error.message;
+    // });
   },
 });
 

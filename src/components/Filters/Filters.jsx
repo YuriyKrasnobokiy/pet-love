@@ -7,11 +7,26 @@ import {
   RadioWrap,
   SelectsWrap,
 } from "./Filters.styled";
+import SearchField from "../SearchField/SearchField";
 
-export const Filters = ({ genders, species, categories }) => {
+export const Filters = ({
+  genders,
+  species,
+  categories,
+  filterTearm,
+  onFilterChange,
+  onFetch,
+  onPageChange,
+}) => {
   return (
     <FiltersWrap>
       <SelectsWrap>
+        <SearchField
+          onFilterChange={onFilterChange}
+          onFetch={onFetch}
+          onPageChange={onPageChange}
+          filterWord={filterTearm}
+        />
         <FirstSelectsWrap>
           <CustomSelect options={categories} />
           <CustomSelect options={genders} />
