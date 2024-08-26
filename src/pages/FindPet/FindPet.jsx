@@ -17,13 +17,14 @@ import {
   selectTotalPages,
 } from "../../redux/pets/petsSelectors";
 
+import { PetsHeaderWrap, PetsTitle, PetsWrap } from "./FindPet.styled";
 import {
   fetchCategories,
   fetchGenders,
   fetchPets,
   fetchSpecies,
 } from "../../redux/pets/petsOperations";
-import { PetsHeaderWrap, PetsTitle, PetsWrap } from "./FindPet.styled";
+import { setFilterTerm, setPage } from "../../redux/pets/petsSlice";
 
 const FindPet = () => {
   const categories = useSelector(selectCategories);
