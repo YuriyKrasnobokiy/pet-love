@@ -16,14 +16,13 @@ import {
   selectSpecies,
   selectTotalPages,
 } from "../../redux/pets/petsSelectors";
+
 import {
   fetchCategories,
   fetchGenders,
   fetchPets,
   fetchSpecies,
-  setFilterTerm,
-  setPage,
-} from "../../redux/pets/petsSlice";
+} from "../../redux/pets/petsOperations";
 import { PetsHeaderWrap, PetsTitle, PetsWrap } from "./FindPet.styled";
 
 const FindPet = () => {

@@ -22,8 +22,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsOpenModal } from "../../../redux/modal/modalSelectors";
 import { Modal } from "../../Modal/Modal";
 import { PetModal } from "../../PetModal/PetModal";
-import { fetchPetsById } from "../../../redux/pets/petsSlice";
 import { selectIsLoggedIn } from "../../../redux/auth/authSelectors";
+import { fetchPetsById } from "../../../redux/pets/petsOperations";
 
 export const PetCard = ({ pet }) => {
   const dispatch = useDispatch();
