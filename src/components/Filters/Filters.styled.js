@@ -8,12 +8,13 @@ export const FiltersWrap = styled.div`
 
 export const SelectsWrap = styled.div`
   padding-bottom: 20px;
+  margin-top: 12px;
 `;
 
 export const FirstSelectsWrap = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 `;
 
 export const RadioWrap = styled.div`

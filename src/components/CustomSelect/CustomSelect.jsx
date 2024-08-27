@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Select from "react-select";
 import { customStyles } from "./customStyles";
 
-export const CustomSelect = ({ options }) => {
+export const CustomSelect = ({ options, placeholder }) => {
   options = { options } = [
     { value: "All", label: "Show all" },
     ...options.map((option) => ({
@@ -20,6 +20,7 @@ export const CustomSelect = ({ options }) => {
       options={options}
       styles={customStyles}
       isSearchable={false}
+      placeholder={placeholder}
     />
   );
 };

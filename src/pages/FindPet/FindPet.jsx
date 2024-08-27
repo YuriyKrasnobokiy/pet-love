@@ -43,7 +43,16 @@ const FindPet = () => {
     dispatch(fetchGenders());
     dispatch(fetchCategories());
     dispatch(fetchSpecies());
-    dispatch(fetchPets({ page: currentPage, limit: perPage, filterWord }));
+  }, []);
+
+  useEffect(() => {
+    dispatch(
+      fetchPets({
+        page: currentPage,
+        limit: perPage,
+        filterWord,
+      }),
+    );
   }, [dispatch, currentPage, perPage, filterWord]);
 
   const handlePageChange = (newPage) => {

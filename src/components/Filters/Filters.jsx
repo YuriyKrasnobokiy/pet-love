@@ -20,18 +20,18 @@ export const Filters = ({
 }) => {
   return (
     <FiltersWrap>
+      <SearchField
+        onFilterChange={onFilterChange}
+        onFetch={onFetch}
+        onPageChange={onPageChange}
+        filterWord={filterTearm}
+      />
       <SelectsWrap>
-        <SearchField
-          onFilterChange={onFilterChange}
-          onFetch={onFetch}
-          onPageChange={onPageChange}
-          filterWord={filterTearm}
-        />
         <FirstSelectsWrap>
-          <CustomSelect options={categories} />
-          <CustomSelect options={genders} />
+          <CustomSelect options={categories} placeholder="Categories" />
+          <CustomSelect options={genders} placeholder="By genders" />
         </FirstSelectsWrap>
-        <CustomSelect options={species} />
+        <CustomSelect options={species} placeholder="By type" />
       </SelectsWrap>
       <RadioWrap>
         <CustomRadioButton id="0" name="rbtn" label="Popular" />
