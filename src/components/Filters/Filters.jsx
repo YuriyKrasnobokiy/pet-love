@@ -1,13 +1,8 @@
 import React from "react";
-import { CustomRadioButton } from "../CustomRadioButton/CustomRadioButton";
 import { CustomSelect } from "../CustomSelect/CustomSelect";
-import {
-  FiltersWrap,
-  FirstSelectsWrap,
-  RadioWrap,
-  SelectsWrap,
-} from "./Filters.styled";
+import { FiltersWrap, FirstSelectsWrap, SelectsWrap } from "./Filters.styled";
 import SearchField from "../SearchField/SearchField";
+import { RadioBtns } from "./RadioBtns";
 
 export const Filters = ({
   genders,
@@ -25,6 +20,7 @@ export const Filters = ({
         onFetch={onFetch}
         onPageChange={onPageChange}
         filterWord={filterTearm}
+        isInFilters
       />
       <SelectsWrap>
         <FirstSelectsWrap>
@@ -33,12 +29,7 @@ export const Filters = ({
         </FirstSelectsWrap>
         <CustomSelect options={species} placeholder="By type" />
       </SelectsWrap>
-      <RadioWrap>
-        <CustomRadioButton id="0" name="rbtn" label="Popular" />
-        <CustomRadioButton id="1" name="rbtn" label="Unpopular" />
-        <CustomRadioButton id="2" name="rbtn" label="Cheap" />
-        <CustomRadioButton id="3" name="rbtn" label="Expensive" />
-      </RadioWrap>
+      <RadioBtns />
     </FiltersWrap>
   );
 };

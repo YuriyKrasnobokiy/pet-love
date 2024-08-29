@@ -13,7 +13,10 @@ export const FormStyled = styled.form`
 `;
 
 export const InputStyled = styled.input`
-  border: 1px solid ${(props) => props.theme.colors.searchInputBorderColor};
+  border: ${(props) =>
+    props.$isInFilters
+      ? `1px solid ${props.theme.colors.searchFiltersInputBorderColor}`
+      : `1px solid  ${props.theme.colors.searchInputBorderColor}`};
   border-radius: 30px;
   padding: 11px 12px;
   width: calc(100% - 26px);
@@ -21,9 +24,14 @@ export const InputStyled = styled.input`
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.03em;
-  background-color: transparent;
-  color: ${(props) => props.theme.colors.searchInputColor};
-
+  background-color: ${(props) =>
+    props.$isInFilters
+      ? `${props.theme.colors.searchFiltersInputBGColor}`
+      : "transparent"};
+  color: ${(props) =>
+    props.$isInFilters
+      ? `${props.theme.colors.searchFiltersInputColor}`
+      : `${props.theme.colors.searchInputColor}`};
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.25;
@@ -32,7 +40,11 @@ export const InputStyled = styled.input`
   }
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.searchInputColor};
+    color: ${(props) =>
+      props.$isInFilters
+        ? `${props.theme.colors.searchFiltersInputColor}`
+        : `${props.theme.colors.searchInputColor}`};
+    font-size: 14px;
   }
 
   &:focus {

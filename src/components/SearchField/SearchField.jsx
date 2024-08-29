@@ -12,6 +12,7 @@ export const SearchField = ({
   onFetch,
   onPageChange,
   filterWord,
+  isInFilters,
 }) => {
   const [inputValue, setInputValue] = useState(filterWord || "");
 
@@ -41,6 +42,7 @@ export const SearchField = ({
         placeholder="Search"
         value={inputValue}
         onChange={onInputChange}
+        $isInFilters={isInFilters}
       />
       {inputValue !== "" && (
         <ResetBtn type="button" onClick={onReset}>

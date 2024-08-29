@@ -3,7 +3,7 @@ import Select from "react-select";
 import { customStyles } from "./customStyles";
 
 export const CustomSelect = ({ options, placeholder }) => {
-  options = { options } = [
+  const selectOptions = [
     { value: "All", label: "Show all" },
     ...options.map((option) => ({
       value: option,
@@ -17,7 +17,7 @@ export const CustomSelect = ({ options, placeholder }) => {
     <Select
       defaultValue={selectedOption}
       onChange={setSelectedOption}
-      options={options}
+      options={selectOptions}
       styles={customStyles}
       isSearchable={false}
       placeholder={placeholder}
