@@ -57,7 +57,13 @@ const FindPet = () => {
 
   const handlePageChange = (newPage) => {
     dispatch(setPage(newPage));
-    dispatch(fetchPets({ page: newPage, limit: perPage, filterWord }));
+    dispatch(
+      fetchPets({
+        page: newPage,
+        limit: perPage,
+        filterWord,
+      }),
+    );
   };
 
   return isLoading ? (

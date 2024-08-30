@@ -12,6 +12,12 @@ export const customStyles = {
     borderColor: "transparent",
     cursor: "pointer",
 
+    "@media screen and (min-width: 768px)": {
+      fontSize: "16px",
+      letterSpacing: "-0.03em",
+      height: "48px",
+    },
+
     "&:hover": {
       borderColor: "transparent",
     },
@@ -26,6 +32,11 @@ export const customStyles = {
     fontSize: "14px",
     margin: 0,
     padding: 0,
+
+    "@media screen and (min-width: 768px)": {
+      fontSize: "16px",
+      letterSpacing: "-0.03em",
+    },
   }),
   singleValue: (provided) => ({
     ...provided,
@@ -35,6 +46,11 @@ export const customStyles = {
     lineHeight: 1.25,
     padding: "0 0 0 8px",
     margin: 0,
+
+    "@media screen and (min-width: 768px)": {
+      fontSize: "16px",
+      letterSpacing: "-0.03em",
+    },
   }),
   placeholder: (provided) => ({
     ...provided,
@@ -44,6 +60,11 @@ export const customStyles = {
     lineHeight: 1.25,
     padding: "0 0 0 8px",
     margin: 0,
+
+    "@media screen and (min-width: 768px)": {
+      fontSize: "16px",
+      letterSpacing: "-0.03em",
+    },
   }),
   menu: (provided) => ({
     ...provided,
@@ -86,6 +107,10 @@ export const customStyles = {
       backgroundColor: "transparent",
     },
     cursor: "pointer",
+    "@media screen and (min-width: 768px)": {
+      fontSize: "16px",
+      letterSpacing: "-0.03em",
+    },
   }),
   indicatorSeparator: () => ({
     display: "none",

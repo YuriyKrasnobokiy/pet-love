@@ -36,7 +36,7 @@ export const SearchField = ({
   };
 
   return (
-    <FormStyled onSubmit={onSubmit}>
+    <FormStyled $isInFilters={isInFilters} onSubmit={onSubmit}>
       <InputStyled
         type="text"
         placeholder="Search"

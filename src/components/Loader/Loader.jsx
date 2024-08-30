@@ -10,7 +10,7 @@ const Loader = () => {
         const newProgress = prevProgress + 25;
         return newProgress > 100 ? 0 : newProgress;
       });
-    }, 500);
+    }, 200);
     return () => clearInterval(interval);
   }, []);
 

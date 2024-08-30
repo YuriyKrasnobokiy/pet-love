@@ -7,7 +7,7 @@ export const FormStyled = styled.form`
   width: 100%;
 
   @media screen and (min-width: 768px) {
-    width: 230px;
+    width: ${(props) => (props.$isInFilters ? "265px" : "230px")};
     margin: 0;
   }
 `;
@@ -45,6 +45,13 @@ export const InputStyled = styled.input`
         ? `${props.theme.colors.searchFiltersInputColor}`
         : `${props.theme.colors.searchInputColor}`};
     font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.03em;
+
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+      line-height: 1.25;
+    }
   }
 
   &:focus {

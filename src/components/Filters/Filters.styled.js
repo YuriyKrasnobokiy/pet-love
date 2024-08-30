@@ -15,6 +15,7 @@ export const FirstSelectsWrap = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 12px;
+  gap: 8px;
 `;
 
 export const RadioWrap = styled.div`
