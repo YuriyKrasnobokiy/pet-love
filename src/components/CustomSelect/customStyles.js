@@ -1,7 +1,7 @@
 export const customStyles = {
   control: (provided, state) => ({
     ...provided,
-    backgroundColor: "#f7f7fb",
+    backgroundColor: "#fff",
     borderRadius: "30px",
     fontWeight: 500,
     fontSize: "14px",
@@ -71,8 +71,8 @@ export const customStyles = {
     backgroundColor: "#fff",
     borderRadius: "14px",
     paddingRight: "10px",
-
-    // width: "auto",
+    border: "none", // Прибираємо бордер
+    boxShadow: "0 0 0 1px rgba(255, 255, 255, 0)", // Додаємо прозору тінь як заміну бордеру
   }),
   menuList: (provided) => ({
     ...provided,
@@ -118,12 +118,12 @@ export const customStyles = {
   dropdownIndicator: (provided, state) => ({
     ...provided,
     transform: state.selectProps.menuIsOpen ? "rotate(180deg)" : null,
-    padding: "0 12px 0 0",
+    padding: "0 14px",
     color: "#262626",
   }),
   indicatorsContainer: (provided) => ({
     ...provided,
+    padding: "0",
     cursor: "pointer",
-    padding: 0,
   }),
 };
