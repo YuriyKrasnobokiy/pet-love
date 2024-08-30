@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 import {
   selectIsLoading,
@@ -28,6 +28,7 @@ import {
 } from "./PetModal.styled";
 import AttentionImg from "../../assets/attention.png";
 import { useNavigate } from "react-router-dom";
+import { closeModal } from "../../redux/modal/modalSlice";
 
 export const PetModal = () => {
   const pet = useSelector(selectPet);
@@ -36,6 +37,7 @@ export const PetModal = () => {
   const navigate = useNavigate();
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
+  const dispatch = useDispatch();
 
   const handleAddToFavorites = () => {
     console.log("ADDED!");
@@ -45,9 +47,11 @@ export const PetModal = () => {
   };
   const handleLoginClick = () => {
     navigate("/login");
+    dispatch(closeModal());
   };
   const handleRegisterClick = () => {
     navigate("/register");
+    dispatch(closeModal());
   };
 
   return (
