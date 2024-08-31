@@ -18,13 +18,23 @@ export const RadioButton = styled.input.attrs({ type: "radio" })`
   height: 0;
   position: absolute;
 
-  &:checked + label {
+  &.pop-radio-btn + label {
     color: ${(props) => props.theme.colors.RadioBtnLabelColorHover};
     background-color: ${(props) =>
       props.theme.colors.RadioBtnLabelBGColorHover};
   }
 
-  &:checked + label ${LabelBtn} {
+  &.pop-radio-btn + label ${LabelBtn} {
+    display: block;
+  }
+
+  &.price-radio-btn + label {
+    color: ${(props) => props.theme.colors.RadioBtnLabelColorHover};
+    background-color: ${(props) =>
+      props.theme.colors.RadioBtnLabelBGColorHover};
+  }
+
+  &.price-radio-btn + label ${LabelBtn} {
     display: block;
   }
 `;
