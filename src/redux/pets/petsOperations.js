@@ -5,10 +5,10 @@ export const API_URL = "https://petlove.b.goit.study/api/";
 
 export const fetchPets = createAsyncThunk(
   "pets/fetchPets",
-  async ({ page, limit, filterWord }) => {
+  async ({ page, limit, filterWord, category, species, genders }) => {
     try {
       const response = await axios.get(
-        `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}`,
+        `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}&category=${category}&species=${species}&genders=${genders}`,
       );
       return response.data;
     } catch (error) {

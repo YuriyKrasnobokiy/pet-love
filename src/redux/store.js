@@ -1,10 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import mobMenuReducer from "./mob-menu/mobMenuSlice";
-import modalReducer from "./modal/modalSlice";
-import newsReducer from "./news/newsSlice";
-import friendsReducer from "./our-friends/friendsSlice";
-import petsReducer from "./pets/petsSlice";
-
 import {
   FLUSH,
   PAUSE,
@@ -17,6 +11,12 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { authReducer } from "./auth/authSlice";
+import filtersReducer from "./filters/filtersSlice";
+import friendsReducer from "./our-friends/friendsSlice";
+import mobMenuReducer from "./mob-menu/mobMenuSlice";
+import modalReducer from "./modal/modalSlice";
+import newsReducer from "./news/newsSlice";
+import petsReducer from "./pets/petsSlice";
 
 export const authPersistConfig = {
   key: "auth",
@@ -31,6 +31,7 @@ export const store = configureStore({
     friendsStore: friendsReducer,
     petsStore: petsReducer,
     newsStore: newsReducer,
+    filtersStore: filtersReducer,
     auth: persistReducer(authPersistConfig, authReducer),
   },
   middleware: (getDefaultMiddleware) =>

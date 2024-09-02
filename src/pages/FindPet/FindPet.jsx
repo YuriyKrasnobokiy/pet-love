@@ -25,6 +25,11 @@ import {
   fetchSpecies,
 } from "../../redux/pets/petsOperations";
 import { setFilterTerm, setPage } from "../../redux/pets/petsSlice";
+import {
+  selectCategory,
+  selectGender,
+  selectSpecie,
+} from "../../redux/filters/filtersSelectors";
 
 const FindPet = () => {
   const categories = useSelector(selectCategories);
@@ -38,12 +43,18 @@ const FindPet = () => {
   const pets = useSelector(selectPets);
   const species = useSelector(selectSpecies);
   const totalPages = useSelector(selectTotalPages);
+  const categoryTerm = useSelector(selectCategory);
+  console.log("categoryTerm: ", categoryTerm);
+  const specieTerm = useSelector(selectSpecie);
+  const genderTerm = useSelector(selectGender);
 
   useEffect(() => {
     dispatch(fetchGenders());
     dispatch(fetchCategories());
     dispatch(fetchSpecies());
-  }, []);
+    dispatch(setFilterTerm(""));
+    dispatch(setPage(1));
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(
@@ -51,9 +62,20 @@ const FindPet = () => {
         page: currentPage,
         limit: perPage,
         filterWord,
+        category: categoryTerm,
+        gender: genderTerm,
+        species: specieTerm,
       }),
     );
-  }, [dispatch, currentPage, perPage, filterWord]);
+  }, [
+    dispatch,
+    currentPage,
+    perPage,
+    filterWord,
+    categoryTerm,
+    genderTerm,
+    specieTerm,
+  ]);
 
   const handlePageChange = (newPage) => {
     dispatch(setPage(newPage));
@@ -62,6 +84,9 @@ const FindPet = () => {
         page: newPage,
         limit: perPage,
         filterWord,
+        category: categoryTerm,
+        gender: genderTerm,
+        species: specieTerm,
       }),
     );
   };
@@ -83,6 +108,7 @@ const FindPet = () => {
         onFilterChange={(term) => dispatch(setFilterTerm(term))}
         onFetch={(params) => dispatch(fetchPets(params))}
         onPageChange={(page) => dispatch(setPage(page))}
+        categoryTerm={categoryTerm}
       />
       <PetList pets={pets} />
       {totalPages > 1 ? (
