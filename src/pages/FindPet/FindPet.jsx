@@ -44,7 +44,6 @@ const FindPet = () => {
   const species = useSelector(selectSpecies);
   const totalPages = useSelector(selectTotalPages);
   const categoryTerm = useSelector(selectCategory);
-  console.log("categoryTerm: ", categoryTerm);
   const specieTerm = useSelector(selectSpecie);
   const genderTerm = useSelector(selectGender);
 
@@ -109,6 +108,7 @@ const FindPet = () => {
         onFetch={(params) => dispatch(fetchPets(params))}
         onPageChange={(page) => dispatch(setPage(page))}
         categoryTerm={categoryTerm}
+        specieTerm={specieTerm}
       />
       <PetList pets={pets} />
       {totalPages > 1 ? (

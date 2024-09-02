@@ -21,6 +21,7 @@ export const Filters = ({
   onFetch,
   onPageChange,
   categoryTerm,
+  specieTerm,
 }) => {
   const dispatch = useDispatch();
 
@@ -54,6 +55,7 @@ export const Filters = ({
             options={categories}
             placeholder="Categories"
             handleOptionChange={handleCategoryChange}
+            selectedOpt={categoryTerm}
           />
           {/* ////TO DO: write function to filter by gender on client side// */}
           <CustomSelect
@@ -66,6 +68,7 @@ export const Filters = ({
           options={species}
           placeholder="By type"
           handleOptionChange={handleSpecieChange}
+          selectedOpt={specieTerm}
         />
       </SelectsWrap>
       <RadioBtns />

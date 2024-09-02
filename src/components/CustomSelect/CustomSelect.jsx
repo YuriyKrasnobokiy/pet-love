@@ -1,8 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import { customStyles } from "./customStyles";
 
-export const CustomSelect = ({ options, placeholder, handleOptionChange }) => {
+export const CustomSelect = ({
+  options,
+  placeholder,
+  handleOptionChange,
+  selectedOpt,
+}) => {
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  useEffect(() => {
+    const initialOption = options.find((option) => option === selectedOpt);
+    if (initialOption) {
+      setSelectedOption({
+        value: initialOption,
+        label: initialOption.charAt(0).toUpperCase() + initialOption.slice(1),
+      });
+    }
+  }, [selectedOpt, options]);
+
   const selectOptions = [
     { value: "", label: "Show all" },
     ...options.map((option) => ({
@@ -11,13 +28,9 @@ export const CustomSelect = ({ options, placeholder, handleOptionChange }) => {
     })),
   ];
 
-  ////TO DO: fix bug with selected option////
-
-  const [selectedOption, setSelectedOption] = useState(selectOptions[0]);
-
   const handleChange = (selected) => {
-    handleOptionChange(selected);
     setSelectedOption(selected);
+    handleOptionChange(selected);
   };
 
   return (
