@@ -1,4 +1,4 @@
-import{u as n,j as t,a as h,c as o,r as w,f as p,L as f,e as b,g as x}from"./index-BPlzuOoa.js";import{S as j,P as u}from"./PaginationControls-CVD2D3Sg.js";const N=e=>e.newsStore.news,C=e=>e.newsStore.isLoading,S=e=>e.newsStore.error,y=e=>e.newsStore.filterTerm,P=e=>e.newsStore.page,v=e=>e.newsStore.perPage,k=e=>e.newsStore.totalPages,z=n.div`
+import{u as n,j as t,a as h,c as o,r as w,f as p,L as f,e as b,g as x}from"./index-BAxE8bi8.js";import{S as j,P as u}from"./PaginationControls-CMqYx772.js";const N=e=>e.newsStore.news,C=e=>e.newsStore.isLoading,S=e=>e.newsStore.error,y=e=>e.newsStore.filterTerm,P=e=>e.newsStore.page,v=e=>e.newsStore.perPage,k=e=>e.newsStore.totalPages,z=n.div`
   padding-top: 34px;
 
   @media screen and (min-width: 768px) {
