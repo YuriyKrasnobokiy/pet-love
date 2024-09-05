@@ -8,6 +8,11 @@ export const NotFoundTitle = styled.h3`
   text-align: center;
   color: ${(props) => props.theme.colors.ResultsNotFoundColor};
   padding: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const NotFoundAccentText = styled.span`
