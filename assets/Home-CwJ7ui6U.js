@@ -1,4 +1,4 @@
-import{u as o,a,b as r,c as p,s as d,r as m,d as c,j as t}from"./index-fK4-dpfV.js";const x=o.div`
+import{u as o,a,b as r,c as p,s as d,r as m,d as c,j as t}from"./index-DtvAajHw.js";const x=o.div`
   padding: 10px 20px 10px;
   @media screen and (min-width: 768px) {
     padding: 20px 32px 20px;
@@ -41,6 +41,7 @@ import{u as o,a,b as r,c as p,s as d,r as m,d as c,j as t}from"./index-fK4-dpfV.
     font-size: 90px;
     line-height: 0.96667;
     margin-bottom: 0;
+    width: 730px;
   }
 `,g=o.span`
   color: ${e=>e.theme.colors.HomeTextAccentColor};
@@ -72,4 +73,4 @@ import{u as o,a,b as r,c as p,s as d,r as m,d as c,j as t}from"./index-fK4-dpfV.
   @media screen and (min-width: 768px) {
     border-radius: 60px;
   }
-`,u="/pet-love/assets/home-img-2x-mob-BdNO4UoT.jpg",j="/pet-love/assets/home-img-2x-tablet-DXLqc3sb.jpg",w="/pet-love/assets/home-img-2x-desc-CoJHKEcj.jpg",H=()=>{const e=a(),i=r(),n=p(d);return m.useEffect(()=>{n&&e(c())},[e,n]),t.jsxs(x,{className:"container",children:[t.jsxs(l,{children:[t.jsxs(h,{children:["Take good ",t.jsx(g,{children:"care"})," of your small pets"]}),t.jsx(f,{children:"Choosing a pet for your home is a choice that is meant to enrich your life with immeasurable joy and tenderness."})]}),t.jsx("div",{children:i==="desktop"?t.jsx(s,{src:w,alt:"pet"}):i==="tablet"?t.jsx(s,{src:j,alt:"pet"}):t.jsx(s,{src:u,alt:"pet"})})]})};export{H as default};
+`,u="/pet-love/assets/home-img-2x-mob-BdNO4UoT.jpg",w="/pet-love/assets/home-img-2x-tablet-DXLqc3sb.jpg",j="/pet-love/assets/home-img-2x-desc-CoJHKEcj.jpg",H=()=>{const e=a(),i=r(),n=p(d);return m.useEffect(()=>{n&&e(c())},[e,n]),t.jsxs(x,{className:"container",children:[t.jsxs(l,{children:[t.jsxs(h,{children:["Take good ",t.jsx(g,{children:"care"})," of your small pets"]}),t.jsx(f,{children:"Choosing a pet for your home is a choice that is meant to enrich your life with immeasurable joy and tenderness."})]}),t.jsx("div",{children:i==="desktop"?t.jsx(s,{src:j,alt:"pet"}):i==="tablet"?t.jsx(s,{src:w,alt:"pet"}):t.jsx(s,{src:u,alt:"pet"})})]})};export{H as default};
