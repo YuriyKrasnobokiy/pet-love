@@ -22,6 +22,7 @@ export const Filters = ({
   onPageChange,
   categoryTerm,
   specieTerm,
+  genderTerm,
 }) => {
   const dispatch = useDispatch();
 
@@ -37,7 +38,7 @@ export const Filters = ({
 
   const handleGenderChange = (selectedOption) => {
     dispatch(setGender(selectedOption.value));
-    dispatch(setPage(1));
+    // dispatch(setPage(1));
   };
 
   return (
@@ -60,8 +61,9 @@ export const Filters = ({
           {/* ////TO DO: write function to filter by gender on client side// */}
           <CustomSelect
             options={genders}
-            placeholder="By genders"
+            placeholder="By gender"
             handleOptionChange={handleGenderChange}
+            selectedOpt={genderTerm}
           />
         </FirstSelectsWrap>
         <CustomSelect

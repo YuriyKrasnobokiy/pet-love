@@ -30,6 +30,7 @@ import {
   selectGender,
   selectSpecie,
 } from "../../redux/filters/filtersSelectors";
+import { ResultsNotFound } from "../../components/ResultsNotFound/ResultsNotFound";
 
 const FindPet = () => {
   const categories = useSelector(selectCategories);
@@ -40,12 +41,18 @@ const FindPet = () => {
   const genders = useSelector(selectGenders);
   const isLoading = useSelector(selectIsLoading);
   const perPage = useSelector(selectPerPage);
+  const genderTerm = useSelector(selectGender);
   const pets = useSelector(selectPets);
   const species = useSelector(selectSpecies);
   const totalPages = useSelector(selectTotalPages);
   const categoryTerm = useSelector(selectCategory);
   const specieTerm = useSelector(selectSpecie);
-  const genderTerm = useSelector(selectGender);
+
+  const filteredPets = genderTerm
+    ? pets.filter((pet) => pet.sex === genderTerm)
+    : pets;
+  console.log("filteredPets: ", filteredPets);
+  console.log("pets: ", pets);
 
   useEffect(() => {
     dispatch(fetchGenders());
@@ -62,8 +69,8 @@ const FindPet = () => {
         limit: perPage,
         filterWord,
         category: categoryTerm,
-        gender: genderTerm,
         species: specieTerm,
+        sex: genderTerm,
       }),
     );
   }, [
@@ -72,8 +79,8 @@ const FindPet = () => {
     perPage,
     filterWord,
     categoryTerm,
-    genderTerm,
     specieTerm,
+    genderTerm,
   ]);
 
   const handlePageChange = (newPage) => {
@@ -84,7 +91,7 @@ const FindPet = () => {
         limit: perPage,
         filterWord,
         category: categoryTerm,
-        gender: genderTerm,
+        sex: genderTerm,
         species: specieTerm,
       }),
     );
@@ -109,15 +116,27 @@ const FindPet = () => {
         onPageChange={(page) => dispatch(setPage(page))}
         categoryTerm={categoryTerm}
         specieTerm={specieTerm}
+        genderTerm={genderTerm}
       />
-      <PetList pets={pets} />
-      {totalPages > 1 ? (
-        <PaginationControls
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
-      ) : null}
+      {/* {pets.length !== 0 ? ( */}
+      {filteredPets.length !== 0 ? (
+        <>
+          {/* <PetList pets={pets} /> */}
+          <PetList pets={filteredPets} />
+          {/* {totalPages > 1 ? ( */}
+          {genderTerm !== "" ? (
+            filteredPets.length > perPage
+          ) : totalPages > 1 ? (
+            <PaginationControls
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          ) : null}
+        </>
+      ) : (
+        <ResultsNotFound />
+      )}
     </PetsWrap>
   );
 };

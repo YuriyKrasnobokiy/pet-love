@@ -115,6 +115,9 @@ export const themes = {
       RadioBtnLabelBGColor: "#fff",
       RadioBtnLabelBGColorHover: "#F6B83D",
 
+      ResultsNotFoundColor: "#262626",
+      ResultsNotFoundAccentColor: "#f6b83d",
+
       white: "#fff",
       IconStarAccentColor: "#ffc531",
     },
@@ -235,6 +238,9 @@ export const themes = {
       RadioBtnLabelColorHover: "#fff",
       RadioBtnLabelBGColor: "#fff",
       RadioBtnLabelBGColorHover: "#F6B83D",
+
+      ResultsNotFoundColor: "rgba(255, 255, 255, 0.7)",
+      ResultsNotFoundAccentColor: "#f6b83d",
 
       white: "#fff",
       IconStarAccentColor: "#ffc531",
