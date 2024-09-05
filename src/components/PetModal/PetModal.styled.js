@@ -104,10 +104,13 @@ export const PetModalPopularityList = styled.ul`
 
 export const PetModalPopularityItem = styled.li`
   color: ${(props) => props.theme.colors.PetModalRatingItemColor};
+`;
 
-  &:first-child {
+/* &:first-child {
     color: ${(props) => props.theme.colors.IconStarAccentColor};
-  }
+  } */
+export const PetModalPopularityAccentItem = styled.li`
+  color: ${(props) => props.theme.colors.IconStarAccentColor};
 `;
 
 export const PetModalPopularityNumber = styled.p`

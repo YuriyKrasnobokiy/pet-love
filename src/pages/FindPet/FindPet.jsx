@@ -40,7 +40,6 @@ const FindPet = () => {
   const dispatch = useDispatch();
   const error = useSelector(selectError);
   const filterWord = useSelector(selectFilterTerm);
-  console.log("filterWord: ", filterWord);
   const genders = useSelector(selectGenders);
   const isLoading = useSelector(selectIsLoading);
   const perPage = useSelector(selectPerPage);

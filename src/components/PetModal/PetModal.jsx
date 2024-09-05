@@ -29,6 +29,7 @@ import {
 import AttentionImg from "../../assets/attention.png";
 import { useNavigate } from "react-router-dom";
 import { closeModal } from "../../redux/modal/modalSlice";
+import { PetStars } from "../PetStars/PetStars";
 
 export const PetModal = () => {
   const pet = useSelector(selectPet);
@@ -76,11 +77,7 @@ export const PetModal = () => {
             <>
               <PetModalPopularityWrap>
                 <PetModalPopularityList>
-                  {stars.map((star, index) => (
-                    <PetModalPopularityItem key={index}>
-                      <Icon name={star} width="16" height="16" />
-                    </PetModalPopularityItem>
-                  ))}
+                  <PetStars popularity={pet.popularity} />
                 </PetModalPopularityList>
                 <PetModalPopularityNumber>
                   {pet.popularity}
