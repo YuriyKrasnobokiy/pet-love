@@ -4,6 +4,8 @@ const initialState = {
   category: "",
   gender: "",
   specie: "",
+  expensive: null,
+  popular: null,
 };
 
 const filtersSlice = createSlice({
@@ -19,8 +21,15 @@ const filtersSlice = createSlice({
     setSpecie(state, action) {
       state.specie = action.payload;
     },
+    setPopular(state, action) {
+      state.popular = action.payload;
+    },
+    setExpensive(state, action) {
+      state.expensive = action.payload;
+    },
   },
 });
 
-export const { setCategory, setSpecie, setGender } = filtersSlice.actions;
+export const { setCategory, setSpecie, setGender, setPopular, setExpensive } =
+  filtersSlice.actions;
 export default filtersSlice.reducer;

@@ -28,6 +28,8 @@ import { setFilterTerm, setPage } from "../../redux/pets/petsSlice";
 import {
   selectCategory,
   selectGender,
+  selectIsExpensive,
+  selectIsPopular,
   selectSpecie,
 } from "../../redux/filters/filtersSelectors";
 import { ResultsNotFound } from "../../components/ResultsNotFound/ResultsNotFound";
@@ -38,6 +40,7 @@ const FindPet = () => {
   const dispatch = useDispatch();
   const error = useSelector(selectError);
   const filterWord = useSelector(selectFilterTerm);
+  console.log("filterWord: ", filterWord);
   const genders = useSelector(selectGenders);
   const isLoading = useSelector(selectIsLoading);
   const perPage = useSelector(selectPerPage);
@@ -47,12 +50,12 @@ const FindPet = () => {
   const totalPages = useSelector(selectTotalPages);
   const categoryTerm = useSelector(selectCategory);
   const specieTerm = useSelector(selectSpecie);
+  const isExpensive = useSelector(selectIsExpensive);
+  const isPopular = useSelector(selectIsPopular);
 
   const filteredPets = genderTerm
     ? pets.filter((pet) => pet.sex === genderTerm)
     : pets;
-  console.log("filteredPets: ", filteredPets);
-  console.log("pets: ", pets);
 
   useEffect(() => {
     dispatch(fetchGenders());
@@ -71,6 +74,8 @@ const FindPet = () => {
         category: categoryTerm,
         species: specieTerm,
         sex: genderTerm,
+        isPopular,
+        isExpensive,
       }),
     );
   }, [
@@ -81,20 +86,25 @@ const FindPet = () => {
     categoryTerm,
     specieTerm,
     genderTerm,
+    isPopular,
+    isExpensive,
   ]);
 
   const handlePageChange = (newPage) => {
     dispatch(setPage(newPage));
-    dispatch(
-      fetchPets({
-        page: newPage,
-        limit: perPage,
-        filterWord,
-        category: categoryTerm,
-        sex: genderTerm,
-        species: specieTerm,
-      }),
-    );
+    // dispatch(
+    //   fetchPets({
+    //     page: newPage,
+    //     limit: perPage,
+    //     filterWord,
+    //     category: categoryTerm,
+    //     sex: genderTerm,
+    //     species: specieTerm,
+    //     sex: genderTerm,
+    //     isPopular,
+    //     isExpensive,
+    //   }),
+    // );
   };
 
   return isLoading ? (
@@ -106,6 +116,7 @@ const FindPet = () => {
       <PetsHeaderWrap>
         <PetsTitle className="title">Find your favorite pet</PetsTitle>
       </PetsHeaderWrap>
+
       <Filters
         genders={genders}
         categories={categories}

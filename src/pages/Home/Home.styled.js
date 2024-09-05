@@ -47,6 +47,7 @@ export const HomeText = styled.h1`
     font-size: 90px;
     line-height: 0.96667;
     margin-bottom: 0;
+    width: 730px;
   }
 `;
 

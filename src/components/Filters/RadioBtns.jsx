@@ -1,25 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { RadioWrap } from "./Filters.styled";
 import { CustomRadioButton } from "../CustomRadioButton/CustomRadioButton";
+import { setExpensive, setPopular } from "../../redux/filters/filtersSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectIsExpensive,
+  selectIsPopular,
+} from "../../redux/filters/filtersSelectors";
 
 export const RadioBtns = () => {
-  const [popRadioBtn, setPopRadioBtn] = useState(null);
-  const [priceRadioBtn, setPriceRadioBtn] = useState(null);
+  const isExpensive = useSelector(selectIsExpensive);
+  const isPopular = useSelector(selectIsPopular);
+  const dispatch = useDispatch();
 
   const handlePopRadioBtnClick = (label) => {
-    setPopRadioBtn(label);
+    dispatch(setPopular(label.toLowerCase() !== "popular"));
   };
 
   const handlePopDeleteClick = () => {
-    setPopRadioBtn(null);
+    dispatch(setPopular(null));
   };
 
   const handlePriceRadioBtnClick = (label) => {
-    setPriceRadioBtn(label);
+    dispatch(setExpensive(label.toLowerCase() === "expensive"));
   };
 
   const handlePriceDeleteClick = () => {
-    setPriceRadioBtn(null);
+    dispatch(setExpensive(null));
   };
 
   return (
@@ -30,7 +37,7 @@ export const RadioBtns = () => {
         id="0"
         name="pop"
         label="Popular"
-        className={popRadioBtn === "Popular" ? "pop-radio-btn" : ""}
+        className={isPopular === false ? "pop-radio-btn" : ""}
       />
       <CustomRadioButton
         handleDeleteClick={handlePopDeleteClick}
@@ -38,7 +45,7 @@ export const RadioBtns = () => {
         id="1"
         name="pop"
         label="Unpopular"
-        className={popRadioBtn === "Unpopular" ? "pop-radio-btn" : ""}
+        className={isPopular === true ? "pop-radio-btn" : ""}
       />
       <CustomRadioButton
         handleDeleteClick={handlePriceDeleteClick}
@@ -46,7 +53,7 @@ export const RadioBtns = () => {
         id="2"
         name="price"
         label="Cheap"
-        className={priceRadioBtn === "Cheap" ? "price-radio-btn" : ""}
+        className={isExpensive === false ? "price-radio-btn" : ""}
       />
       <CustomRadioButton
         handleDeleteClick={handlePriceDeleteClick}
@@ -54,7 +61,7 @@ export const RadioBtns = () => {
         id="3"
         name="price"
         label="Expensive"
-        className={priceRadioBtn === "Expensive" ? "price-radio-btn" : ""}
+        className={isExpensive === true ? "price-radio-btn" : ""}
       />
     </RadioWrap>
   );

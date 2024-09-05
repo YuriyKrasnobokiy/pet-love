@@ -5,10 +5,29 @@ export const API_URL = "https://petlove.b.goit.study/api/";
 
 export const fetchPets = createAsyncThunk(
   "pets/fetchPets",
-  async ({ page, limit, filterWord, category, species, gender }) => {
+  async ({
+    page,
+    limit,
+    filterWord,
+    category,
+    species,
+    isPopular,
+    isExpensive,
+  }) => {
     try {
+      console.log("filterWord: ", filterWord);
+      // const response = await axios.get(
+      //   `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}&category=${category}&species=${species}&byPopularity=${isPopular}&byExpensive=${isExpensive}`,
+      // );
+      // const response = await axios.get(
+      //   `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}&category=${category}&species=${species}&byPopularity=${isPopular}&byExpensive=${isExpensive}`,
+      // );
       const response = await axios.get(
-        `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}&category=${category}&species=${species}&sex=${gender}`,
+        `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}&category=${
+          category || ""
+        }&species=${species || ""}&byPopularity=${
+          isPopular ? "true" : "false"
+        }&byExpensive=${isExpensive ? "true" : "false"}`,
       );
       return response.data;
     } catch (error) {
