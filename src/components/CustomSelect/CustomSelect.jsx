@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import { customStyles } from "./customStyles";
+import { useTheme } from "styled-components";
 
 export const CustomSelect = ({
   options,
@@ -8,6 +9,7 @@ export const CustomSelect = ({
   handleOptionChange,
   selectedOpt,
 }) => {
+  const theme = useTheme();
   const [selectedOption, setSelectedOption] = useState(null);
 
   useEffect(() => {
@@ -38,7 +40,8 @@ export const CustomSelect = ({
       value={selectedOption}
       onChange={handleChange}
       options={selectOptions}
-      styles={customStyles}
+      // styles={customStyles}
+      styles={customStyles(theme)}
       isSearchable={false}
       placeholder={placeholder}
     />

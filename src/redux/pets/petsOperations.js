@@ -15,7 +15,7 @@ export const fetchPets = createAsyncThunk(
     isExpensive,
   }) => {
     try {
-      console.log("isExpensive: ", isExpensive);
+      // console.log("isExpensive: ", isExpensive);
       // const response = await axios.get(
       //   `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}&category=${category}&species=${species}`,
       // );

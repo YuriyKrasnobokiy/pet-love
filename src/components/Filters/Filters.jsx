@@ -6,7 +6,12 @@ import {
 } from "../../redux/filters/filtersSlice";
 import { CustomSelect } from "../CustomSelect/CustomSelect";
 import SearchField from "../SearchField/SearchField";
-import { FiltersWrap, FirstSelectsWrap, SelectsWrap } from "./Filters.styled";
+import {
+  FiltersWrap,
+  FirstSelectsWrap,
+  SearchFieldsWrap,
+  SelectsWrap,
+} from "./Filters.styled";
 import { RadioBtns } from "./RadioBtns";
 
 import { useDispatch } from "react-redux";
@@ -43,36 +48,37 @@ export const Filters = ({
 
   return (
     <FiltersWrap>
-      <SearchField
-        onFilterChange={onFilterChange}
-        onFetch={onFetch}
-        onPageChange={onPageChange}
-        filterWord={filterTearm}
-        isInFilters
-      />
-      <SelectsWrap>
-        <FirstSelectsWrap>
-          <CustomSelect
-            options={categories}
-            placeholder="Categories"
-            handleOptionChange={handleCategoryChange}
-            selectedOpt={categoryTerm}
-          />
-          {/* ////TO DO: write function to filter by gender on client side// */}
-          <CustomSelect
-            options={genders}
-            placeholder="By gender"
-            handleOptionChange={handleGenderChange}
-            selectedOpt={genderTerm}
-          />
-        </FirstSelectsWrap>
-        <CustomSelect
-          options={species}
-          placeholder="By type"
-          handleOptionChange={handleSpecieChange}
-          selectedOpt={specieTerm}
+      <SearchFieldsWrap>
+        <SearchField
+          onFilterChange={onFilterChange}
+          onFetch={onFetch}
+          onPageChange={onPageChange}
+          filterWord={filterTearm}
+          isInFilters
         />
-      </SelectsWrap>
+        <SelectsWrap>
+          <FirstSelectsWrap>
+            <CustomSelect
+              options={categories}
+              placeholder="Categories"
+              handleOptionChange={handleCategoryChange}
+              selectedOpt={categoryTerm}
+            />
+            <CustomSelect
+              options={genders}
+              placeholder="By gender"
+              handleOptionChange={handleGenderChange}
+              selectedOpt={genderTerm}
+            />
+          </FirstSelectsWrap>
+          <CustomSelect
+            options={species}
+            placeholder="By type"
+            handleOptionChange={handleSpecieChange}
+            selectedOpt={specieTerm}
+          />
+        </SelectsWrap>
+      </SearchFieldsWrap>
       <RadioBtns />
     </FiltersWrap>
   );

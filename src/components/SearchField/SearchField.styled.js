@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FormStyled = styled.form`
   position: relative;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: ${(props) => (props.$isInFilters ? "12px" : "20px")};
   width: 100%;
 
   @media screen and (min-width: 768px) {
@@ -32,6 +32,7 @@ export const InputStyled = styled.input`
     props.$isInFilters
       ? `${props.theme.colors.searchFiltersInputColor}`
       : `${props.theme.colors.searchInputColor}`};
+  transition: border-color 300ms ease-in-out;
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.25;
@@ -70,7 +71,10 @@ export const FilterBtn = styled.button`
   right: 12px;
   position: absolute;
   background-color: transparent;
-  color: ${(props) => props.theme.colors.searchInputIconColor};
+  color: ${(props) =>
+    props.$isInFilters
+      ? `${props.theme.colors.searchFiltersInputIconColor}`
+      : `${props.theme.colors.searchInputIconColor}`};
 
   @media screen and (min-width: 768px) {
     top: 15px;

@@ -1,7 +1,7 @@
-export const customStyles = {
+export const customStyles = (theme) => ({
   control: (provided, state) => ({
     ...provided,
-    backgroundColor: "#fff",
+    backgroundColor: theme.colors.SelectControlBGColor,
     borderRadius: "30px",
     fontWeight: 500,
     fontSize: "14px",
@@ -9,8 +9,9 @@ export const customStyles = {
     boxShadow: state.isFocused ? "none" : "none",
     width: "100%",
     height: "42px",
-    borderColor: "transparent",
+    borderColor: theme.colors.SelectControlBorderColor,
     cursor: "pointer",
+    transition: "borderColor 0.3s ease",
 
     "@media screen and (min-width: 768px)": {
       fontSize: "16px",
@@ -19,7 +20,7 @@ export const customStyles = {
     },
 
     "&:hover": {
-      borderColor: "transparent",
+      borderColor: theme.colors.SelectControlBorderHoverColor,
     },
   }),
   container: (provided) => ({
@@ -28,7 +29,7 @@ export const customStyles = {
   }),
   input: (provided) => ({
     ...provided,
-    color: "#121417",
+    color: theme.colors.SelectInputColor,
     fontSize: "14px",
     margin: 0,
     padding: 0,
@@ -40,7 +41,7 @@ export const customStyles = {
   }),
   singleValue: (provided) => ({
     ...provided,
-    color: "#262626",
+    color: theme.colors.SelectSingleValueColor,
     fontWeight: 500,
     fontSize: "14px",
     lineHeight: 1.25,
@@ -54,7 +55,7 @@ export const customStyles = {
   }),
   placeholder: (provided) => ({
     ...provided,
-    color: "#262626",
+    color: theme.colors.SelectInputPlaceholderColor,
     fontWeight: 500,
     fontSize: "14px",
     lineHeight: 1.25,
@@ -68,10 +69,10 @@ export const customStyles = {
   }),
   menu: (provided) => ({
     ...provided,
-    backgroundColor: "#fff",
+    backgroundColor: theme.colors.SelectMenuBGColor,
     borderRadius: "14px",
     paddingRight: "10px",
-    border: "none", // Прибираємо бордер
+    border: theme.colors.SelectMenuBorderColor,
     boxShadow: "0 0 0 1px rgba(255, 255, 255, 0)", // Додаємо прозору тінь як заміну бордеру
   }),
   menuList: (provided) => ({
@@ -82,7 +83,7 @@ export const customStyles = {
       paddingRight: "8px",
     },
     "&::-webkit-scrollbar-thumb": {
-      backgroundColor: "#f3f3f3",
+      backgroundColor: theme.colors.SelectScrollThumbBGColor,
       borderRadius: "10px",
       margin: "14px 8px",
     },
@@ -94,7 +95,9 @@ export const customStyles = {
   }),
   option: (provided, state) => ({
     ...provided,
-    color: state.isFocused ? "#f6b83d" : "#7d7d7d",
+    color: state.isFocused
+      ? theme.colors.SelectOptionFocusColor
+      : theme.colors.SelectOptionColor,
     backgroundColor: state.isFocused
       ? "transparent"
       : state.isSelected
@@ -119,11 +122,11 @@ export const customStyles = {
     ...provided,
     transform: state.selectProps.menuIsOpen ? "rotate(180deg)" : null,
     padding: "0 14px",
-    color: "#262626",
+    color: theme.colors.SelectDropdownIndicatorColor,
   }),
   indicatorsContainer: (provided) => ({
     ...provided,
     padding: "0",
     cursor: "pointer",
   }),
-};
+});

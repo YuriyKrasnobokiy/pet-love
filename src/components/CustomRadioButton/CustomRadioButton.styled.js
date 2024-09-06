@@ -5,7 +5,7 @@ export const RadioWrap = styled.div``;
 export const LabelBtn = styled.button`
   display: none;
   background-color: transparent;
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.RadioBtnLabelColorHover};
   width: 18px;
   height: 18px;
 `;
@@ -50,12 +50,18 @@ export const RadioLabel = styled.label`
   color: ${(props) => props.theme.colors.RadioBtnLabelColor};
   background-color: ${(props) => props.theme.colors.RadioBtnLabelBGColor};
   cursor: pointer;
-  transition: all 300ms ease-in-out;
+  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 
   &:hover {
     color: ${(props) => props.theme.colors.RadioBtnLabelColorHover};
     background-color: ${(props) =>
       props.theme.colors.RadioBtnLabelBGColorHover};
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 14px;
   }
 `;
 
