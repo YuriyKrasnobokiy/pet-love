@@ -1,12 +1,19 @@
 import React from "react";
-import { RadioWrap } from "./Filters.styled";
+import { RadioWrap, ResetBtn } from "./Filters.styled";
 import { CustomRadioButton } from "../CustomRadioButton/CustomRadioButton";
-import { setExpensive, setPopular } from "../../redux/filters/filtersSlice";
+import {
+  setCategory,
+  setExpensive,
+  setGender,
+  setPopular,
+  setSpecie,
+} from "../../redux/filters/filtersSlice";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectIsExpensive,
   selectIsPopular,
 } from "../../redux/filters/filtersSelectors";
+import { setFilterTerm, setPage } from "../../redux/pets/petsSlice";
 
 export const RadioBtns = () => {
   const isExpensive = useSelector(selectIsExpensive);
@@ -27,6 +34,16 @@ export const RadioBtns = () => {
 
   const handlePriceDeleteClick = () => {
     dispatch(setExpensive(null));
+  };
+
+  const handleResetClick = () => {
+    dispatch(setExpensive(null));
+    dispatch(setPopular(null));
+    dispatch(setFilterTerm(""));
+    dispatch(setPage(1));
+    dispatch(setCategory(""));
+    dispatch(setGender(""));
+    dispatch(setSpecie(""));
   };
 
   return (
@@ -63,6 +80,9 @@ export const RadioBtns = () => {
         label="Expensive"
         className={isExpensive === true ? "price-radio-btn" : ""}
       />
+      <ResetBtn type="button" onClick={handleResetClick}>
+        Reset Filters
+      </ResetBtn>
     </RadioWrap>
   );
 };

@@ -42,3 +42,29 @@ export const RadioWrap = styled.div`
   padding-top: 20px;
   border-top: 1px solid ${(props) => props.theme.colors.RadioBtnsBorderColor};
 `;
+
+export const ResetBtn = styled.button`
+  padding: 12px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  border-radius: 30px;
+  color: ${(props) => props.theme.colors.RadioBtnLabelColor};
+  background-color: ${(props) => props.theme.colors.RadioBtnLabelBGColor};
+  cursor: pointer;
+  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.RadioBtnLabelColorHover};
+    background-color: ${(props) =>
+      props.theme.colors.RadioBtnLabelBGColorHover};
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 14px;
+  }
+`;
