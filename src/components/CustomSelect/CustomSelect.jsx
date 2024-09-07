@@ -40,7 +40,6 @@ export const CustomSelect = ({
       value={selectedOption}
       onChange={handleChange}
       options={selectOptions}
-      // styles={customStyles}
       styles={customStyles(theme)}
       isSearchable={false}
       placeholder={placeholder}

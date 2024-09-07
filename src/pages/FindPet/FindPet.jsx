@@ -30,6 +30,7 @@ import {
   selectGender,
   selectIsExpensive,
   selectIsPopular,
+  selectLocationId,
   selectSpecie,
 } from "../../redux/filters/filtersSelectors";
 import { ResultsNotFound } from "../../components/ResultsNotFound/ResultsNotFound";
@@ -45,12 +46,14 @@ const FindPet = () => {
   const perPage = useSelector(selectPerPage);
   const genderTerm = useSelector(selectGender);
   const pets = useSelector(selectPets);
+
   const species = useSelector(selectSpecies);
   const totalPages = useSelector(selectTotalPages);
   const categoryTerm = useSelector(selectCategory);
   const specieTerm = useSelector(selectSpecie);
   const isExpensive = useSelector(selectIsExpensive);
   const isPopular = useSelector(selectIsPopular);
+  const locationId = useSelector(selectLocationId);
 
   const filteredPets = genderTerm
     ? pets.filter((pet) => pet.sex === genderTerm)
@@ -75,6 +78,8 @@ const FindPet = () => {
         sex: genderTerm,
         isPopular,
         isExpensive,
+        locationId,
+        location,
       }),
     );
   }, [
@@ -87,6 +92,8 @@ const FindPet = () => {
     genderTerm,
     isPopular,
     isExpensive,
+    locationId,
+    location,
   ]);
 
   const handlePageChange = (newPage) => {

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   fetchCategories,
+  fetchCities,
   fetchGenders,
   fetchPets,
   fetchPetsById,
@@ -19,6 +20,7 @@ const initialState = {
   pets: [],
   species: [],
   totalPages: 0,
+  cities: [],
 };
 
 const petsSlice = createSlice({
@@ -55,6 +57,10 @@ const petsSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
+      .addCase(fetchCities.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
 
       .addCase(fetchPets.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -77,6 +83,10 @@ const petsSlice = createSlice({
         state.isLoading = false;
         state.species = action.payload;
       })
+      .addCase(fetchCities.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.cities = action.payload;
+      })
 
       .addCase(fetchPets.rejected, (state, action) => {
         state.isLoading = false;
@@ -95,6 +105,10 @@ const petsSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(fetchSpecies.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+      .addCase(fetchCities.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
       });

@@ -2,6 +2,8 @@ import React from "react";
 import {
   setCategory,
   setGender,
+  setLocation,
+  setLocationId,
   setSpecie,
 } from "../../redux/filters/filtersSlice";
 import { CustomSelect } from "../CustomSelect/CustomSelect";
@@ -14,8 +16,13 @@ import {
 } from "./Filters.styled";
 import { RadioBtns } from "./RadioBtns";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setPage } from "../../redux/pets/petsSlice";
+import {
+  selectLocation,
+  selectLocationId,
+} from "../../redux/filters/filtersSelectors";
+import { LocationSelect } from "../LocationSelect/LocationSelect";
 
 export const Filters = ({
   genders,
@@ -30,6 +37,9 @@ export const Filters = ({
   genderTerm,
 }) => {
   const dispatch = useDispatch();
+  const location = useSelector(selectLocation);
+  const locationID = useSelector(selectLocationId);
+  console.log("locationID: ", locationID);
 
   const handleCategoryChange = (selectedOption) => {
     dispatch(setCategory(selectedOption.value));
@@ -44,6 +54,11 @@ export const Filters = ({
   const handleGenderChange = (selectedOption) => {
     dispatch(setGender(selectedOption.value));
     // dispatch(setPage(1));
+  };
+  const handleLocationChange = (selectedOption) => {
+    dispatch(setLocationId(selectedOption.value));
+    dispatch(setLocation(selectedOption));
+    dispatch(setPage(1));
   };
 
   return (
@@ -76,6 +91,10 @@ export const Filters = ({
             placeholder="By type"
             handleOptionChange={handleSpecieChange}
             selectedOpt={specieTerm}
+          />
+          <LocationSelect
+            handleOptionChange={handleLocationChange}
+            selectedOpt={location}
           />
         </SelectsWrap>
       </SearchFieldsWrap>

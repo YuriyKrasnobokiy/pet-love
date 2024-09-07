@@ -6,6 +6,8 @@ const initialState = {
   specie: "",
   expensive: null,
   popular: null,
+  locationId: "",
+  location: "",
 };
 
 const filtersSlice = createSlice({
@@ -27,9 +29,22 @@ const filtersSlice = createSlice({
     setExpensive(state, action) {
       state.expensive = action.payload;
     },
+    setLocationId(state, action) {
+      state.locationId = action.payload;
+    },
+    setLocation(state, action) {
+      state.location = action.payload;
+    },
   },
 });
 
-export const { setCategory, setSpecie, setGender, setPopular, setExpensive } =
-  filtersSlice.actions;
+export const {
+  setCategory,
+  setSpecie,
+  setGender,
+  setPopular,
+  setExpensive,
+  setLocationId,
+  setLocation,
+} = filtersSlice.actions;
 export default filtersSlice.reducer;

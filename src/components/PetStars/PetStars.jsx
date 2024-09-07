@@ -13,7 +13,6 @@ export const PetStars = ({ popularity }) => {
     popularity < 500
       ? 1
       : Math.min(Math.round(popularity / oneStar), totalStars);
-  console.log("startsToShow: ", startsToShow);
   let stars = [];
   for (let i = 0; i < startsToShow; i++) {
     stars.push(
@@ -30,8 +29,6 @@ export const PetStars = ({ popularity }) => {
       </PetModalPopularityItem>,
     );
   }
-
-  console.log("stars: ", stars);
 
   return <PetModalPopularityList>{stars}</PetModalPopularityList>;
 };

@@ -9,3 +9,4 @@ export const selectGenders = (state) => state.petsStore.genders;
 export const selectCategories = (state) => state.petsStore.categories;
 export const selectSpecies = (state) => state.petsStore.species;
 export const selectFilterTerm = (state) => state.petsStore.filterTerm;
+export const selectCities = (state) => state.petsStore.cities;

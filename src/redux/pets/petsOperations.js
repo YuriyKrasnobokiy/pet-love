@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const API_URL = "https://petlove.b.goit.study/api/";
@@ -13,6 +13,7 @@ export const fetchPets = createAsyncThunk(
     species,
     isPopular,
     isExpensive,
+    locationId,
   }) => {
     try {
       // console.log("isExpensive: ", isExpensive);
@@ -28,12 +29,17 @@ export const fetchPets = createAsyncThunk(
       //   }&byPrice=${isExpensive ? "false" : "true"}`,
       // );
       const response = await axios.get(
-        `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}&category=${
-          category || ""
-        }&species=${species || ""}&byPopularity=${
+        `${API_URL}notices?page=${page}&limit=${limit}&keyword=${
+          filterWord || ""
+        }&category=${category || ""}&species=${species || ""}&byPopularity=${
           isPopular ? "true" : "false"
+        }&locationId=${locationId || ""}&${
+          category === "sell"
+            ? `&byPrice=${isExpensive ? "true" : "false"}`
+            : ""
         }`,
       );
+
       return response.data;
     } catch (error) {
       console.error("Error fetching pets:", error);
@@ -81,6 +87,16 @@ export const fetchCategories = createAsyncThunk(
 export const fetchSpecies = createAsyncThunk("pets/fetchSpecies", async () => {
   try {
     const response = await axios.get(`${API_URL}notices/species`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching species:", error);
+    throw error;
+  }
+});
+
+export const fetchCities = createAsyncThunk("pets/fetchCities", async () => {
+  try {
+    const response = await axios.get(`${API_URL}cities`);
     return response.data;
   } catch (error) {
     console.error("Error fetching species:", error);

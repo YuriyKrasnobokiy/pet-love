@@ -5,6 +5,8 @@ import {
   setCategory,
   setExpensive,
   setGender,
+  setLocation,
+  setLocationId,
   setPopular,
   setSpecie,
 } from "../../redux/filters/filtersSlice";
@@ -44,6 +46,8 @@ export const RadioBtns = () => {
     dispatch(setCategory(""));
     dispatch(setGender(""));
     dispatch(setSpecie(""));
+    dispatch(setLocationId(""));
+    dispatch(setLocation(""));
   };
 
   return (
