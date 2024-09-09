@@ -6,29 +6,34 @@ import { useTheme } from "styled-components";
 import { API_URL } from "../../redux/pets/petsOperations";
 import { customStyles } from "../CustomSelect/customStyles";
 import Icon from "../Icon/Icon";
-import { useDeviceType } from "../../hooks/useDeviceType";
+import { LocationSelectIconWrap } from "./LocationSelect.styled";
+import { ResetBtn } from "../SearchField/SearchField.styled";
+import { useDispatch } from "react-redux";
+import { setLocation } from "../../redux/filters/filtersSlice";
 
 const CustomControl = ({ children, ...props }) => {
-  const deviceType = useDeviceType();
-  const theme = useTheme();
+  const dispatch = useDispatch();
+  const { selectProps } = props;
+
+  const onReset = () => {
+    dispatch(setLocation(""));
+    selectProps.onInputChange("");
+    selectProps.onChange(null);
+  };
+
   return (
     <components.Control {...props}>
       {children}
-      <div
-        style={{
-          marginRight:
-            deviceType === "desktop"
-              ? "14px"
-              : deviceType === "tablet"
-              ? "14px"
-              : "12px",
-          color: theme.colors.accentColor,
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
+
+      {(selectProps.value || selectProps.inputValue) && (
+        <ResetBtn type="button" onClick={onReset}>
+          <Icon height={18} width={18} name="icon-cross-small" />
+        </ResetBtn>
+      )}
+
+      <LocationSelectIconWrap>
         <Icon name="icon-search" width={18} height={18} />
-      </div>
+      </LocationSelectIconWrap>
     </components.Control>
   );
 };

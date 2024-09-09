@@ -129,6 +129,8 @@ export const themes = {
       SelectOptionFocusColor: "#f6b83d",
       SelectDropdownIndicatorColor: "#262626",
 
+      LocationSelectWrapColor: "#262626",
+
       ResultsNotFoundColor: "#262626",
       ResultsNotFoundAccentColor: "#f6b83d",
 
@@ -266,6 +268,8 @@ export const themes = {
       SelectOptionColor: "#7d7d7d",
       SelectOptionFocusColor: "#f6b83d",
       SelectDropdownIndicatorColor: "rgba(255, 255, 255, 0.5)",
+
+      LocationSelectWrapColor: "#F6B83D",
 
       ResultsNotFoundColor: "rgba(255, 255, 255, 0.7)",
       ResultsNotFoundAccentColor: "#f6b83d",
