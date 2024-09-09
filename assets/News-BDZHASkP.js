@@ -1,10 +1,10 @@
-import{u as n,j as t,a as h,c as o,r as w,f as p,L as f,e as b,g as x}from"./index-jI398Ttn.js";import{S as j,P as u}from"./PaginationControls-ll8TxczZ.js";const N=e=>e.newsStore.news,C=e=>e.newsStore.isLoading,S=e=>e.newsStore.error,y=e=>e.newsStore.filterTerm,P=e=>e.newsStore.page,v=e=>e.newsStore.perPage,k=e=>e.newsStore.totalPages,z=n.div`
+import{u as i,j as t,a as h,c as a,r as w,f as p,L as f,e as b,g as x}from"./index-C8SbqSzV.js";import{s as j,a as u,b as N,c as C,d as y,e as P,f as v,S as k,P as S}from"./PaginationControls-Cyz871jf.js";const z=i.div`
   padding-top: 34px;
 
   @media screen and (min-width: 768px) {
     padding-top: 53px;
   }
-`,L=n.div`
+`,D=i.div`
   display: block;
   @media screen and (min-width: 768px) {
     display: flex;
@@ -12,13 +12,13 @@ import{u as n,j as t,a as h,c as o,r as w,f as p,L as f,e as b,g as x}from"./ind
     align-items: center;
     margin-bottom: 44px;
   }
-`,T=n.h2`
+`,F=i.h2`
   margin-bottom: 0;
   margin-bottom: 20px;
   @media screen and (min-width: 768px) {
     margin: 0;
   }
-`,D=n.ul`
+`,L=i.ul`
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
@@ -34,14 +34,14 @@ import{u as n,j as t,a as h,c as o,r as w,f as p,L as f,e as b,g as x}from"./ind
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px 35px;
   }
-`,F=n.li`
+`,T=i.li`
   @media screen and (min-width: 768px) {
     padding-bottom: 28px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-`,W=n.img`
+`,W=i.img`
   height: 190px;
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -54,7 +54,7 @@ import{u as n,j as t,a as h,c as o,r as w,f as p,L as f,e as b,g as x}from"./ind
     height: 226px;
     margin-bottom: 28px;
   }
-`,$=n.h3`
+`,$=i.h3`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -71,7 +71,7 @@ import{u as n,j as t,a as h,c as o,r as w,f as p,L as f,e as b,g as x}from"./ind
     line-height: 1.3;
     margin-bottom: 14px;
   }
-`,E=n.p`
+`,E=i.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.285;
@@ -88,11 +88,11 @@ import{u as n,j as t,a as h,c as o,r as w,f as p,L as f,e as b,g as x}from"./ind
     line-height: 1.25;
     margin-bottom: 28px;
   }
-`,M=n.div`
+`,M=i.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-`,R=n.p`
+`,R=i.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.285;
@@ -103,7 +103,7 @@ import{u as n,j as t,a as h,c as o,r as w,f as p,L as f,e as b,g as x}from"./ind
     font-size: 16px;
     line-height: 1.25;
   }
-`,I=n.a`
+`,I=i.a`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.285;
@@ -116,4 +116,4 @@ import{u as n,j as t,a as h,c as o,r as w,f as p,L as f,e as b,g as x}from"./ind
     font-size: 16px;
     line-height: 1.25;
   }
-`,_=e=>{const i=new Date(e),r=i.getDate().toString().padStart(2,"0"),a=(i.getMonth()+1).toString().padStart(2,"0"),c=i.getFullYear();return`${r}/${a}/${c}`},B=({nw:e})=>t.jsxs(F,{children:[t.jsxs("div",{children:[t.jsx(W,{src:e.imgUrl,alt:"news",height:190}),t.jsx($,{children:e.title}),t.jsx(E,{children:e.text})]}),t.jsxs(M,{children:[t.jsx(R,{children:_(e.date)}),t.jsx(I,{href:e.url,target:"_blank",rel:"noopener noreferrer",children:"read more"})]})]}),H=({news:e})=>t.jsx(D,{children:e.map(i=>t.jsx(B,{nw:i},i._id))}),Y=()=>{const e=h(),i=o(N),r=o(y),a=o(C),c=o(S),l=o(P),d=o(v),m=o(k);w.useEffect(()=>{e(p({page:l,limit:d,filterWord:r}))},[e,l,d,r]);const g=s=>{e(x(s)),e(p({page:s,limit:d,filterWord:r}))};return a?t.jsx(f,{}):c?t.jsx("p",{children:"Ooops...Please try to reload page"}):t.jsxs(z,{className:"container",children:[t.jsxs(L,{children:[t.jsx(T,{className:"title",children:"News"}),t.jsx(j,{onFilterChange:s=>e(b(s)),onFetch:s=>e(p(s)),onPageChange:s=>e(x(s)),filterWord:r})]}),t.jsx(H,{news:i}),m>1?t.jsx(u,{currentPage:l,totalPages:m,onPageChange:g}):null]})};export{Y as default};
+`,_=e=>{const n=new Date(e),o=n.getDate().toString().padStart(2,"0"),r=(n.getMonth()+1).toString().padStart(2,"0"),d=n.getFullYear();return`${o}/${r}/${d}`},B=({nw:e})=>t.jsxs(T,{children:[t.jsxs("div",{children:[t.jsx(W,{src:e.imgUrl,alt:"news",height:190}),t.jsx($,{children:e.title}),t.jsx(E,{children:e.text})]}),t.jsxs(M,{children:[t.jsx(R,{children:_(e.date)}),t.jsx(I,{href:e.url,target:"_blank",rel:"noopener noreferrer",children:"read more"})]})]}),H=({news:e})=>t.jsx(L,{children:e.map(n=>t.jsx(B,{nw:n},n._id))}),Y=()=>{const e=h(),n=a(j),o=a(u),r=a(N),d=a(C),l=a(y),c=a(P),m=a(v);w.useEffect(()=>{e(p({page:l,limit:c,filterWord:o}))},[e,l,c,o]);const g=s=>{e(x(s)),e(p({page:s,limit:c,filterWord:o}))};return r?t.jsx(f,{}):d?t.jsx("p",{children:"Ooops...Please try to reload page"}):t.jsxs(z,{className:"container",children:[t.jsxs(D,{children:[t.jsx(F,{className:"title",children:"News"}),t.jsx(k,{onFilterChange:s=>e(b(s)),onFetch:s=>e(p(s)),onPageChange:s=>e(x(s)),filterWord:o})]}),t.jsx(H,{news:n}),m>1?t.jsx(S,{currentPage:l,totalPages:m,onPageChange:g}):null]})};export{Y as default};
