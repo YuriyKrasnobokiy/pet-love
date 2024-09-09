@@ -9,6 +9,11 @@ export const FiltersWrap = styled.div`
   @media screen and (min-width: 768px) {
     padding: 40px 32px;
   }
+  @media screen and (min-width: 1280px) {
+    padding: 40px;
+    width: 1136px;
+    margin: 0 -32px 40px;
+  }
 `;
 
 export const SearchFieldsWrap = styled.div`
@@ -20,6 +25,9 @@ export const SearchFieldsWrap = styled.div`
 
   @media screen and (min-width: 768px) {
     gap: 16px;
+  }
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 2fr 1fr;
   }
 `;
 
@@ -40,6 +48,9 @@ export const FirstSelectsWrap = styled.div`
     margin-bottom: 0;
     gap: 16px;
   }
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 200px 1fr;
+  }
 `;
 
 export const SecondWrap = styled.div`
@@ -48,6 +59,9 @@ export const SecondWrap = styled.div`
   @media screen and (min-width: 768px) {
     gap: 16px;
     grid-template-columns: 1fr 227px 1fr;
+  }
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 190px 227px;
   }
 `;
 
