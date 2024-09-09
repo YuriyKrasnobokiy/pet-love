@@ -5,33 +5,49 @@ export const FiltersWrap = styled.div`
   border-radius: 30px;
   background-color: ${(props) => props.theme.colors.FiltersWrapBGColor};
   margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    padding: 40px 32px;
+  }
 `;
 
 export const SearchFieldsWrap = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-`;
 
-export const SelectsWrap = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
   padding-bottom: 20px;
-  margin-top: 0;
   gap: 12px 8px;
 
   @media screen and (min-width: 768px) {
-    margin-top: 12px;
+    gap: 16px;
+  }
+`;
+
+export const FirstWrap = styled.div`
+  @media screen and (min-width: 768px) {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 2fr;
   }
 `;
 
 export const FirstSelectsWrap = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* margin-bottom: 12px; */
   gap: 8px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
+    gap: 16px;
+  }
+`;
+
+export const SecondWrap = styled.div`
+  display: grid;
+  gap: 12px;
+  @media screen and (min-width: 768px) {
+    gap: 16px;
+    grid-template-columns: 1fr 227px 1fr;
   }
 `;
 

@@ -11,8 +11,9 @@ import SearchField from "../SearchField/SearchField";
 import {
   FiltersWrap,
   FirstSelectsWrap,
+  FirstWrap,
   SearchFieldsWrap,
-  SelectsWrap,
+  SecondWrap,
 } from "./Filters.styled";
 import { RadioBtns } from "./RadioBtns";
 
@@ -64,14 +65,16 @@ export const Filters = ({
   return (
     <FiltersWrap>
       <SearchFieldsWrap>
-        <SearchField
-          onFilterChange={onFilterChange}
-          onFetch={onFetch}
-          onPageChange={onPageChange}
-          filterWord={filterTearm}
-          isInFilters
-        />
-        <SelectsWrap>
+        <FirstWrap>
+          <SearchField
+            onFilterChange={onFilterChange}
+            onFetch={onFetch}
+            onPageChange={onPageChange}
+            filterWord={filterTearm}
+            isInFilters
+          />
+          {/* <SelectsWrap> */}
+
           <FirstSelectsWrap>
             <CustomSelect
               options={categories}
@@ -86,6 +89,8 @@ export const Filters = ({
               selectedOpt={genderTerm}
             />
           </FirstSelectsWrap>
+        </FirstWrap>
+        <SecondWrap>
           <CustomSelect
             options={species}
             placeholder="By type"
@@ -96,7 +101,8 @@ export const Filters = ({
             handleOptionChange={handleLocationChange}
             selectedOpt={location}
           />
-        </SelectsWrap>
+        </SecondWrap>
+        {/* </SelectsWrap> */}
       </SearchFieldsWrap>
       <RadioBtns />
     </FiltersWrap>
