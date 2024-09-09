@@ -17,14 +17,7 @@ import {
   selectTotalPages,
 } from "../../redux/pets/petsSelectors";
 
-import { PetsHeaderWrap, PetsTitle, PetsWrap } from "./FindPet.styled";
-import {
-  fetchCategories,
-  fetchGenders,
-  fetchPets,
-  fetchSpecies,
-} from "../../redux/pets/petsOperations";
-import { setFilterTerm, setPage } from "../../redux/pets/petsSlice";
+import { ResultsNotFound } from "../../components/ResultsNotFound/ResultsNotFound";
 import {
   selectCategory,
   selectGender,
@@ -33,7 +26,14 @@ import {
   selectLocationId,
   selectSpecie,
 } from "../../redux/filters/filtersSelectors";
-import { ResultsNotFound } from "../../components/ResultsNotFound/ResultsNotFound";
+import {
+  fetchCategories,
+  fetchGenders,
+  fetchPets,
+  fetchSpecies,
+} from "../../redux/pets/petsOperations";
+import { setFilterTerm, setPage } from "../../redux/pets/petsSlice";
+import { PetsHeaderWrap, PetsTitle, PetsWrap } from "./FindPet.styled";
 
 const FindPet = () => {
   const categories = useSelector(selectCategories);

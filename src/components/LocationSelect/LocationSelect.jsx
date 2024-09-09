@@ -9,7 +9,8 @@ import Icon from "../Icon/Icon";
 import { LocationSelectIconWrap } from "./LocationSelect.styled";
 import { ResetBtn } from "../SearchField/SearchField.styled";
 import { useDispatch } from "react-redux";
-import { setLocation } from "../../redux/filters/filtersSlice";
+import { setLocation, setLocationId } from "../../redux/filters/filtersSlice";
+import { setFilterTerm } from "../../redux/pets/petsSlice";
 
 const CustomControl = ({ children, ...props }) => {
   const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const CustomControl = ({ children, ...props }) => {
 
   const onReset = () => {
     dispatch(setLocation(""));
+    dispatch(setLocationId(""));
+    dispatch(setFilterTerm(""));
     selectProps.onInputChange("");
     selectProps.onChange(null);
   };
@@ -26,7 +29,7 @@ const CustomControl = ({ children, ...props }) => {
       {children}
 
       {(selectProps.value || selectProps.inputValue) && (
-        <ResetBtn type="button" onClick={onReset}>
+        <ResetBtn $location type="button" onClick={onReset}>
           <Icon height={18} width={18} name="icon-cross-small" />
         </ResetBtn>
       )}

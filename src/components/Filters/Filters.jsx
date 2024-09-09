@@ -16,13 +16,9 @@ import {
   SecondWrap,
 } from "./Filters.styled";
 import { RadioBtns } from "./RadioBtns";
-
 import { useDispatch, useSelector } from "react-redux";
+import { selectLocation } from "../../redux/filters/filtersSelectors";
 import { setPage } from "../../redux/pets/petsSlice";
-import {
-  selectLocation,
-  selectLocationId,
-} from "../../redux/filters/filtersSelectors";
 import { LocationSelect } from "../LocationSelect/LocationSelect";
 
 export const Filters = ({
@@ -39,8 +35,6 @@ export const Filters = ({
 }) => {
   const dispatch = useDispatch();
   const location = useSelector(selectLocation);
-  const locationID = useSelector(selectLocationId);
-  console.log("locationID: ", locationID);
 
   const handleCategoryChange = (selectedOption) => {
     dispatch(setCategory(selectedOption.value));
@@ -73,7 +67,6 @@ export const Filters = ({
             filterWord={filterTearm}
             isInFilters
           />
-          {/* <SelectsWrap> */}
 
           <FirstSelectsWrap>
             <CustomSelect
@@ -102,7 +95,6 @@ export const Filters = ({
             selectedOpt={location}
           />
         </SecondWrap>
-        {/* </SelectsWrap> */}
       </SearchFieldsWrap>
       <RadioBtns />
     </FiltersWrap>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Icon from "../Icon/Icon";
 import {
   FilterBtn,
@@ -6,27 +6,56 @@ import {
   InputStyled,
   ResetBtn,
 } from "./SearchField.styled";
+import { useSearchParams } from "react-router-dom";
+import { setFilterTerm } from "../../redux/news/newsSlice";
+import { selectFilterTerm } from "../../redux/news/newsSelectors";
+import { useDispatch, useSelector } from "react-redux";
 
 export const SearchField = ({
   onFilterChange,
   onFetch,
   onPageChange,
-  filterWord,
   isInFilters,
 }) => {
-  const [inputValue, setInputValue] = useState(filterWord || "");
+  const dispatch = useDispatch();
+  const currentFilterTerm = useSelector(selectFilterTerm);
+  const [inputValue, setInputValue] = useState(currentFilterTerm || "");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const queryFilterWord = searchParams.get("filterWord") || "";
+    setInputValue(queryFilterWord);
+    if (queryFilterWord !== currentFilterTerm) {
+      dispatch(setFilterTerm(queryFilterWord));
+      onFetch({ page: 1, limit: 6, filterWord: queryFilterWord });
+    }
+  }, [searchParams, dispatch, currentFilterTerm]);
+
+  const updateURL = (filterWord) => {
+    const newParams = new URLSearchParams(searchParams.toString());
+
+    if (filterWord) {
+      newParams.set("filterWord", filterWord);
+    } else {
+      newParams.delete("filterWord");
+    }
+
+    setSearchParams(newParams);
+  };
 
   const onSubmit = (evt) => {
     evt.preventDefault();
-    onFilterChange(inputValue);
+    updateURL(inputValue);
+    dispatch(setFilterTerm(inputValue));
     onPageChange(1);
     onFetch({ page: 1, limit: 6, filterWord: inputValue });
   };
 
   const onReset = (evt) => {
     evt.preventDefault();
+    updateURL(""); // Pass empty string to remove the filter
     setInputValue("");
-    onFilterChange("");
+    dispatch(setFilterTerm(""));
     onPageChange(1);
     onFetch({ page: 1, limit: 6, filterWord: "" });
   };
@@ -46,11 +75,11 @@ export const SearchField = ({
       />
       {inputValue !== "" && (
         <ResetBtn type="button" onClick={onReset}>
-          <Icon height={18} width={18} name="icon-cross-small"></Icon>
+          <Icon height={18} width={18} name="icon-cross-small" />
         </ResetBtn>
       )}
       <FilterBtn type="submit">
-        <Icon height={18} width={18} name="icon-search"></Icon>
+        <Icon height={18} width={18} name="icon-search" />
       </FilterBtn>
     </FormStyled>
   );

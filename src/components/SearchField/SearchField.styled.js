@@ -83,13 +83,13 @@ export const FilterBtn = styled.button`
 `;
 
 export const ResetBtn = styled.button`
-  top: 13px;
+  top: ${(props) => (props.$location ? "11px" : "13px")};
   right: 36px;
   position: absolute;
   background-color: transparent;
   color: ${(props) => props.theme.colors.searchInputIconColor};
 
   @media screen and (min-width: 768px) {
-    top: 15px;
+    top: ${(props) => (props.$location ? "14px" : "15px")};
   }
 `;
