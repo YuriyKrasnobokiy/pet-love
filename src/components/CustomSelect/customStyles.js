@@ -11,7 +11,7 @@ export const customStyles = (theme) => ({
     height: "42px",
     borderColor: theme.colors.SelectControlBorderColor,
     cursor: "pointer",
-    transition: "borderColor 0.3s ease",
+    transition: "border-color 300ms ease",
 
     "@media screen and (min-width: 768px)": {
       fontSize: "16px",
@@ -124,9 +124,10 @@ export const customStyles = (theme) => ({
     padding: "0 14px",
     color: theme.colors.SelectDropdownIndicatorColor,
   }),
-  indicatorsContainer: (provided) => ({
+  indicatorsContainer: (provided, state) => ({
     ...provided,
     padding: "0",
     cursor: "pointer",
+    display: state.selectProps.hideIndicators ? "none" : "flex",
   }),
 });
