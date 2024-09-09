@@ -1,4 +1,4 @@
-import{u as s,r as f,j as t,I as m,U as b,b as C}from"./index-jrDwctHu.js";const I=s.form`
+import{u as s,r as f,j as t,I as m,U as b,b as C}from"./index-jI398Ttn.js";const I=s.form`
   position: relative;
   margin: 0 auto;
   margin-bottom: ${e=>e.$isInFilters?"12px":"20px"};
@@ -128,4 +128,4 @@ import{u as s,r as f,j as t,I as m,U as b,b as C}from"./index-jrDwctHu.js";const
     border: 1px solid
       ${e=>e.theme.colors.PaginationBtnBorderColorDisabled};
   }
-`,z=({currentPage:e,totalPages:o,onPageChange:i})=>{const x=()=>{const a=C(),n=[],l=a==="desktop"||a==="tablet"?3:2,h=Math.max(1,Math.min(e-Math.floor(l/2),o-l+1)),p=Math.min(h+l-1,o);for(let r=h;r<=p;r++)n.push(t.jsx(c,{$isCurrentPage:e===r,onClick:()=>i(r),children:r},r));return p<o&&n.push(t.jsx(c,{disabled:!0,children:"..."},"end-ellipsis")),n};return t.jsxs(v,{children:[t.jsxs(g,{children:[t.jsx(c,{className:"left icon",disabled:e===1,onClick:()=>i(1),children:t.jsx(u,{})}),t.jsx(c,{className:"left icon",disabled:e===1,onClick:()=>i(e-1),children:t.jsx($,{})})]}),t.jsx(B,{children:x()}),t.jsxs(g,{children:[t.jsx(c,{className:"icon",disabled:e===o,onClick:()=>i(e+1),children:t.jsx($,{})}),t.jsx(c,{className:"icon",disabled:e===o,onClick:()=>i(o),children:t.jsx(u,{})})]})]})};export{z as P,y as S};
+`,z=({currentPage:e,totalPages:o,onPageChange:i})=>{const x=()=>{const a=C(),n=[],l=a==="desktop"||a==="tablet"?3:2,h=Math.max(1,Math.min(e-Math.floor(l/2),o-l+1)),p=Math.min(h+l-1,o);for(let r=h;r<=p;r++)n.push(t.jsx(c,{$isCurrentPage:e===r,onClick:()=>i(r),children:r},r));return p<o&&n.push(t.jsx(c,{disabled:!0,children:"..."},"end-ellipsis")),n};return t.jsxs(v,{children:[t.jsxs(g,{children:[t.jsx(c,{className:"left icon",disabled:e===1,onClick:()=>i(1),children:t.jsx(u,{})}),t.jsx(c,{className:"left icon",disabled:e===1,onClick:()=>i(e-1),children:t.jsx($,{})})]}),t.jsx(B,{children:x()}),t.jsxs(g,{children:[t.jsx(c,{className:"icon",disabled:e===o,onClick:()=>i(e+1),children:t.jsx($,{})}),t.jsx(c,{className:"icon",disabled:e===o,onClick:()=>i(o),children:t.jsx(u,{})})]})]})};export{z as P,k as R,y as S};
