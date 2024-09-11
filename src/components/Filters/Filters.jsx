@@ -18,15 +18,15 @@ import {
 import { RadioBtns } from "./RadioBtns";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLocation } from "../../redux/filters/filtersSelectors";
-import { setPage } from "../../redux/pets/petsSlice";
+import { setFilterTerm, setPage } from "../../redux/pets/petsSlice";
 import { LocationSelect } from "../LocationSelect/LocationSelect";
+import { selectFilterTerm } from "../../redux/pets/petsSelectors";
 
 export const Filters = ({
   genders,
   species,
   categories,
   filterTearm,
-  onFilterChange,
   onFetch,
   onPageChange,
   categoryTerm,
@@ -61,8 +61,10 @@ export const Filters = ({
       <SearchFieldsWrap>
         <FirstWrap>
           <SearchField
-            onFilterChange={onFilterChange}
+            // onFilterChange={onFilterChange}
             onFetch={onFetch}
+            setFilterTerm={setFilterTerm}
+            selectFilterTerm={selectFilterTerm}
             onPageChange={onPageChange}
             filterWord={filterTearm}
             isInFilters

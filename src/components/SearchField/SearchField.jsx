@@ -7,15 +7,14 @@ import {
   ResetBtn,
 } from "./SearchField.styled";
 import { useSearchParams } from "react-router-dom";
-import { setFilterTerm } from "../../redux/news/newsSlice";
-import { selectFilterTerm } from "../../redux/news/newsSelectors";
 import { useDispatch, useSelector } from "react-redux";
 
 export const SearchField = ({
-  onFilterChange,
   onFetch,
   onPageChange,
   isInFilters,
+  setFilterTerm,
+  selectFilterTerm,
 }) => {
   const dispatch = useDispatch();
   const currentFilterTerm = useSelector(selectFilterTerm);

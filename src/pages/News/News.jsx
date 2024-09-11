@@ -49,6 +49,8 @@ const News = () => {
           onFetch={(params) => dispatch(fetchNews(params))}
           onPageChange={(page) => dispatch(setPage(page))}
           filterWord={filterWord}
+          setFilterTerm={setFilterTerm}
+          selectFilterTerm={selectFilterTerm}
         />
       </NewsHeaderWrap>
       <NewsList news={news} />

@@ -33,7 +33,7 @@ import { PetStars } from "../PetStars/PetStars";
 
 export const PetModal = () => {
   const pet = useSelector(selectPet);
-  const stars = Array(5).fill("icon-star");
+  console.log("pet: ", pet);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
   const isLoading = useSelector(selectIsLoading);
@@ -44,8 +44,9 @@ export const PetModal = () => {
     console.log("ADDED!");
   };
   const handleContactClick = () => {
-    console.log("We will send you contact information soon...loading...");
+    window.location.href = `tel:${pet.user.phone}`;
   };
+
   const handleLoginClick = () => {
     navigate("/login");
     dispatch(closeModal());

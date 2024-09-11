@@ -46,7 +46,6 @@ const FindPet = () => {
   const perPage = useSelector(selectPerPage);
   const genderTerm = useSelector(selectGender);
   const pets = useSelector(selectPets);
-
   const species = useSelector(selectSpecies);
   const totalPages = useSelector(selectTotalPages);
   const categoryTerm = useSelector(selectCategory);
