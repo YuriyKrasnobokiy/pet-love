@@ -19,6 +19,11 @@ export const UserAvatarThumb = styled.div`
   background-color: ${(props) => props.theme.colors.UserBlockAvatarBGColor};
   margin: 0 auto;
   color: ${(props) => props.theme.colors.UserBlockAvatarColor};
+
+  @media screen and (min-width: 768px) {
+    width: 90px;
+    height: 90px;
+  }
 `;
 
 export const UserAvatarBtn = styled.button`
@@ -33,6 +38,11 @@ export const UserAvatarBtn = styled.button`
   padding: 8px 10px;
   transition: color 300ms ease-in-out;
 
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+
   &:hover {
     color: ${(props) => props.theme.colors.UserBlockAvatarBtnHoverColor};
   }
@@ -41,7 +51,6 @@ export const UserAvatarBtn = styled.button`
 export const UserInfoForm = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 295px;
 `;
 
 export const UserInfoFormTitle = styled.h3`
@@ -50,6 +59,23 @@ export const UserInfoFormTitle = styled.h3`
   line-height: 1.25;
   color: ${(props) => props.theme.colors.UserInfoFormTitleColor};
   margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.33333;
+  }
+`;
+
+export const UserInfoInputsWrap = styled.div`
+  display: grid;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 `;
 
 export const UserInfoFormInput = styled.input`
@@ -64,5 +90,15 @@ export const UserInfoFormInput = styled.input`
 
   &:not(:last-child) {
     margin-bottom: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 16px;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 `;

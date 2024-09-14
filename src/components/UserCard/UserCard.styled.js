@@ -1,15 +1,32 @@
 import styled from "styled-components";
 
 export const UserCardWrap = styled.div`
-  max-width: 335px;
+  /* max-width: 335px; */
   padding: 18px 20px 40px;
   border-radius: 30px;
   background-color: ${(props) => props.theme.colors.UserCardBGColor};
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+    padding: 40px;
+    border-radius: 60px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 440px;
+  }
 `;
 
 export const UserCardBageWrap = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    left: 40px;
+  }
 `;
 
 export const UserBage = styled.p`

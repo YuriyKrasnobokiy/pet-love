@@ -5,6 +5,10 @@ export const PetsBlockTitleWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 80px;
+  }
 `;
 
 export const PetsBlockTitle = styled.h2`
@@ -12,6 +16,11 @@ export const PetsBlockTitle = styled.h2`
   font-size: 16px;
   line-height: 1.25;
   color: ${(props) => props.theme.colors.PetsBlockTitleColor};
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.33333;
+  }
 `;
 
 export const AddPetBtn = styled.button`
@@ -33,6 +42,11 @@ export const AddPetBtn = styled.button`
     background-color: ${(props) =>
       props.theme.colors.PetsBlockAddPetBtnHoverBGColor};
   }
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+    width: 118px;
+  }
 `;
 
 export const LogOutBtn = styled.button`
@@ -53,5 +67,12 @@ export const LogOutBtn = styled.button`
   &:hover {
     background-color: ${(props) =>
       props.theme.colors.PetsBlockLogOutBtnBGHoverColor};
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 15px;
+    width: 136px;
+    font-size: 16px;
+    line-height: 1.25;
   }
 `;
