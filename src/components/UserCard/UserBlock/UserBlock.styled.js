@@ -87,6 +87,7 @@ export const UserInfoFormInput = styled.input`
   padding: 12px;
   border-radius: 30px;
   border: ${(props) => props.theme.colors.UserInfoFormInputBorderColor};
+  background-color: transparent;
 
   &:not(:last-child) {
     margin-bottom: 10px;

@@ -160,6 +160,10 @@ export const themes = {
 
       white: "#fff",
       IconStarAccentColor: "#ffc531",
+
+      BtnLogoutColor: "#fff",
+      BtnLogoutBgColor: "#f6b83d",
+      BtnLogoutBgHoverColor: "#f9b020",
     },
   },
   dark: {
@@ -310,17 +314,25 @@ export const themes = {
       UserBlockAvatarBtnColor: "rgba(255, 255, 255, 0.7)",
       UserBlockAvatarBtnHoverColor: "#f6b83d",
 
-      UserInfoFormTitleColor: "#2b2b2a",
-      UserInfoFormInputColor: "#262626",
-      UserInfoFormInputBorderColor: "1px solid rgba(38, 38, 38, 0.15)",
+      UserInfoFormTitleColor: "#fff",
+      UserInfoFormInputColor: "rgba(255, 255, 255, 0.5)",
+      UserInfoFormInputBorderColor: "1px solid rgba(255, 255, 255, 0.3)",
 
       PetsBlockTitleColor: "#2b2b2a",
       PetsBlockAddPetBtnColor: "#fff",
       PetsBlockAddPetBtnBGColor: "#f6b83d",
       PetsBlockAddPetBtnHoverBGColor: "#f9b020",
 
+      PetsBlockLogOutBtnColor: "#f6b83d",
+      PetsBlockLogOutBtnBGColor: "#fff4df",
+      PetsBlockLogOutBtnBGHoverColor: "#fbe7c1",
+
       white: "#fff",
       IconStarAccentColor: "#ffc531",
+
+      BtnLogoutColor: "#181818",
+      BtnLogoutBgColor: "#f6b83d",
+      BtnLogoutBgHoverColor: "#f9b020",
     },
   },
 };

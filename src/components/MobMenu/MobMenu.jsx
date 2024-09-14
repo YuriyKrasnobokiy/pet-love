@@ -22,53 +22,6 @@ export const MobMenu = () => {
   const [isScrollable, setIsScrollable] = useState(false);
   const contentRef = useRef(null);
 
-  // useEffect(() => {
-  //   const checkScrollable = () => {
-  //     if (contentRef.current) {
-  //       const isContentOverflowing =
-  //         contentRef.current.scrollHeight > window.innerHeight;
-  //       setIsScrollable(isContentOverflowing);
-  //     }
-  //   };
-
-  //   checkScrollable();
-  //   window.addEventListener("resize", checkScrollable);
-
-  //   return () => {
-  //     window.removeEventListener("resize", checkScrollable);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   switch (location.pathname) {
-  //     case "/login":
-  //       setChangeColor(true);
-  //       break;
-  //     case "/register":
-  //       setChangeColor(true);
-  //       break;
-  //     default:
-  //       setChangeColor(false);
-  //       break;
-  //   }
-  // }, [location.pathname]);
-
-  // useEffect(() => {
-  //   const handleKeyDown = (evt) => {
-  //     if (evt.code === "Escape") {
-  //       dispatch(closeMobMenu());
-  //     }
-  //   };
-
-  //   window.addEventListener("keydown", handleKeyDown);
-  //   document.body.style.overflow = "hidden";
-
-  //   return () => {
-  //     window.removeEventListener("keydown", handleKeyDown);
-  //     document.body.style.overflow = "auto";
-  //   };
-  // }, [dispatch]);
-
   useEffect(() => {
     const checkScrollable = () => {
       if (contentRef.current) {
