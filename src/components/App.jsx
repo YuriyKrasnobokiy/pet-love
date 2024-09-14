@@ -1,24 +1,26 @@
-import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy, useEffect, useState } from "react";
-import Layout from "./Layout/Layout";
-import GlobalStyles from "../GlobalStyles";
-import { ThemeProvider } from "styled-components";
-import Loader from "./Loader/Loader";
-import { refresh } from "../redux/auth/authOperations";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsRefreshing, selectToken } from "../redux/auth/authSelectors";
-import { RestrictedRoute } from "./RestrictedRoute";
-import { themes } from "../themes";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "../GlobalStyles";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
+import { refresh } from "../redux/auth/authOperations";
+import { selectIsRefreshing, selectToken } from "../redux/auth/authSelectors";
+import { themes } from "../themes";
+import Layout from "./Layout/Layout";
+import Loader from "./Loader/Loader";
+import { MyFavoritesPets } from "./MyNotices/MyFavoritesPets/MyFavoritesPets";
+import { Viewed } from "./MyNotices/Viewed/Viewed";
 import { PrivateRoute } from "./PrivateRoute";
-import Profile from "../pages/Profile/Profile";
+import { RestrictedRoute } from "./RestrictedRoute";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const News = lazy(() => import("../pages/News/News"));
 const OurFriends = lazy(() => import("../pages/OurFriends/OurFriends"));
 const FindPet = lazy(() => import("../pages/FindPet/FindPet"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
+const Profile = lazy(() => import("../pages/Profile/Profile"));
 
 export const App = () => {
   const [currentTheme, setCurrentTheme] = useState(() => {
@@ -71,7 +73,10 @@ export const App = () => {
             <Route
               path="/profile"
               element={<PrivateRoute redirectTo="/" component={<Profile />} />}
-            />
+            >
+              <Route path="favorites" element={<MyFavoritesPets />} />
+              <Route path="viewed" element={<Viewed />} />
+            </Route>
 
             <Route path="*" element={<NotFound />} />
           </Routes>

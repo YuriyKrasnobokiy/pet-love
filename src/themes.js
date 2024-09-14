@@ -318,12 +318,12 @@ export const themes = {
       UserInfoFormInputColor: "rgba(255, 255, 255, 0.5)",
       UserInfoFormInputBorderColor: "1px solid rgba(255, 255, 255, 0.3)",
 
-      PetsBlockTitleColor: "#2b2b2a",
-      PetsBlockAddPetBtnColor: "#fff",
+      PetsBlockTitleColor: "#fff",
+      PetsBlockAddPetBtnColor: "#181818",
       PetsBlockAddPetBtnBGColor: "#f6b83d",
       PetsBlockAddPetBtnHoverBGColor: "#f9b020",
 
-      PetsBlockLogOutBtnColor: "#f6b83d",
+      PetsBlockLogOutBtnColor: "#181818",
       PetsBlockLogOutBtnBGColor: "#fff4df",
       PetsBlockLogOutBtnBGHoverColor: "#fbe7c1",
 

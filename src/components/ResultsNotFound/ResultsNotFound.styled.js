@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ResNotFoundWrap = styled.div`
-  padding: 20px;
+  padding: ${(props) => (props.$isProfile ? 0 : "20px")};
 `;
 export const ResNotFoundImg = styled.img`
   width: 80px;
