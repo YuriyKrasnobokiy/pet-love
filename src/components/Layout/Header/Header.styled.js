@@ -108,6 +108,7 @@ export const UserBtn = styled.button`
   width: 40px;
   height: 40px;
   justify-content: center;
+  color: ${(props) => props.theme.colors.UserBtnColor};
 
   @media screen and (min-width: 768px) {
     width: 50px;

@@ -71,6 +71,7 @@ export const themes = {
       Error: "#ef2447",
       Success: "#08aa83",
       FormBottomTextColor: "rgba(38, 38, 38, 0.5)",
+      UserBtnColor: "#F6B83D",
       UserBtnBgColor: "#FFF4DF",
       UserBtnBgColorHover: "#fbe7c1",
 
@@ -133,6 +134,29 @@ export const themes = {
 
       ResultsNotFoundColor: "#262626",
       ResultsNotFoundAccentColor: "#f6b83d",
+
+      UserCardBGColor: "#fff",
+      UserCardBageBgColor: "#f6b83d",
+      UserCardBageColor: "#fff",
+      UserCardEditBtnBGColor: "#fff4df",
+      UserCardEditBtnHoverBGColor: "#FBE7C1",
+
+      UserBlockAvatarColor: "#f6b83d",
+      UserBlockAvatarBGColor: "#fff4df",
+      UserBlockAvatarBtnColor: "#262626",
+      UserBlockAvatarBtnHoverColor: "#f6b83d",
+
+      UserInfoFormTitleColor: "#2b2b2a",
+      UserInfoFormInputColor: "#262626",
+      UserInfoFormInputBorderColor: "1px solid rgba(38, 38, 38, 0.15)",
+
+      PetsBlockTitleColor: "#2b2b2a",
+      PetsBlockAddPetBtnColor: "#fff",
+      PetsBlockAddPetBtnBGColor: "#f6b83d",
+      PetsBlockAddPetBtnHoverBGColor: "#f9b020",
+      PetsBlockLogOutBtnColor: "#f6b83d",
+      PetsBlockLogOutBtnBGColor: "#fff4df",
+      PetsBlockLogOutBtnBGHoverColor: "#fbe7c1",
 
       white: "#fff",
       IconStarAccentColor: "#ffc531",
@@ -212,6 +236,7 @@ export const themes = {
       Success: "#08aa83",
       FormBottomTextColor: "rgba(255, 255, 255, 0.7)",
       UserBtnBgColor: "#FFF4DF",
+      UserBtnColor: "#181818",
       UserBtnBgColorHover: "#fbe7c1",
 
       PetCardBGColor: "#181818",
@@ -273,6 +298,26 @@ export const themes = {
 
       ResultsNotFoundColor: "rgba(255, 255, 255, 0.7)",
       ResultsNotFoundAccentColor: "#f6b83d",
+
+      UserCardBGColor: "#181818",
+      UserCardBageBgColor: "#f6b83d",
+      UserCardBageColor: "#fff",
+      UserCardEditBtnBGColor: "#fff4df",
+      UserCardEditBtnHoverBGColor: "#FBE7C1",
+
+      UserBlockAvatarColor: "#f6b83d",
+      UserBlockAvatarBGColor: "#fff4df",
+      UserBlockAvatarBtnColor: "rgba(255, 255, 255, 0.7)",
+      UserBlockAvatarBtnHoverColor: "#f6b83d",
+
+      UserInfoFormTitleColor: "#2b2b2a",
+      UserInfoFormInputColor: "#262626",
+      UserInfoFormInputBorderColor: "1px solid rgba(38, 38, 38, 0.15)",
+
+      PetsBlockTitleColor: "#2b2b2a",
+      PetsBlockAddPetBtnColor: "#fff",
+      PetsBlockAddPetBtnBGColor: "#f6b83d",
+      PetsBlockAddPetBtnHoverBGColor: "#f9b020",
 
       white: "#fff",
       IconStarAccentColor: "#ffc531",

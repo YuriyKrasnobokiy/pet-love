@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { MdOutlineNightsStay, MdOutlineWbSunny } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDeviceType } from "../../../hooks/useDeviceType";
 import { selectIsLoggedIn } from "../../../redux/auth/authSelectors";
 import { selectIsOpenMobMenu } from "../../../redux/mob-menu/mobMenuSelectors";
@@ -25,6 +25,7 @@ export const Header = ({ toggleTheme, currentTheme }) => {
   const isOpenMobMenu = useSelector(selectIsOpenMobMenu);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
+  const navigate = useNavigate();
   const [isHome, setIsHome] = useState(false);
   const deviceType = useDeviceType();
 
@@ -57,7 +58,7 @@ export const Header = ({ toggleTheme, currentTheme }) => {
           {isLoggedIn ? (
             <>
               {deviceType !== "mobile" && <UserMenu />}
-              <UserBtn>
+              <UserBtn onClick={() => navigate("/profile")}>
                 <Icon height={20} width={20} name="icon-user" />
               </UserBtn>
             </>

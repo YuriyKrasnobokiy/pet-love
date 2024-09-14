@@ -19,6 +19,7 @@ import {
   AuthTitle,
   ErrorMessage,
 } from "../RegistrForm/AuthForm.styled";
+import { useNavigate } from "react-router-dom";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().matches(emailRegExp, "Invalid email").required(),
@@ -38,6 +39,7 @@ export const LoginForm = () => {
 
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handlePasswordClick = () => {
     setShowPassword(!showPassword);

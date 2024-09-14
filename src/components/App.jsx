@@ -11,6 +11,8 @@ import { RestrictedRoute } from "./RestrictedRoute";
 import { themes } from "../themes";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
+import { PrivateRoute } from "./PrivateRoute";
+import Profile from "../pages/Profile/Profile";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const News = lazy(() => import("../pages/News/News"));
@@ -64,6 +66,11 @@ export const App = () => {
             <Route
               path="/login"
               element={<RestrictedRoute redirectTo="/" component={<Login />} />}
+            />
+
+            <Route
+              path="/profile"
+              element={<PrivateRoute redirectTo="/" component={<Profile />} />}
             />
 
             <Route path="*" element={<NotFound />} />
