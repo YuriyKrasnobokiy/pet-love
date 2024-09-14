@@ -1,6 +1,6 @@
 import { Suspense, lazy, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../GlobalStyles";
 import Login from "../pages/Login/Login";
@@ -10,8 +10,6 @@ import { selectIsRefreshing, selectToken } from "../redux/auth/authSelectors";
 import { themes } from "../themes";
 import Layout from "./Layout/Layout";
 import Loader from "./Loader/Loader";
-import { MyFavoritesPets } from "./MyNotices/MyFavoritesPets/MyFavoritesPets";
-import { Viewed } from "./MyNotices/Viewed/Viewed";
 import { PrivateRoute } from "./PrivateRoute";
 import { RestrictedRoute } from "./RestrictedRoute";
 
@@ -21,6 +19,10 @@ const OurFriends = lazy(() => import("../pages/OurFriends/OurFriends"));
 const FindPet = lazy(() => import("../pages/FindPet/FindPet"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 const Profile = lazy(() => import("../pages/Profile/Profile"));
+const MyFavoritesPets = lazy(() =>
+  import("./MyNotices/MyFavoritesPets/MyFavoritesPets"),
+);
+const Viewed = lazy(() => import("./MyNotices/Viewed/Viewed"));
 
 export const App = () => {
   const [currentTheme, setCurrentTheme] = useState(() => {

@@ -21,6 +21,10 @@ export const NotFoundTitle = styled.h3`
     font-size: 16px;
     line-height: 1.25;
   }
+
+  @media screen and (min-width: 1250px) {
+    width: 456px;
+  }
 `;
 
 export const NotFoundAccentText = styled.span`

@@ -1,23 +1,23 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import {
+  MyNoticesList,
+  MyNoticesWrap,
+  NavLinkStyled,
+  NoticesContainer,
+} from "./MyNotices.styled";
 
 export const MyNotices = () => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to={"favorites"}>My favorites pets</NavLink>
-          </li>
-          <li>
-            <NavLink to={"viewed"}>Viewed</NavLink>
-          </li>
-        </ul>
-      </nav>
+    <MyNoticesWrap>
+      <MyNoticesList>
+        <NavLinkStyled to="favorites">My favorites pets</NavLinkStyled>
+        <NavLinkStyled to="viewed">Viewed</NavLinkStyled>
+      </MyNoticesList>
 
-      <div>
+      <NoticesContainer>
         <Outlet />
-      </div>
-    </div>
+      </NoticesContainer>
+    </MyNoticesWrap>
   );
 };

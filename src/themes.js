@@ -158,6 +158,13 @@ export const themes = {
       PetsBlockLogOutBtnBGColor: "#fff4df",
       PetsBlockLogOutBtnBGHoverColor: "#fbe7c1",
 
+      MyNoticesLinkColor: "#fff",
+      MyNoticesLinkSecColor: "#262626",
+      MyNoticesLinkBGColor: "#f6b83d",
+      MyNoticesLinkSecBGColor: "#fff",
+      MyNoticesLinkHoverBGColor: "#f9b020",
+      MyNoticesLinkSecHoverBGColor: "#fff4df",
+
       white: "#fff",
       IconStarAccentColor: "#ffc531",
 
@@ -326,6 +333,13 @@ export const themes = {
       PetsBlockLogOutBtnColor: "#181818",
       PetsBlockLogOutBtnBGColor: "#fff4df",
       PetsBlockLogOutBtnBGHoverColor: "#fbe7c1",
+
+      MyNoticesLinkColor: "#fff",
+      MyNoticesLinkSecColor: "#262626",
+      MyNoticesLinkBGColor: "#f6b83d",
+      MyNoticesLinkSecBGColor: "#fff",
+      MyNoticesLinkHoverBGColor: "#f9b020",
+      MyNoticesLinkSecHoverBGColor: "#fff4df",
 
       white: "#fff",
       IconStarAccentColor: "#ffc531",
