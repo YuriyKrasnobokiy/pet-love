@@ -1,4 +1,11 @@
-import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzPhIgR.js";const p=t.div``,h=t.div`
+import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-COXLs-tV.js";const x=t.div`
+  @media screen and (min-width: 1280px) {
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    max-width: 1216px;
+    padding: 0 32px;
+  }
+`,h=t.div`
   padding: 18px 20px 40px;
   border-radius: 30px;
   background-color: ${e=>e.theme.colors.UserCardBGColor};
@@ -12,7 +19,7 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
   @media screen and (min-width: 1280px) {
     max-width: 440px;
   }
-`,x=t.div`
+`,m=t.div`
   display: flex;
   justify-content: space-between;
 
@@ -22,7 +29,7 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
     right: 40px;
     left: 40px;
   }
-`,m=t.p`
+`,g=t.p`
   display: flex;
   gap: 4px;
   align-items: center;
@@ -35,7 +42,7 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
   line-height: 1.28571;
   letter-spacing: -0.02em;
   background-color: ${e=>e.theme.colors.UserCardBageBgColor};
-`,g=t.button`
+`,u=t.button`
   border-radius: 30px;
   padding: 10px;
   width: 38px;
@@ -47,11 +54,11 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
   &:hover {
     background-color: ${e=>e.theme.colors.UserCardEditBtnHoverBGColor};
   }
-`,u=t.div`
-  margin-bottom: 40px;
 `,f=t.div`
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 `,b=t.div`
+  margin-bottom: 20px;
+`,w=t.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +74,7 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
     width: 90px;
     height: 90px;
   }
-`,j=t.button`
+`,B=t.button`
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33333;
@@ -87,10 +94,10 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
   &:hover {
     color: ${e=>e.theme.colors.UserBlockAvatarBtnHoverColor};
   }
-`,B=t.form`
+`,k=t.form`
   display: flex;
   flex-direction: column;
-`,v=t.h3`
+`,j=t.h3`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -101,7 +108,7 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
     font-size: 18px;
     line-height: 1.33333;
   }
-`,w=t.div`
+`,v=t.div`
   display: grid;
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
@@ -111,7 +118,7 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
     grid-template-columns: 1fr;
     gap: 14px;
   }
-`,i=t.input`
+`,r=t.input`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
@@ -135,7 +142,7 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
       margin-bottom: 0;
     }
   }
-`,k=()=>{const e=d(),r=a(l);return o.jsxs(u,{children:[o.jsxs(f,{children:[o.jsx(b,{children:o.jsx(n,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),o.jsx(j,{children:"Upload photo"})]}),o.jsxs(B,{children:[o.jsx(v,{children:"My information"}),o.jsxs(w,{children:[o.jsx(i,{type:"text",value:r?r.name:"Name",disabled:!0}),o.jsx(i,{type:"email",value:r?r.email:"name@gmail.com",disabled:!0}),o.jsx(i,{type:"phone",value:"+380",disabled:!0})]})]})]})},U=t.div`
+`,C=()=>{const e=d(),i=a(c);return o.jsxs(f,{children:[o.jsxs(b,{children:[o.jsx(w,{children:o.jsx(n,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),o.jsx(B,{children:"Upload photo"})]}),o.jsxs(k,{children:[o.jsx(j,{children:"My information"}),o.jsxs(v,{children:[o.jsx(r,{type:"text",value:i?i.name:"Name",disabled:!0}),o.jsx(r,{type:"email",value:i?i.email:"name@gmail.com",disabled:!0}),o.jsx(r,{type:"phone",value:"+380",disabled:!0})]})]})]})},y=t.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -144,7 +151,7 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
   @media screen and (min-width: 768px) {
     margin-bottom: 80px;
   }
-`,C=t.h2`
+`,U=t.h2`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -154,7 +161,7 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
     font-size: 18px;
     line-height: 1.33333;
   }
-`,y=t.button`
+`,$=t.button`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
@@ -177,7 +184,7 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
     line-height: 1.25;
     width: 118px;
   }
-`,$=t.button`
+`,P=t.button`
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
@@ -202,4 +209,61 @@ import{u as t,b as d,c as a,X as l,j as o,I as n,Y as s,Z as c}from"./index-DZzP
     font-size: 16px;
     line-height: 1.25;
   }
-`,P=()=>o.jsxs("div",{children:[o.jsxs(U,{children:[o.jsx(C,{children:"My pets"}),o.jsxs(y,{children:["Add pet",o.jsx(n,{name:"icon-plus",width:18,height:18})]})]}),o.jsx($,{children:"LOG OUT"})]}),z=()=>o.jsxs(h,{children:[o.jsxs(x,{children:[o.jsxs(m,{children:["User",o.jsx(n,{name:"icon-user",width:18,height:18})]}),o.jsx(g,{children:o.jsx(n,{name:"icon-edit",width:18,height:18})})]}),o.jsx(k,{}),o.jsx(P,{})]}),I=()=>o.jsxs("div",{children:[o.jsx("nav",{children:o.jsxs("ul",{children:[o.jsx("li",{children:o.jsx(s,{to:"favorites",children:"My favorites pets"})}),o.jsx("li",{children:o.jsx(s,{to:"viewed",children:"Viewed"})})]})}),o.jsx("div",{children:o.jsx(c,{})})]}),G=()=>o.jsxs(p,{className:"container",children:[o.jsx(z,{}),o.jsx(I,{})]});export{G as default};
+`,z=()=>o.jsxs("div",{children:[o.jsxs(y,{children:[o.jsx(U,{children:"My pets"}),o.jsxs($,{children:["Add pet",o.jsx(n,{name:"icon-plus",width:18,height:18})]})]}),o.jsx(P,{children:"LOG OUT"})]}),L=()=>o.jsxs(h,{children:[o.jsxs(m,{children:[o.jsxs(g,{children:["User",o.jsx(n,{name:"icon-user",width:18,height:18})]}),o.jsx(u,{children:o.jsx(n,{name:"icon-edit",width:18,height:18})})]}),o.jsx(C,{}),o.jsx(z,{})]}),N=t.div`
+  padding: 40px 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 32px 0;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 40px 32px;
+  }
+`,G=t.div`
+  display: flex;
+  gap: 10px;
+
+  @media screen and (min-width: 768px) {
+    gap: 8px;
+  }
+`,s=t(l)`
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.28571;
+  border-radius: 30px;
+  letter-spacing: -0.03em;
+  color: ${e=>e.theme.colors.MyNoticesLinkColor};
+  padding: 12px;
+  min-width: 99px;
+  background-color: ${e=>e.theme.colors.MyNoticesLinkBGColor};
+  transition: background-color 300ms ease-in-out;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 14px;
+    min-width: 114px;
+  }
+
+  &:last-child {
+    color: ${e=>e.theme.colors.MyNoticesLinkSecColor};
+    background-color: ${e=>e.theme.colors.MyNoticesLinkSecBGColor};
+    &:hover {
+      background-color: ${e=>e.theme.colors.MyNoticesLinkSecHoverBGColor};
+    }
+  }
+
+  &:hover {
+    background-color: ${e=>e.theme.colors.MyNoticesLinkHoverBGColor};
+  }
+`,I=t.div`
+  padding: 80px 0 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 180px 123px 0;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 180px 103px 0;
+  }
+`,A=()=>o.jsxs(N,{children:[o.jsxs(G,{children:[o.jsx(s,{to:"favorites",children:"My favorites pets"}),o.jsx(s,{to:"viewed",children:"Viewed"})]}),o.jsx(I,{children:o.jsx(p,{})})]}),T=()=>o.jsxs(x,{className:"container",children:[o.jsx(L,{}),o.jsx(A,{})]});export{T as default};

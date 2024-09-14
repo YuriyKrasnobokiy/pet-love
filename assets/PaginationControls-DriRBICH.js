@@ -1,4 +1,4 @@
-import{u as a,a as B,c as F,r as $,U as y,j as t,I as g,V as I,b as S}from"./index-DZzPhIgR.js";const W=a.form`
+import{u as a,a as B,c as F,r as $,T as y,j as t,I as g,U as I,b as S}from"./index-COXLs-tV.js";const W=a.form`
   position: relative;
   margin: 0 auto;
   margin-bottom: ${e=>e.$isInFilters?"12px":"20px"};
@@ -128,4 +128,4 @@ import{u as a,a as B,c as F,r as $,U as y,j as t,I as g,V as I,b as S}from"./ind
     border: 1px solid
       ${e=>e.theme.colors.PaginationBtnBorderColorDisabled};
   }
-`,V=({currentPage:e,totalPages:n,onPageChange:r})=>{const p=()=>{const x=S(),s=[],c=x==="desktop"||x==="tablet"?3:2,l=Math.max(1,Math.min(e-Math.floor(c/2),n-c+1)),d=Math.min(l+c-1,n);for(let i=l;i<=d;i++)s.push(t.jsx(h,{$isCurrentPage:e===i,onClick:()=>r(i),children:i},i));return d<n&&s.push(t.jsx(h,{disabled:!0,children:"..."},"end-ellipsis")),s};return t.jsxs(D,{children:[t.jsxs(C,{children:[t.jsx(h,{className:"left icon",disabled:e===1,onClick:()=>r(1),children:t.jsx(f,{})}),t.jsx(h,{className:"left icon",disabled:e===1,onClick:()=>r(e-1),children:t.jsx(b,{})})]}),t.jsx(L,{children:p()}),t.jsxs(C,{children:[t.jsx(h,{className:"icon",disabled:e===n,onClick:()=>r(e+1),children:t.jsx(b,{})}),t.jsx(h,{className:"icon",disabled:e===n,onClick:()=>r(n),children:t.jsx(f,{})})]})]})};export{V as P,M as R,P as S};
+`,E=({currentPage:e,totalPages:n,onPageChange:r})=>{const p=()=>{const x=S(),s=[],c=x==="desktop"||x==="tablet"?3:2,l=Math.max(1,Math.min(e-Math.floor(c/2),n-c+1)),d=Math.min(l+c-1,n);for(let i=l;i<=d;i++)s.push(t.jsx(h,{$isCurrentPage:e===i,onClick:()=>r(i),children:i},i));return d<n&&s.push(t.jsx(h,{disabled:!0,children:"..."},"end-ellipsis")),s};return t.jsxs(D,{children:[t.jsxs(C,{children:[t.jsx(h,{className:"left icon",disabled:e===1,onClick:()=>r(1),children:t.jsx(f,{})}),t.jsx(h,{className:"left icon",disabled:e===1,onClick:()=>r(e-1),children:t.jsx(b,{})})]}),t.jsx(L,{children:p()}),t.jsxs(C,{children:[t.jsx(h,{className:"icon",disabled:e===n,onClick:()=>r(e+1),children:t.jsx(b,{})}),t.jsx(h,{className:"icon",disabled:e===n,onClick:()=>r(n),children:t.jsx(f,{})})]})]})};export{E as P,M as R,P as S};
