@@ -19,6 +19,7 @@ import {
   AuthTitle,
   ErrorMessage,
 } from "./AuthForm.styled";
+import { useNavigate } from "react-router-dom";
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string().min(2, "Name must be at least 2 characters").required(),
@@ -41,6 +42,7 @@ export const RegistrForm = () => {
   } = useForm({ resolver: yupResolver(RegisterSchema), mode: "onChange" });
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const handlePasswordClick = () => {
@@ -50,10 +52,15 @@ export const RegistrForm = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
-  const handleFormSubmit = (data) => {
+  const handleFormSubmit = async (data) => {
     const { name, email, password } = data;
-    dispatch(registration({ name, email, password }));
-    reset();
+    try {
+      await dispatch(registration({ name, email, password })).unwrap();
+      reset();
+      navigate("/profile");
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (

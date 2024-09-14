@@ -16,18 +16,6 @@ export const fetchPets = createAsyncThunk(
     locationId,
   }) => {
     try {
-      // console.log("isExpensive: ", isExpensive);
-      // const response = await axios.get(
-      //   `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}&category=${category}&species=${species}`,
-      // );
-
-      // const response = await axios.get(
-      //   `${API_URL}notices?page=${page}&limit=${limit}&keyword=${filterWord}&category=${
-      //     category || ""
-      //   }&species=${species || ""}&byPopularity=${
-      //     isPopular ? "true" : "false"
-      //   }&byPrice=${isExpensive ? "false" : "true"}`,
-      // );
       const response = await axios.get(
         `${API_URL}notices?page=${page}&limit=${limit}&keyword=${
           filterWord || ""

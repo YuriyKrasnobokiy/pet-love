@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const UserCardWrap = styled.div`
-  /* max-width: 335px; */
   padding: 18px 20px 40px;
   border-radius: 30px;
   background-color: ${(props) => props.theme.colors.UserCardBGColor};

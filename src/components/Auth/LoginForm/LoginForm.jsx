@@ -45,10 +45,16 @@ export const LoginForm = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleFormSubmit = (data) => {
+  // Since it is necessary to wait for a response from the backend, and then redirect to the user profile, we perform
+  const handleFormSubmit = async (data) => {
     const { email, password } = data;
-    dispatch(login({ email, password }));
-    reset();
+    try {
+      await dispatch(login({ email, password })).unwrap();
+      reset();
+      navigate("/profile");
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (
