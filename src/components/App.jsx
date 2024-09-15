@@ -76,6 +76,7 @@ export const App = () => {
               path="/profile"
               element={<PrivateRoute redirectTo="/" component={<Profile />} />}
             >
+              <Route index element={<MyFavoritesPets />} />
               <Route path="favorites" element={<MyFavoritesPets />} />
               <Route path="viewed" element={<Viewed />} />
             </Route>
