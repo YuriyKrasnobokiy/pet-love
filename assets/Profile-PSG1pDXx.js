@@ -1,4 +1,4 @@
-import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-COXLs-tV.js";const x=t.div`
+import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7LkVU.js";const x=t.div`
   @media screen and (min-width: 1280px) {
     display: grid;
     grid-template-columns: 520px 1fr;

@@ -1,4 +1,4 @@
-import{u as s,r as i,Z as n,j as o,_ as a}from"./index-COXLs-tV.js";const l=s.div`
+import{u as s,r as i,Z as n,j as o,_ as a}from"./index-j_a7LkVU.js";const l=s.div`
   padding: ${e=>e.$isProfile?0:"20px"};
 `,c=s.img`
   width: 80px;
