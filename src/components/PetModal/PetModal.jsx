@@ -15,7 +15,6 @@ import {
   PetModalComment,
   PetModalImg,
   PetModalImgWrap,
-  PetModalPopularityItem,
   PetModalPopularityList,
   PetModalPopularityNumber,
   PetModalPopularityWrap,
@@ -33,7 +32,6 @@ import { PetStars } from "../PetStars/PetStars";
 
 export const PetModal = () => {
   const pet = useSelector(selectPet);
-  console.log("pet: ", pet);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
   const isLoading = useSelector(selectIsLoading);

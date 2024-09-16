@@ -6,14 +6,19 @@ import Login from "../../pages/Login/Login";
 import Registration from "../../pages/Registration/Registration";
 import { Modal } from "../Modal/Modal";
 import { PetModal } from "../PetModal/PetModal";
-import { selectIsOpenModal } from "../../redux/modal/modalSelectors";
+import {
+  selectIsModalEditUserOpen,
+  selectIsOpenModal,
+} from "../../redux/modal/modalSelectors";
 import { selectIsApproveModalOpen } from "../../redux/modal/modalSelectors";
 import { useSelector } from "react-redux";
 import { ModalApproveAction } from "../ModalApproveAction/ModalApproveAction";
+import { ModalEditUser } from "../ModalEditUser/ModalEditUser";
 
 const Layout = ({ children, toggleTheme, currentTheme }) => {
   const isOpenModal = useSelector(selectIsOpenModal);
   const isApproveModalOpen = useSelector(selectIsApproveModalOpen);
+  const isModalEditUserOpen = useSelector(selectIsModalEditUserOpen);
   return (
     <>
       <ToastContainer
@@ -33,7 +38,13 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
       <main>{children}</main>
       {isOpenModal && (
         <Modal>
-          {isApproveModalOpen ? <ModalApproveAction /> : <PetModal />}
+          {isModalEditUserOpen ? (
+            <ModalEditUser />
+          ) : isApproveModalOpen ? (
+            <ModalApproveAction />
+          ) : (
+            <PetModal />
+          )}
         </Modal>
       )}
       <Footer currentTheme={currentTheme} />

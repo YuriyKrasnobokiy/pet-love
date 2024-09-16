@@ -13,16 +13,16 @@ export const UserAvatarThumb = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  width: 74px;
-  height: 74px;
+  width: ${(props) => (props.$isEditModal ? "60px" : "74px")};
+  height: ${(props) => (props.$isEditModal ? "60px" : "74px")};
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.UserBlockAvatarBGColor};
   margin: 0 auto;
   color: ${(props) => props.theme.colors.UserBlockAvatarColor};
 
   @media screen and (min-width: 768px) {
-    width: 90px;
-    height: 90px;
+    width: ${(props) => (props.$isEditModal ? "66px" : "90px")};
+    height: ${(props) => (props.$isEditModal ? "66px" : "90px")};
   }
 `;
 

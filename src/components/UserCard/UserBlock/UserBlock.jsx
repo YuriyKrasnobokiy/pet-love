@@ -11,25 +11,38 @@ import {
 } from "./UserBlock.styled";
 import Icon from "../../Icon/Icon";
 import { useDeviceType } from "../../../hooks/useDeviceType";
-import { selectUser } from "../../../redux/auth/authSelectors";
 import { useSelector } from "react-redux";
+import { selectProfile } from "../../../redux/profile/profileSelectors";
 
 export const UserBlock = () => {
   const deviceType = useDeviceType();
-  const userData = useSelector(selectUser);
+  const userData = useSelector(selectProfile);
+  console.log("userData: ", userData);
   return (
     <UserBlockWrap>
       <UserAvatarWrap>
         <UserAvatarThumb>
-          <Icon
-            name="icon-user-big"
-            width={
-              deviceType === "desktop" ? 50 : deviceType === "tablet" ? 50 : 40
-            }
-            height={
-              deviceType === "desktop" ? 50 : deviceType === "tablet" ? 50 : 40
-            }
-          />
+          {userData && userData.avatar && userData.avatar.trim() !== "" ? (
+            <img src={userData.avatar} alt="avatar" />
+          ) : (
+            <Icon
+              name="icon-user-big"
+              width={
+                deviceType === "desktop"
+                  ? 50
+                  : deviceType === "tablet"
+                  ? 50
+                  : 40
+              }
+              height={
+                deviceType === "desktop"
+                  ? 50
+                  : deviceType === "tablet"
+                  ? 50
+                  : 40
+              }
+            />
+          )}
         </UserAvatarThumb>
         <UserAvatarBtn>Upload photo</UserAvatarBtn>
       </UserAvatarWrap>
@@ -39,15 +52,31 @@ export const UserBlock = () => {
         <UserInfoInputsWrap>
           <UserInfoFormInput
             type="text"
-            value={userData ? userData.name : "Name"}
+            value={
+              userData && userData.name && userData.name.trim() !== ""
+                ? userData.name
+                : "Name"
+            }
             disabled
           />
           <UserInfoFormInput
             type="email"
-            value={userData ? userData.email : "name@gmail.com"}
+            value={
+              userData && userData.email && userData.email.trim() !== ""
+                ? userData.email
+                : "name@gmail.com"
+            }
             disabled
           />
-          <UserInfoFormInput type="phone" value="+380" disabled />
+          <UserInfoFormInput
+            type="phone"
+            value={
+              userData && userData.phone && userData.phone.trim() !== ""
+                ? userData.phone
+                : "+380"
+            }
+            disabled
+          />
         </UserInfoInputsWrap>
       </UserInfoForm>
     </UserBlockWrap>

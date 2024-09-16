@@ -8,8 +8,11 @@ import {
 import Icon from "../Icon/Icon";
 import { UserBlock } from "./UserBlock/UserBlock";
 import { PetsBlock } from "./PetsBlock/PetsBlock";
+import { useDispatch } from "react-redux";
+import { openModalEditUser } from "../../redux/modal/modalSlice";
 
 export const UserCard = () => {
+  const dispatch = useDispatch();
   return (
     <UserCardWrap>
       <UserCardBageWrap>
@@ -18,7 +21,7 @@ export const UserCard = () => {
           <Icon name="icon-user" width={18} height={18}></Icon>
         </UserBage>
 
-        <UserCardEditBtn>
+        <UserCardEditBtn onClick={() => dispatch(openModalEditUser())}>
           <Icon name="icon-edit" width={18} height={18}></Icon>
         </UserCardEditBtn>
       </UserCardBageWrap>

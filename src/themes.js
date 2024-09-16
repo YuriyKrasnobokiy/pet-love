@@ -165,6 +165,8 @@ export const themes = {
       MyNoticesLinkActiveHoverBGColor: "#f9b020",
       MyNoticesLinkHoverBGColor: "#fff4df",
 
+      ModalEditUserTitleColor: "2b2b2a",
+
       white: "#fff",
       IconStarAccentColor: "#ffc531",
 
@@ -340,6 +342,8 @@ export const themes = {
       MyNoticesLinkBGColor: "#fff",
       MyNoticesLinkActiveHoverBGColor: "#f9b020",
       MyNoticesLinkHoverBGColor: "#fff4df",
+
+      ModalEditUserTitleColor: "2b2b2a",
 
       white: "#fff",
       IconStarAccentColor: "#ffc531",

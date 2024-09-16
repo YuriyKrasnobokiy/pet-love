@@ -17,6 +17,7 @@ import mobMenuReducer from "./mob-menu/mobMenuSlice";
 import modalReducer from "./modal/modalSlice";
 import newsReducer from "./news/newsSlice";
 import petsReducer from "./pets/petsSlice";
+import profileReducer from "./profile/profileSlice";
 
 export const authPersistConfig = {
   key: "auth",
@@ -32,6 +33,7 @@ export const store = configureStore({
     petsStore: petsReducer,
     newsStore: newsReducer,
     filtersStore: filtersReducer,
+    profileStore: profileReducer,
     auth: persistReducer(authPersistConfig, authReducer),
   },
   middleware: (getDefaultMiddleware) =>
