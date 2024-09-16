@@ -1,11 +1,11 @@
-import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7LkVU.js";const x=t.div`
+import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}from"./index-CQ5QWlwV.js";const m=t.div`
   @media screen and (min-width: 1280px) {
     display: grid;
     grid-template-columns: 520px 1fr;
     max-width: 1216px;
     padding: 0 32px;
   }
-`,h=t.div`
+`,g=t.div`
   padding: 18px 20px 40px;
   border-radius: 30px;
   background-color: ${e=>e.theme.colors.UserCardBGColor};
@@ -19,7 +19,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
   @media screen and (min-width: 1280px) {
     max-width: 440px;
   }
-`,m=t.div`
+`,u=t.div`
   display: flex;
   justify-content: space-between;
 
@@ -29,7 +29,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
     right: 40px;
     left: 40px;
   }
-`,g=t.p`
+`,f=t.p`
   display: flex;
   gap: 4px;
   align-items: center;
@@ -42,7 +42,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
   line-height: 1.28571;
   letter-spacing: -0.02em;
   background-color: ${e=>e.theme.colors.UserCardBageBgColor};
-`,u=t.button`
+`,b=t.button`
   border-radius: 30px;
   padding: 10px;
   width: 38px;
@@ -54,11 +54,11 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
   &:hover {
     background-color: ${e=>e.theme.colors.UserCardEditBtnHoverBGColor};
   }
-`,f=t.div`
+`,k=t.div`
   margin-bottom: 40px;
-`,b=t.div`
-  margin-bottom: 20px;
 `,w=t.div`
+  margin-bottom: 20px;
+`,B=t.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +74,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
     width: 90px;
     height: 90px;
   }
-`,B=t.button`
+`,v=t.button`
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33333;
@@ -94,10 +94,10 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
   &:hover {
     color: ${e=>e.theme.colors.UserBlockAvatarBtnHoverColor};
   }
-`,k=t.form`
+`,j=t.form`
   display: flex;
   flex-direction: column;
-`,j=t.h3`
+`,C=t.h3`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -108,7 +108,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
     font-size: 18px;
     line-height: 1.33333;
   }
-`,v=t.div`
+`,y=t.div`
   display: grid;
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
@@ -142,7 +142,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
       margin-bottom: 0;
     }
   }
-`,C=()=>{const e=d(),i=a(c);return o.jsxs(f,{children:[o.jsxs(b,{children:[o.jsx(w,{children:o.jsx(n,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),o.jsx(B,{children:"Upload photo"})]}),o.jsxs(k,{children:[o.jsx(j,{children:"My information"}),o.jsxs(v,{children:[o.jsx(r,{type:"text",value:i?i.name:"Name",disabled:!0}),o.jsx(r,{type:"email",value:i?i.email:"name@gmail.com",disabled:!0}),o.jsx(r,{type:"phone",value:"+380",disabled:!0})]})]})]})},y=t.div`
+`,U=()=>{const e=d(),i=a(c);return o.jsxs(k,{children:[o.jsxs(w,{children:[o.jsx(B,{children:o.jsx(n,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),o.jsx(v,{children:"Upload photo"})]}),o.jsxs(j,{children:[o.jsx(C,{children:"My information"}),o.jsxs(y,{children:[o.jsx(r,{type:"text",value:i?i.name:"Name",disabled:!0}),o.jsx(r,{type:"email",value:i?i.email:"name@gmail.com",disabled:!0}),o.jsx(r,{type:"phone",value:"+380",disabled:!0})]})]})]})},$=t.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -151,7 +151,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
   @media screen and (min-width: 768px) {
     margin-bottom: 80px;
   }
-`,U=t.h2`
+`,A=t.h2`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -161,7 +161,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
     font-size: 18px;
     line-height: 1.33333;
   }
-`,$=t.button`
+`,P=t.button`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
@@ -184,7 +184,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
     line-height: 1.25;
     width: 118px;
   }
-`,P=t.button`
+`,z=t.button`
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
@@ -209,7 +209,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
     font-size: 16px;
     line-height: 1.25;
   }
-`,z=()=>o.jsxs("div",{children:[o.jsxs(y,{children:[o.jsx(U,{children:"My pets"}),o.jsxs($,{children:["Add pet",o.jsx(n,{name:"icon-plus",width:18,height:18})]})]}),o.jsx(P,{children:"LOG OUT"})]}),L=()=>o.jsxs(h,{children:[o.jsxs(m,{children:[o.jsxs(g,{children:["User",o.jsx(n,{name:"icon-user",width:18,height:18})]}),o.jsx(u,{children:o.jsx(n,{name:"icon-edit",width:18,height:18})})]}),o.jsx(C,{}),o.jsx(z,{})]}),N=t.div`
+`,L=()=>{const e=l(),i=()=>{e(p())};return o.jsxs("div",{children:[o.jsxs($,{children:[o.jsx(A,{children:"My pets"}),o.jsxs(P,{children:["Add pet",o.jsx(n,{name:"icon-plus",width:18,height:18})]})]}),o.jsx(z,{onClick:i,children:"LOG OUT"})]})},N=()=>o.jsxs(g,{children:[o.jsxs(u,{children:[o.jsxs(f,{children:["User",o.jsx(n,{name:"icon-user",width:18,height:18})]}),o.jsx(b,{children:o.jsx(n,{name:"icon-edit",width:18,height:18})})]}),o.jsx(U,{}),o.jsx(L,{})]}),G=t.div`
   padding: 40px 0;
 
   @media screen and (min-width: 768px) {
@@ -218,14 +218,14 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
   @media screen and (min-width: 1280px) {
     padding: 40px 32px;
   }
-`,G=t.div`
+`,I=t.div`
   display: flex;
   gap: 10px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-`,s=t(l)`
+`,s=t(x)`
   display: flex;
   justify-content: center;
   font-size: 14px;
@@ -239,6 +239,15 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
   background-color: ${e=>e.theme.colors.MyNoticesLinkBGColor};
   transition: background-color 300ms ease-in-out;
 
+  &.active {
+    background-color: ${e=>e.theme.colors.MyNoticesLinkActiveBGColor};
+    color: ${e=>e.theme.colors.MyNoticesLinkActiveColor};
+
+    &:hover {
+      background-color: ${e=>e.theme.colors.MyNoticesLinkActiveHoverBGColor};
+    }
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.25;
@@ -246,18 +255,10 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
     min-width: 114px;
   }
 
-  &:last-child {
-    color: ${e=>e.theme.colors.MyNoticesLinkSecColor};
-    background-color: ${e=>e.theme.colors.MyNoticesLinkSecBGColor};
-    &:hover {
-      background-color: ${e=>e.theme.colors.MyNoticesLinkSecHoverBGColor};
-    }
-  }
-
   &:hover {
     background-color: ${e=>e.theme.colors.MyNoticesLinkHoverBGColor};
   }
-`,I=t.div`
+`,M=t.div`
   padding: 80px 0 0;
 
   @media screen and (min-width: 768px) {
@@ -266,4 +267,4 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,X as l,Y as p}from"./index-j_a7
   @media screen and (min-width: 1280px) {
     padding: 180px 103px 0;
   }
-`,A=()=>o.jsxs(N,{children:[o.jsxs(G,{children:[o.jsx(s,{to:"favorites",children:"My favorites pets"}),o.jsx(s,{to:"viewed",children:"Viewed"})]}),o.jsx(I,{children:o.jsx(p,{})})]}),T=()=>o.jsxs(x,{className:"container",children:[o.jsx(L,{}),o.jsx(A,{})]});export{T as default};
+`,T=()=>o.jsxs(G,{children:[o.jsxs(I,{children:[o.jsx(s,{to:"favorites",children:"My favorites pets"}),o.jsx(s,{to:"viewed",children:"Viewed"})]}),o.jsx(M,{children:o.jsx(h,{})})]}),O=()=>o.jsxs(m,{className:"container",children:[o.jsx(N,{}),o.jsx(T,{})]});export{O as default};

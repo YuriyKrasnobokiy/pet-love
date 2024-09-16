@@ -1,4 +1,4 @@
-import{u as a,a as B,c as F,r as $,T as y,j as t,I as g,U as I,b as S}from"./index-j_a7LkVU.js";const W=a.form`
+import{u as a,a as B,c as F,r as $,T as y,j as t,I as g,U as I,b as S}from"./index-CQ5QWlwV.js";const W=a.form`
   position: relative;
   margin: 0 auto;
   margin-bottom: ${e=>e.$isInFilters?"12px":"20px"};
