@@ -1,5 +1,15 @@
-import React from "react";
-import { EditUserTitle, ModalEditUserWrap } from "./ModalEditUser.styled";
+import React, { useState } from "react";
+import {
+  AvatarUploadBtn,
+  AvatarUploadWrap,
+  EditUserAvatarInput,
+  EditUserImg,
+  EditUserInput,
+  EditUserSubmitBtn,
+  EditUserTitle,
+  InputsWrap,
+  ModalEditUserWrap,
+} from "./ModalEditUser.styled";
 import { UserAvatarThumb } from "../UserCard/UserBlock/UserBlock.styled";
 import Icon from "../Icon/Icon";
 import { useDeviceType } from "../../hooks/useDeviceType";
@@ -27,19 +37,22 @@ export const ModalEditUser = () => {
   const userData = useSelector(selectProfile);
   const dispatch = useDispatch();
 
+  const [previewAvatar, setPreviewAvatar] = useState(userData.avatar || "");
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    watch,
   } = useForm({
     resolver: yupResolver(EditUserSchema),
     mode: "onChange",
     defaultValues: {
       name: userData.name || "Name",
       email: userData.email || "name@gmail.com",
-      phone: userData.phone || "+380111111111",
-      avatar: userData.avatar || "https://test.png",
+      phone: userData.phone || "",
+      avatar: userData.avatar || "",
     },
   });
 
@@ -55,14 +68,21 @@ export const ModalEditUser = () => {
     }
   };
 
+  const handleUploadPhoto = () => {
+    const avatarUrl = watch("avatar");
+    if (avatarUrl && avatarUrl.trim() !== "") {
+      setPreviewAvatar(avatarUrl);
+    }
+  };
+
   return (
     <ModalEditUserWrap>
-      <EditUserTitle>Edit information</EditUserTitle>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
-        <UserAvatarThumb $isEditModal>
-          {userData && userData.avatar && userData.avatar.trim() !== "" ? (
-            <img src={userData.avatar} alt="avatar" />
-          ) : (
+        <EditUserTitle>Edit information</EditUserTitle>
+        {previewAvatar.trim() !== "" ? (
+          <EditUserImg src={previewAvatar} alt="avatar" />
+        ) : (
+          <UserAvatarThumb $isEditModal>
             <Icon
               name="icon-user-big"
               width={
@@ -80,29 +100,49 @@ export const ModalEditUser = () => {
                   : 40
               }
             />
-          )}
-        </UserAvatarThumb>
-        <div>
-          <input
-            {...register("avatar")}
-            type="avatar"
-            placeholder="Avatar URL"
-          />
-          <p>{errors.avatar?.message}</p>
-        </div>
-        <div>
-          <input {...register("name")} type="text" placeholder="Name" />
-          <p>{errors.name?.message}</p>
-        </div>
-        <div>
-          <input {...register("email")} type="email" placeholder="Email" />
-          <p>{errors.email?.message}</p>
-        </div>
-        <div>
-          <input {...register("phone")} type="text" placeholder="phone" />
-          <p>{errors.phone?.message}</p>
-        </div>
-        <button type="submit">Submit</button>
+          </UserAvatarThumb>
+        )}
+        <InputsWrap>
+          <AvatarUploadWrap>
+            <div>
+              <EditUserAvatarInput
+                {...register("avatar")}
+                type="avatar"
+                placeholder="https://test.png"
+              />
+              <p>{errors.avatar?.message}</p>
+            </div>
+            <AvatarUploadBtn type="button" onClick={handleUploadPhoto}>
+              Upload photo
+            </AvatarUploadBtn>
+          </AvatarUploadWrap>
+
+          <div>
+            <EditUserInput
+              {...register("name")}
+              type="text"
+              placeholder="Name"
+            />
+            <p>{errors.name?.message}</p>
+          </div>
+          <div>
+            <EditUserInput
+              {...register("email")}
+              type="email"
+              placeholder="Email"
+            />
+            <p>{errors.email?.message}</p>
+          </div>
+          <div>
+            <EditUserInput
+              {...register("phone")}
+              type="text"
+              placeholder="phone"
+            />
+            <p>{errors.phone?.message}</p>
+          </div>
+        </InputsWrap>
+        <EditUserSubmitBtn type="submit">Go to profile</EditUserSubmitBtn>
       </form>
     </ModalEditUserWrap>
   );

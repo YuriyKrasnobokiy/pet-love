@@ -44,7 +44,9 @@ export const UserBlock = () => {
             />
           )}
         </UserAvatarThumb>
-        <UserAvatarBtn>Upload photo</UserAvatarBtn>
+        {userData.avatar && userData.avatar.trim() !== "" ? null : (
+          <UserAvatarBtn>Upload photo</UserAvatarBtn>
+        )}
       </UserAvatarWrap>
 
       <UserInfoForm>
