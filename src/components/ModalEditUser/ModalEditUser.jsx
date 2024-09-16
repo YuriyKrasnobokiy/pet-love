@@ -32,7 +32,16 @@ export const ModalEditUser = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm({ resolver: yupResolver(EditUserSchema), mode: "onChange" });
+  } = useForm({
+    resolver: yupResolver(EditUserSchema),
+    mode: "onChange",
+    defaultValues: {
+      name: userData.name || "Name",
+      email: userData.email || "name@gmail.com",
+      phone: userData.phone || "+380111111111",
+      avatar: userData.avatar || "https://test.png",
+    },
+  });
 
   const handleFormSubmit = (data) => {
     const { name, email, phone, avatar } = data;
