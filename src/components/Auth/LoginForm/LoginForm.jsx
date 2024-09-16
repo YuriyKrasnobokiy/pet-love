@@ -20,6 +20,7 @@ import {
   ErrorMessage,
 } from "../RegistrForm/AuthForm.styled";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().matches(emailRegExp, "Invalid email").required(),

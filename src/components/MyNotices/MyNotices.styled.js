@@ -35,6 +35,17 @@ export const NavLinkStyled = styled(NavLink)`
   background-color: ${(props) => props.theme.colors.MyNoticesLinkBGColor};
   transition: background-color 300ms ease-in-out;
 
+  &.active {
+    background-color: ${(props) =>
+      props.theme.colors.MyNoticesLinkActiveBGColor};
+    color: ${(props) => props.theme.colors.MyNoticesLinkActiveColor};
+
+    &:hover {
+      background-color: ${(props) =>
+        props.theme.colors.MyNoticesLinkActiveHoverBGColor};
+    }
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.25;
@@ -42,20 +53,18 @@ export const NavLinkStyled = styled(NavLink)`
     min-width: 114px;
   }
 
-  &:last-child {
-    color: ${(props) => props.theme.colors.MyNoticesLinkSecColor};
-    background-color: ${(props) => props.theme.colors.MyNoticesLinkSecBGColor};
-    &:hover {
-      background-color: ${(props) =>
-        props.theme.colors.MyNoticesLinkSecHoverBGColor};
-    }
-  }
-
   &:hover {
     background-color: ${(props) =>
       props.theme.colors.MyNoticesLinkHoverBGColor};
   }
 `;
+
+//       MyNoticesLinkActiveColor: "#fff",
+//       MyNoticesLinkColor: "#262626",
+//       MyNoticesLinkActiveBGColor: "#f6b83d",
+//       MyNoticesLinkBGColor: "#fff",
+//       MyNoticesLinkActiveHoverBGColor: "#f9b020",
+//       MyNoticesLinkHoverBGColor: "#fff4df",
 
 export const NoticesContainer = styled.div`
   padding: 80px 0 0;

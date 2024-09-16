@@ -1,6 +1,6 @@
 import { Suspense, lazy, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../GlobalStyles";
 import Login from "../pages/Login/Login";
@@ -76,7 +76,8 @@ export const App = () => {
               path="/profile"
               element={<PrivateRoute redirectTo="/" component={<Profile />} />}
             >
-              <Route index element={<MyFavoritesPets />} />
+              {/* <Route index element={<MyFavoritesPets />} /> */}
+              <Route index element={<Navigate to="favorites" replace />} />
               <Route path="favorites" element={<MyFavoritesPets />} />
               <Route path="viewed" element={<Viewed />} />
             </Route>

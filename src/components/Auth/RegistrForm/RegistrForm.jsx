@@ -20,6 +20,7 @@ import {
   ErrorMessage,
 } from "./AuthForm.styled";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string().min(2, "Name must be at least 2 characters").required(),
