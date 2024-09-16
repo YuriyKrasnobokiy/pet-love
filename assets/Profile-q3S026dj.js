@@ -1,4 +1,4 @@
-import{u as i,b as d,c,W as l,j as o,X as p,Y as x,Z as h,I as r,_ as m,$ as g,a0 as u,a1 as f,a2 as n,a as s,a3 as j,a4 as k,a5 as v,a6 as B,r as b,a7 as w}from"./index-DhznfioA.js";const C=i.div`
+import{u as i,b as d,c,W as l,j as o,X as p,Y as x,Z as h,I as r,_ as m,$ as g,a0 as u,a1 as f,a2 as n,a as s,a3 as v,a4 as j,a5 as k,a6 as B,r as b,a7 as w}from"./index-BSI6NEvM.js";const C=i.div`
   @media screen and (min-width: 1280px) {
     display: grid;
     grid-template-columns: 520px 1fr;
@@ -54,7 +54,7 @@ import{u as i,b as d,c,W as l,j as o,X as p,Y as x,Z as h,I as r,_ as m,$ as g,a
   &:hover {
     background-color: ${e=>e.theme.colors.UserCardEditBtnHoverBGColor};
   }
-`,L=()=>{const e=d(),t=c(l);return console.log("userData: ",t),o.jsxs(p,{children:[o.jsxs(x,{children:[o.jsx(h,{children:t&&t.avatar&&t.avatar.trim()!==""?o.jsx("img",{src:t.avatar,alt:"avatar"}):o.jsx(r,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),o.jsx(m,{children:"Upload photo"})]}),o.jsxs(g,{children:[o.jsx(u,{children:"My information"}),o.jsxs(f,{children:[o.jsx(n,{type:"text",value:t&&t.name&&t.name.trim()!==""?t.name:"Name",disabled:!0}),o.jsx(n,{type:"email",value:t&&t.email&&t.email.trim()!==""?t.email:"name@gmail.com",disabled:!0}),o.jsx(n,{type:"phone",value:t&&t.phone&&t.phone.trim()!==""?t.phone:"+380",disabled:!0})]})]})]})},M=i.div`
+`,L=()=>{const e=d(),t=c(l);return console.log("userData: ",t),o.jsxs(p,{children:[o.jsxs(x,{children:[o.jsx(h,{children:t&&t.avatar&&t.avatar.trim()!==""?o.jsx("img",{src:t.avatar,alt:"avatar"}):o.jsx(r,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),t.avatar&&t.avatar.trim()!==""?null:o.jsx(m,{children:"Upload photo"})]}),o.jsxs(g,{children:[o.jsx(u,{children:"My information"}),o.jsxs(f,{children:[o.jsx(n,{type:"text",value:t&&t.name&&t.name.trim()!==""?t.name:"Name",disabled:!0}),o.jsx(n,{type:"email",value:t&&t.email&&t.email.trim()!==""?t.email:"name@gmail.com",disabled:!0}),o.jsx(n,{type:"phone",value:t&&t.phone&&t.phone.trim()!==""?t.phone:"+380",disabled:!0})]})]})]})},M=i.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,7 +121,7 @@ import{u as i,b as d,c,W as l,j as o,X as p,Y as x,Z as h,I as r,_ as m,$ as g,a
     font-size: 16px;
     line-height: 1.25;
   }
-`,z=()=>{const e=s(),t=()=>{e(j())};return o.jsxs("div",{children:[o.jsxs(M,{children:[o.jsx(N,{children:"My pets"}),o.jsxs(A,{children:["Add pet",o.jsx(r,{name:"icon-plus",width:18,height:18})]})]}),o.jsx(G,{onClick:t,children:"LOG OUT"})]})},W=()=>{const e=s();return o.jsxs(y,{children:[o.jsxs(U,{children:[o.jsxs($,{children:["User",o.jsx(r,{name:"icon-user",width:18,height:18})]}),o.jsx(P,{onClick:()=>e(k()),children:o.jsx(r,{name:"icon-edit",width:18,height:18})})]}),o.jsx(L,{}),o.jsx(z,{})]})},I=i.div`
+`,z=()=>{const e=s(),t=()=>{e(v())};return o.jsxs("div",{children:[o.jsxs(M,{children:[o.jsx(N,{children:"My pets"}),o.jsxs(A,{children:["Add pet",o.jsx(r,{name:"icon-plus",width:18,height:18})]})]}),o.jsx(G,{onClick:t,children:"LOG OUT"})]})},W=()=>{const e=s();return o.jsxs(y,{children:[o.jsxs(U,{children:[o.jsxs($,{children:["User",o.jsx(r,{name:"icon-user",width:18,height:18})]}),o.jsx(P,{onClick:()=>e(j()),children:o.jsx(r,{name:"icon-edit",width:18,height:18})})]}),o.jsx(L,{}),o.jsx(z,{})]})},I=i.div`
   padding: 40px 0;
 
   @media screen and (min-width: 768px) {
@@ -137,7 +137,7 @@ import{u as i,b as d,c,W as l,j as o,X as p,Y as x,Z as h,I as r,_ as m,$ as g,a
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-`,a=i(v)`
+`,a=i(k)`
   display: flex;
   justify-content: center;
   font-size: 14px;
