@@ -1,11 +1,11 @@
-import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}from"./index-CQ5QWlwV.js";const m=t.div`
+import{u as i,b as d,c,W as l,j as o,X as p,Y as x,Z as h,I as r,_ as m,$ as g,a0 as u,a1 as f,a2 as n,a as s,a3 as j,a4 as k,a5 as v,a6 as B,r as b,a7 as w}from"./index-DkhqChRq.js";const C=i.div`
   @media screen and (min-width: 1280px) {
     display: grid;
     grid-template-columns: 520px 1fr;
     max-width: 1216px;
     padding: 0 32px;
   }
-`,g=t.div`
+`,y=i.div`
   padding: 18px 20px 40px;
   border-radius: 30px;
   background-color: ${e=>e.theme.colors.UserCardBGColor};
@@ -19,7 +19,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
   @media screen and (min-width: 1280px) {
     max-width: 440px;
   }
-`,u=t.div`
+`,U=i.div`
   display: flex;
   justify-content: space-between;
 
@@ -29,7 +29,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
     right: 40px;
     left: 40px;
   }
-`,f=t.p`
+`,$=i.p`
   display: flex;
   gap: 4px;
   align-items: center;
@@ -42,7 +42,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
   line-height: 1.28571;
   letter-spacing: -0.02em;
   background-color: ${e=>e.theme.colors.UserCardBageBgColor};
-`,b=t.button`
+`,P=i.button`
   border-radius: 30px;
   padding: 10px;
   width: 38px;
@@ -54,95 +54,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
   &:hover {
     background-color: ${e=>e.theme.colors.UserCardEditBtnHoverBGColor};
   }
-`,k=t.div`
-  margin-bottom: 40px;
-`,w=t.div`
-  margin-bottom: 20px;
-`,B=t.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 74px;
-  height: 74px;
-  border-radius: 50%;
-  background-color: ${e=>e.theme.colors.UserBlockAvatarBGColor};
-  margin: 0 auto;
-  color: ${e=>e.theme.colors.UserBlockAvatarColor};
-
-  @media screen and (min-width: 768px) {
-    width: 90px;
-    height: 90px;
-  }
-`,v=t.button`
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33333;
-  letter-spacing: -0.02em;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  color: ${e=>e.theme.colors.UserBlockAvatarBtnColor};
-  background-color: transparent;
-  padding: 8px 10px;
-  transition: color 300ms ease-in-out;
-
-  @media screen and (min-width: 768px) {
-    font-size: 14px;
-    line-height: 1.28571;
-  }
-
-  &:hover {
-    color: ${e=>e.theme.colors.UserBlockAvatarBtnHoverColor};
-  }
-`,j=t.form`
-  display: flex;
-  flex-direction: column;
-`,C=t.h3`
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.25;
-  color: ${e=>e.theme.colors.UserInfoFormTitleColor};
-  margin-bottom: 20px;
-
-  @media screen and (min-width: 768px) {
-    font-size: 18px;
-    line-height: 1.33333;
-  }
-`,y=t.div`
-  display: grid;
-  @media screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-  @media screen and (min-width: 1280px) {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-`,r=t.input`
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.28571;
-  letter-spacing: -0.03em;
-  color: ${e=>e.theme.colors.UserInfoFormInputColor};
-  padding: 12px;
-  border-radius: 30px;
-  border: ${e=>e.theme.colors.UserInfoFormInputBorderColor};
-  background-color: transparent;
-
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
-
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 1.25;
-    padding: 16px;
-
-    &:not(:last-child) {
-      margin-bottom: 0;
-    }
-  }
-`,U=()=>{const e=d(),i=a(c);return o.jsxs(k,{children:[o.jsxs(w,{children:[o.jsx(B,{children:o.jsx(n,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),o.jsx(v,{children:"Upload photo"})]}),o.jsxs(j,{children:[o.jsx(C,{children:"My information"}),o.jsxs(y,{children:[o.jsx(r,{type:"text",value:i?i.name:"Name",disabled:!0}),o.jsx(r,{type:"email",value:i?i.email:"name@gmail.com",disabled:!0}),o.jsx(r,{type:"phone",value:"+380",disabled:!0})]})]})]})},$=t.div`
+`,L=()=>{const e=d(),t=c(l);return console.log("userData: ",t),o.jsxs(p,{children:[o.jsxs(x,{children:[o.jsx(h,{children:t&&t.avatar&&t.avatar.trim()!==""?o.jsx("img",{src:t.avatar,alt:"avatar"}):o.jsx(r,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),o.jsx(m,{children:"Upload photo"})]}),o.jsxs(g,{children:[o.jsx(u,{children:"My information"}),o.jsxs(f,{children:[o.jsx(n,{type:"text",value:t&&t.name&&t.name.trim()!==""?t.name:"Name",disabled:!0}),o.jsx(n,{type:"email",value:t&&t.email&&t.email.trim()!==""?t.email:"name@gmail.com",disabled:!0}),o.jsx(n,{type:"phone",value:t&&t.phone&&t.phone.trim()!==""?t.phone:"+380",disabled:!0})]})]})]})},M=i.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -151,7 +63,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
   @media screen and (min-width: 768px) {
     margin-bottom: 80px;
   }
-`,A=t.h2`
+`,N=i.h2`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -161,7 +73,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
     font-size: 18px;
     line-height: 1.33333;
   }
-`,P=t.button`
+`,A=i.button`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
@@ -184,7 +96,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
     line-height: 1.25;
     width: 118px;
   }
-`,z=t.button`
+`,G=i.button`
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
@@ -209,7 +121,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
     font-size: 16px;
     line-height: 1.25;
   }
-`,L=()=>{const e=l(),i=()=>{e(p())};return o.jsxs("div",{children:[o.jsxs($,{children:[o.jsx(A,{children:"My pets"}),o.jsxs(P,{children:["Add pet",o.jsx(n,{name:"icon-plus",width:18,height:18})]})]}),o.jsx(z,{onClick:i,children:"LOG OUT"})]})},N=()=>o.jsxs(g,{children:[o.jsxs(u,{children:[o.jsxs(f,{children:["User",o.jsx(n,{name:"icon-user",width:18,height:18})]}),o.jsx(b,{children:o.jsx(n,{name:"icon-edit",width:18,height:18})})]}),o.jsx(U,{}),o.jsx(L,{})]}),G=t.div`
+`,z=()=>{const e=s(),t=()=>{e(j())};return o.jsxs("div",{children:[o.jsxs(M,{children:[o.jsx(N,{children:"My pets"}),o.jsxs(A,{children:["Add pet",o.jsx(r,{name:"icon-plus",width:18,height:18})]})]}),o.jsx(G,{onClick:t,children:"LOG OUT"})]})},W=()=>{const e=s();return o.jsxs(y,{children:[o.jsxs(U,{children:[o.jsxs($,{children:["User",o.jsx(r,{name:"icon-user",width:18,height:18})]}),o.jsx(P,{onClick:()=>e(k()),children:o.jsx(r,{name:"icon-edit",width:18,height:18})})]}),o.jsx(L,{}),o.jsx(z,{})]})},I=i.div`
   padding: 40px 0;
 
   @media screen and (min-width: 768px) {
@@ -218,14 +130,14 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
   @media screen and (min-width: 1280px) {
     padding: 40px 32px;
   }
-`,I=t.div`
+`,O=i.div`
   display: flex;
   gap: 10px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-`,s=t(x)`
+`,a=i(v)`
   display: flex;
   justify-content: center;
   font-size: 14px;
@@ -258,7 +170,7 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
   &:hover {
     background-color: ${e=>e.theme.colors.MyNoticesLinkHoverBGColor};
   }
-`,M=t.div`
+`,T=i.div`
   padding: 80px 0 0;
 
   @media screen and (min-width: 768px) {
@@ -267,4 +179,4 @@ import{u as t,b as d,c as a,W as c,j as o,I as n,a as l,X as p,Y as x,Z as h}fro
   @media screen and (min-width: 1280px) {
     padding: 180px 103px 0;
   }
-`,T=()=>o.jsxs(G,{children:[o.jsxs(I,{children:[o.jsx(s,{to:"favorites",children:"My favorites pets"}),o.jsx(s,{to:"viewed",children:"Viewed"})]}),o.jsx(M,{children:o.jsx(h,{})})]}),O=()=>o.jsxs(m,{className:"container",children:[o.jsx(N,{}),o.jsx(T,{})]});export{O as default};
+`,E=()=>o.jsxs(I,{children:[o.jsxs(O,{children:[o.jsx(a,{to:"favorites",children:"My favorites pets"}),o.jsx(a,{to:"viewed",children:"Viewed"})]}),o.jsx(T,{children:o.jsx(B,{})})]}),D=()=>{const e=s();return b.useEffect(()=>{e(w())},[]),o.jsxs(C,{className:"container",children:[o.jsx(W,{}),o.jsx(E,{})]})};export{D as default};
