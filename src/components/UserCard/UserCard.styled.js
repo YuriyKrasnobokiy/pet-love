@@ -50,7 +50,7 @@ export const UserCardEditBtn = styled.button`
   height: 38px;
   margin: 0;
   background-color: ${(props) => props.theme.colors.UserCardEditBtnBGColor};
-  transition: background-color 300ms easy-in-out;
+  transition: background-color 300ms ease-in-out;
 
   &:hover {
     background-color: ${(props) =>

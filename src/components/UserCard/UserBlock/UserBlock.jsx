@@ -17,14 +17,16 @@ import { selectProfile } from "../../../redux/profile/profileSelectors";
 export const UserBlock = () => {
   const deviceType = useDeviceType();
   const userData = useSelector(selectProfile);
-  console.log("userData: ", userData);
+  const avatarUrl = userData.avatar;
+
   return (
     <UserBlockWrap>
       <UserAvatarWrap>
-        <UserAvatarThumb>
-          {userData && userData.avatar && userData.avatar.trim() !== "" ? (
-            <img src={userData.avatar} alt="avatar" />
-          ) : (
+        <UserAvatarThumb $avatarUrl={avatarUrl}>
+          {userData &&
+          userData.avatar &&
+          userData.avatar.trim() !== "https://test.png" &&
+          userData.avatar.trim() !== "" ? null : (
             <Icon
               name="icon-user-big"
               width={
@@ -44,6 +46,7 @@ export const UserBlock = () => {
             />
           )}
         </UserAvatarThumb>
+
         {userData.avatar && userData.avatar.trim() !== "" ? null : (
           <UserAvatarBtn>Upload photo</UserAvatarBtn>
         )}

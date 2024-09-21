@@ -165,12 +165,13 @@ export const themes = {
       MyNoticesLinkActiveHoverBGColor: "#f9b020",
       MyNoticesLinkHoverBGColor: "#fff4df",
 
-      ModalEditUserTitleColor: "2b2b2a",
+      ModalEditUserTitleColor: "#2b2b2a",
       ModalEditUserAvatarColor: "#262626",
       ModalEditUserInputBorder: "1px solid #f6b83d",
       ModalEditUserAvatarInputBorder: "1px solid #f6b83d",
       AvatarUploadBtnColor: "#262626",
       AvatarUploadBtnBGColor: "#fff4df",
+      AvatarUploadBtnBGHoverColor: "#fbe7c1",
 
       white: "#fff",
       IconStarAccentColor: "#ffc531",
@@ -354,6 +355,7 @@ export const themes = {
       ModalEditUserAvatarInputBorder: "1px solid #f6b83d",
       AvatarUploadBtnColor: "#262626",
       AvatarUploadBtnBGColor: "#fff4df",
+      AvatarUploadBtnBGHoverColor: "#fbe7c1",
 
       white: "#fff",
       IconStarAccentColor: "#ffc531",

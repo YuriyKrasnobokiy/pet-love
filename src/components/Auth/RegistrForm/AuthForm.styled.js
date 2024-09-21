@@ -182,6 +182,13 @@ export const ErrorMessage = styled.p`
     top: 53px;
     left: 16px;
   }
+
+  &.avatar {
+    top: 40px;
+    @media screen and (min-width: 768px) {
+      top: 44px;
+    }
+  }
 `;
 
 export const AuthFormBottomText = styled.p`

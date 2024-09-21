@@ -17,7 +17,11 @@ export const UserAvatarThumb = styled.div`
   height: ${(props) => (props.$isEditModal ? "60px" : "74px")};
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.UserBlockAvatarBGColor};
-  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-image: ${(props) =>
+    props.$avatarUrl ? `url(${props.$avatarUrl})` : "none"};
+  margin: ${(props) => (props.$isEditModal ? "0 auto 12px" : "0 auto")};
   color: ${(props) => props.theme.colors.UserBlockAvatarColor};
 
   @media screen and (min-width: 768px) {
