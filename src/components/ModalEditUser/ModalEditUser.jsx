@@ -131,7 +131,7 @@ export const ModalEditUser = () => {
               type="text"
               placeholder="Name"
             />
-            <ErrorMessage>{errors.name?.message}</ErrorMessage>
+            <ErrorMessage className="edit">{errors.name?.message}</ErrorMessage>
           </InputWrap>
           <InputWrap>
             <EditUserInput
@@ -139,15 +139,19 @@ export const ModalEditUser = () => {
               type="email"
               placeholder="Email"
             />
-            <ErrorMessage>{errors.email?.message}</ErrorMessage>
+            <ErrorMessage className="edit">
+              {errors.email?.message}
+            </ErrorMessage>
           </InputWrap>
           <InputWrap>
             <EditUserInput
               {...register("phone")}
               type="text"
-              placeholder="phone"
+              placeholder="Phone"
             />
-            <ErrorMessage>{errors.phone?.message}</ErrorMessage>
+            <ErrorMessage className="edit">
+              {errors.phone?.message}
+            </ErrorMessage>
           </InputWrap>
         </InputsWrap>
         <EditUserSubmitBtn type="submit">Save</EditUserSubmitBtn>

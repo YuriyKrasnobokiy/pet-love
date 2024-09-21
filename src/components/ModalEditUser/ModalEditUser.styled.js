@@ -56,10 +56,18 @@ export const EditUserAvatarInput = styled.input`
   letter-spacing: -0.02em;
   color: ${(props) => props.theme.colors.ModalEditUserAvatarColor};
   border: ${(props) => props.theme.colors.ModalEditUserAvatarInputBorder};
+  background-color: transparent;
   border-radius: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  outline: none;
+  transition: border 300ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    border: ${(props) => props.theme.colors.ModalEditUserHoverInputBorder};
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
@@ -77,7 +85,7 @@ export const AvatarUploadBtn = styled.button`
   width: 126px;
   line-height: 1.33333;
   letter-spacing: -0.02em;
-  color: ${(props) => props.theme.colors.ModalEditUserAvatarColor};
+  color: ${(props) => props.theme.colors.AvatarUploadBtnColor};
   justify-content: center;
   gap: 8px;
   background-color: ${(props) => props.theme.colors.AvatarUploadBtnBGColor};
@@ -117,12 +125,20 @@ export const EditUserInput = styled.input`
   border-radius: 30px;
   padding: 11px 12px;
   width: 269px;
+  background-color: transparent;
+  outline: none;
+  caret-color: ${(props) => props.theme.colors.accentColor};
+  transition: border 300ms ease-in-out;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.25;
     padding: 15px 16px;
     width: 346px;
+  }
+  &:hover,
+  &:focus {
+    border: ${(props) => props.theme.colors.ModalEditUserHoverInputBorder};
   }
 `;
 
@@ -131,12 +147,18 @@ export const EditUserSubmitBtn = styled.button`
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: ${(props) => props.theme.colors.EditUserSubmitBtn};
   border-radius: 30px;
   padding: 12px;
   width: 100%;
-  background: #f6b83d;
+  background: ${(props) => props.theme.colors.ModalEditUserSubmitBtnBGColor};
   justify-content: center;
+  transition: background 300ms ease-in-out;
+
+  &:hover {
+    background: ${(props) =>
+      props.theme.colors.ModalEditUserSubmitBtnHoverBGColor};
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
