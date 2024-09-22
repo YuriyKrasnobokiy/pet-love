@@ -14,7 +14,8 @@ export const PetCardWrap = styled.li`
     width: 294px;
   }
   @media screen and (min-width: 1280px) {
-    width: 315px;
+    width: ${(props) => (props.$profile ? "292px" : "315px")};
+    padding: ${(props) => (props.$profile ? "14px 14px 18px" : "24px")};
   }
 `;
 
@@ -25,13 +26,17 @@ export const PetCardImg = styled.img`
   margin-bottom: 24px;
   object-fit: cover;
   object-position: center;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: ${(props) => (props.$profile ? "14px" : "24px")};
+  }
 `;
 
 export const PetCardTextBlock = styled.div`
   margin-bottom: 24px;
 
   @media screen and (min-width: 768px) {
-    margin-bottom: 32px;
+    margin-bottom: ${(props) => (props.$profile ? "24px" : "32px")};
   }
 `;
 export const PetCardTitleBlock = styled.div`
@@ -134,7 +139,7 @@ export const PetCardButton = styled.button`
   line-height: 1.28571;
   letter-spacing: -0.03em;
   justify-content: center;
-  width: 231px;
+  width: ${(props) => (props.$profile ? "100%" : "231px")};
   margin: 0;
   color: ${(props) => props.theme.colors.PetCardBtnColor};
   background-color: ${(props) => props.theme.colors.PetCardBtnBGColor};
@@ -143,10 +148,10 @@ export const PetCardButton = styled.button`
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.25;
-    width: 236px;
+    width: ${(props) => (props.$profile ? "100%" : "236px")};
   }
   @media screen and (min-width: 1280px) {
-    width: 257px;
+    width: ${(props) => (props.$profile ? "100%" : "257px")};
   }
 
   &:hover {
@@ -155,6 +160,7 @@ export const PetCardButton = styled.button`
 `;
 
 export const PetCardFavorBtn = styled.button`
+  display: ${(props) => (props.$profile ? "none" : "block")};
   border-radius: 100%;
   width: 46px;
   height: 46px;

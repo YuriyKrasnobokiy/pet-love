@@ -4,7 +4,6 @@ import {
   MyNoticesList,
   MyNoticesWrap,
   NavLinkStyled,
-  NoticesContainer,
 } from "./MyNotices.styled";
 
 export const MyNotices = () => {
@@ -15,9 +14,7 @@ export const MyNotices = () => {
         <NavLinkStyled to="viewed">Viewed</NavLinkStyled>
       </MyNoticesList>
 
-      <NoticesContainer>
-        <Outlet />
-      </NoticesContainer>
+      <Outlet />
     </MyNoticesWrap>
   );
 };

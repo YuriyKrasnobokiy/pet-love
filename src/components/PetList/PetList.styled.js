@@ -11,8 +11,9 @@ export const PetsList = styled.ul`
     margin-bottom: 60px;
   }
   @media screen and (min-width: 1280px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: ${(props) =>
+      props.$profile ? "1fr 1fr" : "repeat(3, 1fr)"};
     margin-bottom: 60px;
-    gap: 40px 32px;
+    gap: ${(props) => (props.$profile ? "24px" : "40px 32px")};
   }
 `;

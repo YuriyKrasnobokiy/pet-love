@@ -19,11 +19,10 @@ import {
 import Icon from "../../Icon/Icon";
 import { openModal } from "../../../redux/modal/modalSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsOpenModal } from "../../../redux/modal/modalSelectors";
 import { selectIsLoggedIn } from "../../../redux/auth/authSelectors";
 import { fetchPetsById } from "../../../redux/pets/petsOperations";
 
-export const PetCard = ({ pet }) => {
+export const PetCard = ({ pet, profile }) => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
@@ -37,12 +36,12 @@ export const PetCard = ({ pet }) => {
 
   return (
     <>
-      <PetCardWrap>
+      <PetCardWrap $profile={profile}>
         <div>
           <div>
-            <PetCardImg src={pet.imgURL} alt="pet" />
+            <PetCardImg $profile={profile} src={pet.imgURL} alt="pet" />
           </div>
-          <PetCardTextBlock>
+          <PetCardTextBlock $profile={profile}>
             <PetCardTitleBlock>
               <PetCardTitle>{pet.title}</PetCardTitle>
               <PetCardPopularWrap>
@@ -79,10 +78,10 @@ export const PetCard = ({ pet }) => {
         </div>
 
         <PetCardBtnsWrap>
-          <PetCardButton type="button" onClick={handleClick}>
+          <PetCardButton $profile={profile} type="button" onClick={handleClick}>
             Learn more
           </PetCardButton>
-          <PetCardFavorBtn>
+          <PetCardFavorBtn $profile={profile}>
             <Icon name="icon-heart" width={18} height={18} />
           </PetCardFavorBtn>
         </PetCardBtnsWrap>

@@ -2,12 +2,12 @@ import React from "react";
 import { PetsList } from "./PetList.styled";
 import { PetCard } from "./PetCard/PetCard";
 
-export const PetList = ({ pets }) => {
+export const PetList = ({ pets, profile }) => {
   return (
     <>
-      <PetsList>
-        {pets.map((pet) => (
-          <PetCard key={pet._id} pet={pet} />
+      <PetsList $profile={profile}>
+        {pets.map((pet, index) => (
+          <PetCard profile={profile} key={`${pet._id} + ${index}`} pet={pet} />
         ))}
       </PetsList>
     </>

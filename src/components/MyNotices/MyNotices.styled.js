@@ -59,20 +59,13 @@ export const NavLinkStyled = styled(NavLink)`
   }
 `;
 
-//       MyNoticesLinkActiveColor: "#fff",
-//       MyNoticesLinkColor: "#262626",
-//       MyNoticesLinkActiveBGColor: "#f6b83d",
-//       MyNoticesLinkBGColor: "#fff",
-//       MyNoticesLinkActiveHoverBGColor: "#f9b020",
-//       MyNoticesLinkHoverBGColor: "#fff4df",
-
 export const NoticesContainer = styled.div`
-  padding: 80px 0 0;
+  padding: ${(props) => (props.$isEmpty ? "80px 0 0" : "20px 0 0")};
 
   @media screen and (min-width: 768px) {
-    padding: 180px 123px 0;
+    padding: ${(props) => (props.$isEmpty ? "180px 123px 0" : "20px 0 0")};
   }
   @media screen and (min-width: 1280px) {
-    padding: 180px 103px 0;
+    padding: ${(props) => (props.$isEmpty ? "180px 103px 0" : "32px 0 0")};
   }
 `;
