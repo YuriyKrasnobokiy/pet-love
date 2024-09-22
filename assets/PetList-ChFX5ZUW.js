@@ -1,4 +1,4 @@
-import{u as r,a as h,c as x,a4 as m,j as t,I as c,a5 as l,a6 as g}from"./index-DpkvdkQU.js";const f=r.ul`
+import{u as r,a as x,c as h,a4 as m,j as t,I as c,a5 as l,a6 as g}from"./index-ornhWv6T.js";const f=r.ul`
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -146,7 +146,7 @@ import{u as r,a as h,c as x,a4 as m,j as t,I as c,a5 as l,a6 as g}from"./index-D
     background-color: ${e=>e.theme.colors.PetCardBtnBGHoverColor};
   }
 `,z=r.button`
-  display: ${e=>e.$profile?"none":"block"};
+  display: ${e=>e.$profile?"none":"flex"};
   border-radius: 100%;
   width: 46px;
   height: 46px;
@@ -164,4 +164,4 @@ import{u as r,a as h,c as x,a4 as m,j as t,I as c,a5 as l,a6 as g}from"./index-D
   &:hover {
     background-color: ${e=>e.theme.colors.PetCardFavBtnBGHoverColor};
   }
-`,I=({pet:e,profile:i})=>{const n=h(),a=x(m),p=()=>{a&&(n(l()),n(g({_id:e._id}))),n(l())};return t.jsx(t.Fragment,{children:t.jsxs(j,{$profile:i,children:[t.jsxs("div",{children:[t.jsx("div",{children:t.jsx(u,{$profile:i,src:e.imgURL,alt:"pet"})}),t.jsxs(C,{$profile:i,children:[t.jsxs($,{children:[t.jsx(P,{children:e.title}),t.jsxs(w,{children:[t.jsx(c,{name:"icon-star",width:16,height:16}),t.jsx(b,{children:e.popularity})]})]}),t.jsxs(y,{children:[t.jsxs(o,{children:[t.jsx(s,{children:"Name"}),t.jsx(d,{children:e.name})]}),t.jsxs(o,{children:[t.jsx(s,{children:"Birthday"}),t.jsx(d,{children:e.birthday})]}),t.jsxs(o,{children:[t.jsx(s,{children:"Sex"}),t.jsx(d,{children:e.sex})]}),t.jsxs(o,{children:[t.jsx(s,{children:"Species"}),t.jsx(d,{children:e.species})]}),t.jsxs(o,{children:[t.jsx(s,{children:"Category"}),t.jsx(d,{children:e.category})]})]}),t.jsx(B,{children:e.comment})]})]}),t.jsxs(v,{children:[t.jsx(k,{$profile:i,type:"button",onClick:p,children:"Learn more"}),t.jsx(z,{$profile:i,children:t.jsx(c,{name:"icon-heart",width:18,height:18})})]})]})})},F=({pets:e,profile:i})=>t.jsx(t.Fragment,{children:t.jsx(f,{$profile:i,children:e.map((n,a)=>t.jsx(I,{profile:i,pet:n},`${n._id} + ${a}`))})});export{F as P};
+`,I=({pet:e,profile:i})=>{const n=x(),a=h(m),p=()=>{a&&(n(l()),n(g({_id:e._id}))),n(l())};return t.jsx(t.Fragment,{children:t.jsxs(j,{$profile:i,children:[t.jsxs("div",{children:[t.jsx("div",{children:t.jsx(u,{$profile:i,src:e.imgURL,alt:"pet"})}),t.jsxs(C,{$profile:i,children:[t.jsxs($,{children:[t.jsx(P,{children:e.title}),t.jsxs(w,{children:[t.jsx(c,{name:"icon-star",width:16,height:16}),t.jsx(b,{children:e.popularity})]})]}),t.jsxs(y,{children:[t.jsxs(o,{children:[t.jsx(s,{children:"Name"}),t.jsx(d,{children:e.name})]}),t.jsxs(o,{children:[t.jsx(s,{children:"Birthday"}),t.jsx(d,{children:e.birthday})]}),t.jsxs(o,{children:[t.jsx(s,{children:"Sex"}),t.jsx(d,{children:e.sex})]}),t.jsxs(o,{children:[t.jsx(s,{children:"Species"}),t.jsx(d,{children:e.species})]}),t.jsxs(o,{children:[t.jsx(s,{children:"Category"}),t.jsx(d,{children:e.category})]})]}),t.jsx(B,{children:e.comment})]})]}),t.jsxs(v,{children:[t.jsx(k,{$profile:i,type:"button",onClick:p,children:"Learn more"}),t.jsx(z,{$profile:i,children:t.jsx(c,{name:"icon-heart",width:18,height:18})})]})]})})},F=({pets:e,profile:i})=>t.jsx(t.Fragment,{children:t.jsx(f,{$profile:i,children:e.map((n,a)=>t.jsx(I,{profile:i,pet:n},`${n._id} + ${a}`))})});export{F as P};

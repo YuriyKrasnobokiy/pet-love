@@ -1,4 +1,4 @@
-import{u as s,r as i,a8 as n,j as o,a9 as a}from"./index-DpkvdkQU.js";const l=s.div`
+import{u as s,r as i,a8 as n,j as o,a9 as a}from"./index-ornhWv6T.js";const l=s.div`
   padding: ${e=>e.$isProfile?0:"20px"};
 `,c=s.img`
   width: 80px;
