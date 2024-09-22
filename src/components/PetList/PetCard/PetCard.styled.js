@@ -160,7 +160,7 @@ export const PetCardButton = styled.button`
 `;
 
 export const PetCardFavorBtn = styled.button`
-  display: ${(props) => (props.$profile ? "none" : "block")};
+  display: ${(props) => (props.$profile ? "none" : "flex")};
   border-radius: 100%;
   width: 46px;
   height: 46px;
