@@ -1,12 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
+import { useNavigate } from "react-router-dom";
+import AttentionImg from "../../assets/attention.png";
+import { selectIsLoggedIn, selectUser } from "../../redux/auth/authSelectors";
+import { closeModal } from "../../redux/modal/modalSlice";
+import { addToFavorites } from "../../redux/pets/petsOperations";
 import {
+  selectError,
   selectIsLoading,
   selectPet,
-  selectError,
 } from "../../redux/pets/petsSelectors";
 import Icon from "../Icon/Icon";
+import { PetStars } from "../PetStars/PetStars";
 import {
   CategoryBage,
   PetModalAccentProperty,
@@ -25,10 +30,6 @@ import {
   PetModalTitle,
   PetModalWrap,
 } from "./PetModal.styled";
-import AttentionImg from "../../assets/attention.png";
-import { useNavigate } from "react-router-dom";
-import { closeModal } from "../../redux/modal/modalSlice";
-import { PetStars } from "../PetStars/PetStars";
 
 export const PetModal = () => {
   const pet = useSelector(selectPet);
@@ -37,10 +38,18 @@ export const PetModal = () => {
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
   const dispatch = useDispatch();
+  const userData = useSelector(selectUser);
+  const favorites = userData.noticesFavorites;
 
   const handleAddToFavorites = () => {
-    console.log("ADDED!");
+    if (favorites.includes(pet._id)) {
+      toast.error("This pet has already been added to favorites");
+      dispatch(closeModal());
+    }
+    dispatch(addToFavorites({ _id: pet._id }));
+    dispatch(closeModal());
   };
+
   const handleContactClick = () => {
     window.location.href = `tel:${pet.user.phone}`;
   };

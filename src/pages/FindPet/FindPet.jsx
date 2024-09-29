@@ -7,6 +7,7 @@ import { PetList } from "../../components/PetList/PetList";
 import {
   selectCategories,
   selectError,
+  selectFavorites,
   selectFilterTerm,
   selectGenders,
   selectIsLoading,

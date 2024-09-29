@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const API_URL = "https://petlove.b.goit.study/api/";
 
@@ -91,3 +92,18 @@ export const fetchCities = createAsyncThunk("pets/fetchCities", async () => {
     throw error;
   }
 });
+
+export const addToFavorites = createAsyncThunk(
+  "pets / addToFavorites",
+  async ({ _id }) => {
+    try {
+      const response = await axios.post(
+        `${API_URL}notices/favorites/add/${_id}`,
+      );
+      return response.data;
+    } catch (error) {
+      toast.error(error.response.data.message);
+      throw error;
+    }
+  },
+);

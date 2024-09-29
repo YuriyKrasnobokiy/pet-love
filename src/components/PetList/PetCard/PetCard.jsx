@@ -19,12 +19,21 @@ import {
 import Icon from "../../Icon/Icon";
 import { openModal } from "../../../redux/modal/modalSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../../../redux/auth/authSelectors";
-import { fetchPetsById } from "../../../redux/pets/petsOperations";
+import {
+  selectIsLoggedIn,
+  selectUser,
+} from "../../../redux/auth/authSelectors";
+import {
+  addToFavorites,
+  fetchPetsById,
+} from "../../../redux/pets/petsOperations";
+import { toast } from "react-toastify";
 
 export const PetCard = ({ pet, profile }) => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const userData = useSelector(selectUser);
+  const favorites = userData.noticesFavorites;
 
   const handleClick = () => {
     if (isLoggedIn) {
@@ -32,6 +41,17 @@ export const PetCard = ({ pet, profile }) => {
       dispatch(fetchPetsById({ _id: pet._id }));
     }
     dispatch(openModal());
+  };
+
+  const handleAddToFavorites = () => {
+    if (!isLoggedIn) {
+      dispatch(openModal());
+    } else if (favorites.includes(pet._id)) {
+      toast.error("This pet has already been added to favorites");
+      return;
+    } else {
+      dispatch(addToFavorites({ _id: pet._id }));
+    }
   };
 
   return (
@@ -81,7 +101,7 @@ export const PetCard = ({ pet, profile }) => {
           <PetCardButton $profile={profile} type="button" onClick={handleClick}>
             Learn more
           </PetCardButton>
-          <PetCardFavorBtn $profile={profile}>
+          <PetCardFavorBtn onClick={handleAddToFavorites} $profile={profile}>
             <Icon name="icon-heart" width={18} height={18} />
           </PetCardFavorBtn>
         </PetCardBtnsWrap>
