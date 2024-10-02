@@ -102,9 +102,9 @@ const FindPet = () => {
 
   return isLoading ? (
     <Loader />
-  ) : error ? (
-    <p>Ooops...Please try to reload page</p>
   ) : (
+    // ) : error ? (
+    //   <p>Ooops...Please try to reload page</p>
     <PetsWrap className="container">
       <PetsHeaderWrap>
         <PetsTitle className="title">Find your favorite pet</PetsTitle>

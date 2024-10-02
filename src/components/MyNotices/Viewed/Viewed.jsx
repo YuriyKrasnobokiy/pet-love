@@ -12,7 +12,7 @@ const Viewed = () => {
     <>
       <NoticesContainer $isEmpty={!viewed || viewed.length === 0}>
         {viewed && viewed.length > 0 ? (
-          <PetList profile={true} pets={viewed} />
+          <PetList profile={true} viewed={true} pets={viewed} />
         ) : (
           <ResultsNotFound />
         )}

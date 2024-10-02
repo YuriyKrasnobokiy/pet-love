@@ -133,13 +133,14 @@ export const PetCardBtnsWrap = styled.div`
 
 export const PetCardButton = styled.button`
   border-radius: 30px;
-  padding: 14px;
+  padding: ${(props) => (props.$profile ? "13px" : "14px")};
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
   justify-content: center;
-  width: ${(props) => (props.$profile ? "100%" : "231px")};
+  width: ${(props) =>
+    props.$viewed ? "100%" : props.$profile ? "233px" : "231px"};
   margin: 0;
   color: ${(props) => props.theme.colors.PetCardBtnColor};
   background-color: ${(props) => props.theme.colors.PetCardBtnBGColor};
@@ -148,10 +149,13 @@ export const PetCardButton = styled.button`
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.25;
-    width: ${(props) => (props.$profile ? "100%" : "236px")};
+    width: ${(props) =>
+      props.$viewed ? "100%" : props.$profile ? "260px" : "236px"};
+    padding: ${(props) => (props.$profile ? "12px" : "14px")};
   }
   @media screen and (min-width: 1280px) {
-    width: ${(props) => (props.$profile ? "100%" : "257px")};
+    width: ${(props) =>
+      props.$viewed ? "100%" : props.$profile ? "238px" : "257px"};
   }
 
   &:hover {
@@ -173,6 +177,29 @@ export const PetCardFavorBtn = styled.button`
   @media screen and (min-width: 768px) {
     width: 48px;
     height: 48px;
+  }
+
+  &:hover {
+    background-color: ${(props) =>
+      props.theme.colors.PetCardFavBtnBGHoverColor};
+  }
+`;
+
+export const PetCardDeleteBtn = styled.button`
+  display: ${(props) =>
+    props.$viewed ? "none" : props.$profile ? "flex" : "none"};
+  border-radius: 100%;
+  width: ${(props) => (props.$profile ? "44px" : "46px")};
+  height: ${(props) => (props.$profile ? "44px" : "46px")};
+  justify-content: center;
+  margin: 0;
+  color: ${(props) => props.theme.colors.PetCardFavBtnColor};
+  background-color: ${(props) => props.theme.colors.PetCardFavBtnBGColor};
+  transition: background-color 300ms linear;
+
+  @media screen and (min-width: 768px) {
+    width: ${(props) => (props.$profile ? "44px" : "48px")};
+    height: ${(props) => (props.$profile ? "44px" : "48px")};
   }
 
   &:hover {

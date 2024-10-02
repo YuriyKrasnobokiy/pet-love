@@ -102,7 +102,22 @@ export const addToFavorites = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error("This pet has already been added to favorites");
+      throw error;
+    }
+  },
+);
+
+export const deleteFromFavorites = createAsyncThunk(
+  "pets / deleteFromFavorites",
+  async ({ _id }) => {
+    try {
+      const response = await axios.delete(
+        `${API_URL}notices/favorites/remove/${_id}`,
+      );
+      return response.data;
+    } catch (error) {
+      toast.error("This pet has already been deleted");
       throw error;
     }
   },
