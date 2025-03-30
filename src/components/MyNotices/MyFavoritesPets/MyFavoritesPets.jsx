@@ -10,10 +10,11 @@ const MyFavoritesPets = () => {
   const dispatch = useDispatch();
   const userData = useSelector(selectProfile);
   const favorite = userData.noticesFavorites;
+  console.log('favorite: ', favorite);
 
   useEffect(() => {
     dispatch(fetchProfile());
-  }, [dispatch, favorite]);
+  }, [dispatch]);
 
   return (
     <>
