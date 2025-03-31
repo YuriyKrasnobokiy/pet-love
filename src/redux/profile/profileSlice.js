@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { addToFavorites, deleteFromFavorites } from "../pets/petsOperations";
 
 export const API_URL = "https://petlove.b.goit.study/api/";
 
@@ -65,6 +66,42 @@ const profileSlice = createSlice({
         state.profile = action.payload;
       })
       .addCase(updateProfile.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+      .addCase(addToFavorites.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(deleteFromFavorites.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      // .addCase(addToFavorites.fulfilled, (state, action) => {
+      //   state.isLoading = false;
+      //   state.error = null;
+      //   state.profile.favorites = action.payload;
+      // })
+      // .addCase(deleteFromFavorites.fulfilled, (state, action) => {
+      //   state.isLoading = false;
+      //   state.error = null;
+      //   state.profile.favorites = action.payload;
+      // })
+      .addCase(addToFavorites.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.profile.favorites = action.payload;
+      })
+      .addCase(deleteFromFavorites.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.profile.favorites = action.payload;
+      })
+      .addCase(addToFavorites.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+      .addCase(deleteFromFavorites.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
       });

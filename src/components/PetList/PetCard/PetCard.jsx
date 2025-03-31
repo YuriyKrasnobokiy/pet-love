@@ -26,6 +26,7 @@ import {
   PetCardWrap,
   PropertyText,
 } from "./PetCard.styled";
+import { fetchProfile } from "../../../redux/profile/profileSlice";
 
 export const PetCard = ({ pet, profile, viewed }) => {
   const dispatch = useDispatch();
@@ -46,12 +47,17 @@ export const PetCard = ({ pet, profile, viewed }) => {
     dispatch(addToFavorites({ _id: pet._id }));
   };
 
-  const handleDeletePet = () => {
+  const handleDeletePet = async () => {
     if (!isLoggedIn) {
       dispatch(openModal());
+      return;
     }
-    console.log("clicked");
-    dispatch(deleteFromFavorites({ _id: pet._id }));
+    try {
+      await dispatch(deleteFromFavorites({ _id: pet._id })).unwrap();
+      dispatch(fetchProfile());
+    } catch (error) {
+      console.error("Error deleting pet:", error);
+    }
   };
 
   return (
