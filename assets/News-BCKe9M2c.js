@@ -1,24 +1,4 @@
-import{u as n,j as t,a as f,c as o,r as b,f as p,L as j,e as x,g}from"./index-DFDKE7Ur.js";import{S as u,P as N}from"./PaginationControls-CmHebxi8.js";const C=e=>e.newsStore.news,S=e=>e.newsStore.isLoading,y=e=>e.newsStore.error,h=e=>e.newsStore.filterTerm,P=e=>e.newsStore.page,v=e=>e.newsStore.perPage,k=e=>e.newsStore.totalPages,z=n.div`
-  padding-top: 34px;
-
-  @media screen and (min-width: 768px) {
-    padding-top: 53px;
-  }
-`,L=n.div`
-  display: block;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 44px;
-  }
-`,T=n.h2`
-  margin-bottom: 0;
-  margin-bottom: 20px;
-  @media screen and (min-width: 768px) {
-    margin: 0;
-  }
-`,D=n.ul`
+import{u as n,j as t,a as f,c as s,r as b,f as p,e as x,g}from"./index-D_EJOTRS.js";import{S as j}from"./SimpleLoader-DbY4rQIh.js";import{S as u,P as N}from"./SearchField-DeARJ0wb.js";const S=n.ul`
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
@@ -34,14 +14,14 @@ import{u as n,j as t,a as f,c as o,r as b,f as p,L as j,e as x,g}from"./index-DF
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px 35px;
   }
-`,F=n.li`
+`,C=n.li`
   @media screen and (min-width: 768px) {
     padding-bottom: 28px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-`,W=n.img`
+`,y=n.img`
   height: 190px;
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -54,7 +34,7 @@ import{u as n,j as t,a as f,c as o,r as b,f as p,L as j,e as x,g}from"./index-DF
     height: 226px;
     margin-bottom: 28px;
   }
-`,$=n.h3`
+`,P=n.h3`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -71,7 +51,7 @@ import{u as n,j as t,a as f,c as o,r as b,f as p,L as j,e as x,g}from"./index-DF
     line-height: 1.3;
     margin-bottom: 14px;
   }
-`,E=n.p`
+`,v=n.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.285;
@@ -88,11 +68,11 @@ import{u as n,j as t,a as f,c as o,r as b,f as p,L as j,e as x,g}from"./index-DF
     line-height: 1.25;
     margin-bottom: 28px;
   }
-`,M=n.div`
+`,k=n.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-`,R=n.p`
+`,z=n.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.285;
@@ -103,7 +83,7 @@ import{u as n,j as t,a as f,c as o,r as b,f as p,L as j,e as x,g}from"./index-DF
     font-size: 16px;
     line-height: 1.25;
   }
-`,I=n.a`
+`,T=n.a`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.285;
@@ -116,4 +96,24 @@ import{u as n,j as t,a as f,c as o,r as b,f as p,L as j,e as x,g}from"./index-DF
     font-size: 16px;
     line-height: 1.25;
   }
-`,_=e=>{const i=new Date(e),r=i.getDate().toString().padStart(2,"0"),a=(i.getMonth()+1).toString().padStart(2,"0"),c=i.getFullYear();return`${r}/${a}/${c}`},B=({nw:e})=>t.jsxs(F,{children:[t.jsxs("div",{children:[t.jsx(W,{src:e.imgUrl,alt:"news",height:190}),t.jsx($,{children:e.title}),t.jsx(E,{children:e.text})]}),t.jsxs(M,{children:[t.jsx(R,{children:_(e.date)}),t.jsx(I,{href:e.url,target:"_blank",rel:"noopener noreferrer",children:"read more"})]})]}),H=({news:e})=>t.jsx(D,{children:e.map(i=>t.jsx(B,{nw:i},i._id))}),Y=()=>{const e=f(),i=o(C),r=o(h),a=o(S),c=o(y),l=o(P),d=o(v),m=o(k);b.useEffect(()=>{e(p({page:l,limit:d,filterWord:r}))},[e,l,d,r]);const w=s=>{e(g(s)),e(p({page:s,limit:d,filterWord:r}))};return a?t.jsx(j,{}):c?t.jsx("p",{children:"Ooops...Please try to reload page"}):t.jsxs(z,{className:"container",children:[t.jsxs(L,{children:[t.jsx(T,{className:"title",children:"News"}),t.jsx(u,{onFilterChange:s=>e(x(s)),onFetch:s=>e(p(s)),onPageChange:s=>e(g(s)),filterWord:r,setFilterTerm:x,selectFilterTerm:h})]}),t.jsx(H,{news:i}),m>1?t.jsx(N,{currentPage:l,totalPages:m,onPageChange:w}):null]})};export{Y as default};
+`,D=e=>{const i=new Date(e),r=i.getDate().toString().padStart(2,"0"),a=(i.getMonth()+1).toString().padStart(2,"0"),c=i.getFullYear();return`${r}/${a}/${c}`},F=({nw:e})=>t.jsxs(C,{children:[t.jsxs("div",{children:[t.jsx(y,{src:e.imgUrl,alt:"news",height:190}),t.jsx(P,{children:e.title}),t.jsx(v,{children:e.text})]}),t.jsxs(k,{children:[t.jsx(z,{children:D(e.date)}),t.jsx(T,{href:e.url,target:"_blank",rel:"noopener noreferrer",children:"read more"})]})]}),L=({news:e})=>t.jsx(S,{children:e.map(i=>t.jsx(F,{nw:i},i._id))}),W=e=>e.newsStore.news,$=e=>e.newsStore.isLoading,E=e=>e.newsStore.error,h=e=>e.newsStore.filterTerm,M=e=>e.newsStore.page,R=e=>e.newsStore.perPage,I=e=>e.newsStore.totalPages,_=n.div`
+  padding-top: 34px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 53px;
+  }
+`,B=n.div`
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 44px;
+  }
+`,H=n.h2`
+  margin-bottom: 0;
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+`,q=()=>{const e=f(),i=s(W),r=s(h),a=s($),c=s(E),l=s(M),d=s(R),m=s(I);b.useEffect(()=>{e(p({page:l,limit:d,filterWord:r}))},[e,l,d,r]);const w=o=>{e(g(o)),e(p({page:o,limit:d,filterWord:r}))};return a?t.jsx(j,{}):c?t.jsx("p",{children:"Ooops...Please try to reload page"}):t.jsxs(_,{className:"container",children:[t.jsxs(B,{children:[t.jsx(H,{className:"title",children:"News"}),t.jsx(u,{onFilterChange:o=>e(x(o)),onFetch:o=>e(p(o)),onPageChange:o=>e(g(o)),filterWord:r,setFilterTerm:x,selectFilterTerm:h})]}),t.jsx(L,{news:i}),m>1?t.jsx(N,{currentPage:l,totalPages:m,onPageChange:w}):null]})};export{q as default};

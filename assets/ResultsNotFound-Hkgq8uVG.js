@@ -1,4 +1,4 @@
-import{u as r,a as u,c as $,a4 as w,j as t,I as p,a5 as c,a6 as C,a7 as j,a8 as P,a3 as b,r as h,a9 as y,aa as v}from"./index-DFDKE7Ur.js";const B=r.ul`
+import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as P,a2 as b,r as h,a8 as y,a9 as v}from"./index-D_EJOTRS.js";const B=r.ul`
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
