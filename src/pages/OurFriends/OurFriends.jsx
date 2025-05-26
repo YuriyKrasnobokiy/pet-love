@@ -6,9 +6,9 @@ import {
   selectIsLoading,
 } from "../../redux/our-friends/friendsSelectors";
 import { fetchFriends } from "../../redux/our-friends/friendsSlice";
-import Loader from "../../components/Loader/Loader";
 import { FriendsList, FriendsWrapper } from "./OurFriends.styled";
 import { FriendsCard } from "../../components/FriendsCard/FriendsCard";
+import SimpleLoader from "../../components/Loader/SimpleLoader";
 
 const OurFriends = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const OurFriends = () => {
   return (
     <>
       {isLoading ? (
-        <Loader />
+        <SimpleLoader />
       ) : (
         <FriendsWrapper className="container">
           <h2 className="title">Our Friends</h2>

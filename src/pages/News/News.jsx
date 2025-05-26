@@ -1,5 +1,9 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import SimpleLoader from "../../components/Loader/SimpleLoader";
+import { NewsList } from "../../components/NewsList/NewsList";
+import PaginationControls from "../../components/PaginationControls/PaginationControls";
+import { SearchField } from "../../components/SearchField/SearchField";
 import {
   selectError,
   selectFilterTerm,
@@ -10,12 +14,7 @@ import {
   selectTotalPages,
 } from "../../redux/news/newsSelectors";
 import { fetchNews, setFilterTerm, setPage } from "../../redux/news/newsSlice";
-import Loader from "../../components/Loader/Loader";
-
 import { NewsHeaderWrap, NewsTitle, NewsWrap } from "./News.styled";
-import { SearchField } from "../../components/SearchField/SearchField";
-import PaginationControls from "../../components/PaginationControls/PaginationControls";
-import { NewsList } from "../../components/NewsList/NewsList";
 
 const News = () => {
   const dispatch = useDispatch();
@@ -37,7 +36,7 @@ const News = () => {
   };
 
   return isLoading ? (
-    <Loader />
+    <SimpleLoader />
   ) : error ? (
     <p>Ooops...Please try to reload page</p>
   ) : (

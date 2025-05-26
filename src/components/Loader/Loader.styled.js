@@ -11,7 +11,7 @@ position: absolute;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(${loaderImgMobile});
   background-size: cover;

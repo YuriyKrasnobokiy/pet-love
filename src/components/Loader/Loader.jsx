@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { CircleStyled, LoaderContainer, ProgressBar } from "./Loader.styled";
 
 const Loader = () => {
   const [progress, setProgress] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+
     const interval = setInterval(() => {
       setProgress((prevProgress) => {
         const newProgress = prevProgress + 25;
         return newProgress > 100 ? 0 : newProgress;
       });
     }, 200);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -31,29 +35,36 @@ const Loader = () => {
             </linearGradient>
           </defs>
 
-          <circle
-            cx="146"
-            cy="146"
-            r="146"
-            stroke="url(#strokeGradient)"
-            strokeWidth="1"
-            fill="none"
-            strokeDasharray={2 * Math.PI * 146}
-            strokeDashoffset={(1 - progress / 100) * (2 * Math.PI * 146)}
-          />
-          <text
-            x="50%"
-            y="50%"
-            textAnchor="middle"
-            dominantBaseline="middle"
-            fontWeight="700"
-            fontSize="50"
-            letterSpacing="-0.04em"
-            fill="#fff"
-            transform="rotate(90 146 146)"
-          >
-            {progress}%
-          </text>
+          {isMounted && (
+            <>
+              <circle
+                cx="146"
+                cy="146"
+                r="146"
+                stroke="url(#strokeGradient)"
+                strokeWidth="1"
+                fill="none"
+                strokeDasharray={2 * Math.PI * 146}
+                strokeDashoffset={(1 - progress / 100) * (2 * Math.PI * 146)}
+                style={{
+                  transition: "stroke-dashoffset 0.2s ease-in-out",
+                }}
+              />
+              <text
+                x="50%"
+                y="50%"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontWeight="700"
+                fontSize="50"
+                letterSpacing="-0.04em"
+                fill="#fff"
+                transform="rotate(90 146 146)"
+              >
+                {progress}%
+              </text>
+            </>
+          )}
         </CircleStyled>
       </ProgressBar>
     </LoaderContainer>

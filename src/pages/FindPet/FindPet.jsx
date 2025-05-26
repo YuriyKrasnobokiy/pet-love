@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Filters } from "../../components/Filters/Filters";
-import Loader from "../../components/Loader/Loader";
 import PaginationControls from "../../components/PaginationControls/PaginationControls";
 import { PetList } from "../../components/PetList/PetList";
 import {
@@ -35,6 +34,7 @@ import {
 } from "../../redux/pets/petsOperations";
 import { setFilterTerm, setPage } from "../../redux/pets/petsSlice";
 import { PetsHeaderWrap, PetsTitle, PetsWrap } from "./FindPet.styled";
+import SimpleLoader from "../../components/Loader/SimpleLoader";
 
 const FindPet = () => {
   const categories = useSelector(selectCategories);
@@ -101,7 +101,7 @@ const FindPet = () => {
   };
 
   return isLoading ? (
-    <Loader />
+    <SimpleLoader />
   ) : (
     // ) : error ? (
     //   <p>Ooops...Please try to reload page</p>
