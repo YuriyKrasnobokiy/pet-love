@@ -6,7 +6,7 @@ export const SimpleLoaderContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100dvh;
-  background: rgba(12, 12, 12, 1);
+  background: ${(props) => props.theme.colors.mainBgColor};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,4 +20,5 @@ export const SimpleProgressBar = styled.div`
 `;
 export const SimpleCircleStyled = styled.svg`
   transform: rotate(-90deg);
+  color: red;
 `;

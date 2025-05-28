@@ -102,7 +102,11 @@ export const addToFavorites = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      toast.error("This pet has already been added to favorites");
+      if (error.response?.status === 401) {
+        toast.error("Please log in to add to favorites");
+      } else {
+        toast.error("This pet has already been added to favorites");
+      }
       throw error;
     }
   },
@@ -117,7 +121,11 @@ export const deleteFromFavorites = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
+      if (error.response?.status === 401) {
+        toast.error("Please log in to add to favorites");
+      } else {
       toast.error("This pet has already been deleted");
+      }
       throw error;
     }
   },

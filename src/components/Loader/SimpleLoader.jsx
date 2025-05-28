@@ -4,10 +4,12 @@ import {
   SimpleLoaderContainer,
   SimpleProgressBar,
 } from "./SimpleLoader.styled";
+import { useTheme } from "styled-components";
 
 const SimpleLoader = () => {
   const [progress, setProgress] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
+  const theme = useTheme(); 
 
   useEffect(() => {
     setIsMounted(true);
@@ -34,8 +36,8 @@ const SimpleLoader = () => {
               x2="100%"
               y2="0%"
             >
-              <stop offset="0%" stopColor="rgba(255, 255, 255, 1)" />
-              <stop offset="100%" stopColor="rgba(255, 255, 255, 0.1)" />
+              <stop offset="0%" stopColor={theme.colors.textColor}  />
+              <stop offset="100%" stopColor={theme.colors.accentColor} />
             </linearGradient>
           </defs>
 
