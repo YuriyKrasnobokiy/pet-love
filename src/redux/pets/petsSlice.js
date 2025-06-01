@@ -21,7 +21,6 @@ const initialState = {
   species: [],
   totalPages: 0,
   cities: [],
-  // favorites: [],
 };
 
 const petsSlice = createSlice({
@@ -62,14 +61,6 @@ const petsSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      // .addCase(addToFavorites.pending, (state) => {
-      //   state.isLoading = true;
-      //   state.error = null;
-      // })
-      // .addCase(deleteFromFavorites.pending, (state) => {
-      //   state.isLoading = true;
-      //   state.error = null;
-      // })
 
       .addCase(fetchPets.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -96,16 +87,6 @@ const petsSlice = createSlice({
         state.isLoading = false;
         state.cities = action.payload;
       })
-      // .addCase(addToFavorites.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = null;
-      //   state.favorites = action.payload;
-      // })
-      // .addCase(deleteFromFavorites.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = null;
-      //   state.favorites = action.payload;
-      // })
 
       .addCase(fetchPets.rejected, (state, action) => {
         state.isLoading = false;
@@ -131,14 +112,6 @@ const petsSlice = createSlice({
         state.isLoading = false;
         state.error = action.error.message;
       });
-      // .addCase(addToFavorites.rejected, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = action.error.message;
-      // })
-      // .addCase(deleteFromFavorites.rejected, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = action.error.message;
-      // });
   },
 });
 
