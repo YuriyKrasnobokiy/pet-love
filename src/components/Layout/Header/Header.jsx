@@ -71,7 +71,7 @@ export const Header = ({ toggleTheme, currentTheme }) => {
               <UserBtnWrap $isHome={isHome}>
                 <UserBtn $user={user} onClick={() => navigate("/profile")}>
                   {/* <Icon height={20} width={20} name="icon-user" /> */}
-                  {user ? <UserImg src={user?.avatar} alt="user" /> : <Icon height={20} width={20} name="icon-user" />}
+                  {user?.avatar ? <UserImg src={user?.avatar} alt="user" /> : <Icon height={20} width={20} name="icon-user" />}
                 </UserBtn>
                 {user?.name && <UserName $isHome={isHome}>{user?.name}</UserName>}
               </UserBtnWrap>
