@@ -6,6 +6,8 @@ import { useDeviceType } from "../../../hooks/useDeviceType";
 import { selectIsLoggedIn } from "../../../redux/auth/authSelectors";
 import { selectIsOpenMobMenu } from "../../../redux/mob-menu/mobMenuSelectors";
 import { openMobMenu } from "../../../redux/mob-menu/mobMenuSlice";
+import { selectProfile } from "../../../redux/profile/profileSelectors";
+import { fetchProfile } from "../../../redux/profile/profileSlice";
 import { AuthNav } from "../../Auth/AuthNav/AuthNav";
 import Icon from "../../Icon/Icon";
 import { MobMenu } from "../../MobMenu/MobMenu";
@@ -17,6 +19,9 @@ import {
   StyledHeader,
   ThemeBtn,
   UserBtn,
+  UserBtnWrap,
+  UserImg,
+  UserName,
 } from "./Header.styled";
 import { HeaderNavComponent } from "./HeaderNav/HeaderNav";
 
@@ -28,6 +33,11 @@ export const Header = ({ toggleTheme, currentTheme }) => {
   const navigate = useNavigate();
   const [isHome, setIsHome] = useState(false);
   const deviceType = useDeviceType();
+  const user = useSelector(selectProfile)
+
+  useEffect(() => {
+    dispatch(fetchProfile());
+  }, [])
 
   useEffect(() => {
     switch (location.pathname) {
@@ -58,9 +68,13 @@ export const Header = ({ toggleTheme, currentTheme }) => {
           {isLoggedIn ? (
             <>
               {deviceType !== "mobile" && <UserMenu />}
-              <UserBtn onClick={() => navigate("/profile")}>
-                <Icon height={20} width={20} name="icon-user" />
-              </UserBtn>
+              <UserBtnWrap $isHome={isHome}>
+                <UserBtn $user={user} onClick={() => navigate("/profile")}>
+                  {/* <Icon height={20} width={20} name="icon-user" /> */}
+                  {user ? <UserImg src={user?.avatar} alt="user" /> : <Icon height={20} width={20} name="icon-user" />}
+                </UserBtn>
+                {user?.name && <UserName $isHome={isHome}>{user?.name}</UserName>}
+              </UserBtnWrap>
             </>
           ) : deviceType === "tablet" || deviceType === "desktop" ? (
             <AuthNav />

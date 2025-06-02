@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   position: ${(props) => (props.$isHome ? "absolute" : "static")};
+  top: 0;
   width: ${(props) => (props.$isHome ? "100%" : "inherit")};
 `;
 
@@ -98,8 +99,13 @@ export const BurgerBtn = styled.button`
   }
 `;
 
+export const UserBtnWrap = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 export const UserBtn = styled.button`
-  padding: 10px;
+  padding: ${(props) => (props.$user ? "" : "10px")};
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.UserBtnBgColor};
   transition: background-color 0.3s linear;
@@ -119,3 +125,27 @@ export const UserBtn = styled.button`
     background-color: ${(props) => props.theme.colors.UserBtnBgColorHover};
   }
 `;
+
+
+export const UserImg = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+`;
+
+export const UserName = styled.p`
+  display: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: ${(props) => props.$isHome ? props.theme.colors.UserCardBGColor : props.theme.colors.textColor};
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin-right: 16px;
+  }
+`
