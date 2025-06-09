@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../../redux/auth/authSelectors";
 import { openModal } from "../../../redux/modal/modalSlice";
 import {
-  addToFavorites,
-  deleteFromFavorites,
   fetchPetsById,
 } from "../../../redux/pets/petsOperations";
 import Icon from "../../Icon/Icon";
@@ -26,7 +24,7 @@ import {
   PetCardWrap,
   PropertyText,
 } from "./PetCard.styled";
-import { fetchProfile } from "../../../redux/profile/profileSlice";
+import { addToFavorites, deleteFromFavorites } from "../../../redux/profile/profileSlice";
 
 export const PetCard = ({ pet, profile, viewed }) => {
   const dispatch = useDispatch();
@@ -54,7 +52,8 @@ export const PetCard = ({ pet, profile, viewed }) => {
     }
     try {
       await dispatch(deleteFromFavorites({ _id: pet._id })).unwrap();
-      dispatch(fetchProfile());
+      // await dispatch(deleteFromFavorites({ _id: pet._id })).unwrap();
+      // dispatch(fetchProfile());
     } catch (error) {
       console.error("Error deleting pet:", error);
     }

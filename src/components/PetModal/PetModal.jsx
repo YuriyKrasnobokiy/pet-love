@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import AttentionImg from "../../assets/attention.png";
 import { selectIsLoggedIn, selectUser } from "../../redux/auth/authSelectors";
 import { closeModal } from "../../redux/modal/modalSlice";
-import { addToFavorites } from "../../redux/pets/petsOperations";
 import {
   selectError,
   selectIsLoading,
@@ -30,6 +29,7 @@ import {
   PetModalTitle,
   PetModalWrap,
 } from "./PetModal.styled";
+import { addToFavorites } from "../../redux/profile/profileSlice";
 
 export const PetModal = () => {
   const pet = useSelector(selectPet);

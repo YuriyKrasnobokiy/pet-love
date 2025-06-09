@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { addToFavorites, deleteFromFavorites } from "../pets/petsOperations";
+import { toast } from "react-toastify";
 
 export const API_URL = "https://petlove.b.goit.study/api/";
 
@@ -28,6 +28,44 @@ export const updateProfile = createAsyncThunk(
       return response.data;
     } catch (error) {
       console.error("Error updating profile:", error);
+      throw error;
+    }
+  },
+);
+
+export const addToFavorites = createAsyncThunk(
+  "pets / addToFavorites",
+  async ({ _id }) => {
+    try {
+      const response = await axios.post(
+        `${API_URL}notices/favorites/add/${_id}`,
+      );
+      return response.data;
+    } catch (error) {
+      if (error.response?.status === 401) {
+        toast.error("Please log in to add to favorites");
+      } else {
+        toast.error("This pet has already been added to favorites");
+      }
+      throw error;
+    }
+  },
+);
+
+export const deleteFromFavorites = createAsyncThunk(
+  "pets / deleteFromFavorites",
+  async ({ _id }) => {
+    try {
+      const response = await axios.delete(
+        `${API_URL}notices/favorites/remove/${_id}`,
+      );
+      return response.data;
+    } catch (error) {
+      if (error.response?.status === 401) {
+        toast.error("Please log in to add to favorites");
+      } else {
+      toast.error("This pet has already been deleted");
+      }
       throw error;
     }
   },
@@ -90,12 +128,15 @@ const profileSlice = createSlice({
       .addCase(addToFavorites.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.profile.favorites = action.payload;
+        state.profile.noticesFavorites = action.payload;
       })
       .addCase(deleteFromFavorites.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.profile.favorites = action.payload;
+        state.profile.noticesFavorites = state.profile.noticesFavorites.filter(
+          (pet) => action.payload.includes(pet._id),
+        );
+        // state.profile.noticesFavorites = action.payload;
       })
       .addCase(addToFavorites.rejected, (state, action) => {
         state.isLoading = false;
