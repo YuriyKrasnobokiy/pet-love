@@ -1,4 +1,4 @@
-import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as P,a2 as b,r as h,a8 as y,a9 as v}from"./index-DHOaD3KZ.js";const B=r.ul`
+import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as P,r as h,a8 as b,a9 as y}from"./index-B3_NTCBV.js";const v=r.ul`
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -13,7 +13,7 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
     margin-bottom: 60px;
     gap: ${e=>e.$profile?"24px":"40px 32px"};
   }
-`,k=r.li`
+`,B=r.li`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,7 +30,7 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
     width: ${e=>e.$profile?"292px":"315px"};
     padding: ${e=>e.$profile?"14px 14px 18px":"24px"};
   }
-`,F=r.img`
+`,k=r.img`
   border-radius: 16px;
   width: 100%;
   height: 178px;
@@ -41,13 +41,13 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
   @media screen and (min-width: 768px) {
     margin-bottom: ${e=>e.$profile?"14px":"24px"};
   }
-`,I=r.div`
+`,F=r.div`
   margin-bottom: 24px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: ${e=>e.$profile?"24px":"32px"};
   }
-`,z=r.div`
+`,I=r.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -56,7 +56,7 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
   @media screen and (min-width: 768px) {
     align-items: center;
   }
-`,N=r.h2`
+`,z=r.h2`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -66,7 +66,7 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
     font-size: 18px;
     line-height: 1.33;
   }
-`,T=r.div`
+`,N=r.div`
   display: flex;
   color: ${e=>e.theme.colors.IconStarAccentColor};
   gap: 4px;
@@ -74,7 +74,7 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
   @media screen and (min-width: 768px) {
     align-items: center;
   }
-`,L=r.p`
+`,T=r.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
@@ -83,7 +83,7 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
   @media screen and (min-width: 768px) {
     line-height: 1.42857;
   }
-`,R=r.ul`
+`,L=r.ul`
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
@@ -110,16 +110,16 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
   &::first-letter {
     text-transform: uppercase;
   }
-`,G=r.p`
+`,R=r.p`
   color: ${e=>e.theme.colors.PetCardCommentColor};
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.02em;
-`,_=r.div`
+`,G=r.div`
   display: flex;
   justify-content: space-between;
-`,A=r.button`
+`,_=r.button`
   border-radius: 30px;
   padding: ${e=>e.$profile?"13px":"14px"};
   font-weight: 500;
@@ -146,7 +146,7 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
   &:hover {
     background-color: ${e=>e.theme.colors.PetCardBtnBGHoverColor};
   }
-`,D=r.button`
+`,A=r.button`
   display: ${e=>e.$profile?"none":"flex"};
   border-radius: 100%;
   width: 46px;
@@ -165,7 +165,7 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
   &:hover {
     background-color: ${e=>e.theme.colors.PetCardFavBtnBGHoverColor};
   }
-`,S=r.button`
+`,D=r.button`
   display: ${e=>e.$viewed?"none":e.$profile?"flex":"none"};
   border-radius: 100%;
   width: ${e=>e.$profile?"44px":"46px"};
@@ -184,13 +184,13 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
   &:hover {
     background-color: ${e=>e.theme.colors.PetCardFavBtnBGHoverColor};
   }
-`,E=({pet:e,profile:o,viewed:n})=>{const i=u(),s=$(w),x=()=>{s&&(i(c()),i(C({_id:e._id}))),i(c())},m=()=>{s||i(c()),i(j({_id:e._id}))},g=async()=>{if(!s){i(c());return}try{await i(P({_id:e._id})).unwrap(),i(b())}catch(f){console.error("Error deleting pet:",f)}};return t.jsx(t.Fragment,{children:t.jsxs(k,{$viewed:n,$profile:o,children:[t.jsxs("div",{children:[t.jsx("div",{children:t.jsx(F,{$profile:o,src:e.imgURL,alt:"pet"})}),t.jsxs(I,{$profile:o,children:[t.jsxs(z,{children:[t.jsx(N,{children:e.title}),t.jsxs(T,{children:[t.jsx(p,{name:"icon-star",width:16,height:16}),t.jsx(L,{children:e.popularity})]})]}),t.jsxs(R,{children:[t.jsxs(a,{children:[t.jsx(d,{children:"Name"}),t.jsx(l,{children:e.name})]}),t.jsxs(a,{children:[t.jsx(d,{children:"Birthday"}),t.jsx(l,{children:e.birthday})]}),t.jsxs(a,{children:[t.jsx(d,{children:"Sex"}),t.jsx(l,{children:e.sex})]}),t.jsxs(a,{children:[t.jsx(d,{children:"Species"}),t.jsx(l,{children:e.species})]}),t.jsxs(a,{children:[t.jsx(d,{children:"Category"}),t.jsx(l,{children:e.category})]})]}),t.jsx(G,{children:e.comment})]})]}),t.jsxs(_,{children:[t.jsx(A,{$viewed:n,$profile:o,type:"button",onClick:x,children:"Learn more"}),t.jsx(D,{onClick:m,$profile:o,children:t.jsx(p,{name:"icon-heart",width:18,height:18})}),t.jsx(S,{$viewed:n,onClick:g,$profile:o,children:t.jsx(p,{name:"icon-trash",width:18,height:18})})]})]})})},V=({pets:e,profile:o,viewed:n})=>t.jsx(t.Fragment,{children:t.jsx(B,{$profile:o,$viewed:n,children:e.map((i,s)=>t.jsx(E,{viewed:n,profile:o,pet:i},`${i._id} + ${s}`))})}),W=r.div`
+`,S=({pet:e,profile:o,viewed:n})=>{const i=u(),s=$(w),x=()=>{s&&(i(c()),i(C({_id:e._id}))),i(c())},m=()=>{s||i(c()),i(j({_id:e._id}))},g=async()=>{if(!s){i(c());return}try{await i(P({_id:e._id})).unwrap()}catch(f){console.error("Error deleting pet:",f)}};return t.jsx(t.Fragment,{children:t.jsxs(B,{$viewed:n,$profile:o,children:[t.jsxs("div",{children:[t.jsx("div",{children:t.jsx(k,{$profile:o,src:e.imgURL,alt:"pet"})}),t.jsxs(F,{$profile:o,children:[t.jsxs(I,{children:[t.jsx(z,{children:e.title}),t.jsxs(N,{children:[t.jsx(p,{name:"icon-star",width:16,height:16}),t.jsx(T,{children:e.popularity})]})]}),t.jsxs(L,{children:[t.jsxs(a,{children:[t.jsx(d,{children:"Name"}),t.jsx(l,{children:e.name})]}),t.jsxs(a,{children:[t.jsx(d,{children:"Birthday"}),t.jsx(l,{children:e.birthday})]}),t.jsxs(a,{children:[t.jsx(d,{children:"Sex"}),t.jsx(l,{children:e.sex})]}),t.jsxs(a,{children:[t.jsx(d,{children:"Species"}),t.jsx(l,{children:e.species})]}),t.jsxs(a,{children:[t.jsx(d,{children:"Category"}),t.jsx(l,{children:e.category})]})]}),t.jsx(R,{children:e.comment})]})]}),t.jsxs(G,{children:[t.jsx(_,{$viewed:n,$profile:o,type:"button",onClick:x,children:"Learn more"}),t.jsx(A,{onClick:m,$profile:o,children:t.jsx(p,{name:"icon-heart",width:18,height:18})}),t.jsx(D,{$viewed:n,onClick:g,$profile:o,children:t.jsx(p,{name:"icon-trash",width:18,height:18})})]})]})})},U=({pets:e,profile:o,viewed:n})=>t.jsx(t.Fragment,{children:t.jsx(v,{$profile:o,$viewed:n,children:e.map((i,s)=>t.jsx(S,{viewed:n,profile:o,pet:i},`${i._id} + ${s}`))})}),E=r.div`
   padding: ${e=>e.$isProfile?0:"20px"};
-`,H=r.img`
+`,W=r.img`
   width: 80px;
   height: 80px;
   margin: 0 auto 20px;
-`,M=r.h3`
+`,H=r.h3`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
@@ -206,7 +206,7 @@ import{u as r,a as u,c as $,a3 as w,j as t,I as p,a4 as c,a5 as C,a6 as j,a7 as 
   @media screen and (min-width: 1250px) {
     width: 456px;
   }
-`,O=r.span`
+`,M=r.span`
   color: ${e=>e.theme.colors.ResultsNotFoundAccentColor};
-`,q=()=>{const[e,o]=h.useState(!1),n=y();return h.useEffect(()=>{switch(n.pathname){case"/profile":o(!0);break;case"/profile/favorites":o(!0);break;case"/profile/viewed":o(!0);break;default:o(!1);break}},[n.pathname]),t.jsxs(W,{$isProfile:e,children:[e?null:t.jsx(H,{src:v,alt:"dog"}),t.jsxs(M,{children:["Oops, it looks like",t.jsxs(O,{children:[" ","there aren't any furry results"," "]}),"on our adorable page."," ",e?'Do not worry! View your pets on the "find your favorite pet" page and add them to your favorites.':`Don't worry! Please try selecting a different
-        filter or adjust your filtering settings.`]})]})};export{V as P,q as R};
+`,V=()=>{const[e,o]=h.useState(!1),n=b();return h.useEffect(()=>{switch(n.pathname){case"/profile":o(!0);break;case"/profile/favorites":o(!0);break;case"/profile/viewed":o(!0);break;default:o(!1);break}},[n.pathname]),t.jsxs(E,{$isProfile:e,children:[e?null:t.jsx(W,{src:y,alt:"dog"}),t.jsxs(H,{children:["Oops, it looks like",t.jsxs(M,{children:[" ","there aren't any furry results"," "]}),"on our adorable page."," ",e?'Do not worry! View your pets on the "find your favorite pet" page and add them to your favorites.':`Don't worry! Please try selecting a different
+        filter or adjust your filtering settings.`]})]})};export{U as P,V as R};
