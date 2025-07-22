@@ -64,7 +64,8 @@ export const NavLinkStyled = styled(NavLink)`
 export const NoticesContainer = styled.div`
   padding: ${(props) => (props.$isEmpty ? "80px 0 0" : "20px 0 0")};
   height: 100%;
-  overflow: auto;
+  max-height: 78vh;
+  overflow-y: auto;
   scrollbar-width: none; 
   -ms-overflow-style: none; 
 
