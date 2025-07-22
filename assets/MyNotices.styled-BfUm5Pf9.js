@@ -1,4 +1,4 @@
-import{u as i,aa as e}from"./index-CUHY8yAb.js";const t=i.div`
+import{u as i,aa as e}from"./index-DZW3vZ0g.js";const t=i.div`
 max-height: 78vh;
 overflow-y: hidden;
   padding: 40px 0;
@@ -9,14 +9,14 @@ overflow-y: hidden;
   @media screen and (min-width: 1280px) {
     padding: 40px 0 40px 32px;
   }
-`,d=i.div`
+`,a=i.div`
   display: flex;
   gap: 10px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-`,a=i(e)`
+`,d=i(e)`
   display: flex;
   justify-content: center;
   font-size: 14px;
@@ -52,7 +52,8 @@ overflow-y: hidden;
 `,r=i.div`
   padding: ${o=>o.$isEmpty?"80px 0 0":"20px 0 0"};
   height: 100%;
-  overflow: auto;
+  max-height: 78vh;
+  overflow-y: auto;
   scrollbar-width: none; 
   -ms-overflow-style: none; 
 
@@ -66,4 +67,4 @@ overflow-y: hidden;
   @media screen and (min-width: 1280px) {
     padding: ${o=>o.$isEmpty?"180px 103px 0":"32px 0 0"};
   }
-`;export{t as M,a as N,d as a,r as b};
+`;export{t as M,d as N,a,r as b};
