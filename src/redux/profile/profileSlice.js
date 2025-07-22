@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { toast } from "react-toastify";
-
-export const API_URL = "https://petlove.b.goit.study/api/";
+import { API_URL } from "../../config/apiConfig";
 
 export const fetchProfile = createAsyncThunk(
   "profile/fetchProfile",
@@ -115,16 +114,6 @@ const profileSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      // .addCase(addToFavorites.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = null;
-      //   state.profile.favorites = action.payload;
-      // })
-      // .addCase(deleteFromFavorites.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = null;
-      //   state.profile.favorites = action.payload;
-      // })
       .addCase(addToFavorites.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -136,7 +125,6 @@ const profileSlice = createSlice({
         state.profile.noticesFavorites = state.profile.noticesFavorites.filter(
           (pet) => action.payload.includes(pet._id),
         );
-        // state.profile.noticesFavorites = action.payload;
       })
       .addCase(addToFavorites.rejected, (state, action) => {
         state.isLoading = false;

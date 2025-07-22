@@ -1,8 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { toast } from "react-toastify";
-
-export const API_URL = "https://petlove.b.goit.study/api/";
+import { API_URL } from "../../config/apiConfig";
 
 export const fetchPets = createAsyncThunk(
   "pets/fetchPets",
@@ -92,41 +90,3 @@ export const fetchCities = createAsyncThunk("pets/fetchCities", async () => {
     throw error;
   }
 });
-
-// export const addToFavorites = createAsyncThunk(
-//   "pets / addToFavorites",
-//   async ({ _id }) => {
-//     try {
-//       const response = await axios.post(
-//         `${API_URL}notices/favorites/add/${_id}`,
-//       );
-//       return response.data;
-//     } catch (error) {
-//       if (error.response?.status === 401) {
-//         toast.error("Please log in to add to favorites");
-//       } else {
-//         toast.error("This pet has already been added to favorites");
-//       }
-//       throw error;
-//     }
-//   },
-// );
-
-// export const deleteFromFavorites = createAsyncThunk(
-//   "pets / deleteFromFavorites",
-//   async ({ _id }) => {
-//     try {
-//       const response = await axios.delete(
-//         `${API_URL}notices/favorites/remove/${_id}`,
-//       );
-//       return response.data;
-//     } catch (error) {
-//       if (error.response?.status === 401) {
-//         toast.error("Please log in to add to favorites");
-//       } else {
-//       toast.error("This pet has already been deleted");
-//       }
-//       throw error;
-//     }
-//   },
-// );

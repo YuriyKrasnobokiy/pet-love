@@ -3,7 +3,6 @@ import React from "react";
 import AsyncSelect from "react-select/async";
 import { components } from "react-select";
 import { useTheme } from "styled-components";
-import { API_URL } from "../../redux/pets/petsOperations";
 import { customStyles } from "../CustomSelect/customStyles";
 import Icon from "../Icon/Icon";
 import { LocationSelectIconWrap } from "./LocationSelect.styled";
@@ -11,6 +10,7 @@ import { ResetBtn } from "../SearchField/SearchField.styled";
 import { useDispatch } from "react-redux";
 import { setLocation, setLocationId } from "../../redux/filters/filtersSlice";
 import { setFilterTerm } from "../../redux/pets/petsSlice";
+import { API_URL } from "../../config/apiConfig";
 
 const CustomControl = ({ children, ...props }) => {
   const dispatch = useDispatch();

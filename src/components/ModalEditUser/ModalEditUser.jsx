@@ -38,7 +38,6 @@ export const ModalEditUser = () => {
   const deviceType = useDeviceType();
   const userData = useSelector(selectProfile);
   const viewed = userData.noticesViewed;
-  console.log("viewed: ", viewed);
   const dispatch = useDispatch();
 
   const [previewAvatar, setPreviewAvatar] = useState(userData.avatar || "");

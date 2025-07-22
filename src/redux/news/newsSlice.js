@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
-export const API_URL = "https://petlove.b.goit.study/api/";
+import { API_URL } from "../../config/apiConfig";
 
 export const fetchNews = createAsyncThunk(
   "news/fetchNews",
