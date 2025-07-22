@@ -5,9 +5,15 @@ import { API_URL } from "../../config/apiConfig";
 
 export const fetchProfile = createAsyncThunk(
   "profile/fetchProfile",
-  async () => {
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.auth.token;
+    if(!token) return thunkAPI.rejectWithValue('No token');
+
     try {
-      const response = await axios.get(`${API_URL}users/current/full`);
+      const response = await axios.get(`${API_URL}users/current/full`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       return response.data;
     } catch (error) {
       console.error("Error fetching profile:", error);
