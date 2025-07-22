@@ -15,8 +15,6 @@ const MyFavoritesPets = () => {
     dispatch(fetchProfile());
   }, [dispatch]);
 
-  console.log('favorite: ', favorite);
-
   return (
     <>
       <NoticesContainer $isEmpty={!favorite || favorite.length === 0}>

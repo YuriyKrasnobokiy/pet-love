@@ -14,13 +14,14 @@ import { selectIsApproveModalOpen } from "../../redux/modal/modalSelectors";
 import { useSelector } from "react-redux";
 import { ModalApproveAction } from "../ModalApproveAction/ModalApproveAction";
 import { ModalEditUser } from "../ModalEditUser/ModalEditUser";
+import { LayoutStyled } from "./Layout.styled";
 
 const Layout = ({ children, toggleTheme, currentTheme }) => {
   const isOpenModal = useSelector(selectIsOpenModal);
   const isApproveModalOpen = useSelector(selectIsApproveModalOpen);
   const isModalEditUserOpen = useSelector(selectIsModalEditUserOpen);
   return (
-    <>
+    <LayoutStyled>
       <ToastContainer
         position="top-left"
         autoClose={5000}
@@ -35,7 +36,7 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
         <Login />
         <Registration />
       </Header>
-      <main>{children}</main>
+      <main style={{flex: 1}}>{children}</main>
       {isOpenModal && (
         <Modal>
           {isModalEditUserOpen ? (
@@ -48,7 +49,7 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
         </Modal>
       )}
       <Footer currentTheme={currentTheme} />
-    </>
+    </LayoutStyled>
   );
 };
 

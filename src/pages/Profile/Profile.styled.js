@@ -5,6 +5,6 @@ export const ProfileWrapper = styled.div`
     display: grid;
     grid-template-columns: 520px 1fr;
     max-width: 1216px;
-    padding: 0 32px;
+    padding: 0 32px 24px 32px;
   }
 `;

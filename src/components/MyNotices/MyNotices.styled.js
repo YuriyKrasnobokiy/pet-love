@@ -2,13 +2,15 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const MyNoticesWrap = styled.div`
+max-height: 78vh;
+overflow-y: hidden;
   padding: 40px 0;
 
   @media screen and (min-width: 768px) {
     padding: 32px 0;
   }
   @media screen and (min-width: 1280px) {
-    padding: 40px 32px;
+    padding: 40px 0 40px 32px;
   }
 `;
 
@@ -61,6 +63,14 @@ export const NavLinkStyled = styled(NavLink)`
 
 export const NoticesContainer = styled.div`
   padding: ${(props) => (props.$isEmpty ? "80px 0 0" : "20px 0 0")};
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+
+  &::-webkit-scrollbar {
+    display: none; 
+  }
 
   @media screen and (min-width: 768px) {
     padding: ${(props) => (props.$isEmpty ? "180px 123px 0" : "20px 0 0")};
