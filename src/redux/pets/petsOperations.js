@@ -2,6 +2,36 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API_URL } from "../../config/apiConfig";
 
+// export const fetchPets = createAsyncThunk(
+//   "pets/fetchPets",
+//   async ({
+//     page,
+//     limit,
+//     filterWord,
+//     category,
+//     species,
+//     isPopular,
+//     isExpensive,
+//     locationId,
+//   }) => {
+//     try {
+//       const response = await axios.get(
+//         `${API_URL}notices?page=${page}&limit=${limit}&keyword=${
+//           filterWord || ""
+//         }&category=${category || ""}&species=${species || ""}&byPopularity=${
+//           isPopular ? "true" : "false"
+//         }&locationId=${locationId || ""}&byPrice=${isExpensive ? "true" : "false"}`
+
+//       );
+
+//       return response.data;
+//     } catch (error) {
+//       console.error("Error fetching pets:", error);
+//       throw error;
+//     }
+//   },
+// );
+
 export const fetchPets = createAsyncThunk(
   "pets/fetchPets",
   async ({
@@ -15,25 +45,34 @@ export const fetchPets = createAsyncThunk(
     locationId,
   }) => {
     try {
-      const response = await axios.get(
-        `${API_URL}notices?page=${page}&limit=${limit}&keyword=${
-          filterWord || ""
-        }&category=${category || ""}&species=${species || ""}&byPopularity=${
-          isPopular ? "true" : "false"
-        }&locationId=${locationId || ""}&${
-          category === "sell"
-            ? `&byPrice=${isExpensive ? "true" : "false"}`
-            : ""
-        }`,
-      );
+      const params = {
+        page,
+        limit,
+      };
+
+      if (filterWord) params.keyword = filterWord;
+      if (category) params.category = category;
+      if (species) params.species = species;
+      if (locationId) params.locationId = locationId;
+
+      if (isPopular === true || isPopular === false) {
+        params.byPopularity = isPopular.toString();
+      }
+
+      if (isExpensive === true || isExpensive === false) {
+        params.byPrice = isExpensive.toString();
+      }
+
+      const response = await axios.get(`${API_URL}notices`, { params });
 
       return response.data;
     } catch (error) {
       console.error("Error fetching pets:", error);
       throw error;
     }
-  },
+  }
 );
+
 
 export const fetchPetsById = createAsyncThunk(
   "pets/fetchPetsById",

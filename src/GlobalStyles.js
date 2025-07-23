@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${(p) => p.theme.colors.mainBgColor};
+    /* overflow: hidden; */
   }
 
   /* Removes background when clicking on mob devices */

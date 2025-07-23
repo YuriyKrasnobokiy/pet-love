@@ -4,7 +4,7 @@ export const UserCardWrap = styled.div`
   padding: 18px 20px 40px;
   border-radius: 30px;
   background-color: ${(props) => props.theme.colors.UserCardBGColor};
-  height: 100%;
+  height: auto;
 
   @media screen and (min-width: 768px) {
     position: relative;

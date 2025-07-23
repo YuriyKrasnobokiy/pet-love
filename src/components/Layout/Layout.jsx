@@ -36,7 +36,8 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
         <Login />
         <Registration />
       </Header>
-      <main style={{flex: 1}}>{children}</main>
+      <main style={{flexGrow: 1}}>{children}</main>
+      {/* <main style={{flexGrow: 1, overflowY: 'auto'}}>{children}</main> */}
       {isOpenModal && (
         <Modal>
           {isModalEditUserOpen ? (
