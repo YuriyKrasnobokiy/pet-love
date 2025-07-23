@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=/pet-love/" />
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url=./index.html" />
+    <script>
+      window.location.replace('./index.html');
+    </script>
   </head>
   <body>
-    <script type="text/javascript">
-      const pathname = location.pathname.replace(/\/pet-love/, ""); 
-      const redirectTo = "/pet-love" + pathname + location.search + location.hash;
-      window.location.replace(redirectTo);
-    </script>
+    <p>Redirecting to <a href="./index.html">home page</a>…</p>
   </body>
 </html>
