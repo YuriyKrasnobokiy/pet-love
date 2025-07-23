@@ -2,14 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>404 Not Found</title>
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=/pet-love/" />
   </head>
   <body>
-    <!-- <script>
-      window.location.replace("/pet-love");
-    </script> -->
     <script type="text/javascript">
-      const redirectTo = "/pet-love/" + location.pathname + location.search + location.hash;
+      const pathname = location.pathname.replace(/\/pet-love/, ""); 
+      const redirectTo = "/pet-love" + pathname + location.search + location.hash;
       window.location.replace(redirectTo);
     </script>
   </body>
