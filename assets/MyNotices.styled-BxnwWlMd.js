@@ -1,4 +1,4 @@
-import{u as i,a8 as e}from"./index-BkMkcFRi.js";const t=i.div`
+import{u as i,a8 as e}from"./index-BRhEZXsx.js";const t=i.div`
 max-height: 78vh;
 overflow-y: hidden;
   padding: 40px 0;
