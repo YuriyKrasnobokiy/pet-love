@@ -1,4 +1,4 @@
-import{u as i,aa as e}from"./index-z7FlnO6O.js";const t=i.div`
+import{u as i,a8 as e}from"./index-BkMkcFRi.js";const t=i.div`
 max-height: 78vh;
 overflow-y: hidden;
   padding: 40px 0;
@@ -9,14 +9,14 @@ overflow-y: hidden;
   @media screen and (min-width: 1280px) {
     padding: 40px 0 40px 32px;
   }
-`,a=i.div`
+`,d=i.div`
   display: flex;
   gap: 10px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-`,d=i(e)`
+`,a=i(e)`
   display: flex;
   justify-content: center;
   font-size: 14px;
@@ -67,4 +67,4 @@ overflow-y: hidden;
   @media screen and (min-width: 1280px) {
     padding: ${o=>o.$isEmpty?"180px 103px 0":"32px 0 0"};
   }
-`;export{t as M,d as N,a,r as b};
+`;export{t as M,a as N,d as a,r as b};
