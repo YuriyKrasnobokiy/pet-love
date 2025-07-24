@@ -8,6 +8,7 @@ export const CustomSelect = ({
   placeholder,
   handleOptionChange,
   selectedOpt,
+  addPet = false
 }) => {
   const theme = useTheme();
   const [selectedOption, setSelectedOption] = useState(null);
@@ -22,13 +23,26 @@ export const CustomSelect = ({
     }
   }, [selectedOpt, options]);
 
-  const selectOptions = [
-    { value: "", label: "Show all" },
-    ...options.map((option) => ({
-      value: option,
-      label: option.charAt(0).toUpperCase() + option.slice(1),
-    })),
-  ];
+  // const selectOptions = [
+  //   { value: "", label: "Show all" },
+  //   ...options.map((option) => ({
+  //     value: option,
+  //     label: option.charAt(0).toUpperCase() + option.slice(1),
+  //   })),
+  // ];
+
+  const selectOptions = addPet
+    ? options.map((option) => ({
+        value: option,
+        label: option.charAt(0).toUpperCase() + option.slice(1),
+      }))
+    : [
+        { value: "", label: "Show all" },
+        ...options.map((option) => ({
+          value: option,
+          label: option.charAt(0).toUpperCase() + option.slice(1),
+        })),
+      ];
 
   const handleChange = (selected) => {
     setSelectedOption(selected);
@@ -40,7 +54,7 @@ export const CustomSelect = ({
       value={selectedOption}
       onChange={handleChange}
       options={selectOptions}
-      styles={customStyles(theme)}
+      styles={customStyles(theme, addPet)}
       isSearchable={false}
       placeholder={placeholder}
     />

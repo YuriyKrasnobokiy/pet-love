@@ -1,4 +1,4 @@
-export const customStyles = (theme) => ({
+export const customStyles = (theme, addPet = false) => ({
   control: (provided, state) => ({
     ...provided,
     backgroundColor: theme.colors.SelectControlBGColor,
@@ -9,7 +9,8 @@ export const customStyles = (theme) => ({
     boxShadow: state.isFocused ? "none" : "none",
     width: "100%",
     height: "42px",
-    borderColor: theme.colors.SelectControlBorderColor,
+    // borderColor: theme.colors.SelectControlBorderColor,
+    borderColor: addPet ? "rgba(38, 38, 38, 0.15)" : theme.colors.SelectControlBorderColor,
     cursor: "pointer",
     transition: "border-color 300ms ease",
 
@@ -20,7 +21,8 @@ export const customStyles = (theme) => ({
     },
 
     "&:hover": {
-      borderColor: theme.colors.SelectControlBorderHoverColor,
+      // borderColor: theme.colors.SelectControlBorderHoverColor,
+      borderColor: addPet ? "#f6b83d" : theme.colors.SelectControlBorderHoverColor,
     },
   }),
   container: (provided) => ({
@@ -55,7 +57,8 @@ export const customStyles = (theme) => ({
   }),
   placeholder: (provided) => ({
     ...provided,
-    color: theme.colors.SelectInputPlaceholderColor,
+    // color: theme.colors.SelectInputPlaceholderColor,
+    color: addPet ? "rgba(38, 38, 38, 0.5)" : theme.colors.SelectInputPlaceholderColor,
     fontWeight: 500,
     fontSize: "14px",
     lineHeight: 1.25,
@@ -77,6 +80,8 @@ export const customStyles = (theme) => ({
   }),
   menuList: (provided) => ({
     ...provided,
+    maxHeight: addPet ? "80px" : "120px",
+    overflowY: "auto",
 
     "&::-webkit-scrollbar": {
       width: "8px",

@@ -82,7 +82,10 @@ export const App = () => {
               <Route path="viewed" element={<Viewed />} />
             </Route>
 
-            <Route path="/add-pet" element={<AddPet />} />
+            <Route
+              path="/add-pet"
+              element={<PrivateRoute redirectTo="/" component={<AddPet />} />}
+            ></Route>
 
             <Route path="*" element={<NotFound />} />
           </Routes>
