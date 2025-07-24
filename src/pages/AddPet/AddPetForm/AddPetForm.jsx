@@ -18,51 +18,121 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectSpecies } from "../../../redux/pets/petsSelectors";
 import { fetchSpecies } from "../../../redux/pets/petsOperations";
 import { LuCalendar } from "react-icons/lu";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
+import { ErrorMessage } from "../../../components/Auth/RegistrForm/AuthForm.styled";
 
 export const AddPetForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const species = useSelector(selectSpecies);
+
+  const handleBackClick = () => {
+    navigate('/profile');
+  }
+
+  const addPetSchema = yup.object().shape({
+    title: yup.string().required("Title is required"),
+    name: yup.string().required("Pet's name is required"),
+    imgUrl: yup
+      .string()
+      .matches(
+        /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
+        "Invalid image URL",
+      )
+      .required("Image URL is required"),
+    species: yup.string().required("Species is required"),
+    birthday: yup
+      .string()
+      .matches(/^\d{2}\.\d{2}\.\d{4}$/, "Date must be in DD.MM.YYYY format")
+      // .matches(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format")
+      .required("Birthday is required"),
+    sex: yup.string().required("Sex is required"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+    title: '',
+    name: '',
+    imgUrl: '',
+    species: '',
+    birthday: '',
+    sex: '',
+  },
+    resolver: yupResolver(addPetSchema),
+  });
+
+  const onSubmit = (data) => {
+    console.log("Valid form data:", data);
+    reset();
+  };
 
   useEffect(() => {
     dispatch(fetchSpecies());
   }, [dispatch]);
   return (
-    <AddPetFormWrap>
+    <AddPetFormWrap onSubmit={handleSubmit(onSubmit)}>
       <AddPetTitle>
         Add my pet /<AddPetTitleSpan>Personal details</AddPetTitleSpan>
       </AddPetTitle>
 
-      <AddPetRadioGroup />
+      <InputWrapper>
+        <AddPetRadioGroup register={register} setValue={setValue} watch={watch}/>
+        <ErrorMessage className="addPet">{errors.sex?.message}</ErrorMessage>
+      </InputWrapper>
 
-      <AddPetPhoto />
+      <AddPetPhoto register={register} errors={errors}/>
+
       <AddPetInputsWrap>
-        <AddPetInput name="title" placeholder="Title" type="text" />
-        <AddPetInput name="name" placeholder="Pet’s Name" type="text" />
+        <InputWrapper>
+          <AddPetInput {...register("title")} name="title" placeholder="Title" type="text" />
+          <ErrorMessage className="addPet">{errors.title?.message}</ErrorMessage>
+        </InputWrapper>
+
+        <InputWrapper>
+          <AddPetInput {...register("name")} name="name" placeholder="Pet’s Name" type="text" />
+          <ErrorMessage  className="addPet">{errors.name?.message}</ErrorMessage>
+        </InputWrapper>
         <DateTypeWrap>
           <InputWrapper>
-            <IconWrapper >
+            <IconWrapper>
               <LuCalendar />
             </IconWrapper>
             <AddPetInput
+              {...register("birthday")}
               className="date"
-              name="date"
+              name="birthday"
               placeholder="00.00.0000"
               type="text"
             />
+            <ErrorMessage className="addPet">{errors.birthday?.message}</ErrorMessage>
           </InputWrapper>
-
+          <InputWrapper>
           <CustomSelect
             addPet
             options={species}
             placeholder="Pet type"
-            handleOptionChange={() => {}}
-            selectedOpt={() => {}}
+            handleOptionChange={(selected) => {
+              setValue("species", selected.value, { shouldValidate: true });
+            }}
+            selectedOpt={null}
           />
+          <ErrorMessage className="addPet">{errors.species?.message}</ErrorMessage>
+          </InputWrapper>
         </DateTypeWrap>
       </AddPetInputsWrap>
       <BtnsWrap>
-        <AddPetFormBtn className="back">Back</AddPetFormBtn>
-        <AddPetFormBtn className="submit">Submit</AddPetFormBtn>
+        <AddPetFormBtn onClick={handleBackClick} className="back">Back</AddPetFormBtn>
+        <AddPetFormBtn type="submit" className="submit">Submit</AddPetFormBtn>
       </BtnsWrap>
     </AddPetFormWrap>
   );

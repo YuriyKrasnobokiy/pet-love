@@ -65,12 +65,12 @@ const StyledRadioWrapper = styled.div`
 const addPetRadioOpts = [
   { name: "female", value: "female" },
   { name: "male", value: "male" },
-  { name: "both", value: "multiple" },
+  { name: "both", value: "both" },
 ];
 
-const AddPetRadioGroup = () => {
+const AddPetRadioGroup = ({setValue, watch}) => {
   const deviceType = useDeviceType();
-  const [selected, setSelected] = useState(null);
+  const selected = watch("sex");
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -79,10 +79,13 @@ const AddPetRadioGroup = () => {
         <StyledRadioWrapper $opt={opt.name} key={opt.name}>
           <HiddenRadio
             id={`radio-${opt.name}`}
-            name="gender"
+            name="sex"
             value={opt.value}
-            checked={selected === opt.name}
-            onChange={() => setSelected(opt.name)}
+            checked={selected === opt.value}
+            // onChange={() => setValue("sex", opt.value)}
+            onChange={() => {
+              setValue("sex", opt.value, { shouldValidate: true });
+            }}
           />
 
           <RoundLabel

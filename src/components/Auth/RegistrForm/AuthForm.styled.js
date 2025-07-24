@@ -183,6 +183,23 @@ export const ErrorMessage = styled.p`
     left: 16px;
   }
 
+  &.addPet {
+      font-size: 12px;
+      line-height: 1.16667;
+      top: 40px;
+      left: 14px;
+      
+      @media screen and (min-width: 768px) {
+      top: 41px;
+      left: 16px;
+    }
+
+    &.photo {
+      top: 34px;
+      left: 14px;
+    }
+  }
+
   &.avatar {
     top: 40px;
     @media screen and (min-width: 768px) {

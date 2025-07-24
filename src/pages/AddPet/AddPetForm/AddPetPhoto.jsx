@@ -2,6 +2,7 @@ import React from "react";
 import Icon from "../../../components/Icon/Icon";
 import styled from "styled-components";
 import { useDeviceType } from "../../../hooks/useDeviceType";
+import { ErrorMessage } from "../../../components/Auth/RegistrForm/AuthForm.styled";
 
 const AddPetPhotoWrap = styled.div`
   display: flex;
@@ -35,6 +36,7 @@ const InputBtnWrap = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 8px;
+  position: relative;
 `;
 const UrlInput = styled.input`
   border: 1px solid rgba(38, 38, 38, 0.15);
@@ -88,7 +90,7 @@ const UploadBtn = styled.button`
   }
 `;
 
-export const AddPetPhoto = () => {
+export const AddPetPhoto = ({ register, errors }) => {
   const deviceType = useDeviceType();
   return (
     <AddPetPhotoWrap>
@@ -100,10 +102,11 @@ export const AddPetPhoto = () => {
         />
       </PetPhoto>
       <InputBtnWrap>
-        <UrlInput name="url" placeholder="Enter URL" type="text" />
-        <UploadBtn>
+        <UrlInput {...register("imgUrl")} name="imgUrl" placeholder="Enter URL" type="text" />
+        <UploadBtn type="button">
           Upload photo <Icon width={16} height={16} name="icon-cloud" />
         </UploadBtn>
+      <ErrorMessage className="addPet photo">{errors.imgUrl?.message}</ErrorMessage>
       </InputBtnWrap>
     </AddPetPhotoWrap>
   );
