@@ -1,11 +1,11 @@
-import{u as r,b as c,c as l,S as p,j as t,U as h,T as x,V as m,I as s,W as g,X as u,Y as j,Z as f,_ as i,a as n,$ as B,a0 as v,a1 as b,r as k,a2 as w}from"./index-B6k7c3XD.js";import{M as U,a as C,N as a}from"./MyNotices.styled-VR3CCsga.js";const y=r.div`
+import{u as s,b as l,c as p,S as h,j as t,U as x,T as m,V as g,I as r,W as u,X as j,Y as f,Z as v,_ as a,a as n,Q as B,$ as b,a0 as k,a1 as w,r as C,a2 as U}from"./index-z7FlnO6O.js";import{M as y,a as P,N as d}from"./MyNotices.styled-CRtMfsEs.js";const $=s.div`
   @media screen and (min-width: 1280px) {
     display: grid;
     grid-template-columns: 520px 1fr;
     max-width: 1216px;
     padding: 0 32px 24px 32px;
   }
-`,P=r.div`
+`,A=s.div`
   padding: 18px 20px 40px;
   border-radius: 30px;
   background-color: ${e=>e.theme.colors.UserCardBGColor};
@@ -21,7 +21,7 @@ import{u as r,b as c,c as l,S as p,j as t,U as h,T as x,V as m,I as s,W as g,X a
     max-width: 440px;
     max-height: 78vh;
   }
-`,$=r.div`
+`,M=s.div`
   display: flex;
   justify-content: space-between;
 
@@ -31,7 +31,7 @@ import{u as r,b as c,c as l,S as p,j as t,U as h,T as x,V as m,I as s,W as g,X a
     right: 40px;
     left: 40px;
   }
-`,A=r.p`
+`,T=s.p`
   display: flex;
   gap: 4px;
   align-items: center;
@@ -44,7 +44,7 @@ import{u as r,b as c,c as l,S as p,j as t,U as h,T as x,V as m,I as s,W as g,X a
   line-height: 1.28571;
   letter-spacing: -0.02em;
   background-color: ${e=>e.theme.colors.UserCardBageBgColor};
-`,M=r.button`
+`,W=s.button`
   border-radius: 30px;
   padding: 10px;
   width: 38px;
@@ -56,7 +56,7 @@ import{u as r,b as c,c as l,S as p,j as t,U as h,T as x,V as m,I as s,W as g,X a
   &:hover {
     background-color: ${e=>e.theme.colors.UserCardEditBtnHoverBGColor};
   }
-`,T=()=>{const e=c(),o=l(p),d=o.avatar;return t.jsxs(h,{children:[t.jsxs(x,{children:[t.jsx(m,{$avatarUrl:d,children:o&&o.avatar&&o.avatar.trim()!=="https://test.png"&&o.avatar.trim()!==""?null:t.jsx(s,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),o.avatar&&o.avatar.trim()!==""?null:t.jsx(g,{children:"Upload photo"})]}),t.jsxs(u,{children:[t.jsx(j,{children:"My information"}),t.jsxs(f,{children:[t.jsx(i,{type:"text",value:o&&o.name&&o.name.trim()!==""?o.name:"Name",disabled:!0}),t.jsx(i,{type:"email",value:o&&o.email&&o.email.trim()!==""?o.email:"name@gmail.com",disabled:!0}),t.jsx(i,{type:"phone",value:o&&o.phone&&o.phone.trim()!==""?o.phone:"+380",disabled:!0})]})]})]})},W=r.div`
+`,G=()=>{const e=l(),o=p(h),i=o.avatar;return t.jsxs(x,{children:[t.jsxs(m,{children:[t.jsx(g,{$avatarUrl:i,children:o&&o.avatar&&o.avatar.trim()!=="https://test.png"&&o.avatar.trim()!==""?null:t.jsx(r,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),o.avatar&&o.avatar.trim()!==""?null:t.jsx(u,{children:"Upload photo"})]}),t.jsxs(j,{children:[t.jsx(f,{children:"My information"}),t.jsxs(v,{children:[t.jsx(a,{type:"text",value:o&&o.name&&o.name.trim()!==""?o.name:"Name",disabled:!0}),t.jsx(a,{type:"email",value:o&&o.email&&o.email.trim()!==""?o.email:"name@gmail.com",disabled:!0}),t.jsx(a,{type:"phone",value:o&&o.phone&&o.phone.trim()!==""?o.phone:"+380",disabled:!0})]})]})]})},I=s.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,7 +65,7 @@ import{u as r,b as c,c as l,S as p,j as t,U as h,T as x,V as m,I as s,W as g,X a
   @media screen and (min-width: 768px) {
     margin-bottom: 80px;
   }
-`,G=r.h2`
+`,L=s.h2`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -75,7 +75,7 @@ import{u as r,b as c,c as l,S as p,j as t,U as h,T as x,V as m,I as s,W as g,X a
     font-size: 18px;
     line-height: 1.33333;
   }
-`,I=r.button`
+`,N=s.button`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
@@ -98,7 +98,7 @@ import{u as r,b as c,c as l,S as p,j as t,U as h,T as x,V as m,I as s,W as g,X a
     line-height: 1.25;
     width: 118px;
   }
-`,L=r.button`
+`,O=s.button`
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28571;
@@ -123,4 +123,4 @@ import{u as r,b as c,c as l,S as p,j as t,U as h,T as x,V as m,I as s,W as g,X a
     font-size: 16px;
     line-height: 1.25;
   }
-`,O=()=>{const e=n(),o=()=>{e(B())};return t.jsxs("div",{children:[t.jsxs(W,{children:[t.jsx(G,{children:"My pets"}),t.jsxs(I,{children:["Add pet",t.jsx(s,{name:"icon-plus",width:18,height:18})]})]}),t.jsx(L,{onClick:o,children:"LOG OUT"})]})},z=()=>{const e=n();return t.jsxs(P,{children:[t.jsxs($,{children:[t.jsxs(A,{children:["User",t.jsx(s,{name:"icon-user",width:18,height:18})]}),t.jsx(M,{onClick:()=>e(v()),children:t.jsx(s,{name:"icon-edit",width:18,height:18})})]}),t.jsx(T,{}),t.jsx(O,{})]})},E=()=>t.jsxs(U,{children:[t.jsxs(C,{children:[t.jsx(a,{to:"favorites",children:"My favorites pets"}),t.jsx(a,{to:"viewed",children:"Viewed"})]}),t.jsx(b,{})]}),F=()=>{const e=n();return k.useEffect(()=>{e(w())},[]),t.jsxs(y,{className:"container",children:[t.jsx(z,{}),t.jsx(E,{})]})};export{F as default};
+`,z=()=>{const e=n(),o=B(),i=()=>{e(b())},c=()=>{o("/add-pet")};return t.jsxs("div",{children:[t.jsxs(I,{children:[t.jsx(L,{children:"My pets"}),t.jsxs(N,{onClick:c,children:["Add pet",t.jsx(r,{name:"icon-plus",width:18,height:18})]})]}),t.jsx(O,{onClick:i,children:"LOG OUT"})]})},E=()=>{const e=n();return t.jsxs(A,{children:[t.jsxs(M,{children:[t.jsxs(T,{children:["User",t.jsx(r,{name:"icon-user",width:18,height:18})]}),t.jsx(W,{onClick:()=>e(k()),children:t.jsx(r,{name:"icon-edit",width:18,height:18})})]}),t.jsx(G,{}),t.jsx(z,{})]})},D=()=>t.jsxs(y,{children:[t.jsxs(P,{children:[t.jsx(d,{to:"favorites",children:"My favorites pets"}),t.jsx(d,{to:"viewed",children:"Viewed"})]}),t.jsx(w,{})]}),S=()=>{const e=n();return C.useEffect(()=>{e(U())},[]),t.jsxs($,{className:"container",children:[t.jsx(E,{}),t.jsx(D,{})]})};export{S as default};
