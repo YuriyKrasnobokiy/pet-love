@@ -23,6 +23,7 @@ const MyFavoritesPets = lazy(() =>
   import("./MyNotices/MyFavoritesPets/MyFavoritesPets"),
 );
 const Viewed = lazy(() => import("./MyNotices/Viewed/Viewed"));
+const AddPet = lazy(() => import("../pages/AddPet/AddPet"))
 
 export const App = () => {
   const [currentTheme, setCurrentTheme] = useState(() => {
@@ -80,6 +81,8 @@ export const App = () => {
               <Route path="favorites" element={<MyFavoritesPets />} />
               <Route path="viewed" element={<Viewed />} />
             </Route>
+
+            <Route path="/add-pet" element={<AddPet />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>

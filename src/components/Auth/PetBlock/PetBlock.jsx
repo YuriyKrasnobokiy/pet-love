@@ -17,9 +17,13 @@ export const PetBlock = ({
   descrText,
   descrDate,
 }) => {
+
+  const showDescription = descrImg || descrTitle || descrText || descrDate;
+
   return (
     <>
-      <ImgBox $imageUrl={imageUrl}>
+      <ImgBox $position={!showDescription} $imageUrl={imageUrl}>
+        {showDescription ? 
         <DescriptionBlock>
           <DescriptionImg width="60" src={descrImg} alt="descr-img" />
           <DescriptionTextWrap>
@@ -39,7 +43,7 @@ export const PetBlock = ({
             </div>
             <DescriptionText>{descrText}</DescriptionText>
           </DescriptionTextWrap>
-        </DescriptionBlock>
+        </DescriptionBlock> : null }
       </ImgBox>
     </>
   );

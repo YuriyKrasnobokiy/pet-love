@@ -6,7 +6,6 @@ import { PetList } from "../../components/PetList/PetList";
 import {
   selectCategories,
   selectError,
-  selectFavorites,
   selectFilterTerm,
   selectGenders,
   selectIsLoading,
@@ -14,9 +13,10 @@ import {
   selectPerPage,
   selectPets,
   selectSpecies,
-  selectTotalPages,
+  selectTotalPages
 } from "../../redux/pets/petsSelectors";
 
+import SimpleLoader from "../../components/Loader/SimpleLoader";
 import { ResultsNotFound } from "../../components/ResultsNotFound/ResultsNotFound";
 import {
   selectCategory,
@@ -34,7 +34,6 @@ import {
 } from "../../redux/pets/petsOperations";
 import { setFilterTerm, setPage } from "../../redux/pets/petsSlice";
 import { PetsHeaderWrap, PetsTitle, PetsWrap } from "./FindPet.styled";
-import SimpleLoader from "../../components/Loader/SimpleLoader";
 
 const FindPet = () => {
   const categories = useSelector(selectCategories);

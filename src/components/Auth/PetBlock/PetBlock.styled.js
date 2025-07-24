@@ -15,8 +15,8 @@ export const ImgBox = styled.div`
   @media screen and (min-width: 768px) {
     border-radius: 60px;
     height: 302px;
-    background-position: right;
-    background-size: contain;
+    background-position: ${(props) => props.$position ? 'center' : 'right'};
+    background-size: ${(props) => props.$position ? 'cover' : 'contain'};
     margin-bottom: 16px;
   }
 
