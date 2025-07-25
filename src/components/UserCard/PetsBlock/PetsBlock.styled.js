@@ -56,7 +56,14 @@ export const PetsList = styled.ul`
   gap: 14px;
   margin-bottom: 20px;
 
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
+  }
   @media screen and (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 40px;
   }
 `
@@ -115,6 +122,7 @@ export const ItemTextBlock = styled.div`
   @media screen and (min-width: 1280px) {
     gap: 12px;
     max-width: 242px;
+    justify-content: center;
   }
 `
 
