@@ -25,7 +25,7 @@ const PetPhoto = styled.div`
   height: 48px;
   background: #fff4df;
   margin: 0 auto 16px;
-  background-image: ${({ imgPreview }) => (imgPreview ? `url(${imgPreview})` : 'none')};
+  background-image: ${({ $imgPreview }) => ($imgPreview ? `url(${$imgPreview})` : 'none')};
   background-size: cover;
   background-position: center;
 
@@ -121,7 +121,7 @@ export const AddPetPhoto = ({watch, register, errors }) => {
   
   return (
     <AddPetPhotoWrap>
-      <PetPhoto imgPreview={imgPreview}>
+      <PetPhoto $imgPreview={imgPreview}>
         {imgPreview ? null : <Icon
           width={deviceType === 'desktop' ? 44 : deviceType === 'tablet' ? 44 : 34}
           height={deviceType === 'desktop' ? 44 : deviceType === 'tablet' ? 44 : 34}

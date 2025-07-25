@@ -93,6 +93,20 @@ export const addPet = createAsyncThunk(
   },
 );
 
+export const deletePet = createAsyncThunk(
+  "pets / deletePet",
+  async ({ _id }) => {
+    try {
+      const response = await axios.delete(`${API_URL}users/current/pets/remove/${_id}`);
+      return response.data;
+    } catch (error) {
+      const errorMessage = error.response?.data?.message || "An unexpected error occurred";
+      toast.error(errorMessage);
+      throw error;
+    }
+  },
+);
+
 const initialState = {
   profile: {},
   isLoading: false,
@@ -141,6 +155,10 @@ const profileSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
+      .addCase(deletePet.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
       .addCase(addToFavorites.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -149,7 +167,7 @@ const profileSlice = createSlice({
       .addCase(addPet.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.profile.pets = action.payload;
+        state.profile = action.payload;
       })
       .addCase(deleteFromFavorites.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -157,6 +175,11 @@ const profileSlice = createSlice({
         state.profile.noticesFavorites = state.profile.noticesFavorites.filter(
           (pet) => action.payload.includes(pet._id),
         );
+      })
+      .addCase(deletePet.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.profile = action.payload;
       })
       .addCase(addToFavorites.rejected, (state, action) => {
         state.isLoading = false;
@@ -167,6 +190,10 @@ const profileSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(deleteFromFavorites.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+      .addCase(deletePet.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
       });

@@ -22,13 +22,13 @@ import { useNavigate } from "react-router-dom";
 import { selectProfile } from "../../../redux/profile/profileSelectors";
 import { birthdateFormat } from "../../../helpers/birthdateFormat";
 import { useDeviceType } from "../../../hooks/useDeviceType";
+import { deletePet } from "../../../redux/profile/profileSlice";
 
 export const PetsBlock = () => {
   const deviceType = useDeviceType();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const profile = useSelector(selectProfile);
-  console.log("profile: ", profile);
 
   const handleLogOutClick = () => {
     dispatch(openApproveModal());
@@ -47,7 +47,7 @@ export const PetsBlock = () => {
       </PetsBlockTitleWrap>
 
       <PetsList>
-        {profile?.pets?.map((item) => (
+        {(profile?.pets ?? []).map((item) => (
           <PetListItem key={item.name}>
             <PetItemImg src={item.imgURL} alt="pet-photo" />
             <ItemTextBlock>
@@ -66,7 +66,7 @@ export const PetsBlock = () => {
                 ))}
               </ItemTextBlockList>
             </ItemTextBlock>
-            <DeleteBtn type='button'><Icon name='icon-trash' width={deviceType === 'desktop' ? 18 : deviceType === 'tablet' ? 18 : 16} height={deviceType === 'desktop' ? 18 : deviceType === 'tablet' ? 18 : 16} /></DeleteBtn>
+            <DeleteBtn onClick={()=>dispatch(deletePet({ _id: item._id }))} type='button'><Icon name='icon-trash' width={deviceType === 'desktop' ? 18 : deviceType === 'tablet' ? 18 : 16} height={deviceType === 'desktop' ? 18 : deviceType === 'tablet' ? 18 : 16} /></DeleteBtn>
           </PetListItem>
         ))}
       </PetsList>
