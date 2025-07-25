@@ -14,7 +14,7 @@ export const UserCardWrap = styled.div`
 
   @media screen and (min-width: 1280px) {
     max-width: 440px;
-    max-height: 78vh;
+    /* max-height: 78vh; */
   }
 `;
 
