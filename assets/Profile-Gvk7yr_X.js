@@ -1,4 +1,4 @@
-import{u as n,b as h,c as m,Q as g,j as e,U as w,R as b,S as j,I as r,T as v,V as B,W as k,X as y,Y as p,a as c,P as C,Z as U,_ as P,$ as T,a0 as $,r as I,a1 as L}from"./index-VcmNEm7X.js";import{M as z,a as N,N as x}from"./MyNotices.styled-CxUzXCZG.js";const A=n.div`
+import{u as n,b as h,c as m,Q as g,j as e,U as w,R as b,S as j,I as r,T as v,V as B,W as k,X as y,Y as p,a as c,P as C,Z as U,_ as P,$ as T,a0 as $,r as I,a1 as L}from"./index-BRlRNXN_.js";import{M as z,a as N,N as x}from"./MyNotices.styled-CPLcrPjV.js";const A=n.div`
   @media screen and (min-width: 1280px) {
     display: grid;
     grid-template-columns: 520px 1fr;
