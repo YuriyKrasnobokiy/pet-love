@@ -1,0 +1,1 @@
+import{c as s,Q as r,j as t}from"./index-Bx4pz8mJ.js";import{P as o,R as i}from"./ResultsNotFound-BmXRTytE.js";import{b as a}from"./MyNotices.styled-PCojevaD.js";const m=()=>{const e=s(r).noticesViewed;return t.jsx(t.Fragment,{children:t.jsx(a,{$isEmpty:!e||e.length===0,children:e&&e.length>0?t.jsx(o,{profile:!0,viewed:!0,pets:e}):t.jsx(i,{})})})};export{m as default};
