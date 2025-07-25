@@ -23,10 +23,14 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { ErrorMessage } from "../../../components/Auth/RegistrForm/AuthForm.styled";
+import { selectProfile } from "../../../redux/profile/profileSelectors";
+import { addPet } from "../../../redux/profile/profileSlice";
 
 export const AddPetForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const profile = useSelector(selectProfile);
+  console.log('profile: ', profile);
   const species = useSelector(selectSpecies);
   const [selectedOpt, setSelectedOpt] = useState(null);
 
@@ -37,7 +41,7 @@ export const AddPetForm = () => {
   const addPetSchema = yup.object().shape({
     title: yup.string().required("Title is required"),
     name: yup.string().required("Pet's name is required"),
-    imgUrl: yup
+    imgURL: yup
       .string()
       .matches(
         /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/,
@@ -63,7 +67,7 @@ export const AddPetForm = () => {
     defaultValues: {
       title: "",
       name: "",
-      imgUrl: "",
+      imgURL: "",
       species: "",
       birthday: "",
       sex: "",
@@ -71,10 +75,17 @@ export const AddPetForm = () => {
     resolver: yupResolver(addPetSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log("Valid form data:", data);
-    reset();
-    setSelectedOpt(null);
+  const onSubmit = async (data) => {
+    try {
+      console.log("Valid form data:", data);
+      dispatch(addPet(data))
+      reset();
+      setSelectedOpt(null);
+      navigate('/profile')
+    }
+    catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {

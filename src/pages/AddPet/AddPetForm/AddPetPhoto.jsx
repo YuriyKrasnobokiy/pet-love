@@ -45,12 +45,12 @@ const InputBtnWrap = styled.div`
 const UrlInput = styled.input`
   border: 1px solid rgba(38, 38, 38, 0.15);
   border-radius: 30px;
-  padding: 9px 19px 8px 9px;
+  padding: 9px 18px 8px 10px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.28;
   letter-spacing: -0.02em;
-  color: rgba(38, 38, 38, 0.5);
+  color: #262626;
   width: 140px;
   /* height: 36px; */
   transition: all 300ms ease-in-out;
@@ -69,7 +69,13 @@ const UrlInput = styled.input`
     font-style: 14px;
     align-items: center;
     justify-content: center;
-    color: inherit;
+    color: rgba(38, 38, 38, 0.5);
+  }
+
+  &:-webkit-autofill {
+    transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
+    -webkit-text-fill-color: #262626 !important;
+    caret-color: ${(props) => props.theme.colors.accentColor};
   }
 `;
 const UploadBtn = styled.button`
@@ -97,21 +103,21 @@ const UploadBtn = styled.button`
 export const AddPetPhoto = ({watch, register, errors }) => {
   const deviceType = useDeviceType();
   const [imgPreview, setImgPreview] = useState(null);
-  const imgUrl = watch("imgUrl");
+  const imgURL = watch("imgURL");
 
   const onUploadClick = () => {
-    if (!imgUrl) {
+    if (!imgURL) {
       setImgPreview(null);
       return;
     }
-    setImgPreview(imgUrl.trim());
+    setImgPreview(imgURL.trim());
   };
 
   useEffect(() => {
-  if (!imgUrl?.trim()) {
+  if (!imgURL?.trim()) {
     setImgPreview(null);
   }
-}, [imgUrl]);
+}, [imgURL]);
   
   return (
     <AddPetPhotoWrap>
@@ -123,11 +129,11 @@ export const AddPetPhoto = ({watch, register, errors }) => {
         />}
       </PetPhoto>
       <InputBtnWrap>
-        <UrlInput {...register("imgUrl")} name="imgUrl" placeholder="Enter URL" type="text" />
+        <UrlInput {...register("imgURL")} name="imgURL" placeholder="Enter URL" type="text" />
         <UploadBtn type="button" onClick={onUploadClick}>
           Upload photo <Icon width={16} height={16} name="icon-cloud" />
         </UploadBtn>
-      <ErrorMessage className="addPet photo">{errors.imgUrl?.message}</ErrorMessage>
+      <ErrorMessage className="addPet photo">{errors.imgURL?.message}</ErrorMessage>
       </InputBtnWrap>
     </AddPetPhotoWrap>
   );

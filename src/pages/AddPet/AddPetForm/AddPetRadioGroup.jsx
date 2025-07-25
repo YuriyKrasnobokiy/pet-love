@@ -65,7 +65,7 @@ const StyledRadioWrapper = styled.div`
 const addPetRadioOpts = [
   { name: "female", value: "female" },
   { name: "male", value: "male" },
-  { name: "both", value: "both" },
+  { name: "multiple", value: "multiple" },
 ];
 
 const AddPetRadioGroup = ({setValue, watch}) => {

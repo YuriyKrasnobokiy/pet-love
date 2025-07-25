@@ -76,6 +76,23 @@ export const deleteFromFavorites = createAsyncThunk(
   },
 );
 
+export const addPet = createAsyncThunk(
+  "pets / addPet",
+  async (petData) => {
+    try {
+      const response = await axios.post(
+        `${API_URL}users/current/pets/add`,
+        petData,
+      );
+      return response.data;
+    } catch (error) {
+      const errorMessage = error.response?.data?.message || "An unexpected error occurred";
+      toast.error(errorMessage);
+      throw error;
+    }
+  },
+);
+
 const initialState = {
   profile: {},
   isLoading: false,
@@ -116,6 +133,10 @@ const profileSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
+      .addCase(addPet.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
       .addCase(deleteFromFavorites.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -125,6 +146,11 @@ const profileSlice = createSlice({
         state.error = null;
         state.profile.noticesFavorites = action.payload;
       })
+      .addCase(addPet.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.profile.pets = action.payload;
+      })
       .addCase(deleteFromFavorites.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -133,6 +159,10 @@ const profileSlice = createSlice({
         );
       })
       .addCase(addToFavorites.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+      .addCase(addPet.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
       })

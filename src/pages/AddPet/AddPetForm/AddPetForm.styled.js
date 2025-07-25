@@ -72,6 +72,12 @@ export const AddPetInput = styled.input`
     outline: none;
     caret-color: ${(props) => props.theme.colors.accentColor};
   }
+
+  &:-webkit-autofill {
+    transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
+    -webkit-text-fill-color: #262626 !important;
+    caret-color: ${(props) => props.theme.colors.accentColor};
+  }
 `
 
 export const DateTypeWrap = styled.div`
