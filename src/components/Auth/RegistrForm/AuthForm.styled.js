@@ -114,6 +114,16 @@ export const AuthInput = styled.input`
         border-color: ${(props) => props.theme.colors.Success};
       }
     `}
+
+    &:-webkit-autofill,
+&:-webkit-autofill:hover,
+&:-webkit-autofill:focus {
+  -webkit-text-fill-color: ${({ theme }) => theme.colors.textColor};
+  transition: background-color 9999s ease-in-out 0s;
+  caret-color: ${({ theme }) => theme.colors.accentColor};
+  border: 1px solid ${({ theme }) => theme.colors.accentColor};
+  outline: none;
+}
 `;
 
 export const AuthPasswordBtn = styled.button`
