@@ -1,8 +1,8 @@
-import React from "react";
 import Icon from "../../../components/Icon/Icon";
 import styled from "styled-components";
 import { useDeviceType } from "../../../hooks/useDeviceType";
 import { ErrorMessage } from "../../../components/Auth/RegistrForm/AuthForm.styled";
+import { useEffect, useState } from "react";
 
 const AddPetPhotoWrap = styled.div`
   display: flex;
@@ -25,6 +25,9 @@ const PetPhoto = styled.div`
   height: 48px;
   background: #fff4df;
   margin: 0 auto 16px;
+  background-image: ${({ imgPreview }) => (imgPreview ? `url(${imgPreview})` : 'none')};
+  background-size: cover;
+  background-position: center;
 
   @media screen and (min-width: 768px) {
     width: 68px;
@@ -32,6 +35,7 @@ const PetPhoto = styled.div`
     margin: 0 auto 12px;
   }
 `;
+
 const InputBtnWrap = styled.div`
   display: flex;
   justify-content: space-between;
@@ -90,20 +94,37 @@ const UploadBtn = styled.button`
   }
 `;
 
-export const AddPetPhoto = ({ register, errors }) => {
+export const AddPetPhoto = ({watch, register, errors }) => {
   const deviceType = useDeviceType();
+  const [imgPreview, setImgPreview] = useState(null);
+  const imgUrl = watch("imgUrl");
+
+  const onUploadClick = () => {
+    if (!imgUrl) {
+      setImgPreview(null);
+      return;
+    }
+    setImgPreview(imgUrl.trim());
+  };
+
+  useEffect(() => {
+  if (!imgUrl?.trim()) {
+    setImgPreview(null);
+  }
+}, [imgUrl]);
+  
   return (
     <AddPetPhotoWrap>
-      <PetPhoto>
-        <Icon
+      <PetPhoto imgPreview={imgPreview}>
+        {imgPreview ? null : <Icon
           width={deviceType === 'desktop' ? 44 : deviceType === 'tablet' ? 44 : 34}
           height={deviceType === 'desktop' ? 44 : deviceType === 'tablet' ? 44 : 34}
           name="icon-paw"
-        />
+        />}
       </PetPhoto>
       <InputBtnWrap>
         <UrlInput {...register("imgUrl")} name="imgUrl" placeholder="Enter URL" type="text" />
-        <UploadBtn type="button">
+        <UploadBtn type="button" onClick={onUploadClick}>
           Upload photo <Icon width={16} height={16} name="icon-cloud" />
         </UploadBtn>
       <ErrorMessage className="addPet photo">{errors.imgUrl?.message}</ErrorMessage>

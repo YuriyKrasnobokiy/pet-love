@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AddPetFormBtn,
   AddPetFormWrap,
@@ -28,10 +28,11 @@ export const AddPetForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const species = useSelector(selectSpecies);
+  const [selectedOpt, setSelectedOpt] = useState(null);
 
   const handleBackClick = () => {
-    navigate('/profile');
-  }
+    navigate("/profile");
+  };
 
   const addPetSchema = yup.object().shape({
     title: yup.string().required("Title is required"),
@@ -46,8 +47,7 @@ export const AddPetForm = () => {
     species: yup.string().required("Species is required"),
     birthday: yup
       .string()
-      .matches(/^\d{2}\.\d{2}\.\d{4}$/, "Date must be in DD.MM.YYYY format")
-      // .matches(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format")
+      .matches(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format")
       .required("Birthday is required"),
     sex: yup.string().required("Sex is required"),
   });
@@ -61,19 +61,20 @@ export const AddPetForm = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-    title: '',
-    name: '',
-    imgUrl: '',
-    species: '',
-    birthday: '',
-    sex: '',
-  },
+      title: "",
+      name: "",
+      imgUrl: "",
+      species: "",
+      birthday: "",
+      sex: "",
+    },
     resolver: yupResolver(addPetSchema),
   });
 
   const onSubmit = (data) => {
     console.log("Valid form data:", data);
     reset();
+    setSelectedOpt(null);
   };
 
   useEffect(() => {
@@ -86,21 +87,37 @@ export const AddPetForm = () => {
       </AddPetTitle>
 
       <InputWrapper>
-        <AddPetRadioGroup register={register} setValue={setValue} watch={watch}/>
+        <AddPetRadioGroup
+          register={register}
+          setValue={setValue}
+          watch={watch}
+        />
         <ErrorMessage className="addPet">{errors.sex?.message}</ErrorMessage>
       </InputWrapper>
 
-      <AddPetPhoto register={register} errors={errors}/>
+      <AddPetPhoto watch={watch} register={register} errors={errors} />
 
       <AddPetInputsWrap>
         <InputWrapper>
-          <AddPetInput {...register("title")} name="title" placeholder="Title" type="text" />
-          <ErrorMessage className="addPet">{errors.title?.message}</ErrorMessage>
+          <AddPetInput
+            {...register("title")}
+            name="title"
+            placeholder="Title"
+            type="text"
+          />
+          <ErrorMessage className="addPet">
+            {errors.title?.message}
+          </ErrorMessage>
         </InputWrapper>
 
         <InputWrapper>
-          <AddPetInput {...register("name")} name="name" placeholder="Pet’s Name" type="text" />
-          <ErrorMessage  className="addPet">{errors.name?.message}</ErrorMessage>
+          <AddPetInput
+            {...register("name")}
+            name="name"
+            placeholder="Pet’s Name"
+            type="text"
+          />
+          <ErrorMessage className="addPet">{errors.name?.message}</ErrorMessage>
         </InputWrapper>
         <DateTypeWrap>
           <InputWrapper>
@@ -111,28 +128,37 @@ export const AddPetForm = () => {
               {...register("birthday")}
               className="date"
               name="birthday"
-              placeholder="00.00.0000"
+              placeholder="0000-00-00"
               type="text"
             />
-            <ErrorMessage className="addPet">{errors.birthday?.message}</ErrorMessage>
+            <ErrorMessage className="addPet">
+              {errors.birthday?.message}
+            </ErrorMessage>
           </InputWrapper>
           <InputWrapper>
-          <CustomSelect
-            addPet
-            options={species}
-            placeholder="Pet type"
-            handleOptionChange={(selected) => {
-              setValue("species", selected.value, { shouldValidate: true });
-            }}
-            selectedOpt={null}
-          />
-          <ErrorMessage className="addPet">{errors.species?.message}</ErrorMessage>
+            <CustomSelect
+              addPet
+              options={species}
+              placeholder="Pet type"
+              handleOptionChange={(selected) => {
+                setValue("species", selected.value, { shouldValidate: true });
+                setSelectedOpt(selected);
+              }}
+              selectedOpt={selectedOpt}
+            />
+            <ErrorMessage className="addPet">
+              {errors.species?.message}
+            </ErrorMessage>
           </InputWrapper>
         </DateTypeWrap>
       </AddPetInputsWrap>
       <BtnsWrap>
-        <AddPetFormBtn onClick={handleBackClick} className="back">Back</AddPetFormBtn>
-        <AddPetFormBtn type="submit" className="submit">Submit</AddPetFormBtn>
+        <AddPetFormBtn onClick={handleBackClick} className="back">
+          Back
+        </AddPetFormBtn>
+        <AddPetFormBtn type="submit" className="submit">
+          Submit
+        </AddPetFormBtn>
       </BtnsWrap>
     </AddPetFormWrap>
   );

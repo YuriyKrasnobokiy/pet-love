@@ -14,14 +14,28 @@ export const CustomSelect = ({
   const [selectedOption, setSelectedOption] = useState(null);
 
   useEffect(() => {
+    if(!selectedOpt) {
+      setSelectedOption(null);
+    }
+
     const initialOption = options.find((option) => option === selectedOpt);
     if (initialOption) {
       setSelectedOption({
         value: initialOption,
         label: initialOption.charAt(0).toUpperCase() + initialOption.slice(1),
       });
-    }
+    } 
   }, [selectedOpt, options]);
+
+  // useEffect(() => {
+  //   const initialOption = options.find((option) => option === selectedOpt);
+  //   if (initialOption) {
+  //     setSelectedOption({
+  //       value: initialOption,
+  //       label: initialOption.charAt(0).toUpperCase() + initialOption.slice(1),
+  //     });
+  //   } 
+  // }, [selectedOpt, options]);
 
   // const selectOptions = [
   //   { value: "", label: "Show all" },
