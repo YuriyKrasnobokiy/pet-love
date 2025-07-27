@@ -1,4 +1,4 @@
-import{u as o,b as m,c as g,Q as u,j as t,U as b,R as j,S as B,I as a,T as v,V as k,W as y,X as C,Y as p,a as l,P,Z as U,_ as $,$ as T,a0 as I,r as L,a1 as M}from"./index-Be1neRXn.js";import{M as z,a as A,N as h}from"./MyNotices.styled-C2GNDFZ-.js";const G=o.div`
+import{u as o,b as m,c as g,Q as u,j as t,U as b,R as j,S as B,I as a,T as v,V as y,W as k,X as C,Y as c,a as l,P,Z as U,_ as $,$ as T,a0 as I,r as L,a1 as M}from"./index-obbgT2kB.js";import{M as z,a as A,N as h}from"./MyNotices.styled-DSYWZVXN.js";const G=o.div`
   @media screen and (min-width: 1280px) {
     display: grid;
     grid-template-columns: 520px 1fr;
@@ -31,7 +31,7 @@ import{u as o,b as m,c as g,Q as u,j as t,U as b,R as j,S as B,I as a,T as v,V a
     right: 40px;
     left: 40px;
   }
-`,E=o.p`
+`,O=o.p`
   display: flex;
   gap: 4px;
   align-items: center;
@@ -44,7 +44,7 @@ import{u as o,b as m,c as g,Q as u,j as t,U as b,R as j,S as B,I as a,T as v,V a
   line-height: 1.28571;
   letter-spacing: -0.02em;
   background-color: ${e=>e.theme.colors.UserCardBageBgColor};
-`,O=o.button`
+`,E=o.button`
   border-radius: 30px;
   padding: 10px;
   width: 38px;
@@ -56,7 +56,7 @@ import{u as o,b as m,c as g,Q as u,j as t,U as b,R as j,S as B,I as a,T as v,V a
   &:hover {
     background-color: ${e=>e.theme.colors.UserCardEditBtnHoverBGColor};
   }
-`,D=()=>{const e=m(),i=g(u),n=i.avatar;return t.jsxs(b,{children:[t.jsxs(j,{children:[t.jsx(B,{$avatarUrl:n,children:i&&i.avatar&&i.avatar.trim()!=="https://test.png"&&i.avatar.trim()!==""?null:t.jsx(a,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),i.avatar&&i.avatar.trim()!==""?null:t.jsx(v,{children:"Upload photo"})]}),t.jsxs(k,{children:[t.jsx(y,{children:"My information"}),t.jsxs(C,{children:[t.jsx(p,{type:"text",value:i&&i.name&&i.name.trim()!==""?i.name:"Name",disabled:!0}),t.jsx(p,{type:"email",value:i&&i.email&&i.email.trim()!==""?i.email:"name@gmail.com",disabled:!0}),t.jsx(p,{type:"phone",value:i&&i.phone&&i.phone.trim()!==""?i.phone:"+380",disabled:!0})]})]})]})},F=o.div`
+`,D=()=>{const e=m(),i=g(u),r=i.avatar;return t.jsxs(b,{children:[t.jsxs(j,{children:[t.jsx(B,{$avatarUrl:r,children:i&&i.avatar&&i.avatar.trim()!=="https://test.png"&&i.avatar.trim()!==""?null:t.jsx(a,{name:"icon-user-big",width:e==="desktop"||e==="tablet"?50:40,height:e==="desktop"||e==="tablet"?50:40})}),i.avatar&&i.avatar.trim()!==""?null:t.jsx(v,{children:"Upload photo"})]}),t.jsxs(y,{children:[t.jsx(k,{children:"My information"}),t.jsxs(C,{children:[t.jsx(c,{type:"text",value:i&&i.name&&i.name.trim()!==""?i.name:"Name",disabled:!0}),t.jsx(c,{type:"email",value:i&&i.email&&i.email.trim()!==""?i.email:"name@gmail.com",disabled:!0}),t.jsx(c,{type:"phone",value:i&&i.phone&&i.phone.trim()!==""?i.phone:"+380",disabled:!0})]})]})]})},S=o.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,7 +65,7 @@ import{u as o,b as m,c as g,Q as u,j as t,U as b,R as j,S as B,I as a,T as v,V a
   @media screen and (min-width: 768px) {
     margin-bottom: 40px;
   }
-`,S=o.h2`
+`,F=o.h2`
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -118,14 +118,12 @@ import{u as o,b as m,c as g,Q as u,j as t,U as b,R as j,S as B,I as a,T as v,V a
 `,V=o.li`
   position: relative;
   display: flex;
-  border: ${e=>e.theme.colors.MyPetsCardBorder};; 
-  /* border: 1px solid rgba(38, 38, 38, 0.1);  */
+  border: ${e=>e.theme.colors.MyPetsCardBorder}; 
   border-radius: 20px;
   width: calc(295px - 16px - 16px - 2px);
   max-height: calc(132px - 16px - 16px);
   padding: 16px;
   background-color: ${e=>e.theme.colors.MyPetsCardBG};
-  /* background-color: transparent; */
 
   @media screen and (min-width: 768px) {
     width: calc(305px - 16px - 16px - 2px);
@@ -174,7 +172,6 @@ import{u as o,b as m,c as g,Q as u,j as t,U as b,R as j,S as B,I as a,T as v,V a
   font-size: 14px;
   line-height: 1.28;
   color: ${e=>e.theme.colors.MyPetsCardTitleColor};
-  /* color: #2b2b2a; */
   max-width: 100%;
 
   overflow: hidden;
@@ -206,13 +203,11 @@ gap: 4px;
   line-height: 1.4;
   letter-spacing: -0.02em;
   color: ${e=>e.theme.colors.MyPetsCardSecondColor};
-  /* color: rgba(38, 38, 38, 0.5); */
 `,J=o.p`
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16667;
   letter-spacing: -0.02em;
-  /* color: #262626; */
   color:${e=>e.theme.colors.MyPetsCardColor};
   max-width: 64px;
 
@@ -232,14 +227,12 @@ gap: 4px;
   border-radius: 30px;
   width: 30px;
   height: 30px;
-  /* background: #fff4df; */
   background: ${e=>e.theme.colors.MyPetsCardDelBtnBG};
   transition: background 300ms ease-in-out;
   top: 12px;
   right: 12px;
 
   &:hover {
-    /* background: #FBE7C1; */
     background:${e=>e.theme.colors.MyPetsCardDelHoverBtnBG}
   }
 
@@ -278,4 +271,4 @@ gap: 4px;
     font-size: 16px;
     line-height: 1.25;
   }
-`,te=e=>{const[i,n,s]=e.split("-");return`${s}.${n}.${i}`};function c(e){return e?e.charAt(0).toUpperCase()+e.slice(1):""}const ie=()=>{const e=m(),i=l(),n=P(),s=g(u),f=()=>{i($())},w=()=>{n("/add-pet")};return t.jsxs("div",{children:[t.jsxs(F,{children:[t.jsx(S,{children:"My pets"}),t.jsxs(H,{onClick:w,children:["Add pet",t.jsx(a,{name:"icon-plus",width:18,height:18})]})]}),t.jsx(R,{children:((s==null?void 0:s.pets)??[]).map(r=>t.jsxs(V,{children:[t.jsx(_,{src:r.imgURL,alt:"pet-photo"}),t.jsxs(Q,{children:[t.jsx(X,{children:c(r.title)}),t.jsx(Y,{children:[{title:"Name",value:c(r.name)},{title:"Birthday",value:r.birthday},{title:"Sex",value:c(r.sex)},{title:"Species",value:c(r.species)}].map(({title:d,value:x})=>t.jsxs(Z,{children:[t.jsx(q,{children:d}),t.jsx(J,{className:d==="Name"?"name":"",children:d==="Birthday"?te(x):x})]},d))})]}),t.jsx(K,{onClick:()=>i(U({_id:r._id})),type:"button",children:t.jsx(a,{name:"icon-trash",width:e==="desktop"||e==="tablet"?18:16,height:e==="desktop"||e==="tablet"?18:16})})]},r.name))}),t.jsx(ee,{onClick:f,children:"LOG OUT"})]})},oe=()=>{const e=l();return t.jsxs(N,{children:[t.jsxs(W,{children:[t.jsxs(E,{children:["User",t.jsx(a,{name:"icon-user",width:18,height:18})]}),t.jsx(O,{onClick:()=>e(T()),children:t.jsx(a,{name:"icon-edit",width:18,height:18})})]}),t.jsx(D,{}),t.jsx(ie,{})]})},re=()=>t.jsxs(z,{children:[t.jsxs(A,{children:[t.jsx(h,{to:"favorites",children:"My favorites pets"}),t.jsx(h,{to:"viewed",children:"Viewed"})]}),t.jsx(I,{})]}),ae=()=>{const e=l();return L.useEffect(()=>{e(M())},[]),t.jsxs(G,{className:"container",children:[t.jsx(oe,{}),t.jsx(re,{})]})};export{ae as default};
+`,te=e=>{const[i,r,s]=e.split("-");return`${s}.${r}.${i}`};function p(e){return e?e.charAt(0).toUpperCase()+e.slice(1):""}const ie=()=>{const e=m(),i=l(),r=P(),s=g(u),f=()=>{i($())},w=()=>{r("/add-pet")};return t.jsxs("div",{children:[t.jsxs(S,{children:[t.jsx(F,{children:"My pets"}),t.jsxs(H,{onClick:w,children:["Add pet",t.jsx(a,{name:"icon-plus",width:18,height:18})]})]}),t.jsx(R,{children:((s==null?void 0:s.pets)??[]).map(n=>t.jsxs(V,{children:[t.jsx(_,{src:n.imgURL,alt:"pet-photo"}),t.jsxs(Q,{children:[t.jsx(X,{children:p(n.title)}),t.jsx(Y,{children:[{title:"Name",value:p(n.name)},{title:"Birthday",value:n.birthday},{title:"Sex",value:p(n.sex)},{title:"Species",value:p(n.species)}].map(({title:d,value:x})=>t.jsxs(Z,{children:[t.jsx(q,{children:d}),t.jsx(J,{className:d==="Name"?"name":"",children:d==="Birthday"?te(x):x})]},d))})]}),t.jsx(K,{onClick:()=>i(U({_id:n._id})),type:"button",children:t.jsx(a,{name:"icon-trash",width:e==="desktop"||e==="tablet"?18:16,height:e==="desktop"||e==="tablet"?18:16})})]},n.name))}),t.jsx(ee,{onClick:f,children:"LOG OUT"})]})},oe=()=>{const e=l();return t.jsxs(N,{children:[t.jsxs(W,{children:[t.jsxs(O,{children:["User",t.jsx(a,{name:"icon-user",width:18,height:18})]}),t.jsx(E,{onClick:()=>e(T()),children:t.jsx(a,{name:"icon-edit",width:18,height:18})})]}),t.jsx(D,{}),t.jsx(ie,{})]})},ne=()=>t.jsxs(z,{children:[t.jsxs(A,{children:[t.jsx(h,{to:"favorites",children:"My favorites pets"}),t.jsx(h,{to:"viewed",children:"Viewed"})]}),t.jsx(I,{})]}),ae=()=>{const e=l();return L.useEffect(()=>{e(M())},[]),t.jsxs(G,{className:"container",children:[t.jsx(oe,{}),t.jsx(ne,{})]})};export{ae as default};
