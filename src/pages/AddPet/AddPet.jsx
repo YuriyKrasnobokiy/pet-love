@@ -9,7 +9,7 @@ import { AddPetForm } from './AddPetForm/AddPetForm';
 const AddPet = () => {
   const deviceType = useDeviceType();
   return (
-    <AddPetWrap>
+    <AddPetWrap className='container'>
       <PetBlock imageUrl={
                 deviceType === "desktop"
                   ? addPetImgDesktop

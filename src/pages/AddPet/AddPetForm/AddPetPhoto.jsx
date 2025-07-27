@@ -13,6 +13,7 @@ const AddPetPhotoWrap = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 18px;
+    /* align-items: start; */
   }
 `;
 const PetPhoto = styled.div`
@@ -30,31 +31,39 @@ const PetPhoto = styled.div`
   background-position: center;
 
   @media screen and (min-width: 768px) {
-    width: 68px;
-    height: 68px;
+    width: 66px;
+    height: 66px;
     margin: 0 auto 12px;
   }
 `;
 
 const InputBtnWrap = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
   position: relative;
 `;
+
 const UrlInput = styled.input`
   border: 1px solid rgba(38, 38, 38, 0.15);
   border-radius: 30px;
-  padding: 9px 18px 8px 10px;
+  padding: 9px 18px 9px 10px;
+  height: 16px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.28;
   letter-spacing: -0.02em;
   color: #262626;
   width: 140px;
-  /* height: 36px; */
   transition: all 300ms ease-in-out;
   outline: none;
+
+  @media screen and (min-width: 768px) {
+    padding: 12px 20px 12px 12px;
+    width: calc(278px - 20px - 12px - 2px);
+    font-size: 14px;
+  }
 
   &:hover {
     border-color: ${(props) => props.theme.colors.accentColor};
@@ -67,9 +76,10 @@ const UrlInput = styled.input`
 
   &::placeholder {
     font-style: 14px;
-    align-items: center;
-    justify-content: center;
     color: rgba(38, 38, 38, 0.5);
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
   }
 
   &:-webkit-autofill {
@@ -78,6 +88,7 @@ const UrlInput = styled.input`
     caret-color: ${(props) => props.theme.colors.accentColor};
   }
 `;
+
 const UploadBtn = styled.button`
   display: flex;
   border-radius: 30px;
@@ -94,6 +105,14 @@ const UploadBtn = styled.button`
   letter-spacing: -0.02em;
   color: #262626;
   transition: background 300ms ease-in-out;
+
+  @media screen and (min-width: 768px) {
+    padding: 12px 16px;
+    width: 146px;
+    height: 42px;
+    font-size: 14px;
+    line-height: 1.28;
+  }
 
   &:hover {
     background: #fbe7c1;
@@ -131,7 +150,7 @@ export const AddPetPhoto = ({watch, register, errors }) => {
       <InputBtnWrap>
         <UrlInput {...register("imgURL")} name="imgURL" placeholder="Enter URL" type="text" />
         <UploadBtn type="button" onClick={onUploadClick}>
-          Upload photo <Icon width={16} height={16} name="icon-cloud" />
+          Upload photo <Icon width={deviceType === 'desktop' ? 18 : deviceType === 'tablet' ? 18 : 16} height={deviceType === 'desktop' ? 18 : deviceType === 'tablet' ? 18 : 16} name="icon-cloud" />
         </UploadBtn>
       <ErrorMessage className="addPet photo">{errors.imgURL?.message}</ErrorMessage>
       </InputBtnWrap>

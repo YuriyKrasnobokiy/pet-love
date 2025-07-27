@@ -4,6 +4,15 @@ export const AddPetFormWrap = styled.form`
   padding: 28px 20px 20px;
   background-color: #fff;
   border-radius: 30px;
+
+  @media screen and (min-width: 768px) {
+    border-radius: 60px;
+    padding: 40px 136px;
+  }
+  @media screen and (min-width: 1280px) {
+    border-radius: 60px;
+    padding: 60px 80px;
+  }
 `;
 
 export const AddPetTitle = styled.h2`
@@ -39,6 +48,11 @@ export const AddPetInputsWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 768px){
+    gap: 18px;
+  }
 `
 
 export const AddPetInput = styled.input`
@@ -55,13 +69,26 @@ export const AddPetInput = styled.input`
   transition: border-color 300ms ease-in-out;
   outline: none;
 
+  @media screen and (min-width: 768px) {
+    padding: 16px;
+    width: calc(432px - 16px - 16px - 2px);
+    height: calc(52px - 16px - 16px - 2px);
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
   &.date {
     width: 88px;
     padding: 12px 42px 12px 12px;
+
+    @media screen and (min-width: 768px) {
+      padding: 16px 109px 16px 16px;
+      width: calc(210px - 109px - 16px - 2px);
+    }
   }
 
   &::placeholder{
-    color: rgba(38, 38, 38, 0.5);
+    color: rgba(38, 38, 38, 0.5); 
   }
 
   &:hover {
@@ -81,11 +108,9 @@ export const AddPetInput = styled.input`
 `
 
 export const DateTypeWrap = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
-  margin-bottom: 32px;
 `
 
 export const InputWrapper = styled.div`
@@ -97,6 +122,11 @@ export const IconWrapper = styled.div`
   right: 12px;
   top: 11px;
   pointer-events: none;
+
+  @media screen and (min-width: 768px) {
+    right: 16px;
+    top: 16px;
+  }
 `;
 
 export const BtnsWrap = styled.div`

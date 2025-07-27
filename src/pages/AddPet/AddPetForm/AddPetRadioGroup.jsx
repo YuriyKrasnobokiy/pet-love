@@ -6,10 +6,11 @@ import { useDeviceType } from "../../../hooks/useDeviceType";
 const RadioGroup = styled.div`
   display: flex;
   gap: 8px;
-  margin-bottom: 8px;
+  padding-bottom: 8px;
 
   @media screen and (min-width: 768px){
     margin-bottom: -20px;
+    padding-bottom: 0;
   }
 `;
 

@@ -17,7 +17,7 @@ export const customStyles = (theme, addPet = false) => ({
     "@media screen and (min-width: 768px)": {
       fontSize: "16px",
       letterSpacing: "-0.03em",
-      height: "48px",
+      height: addPet ? "52px" : "48px",
     },
 
     "&:hover": {
@@ -75,8 +75,8 @@ export const customStyles = (theme, addPet = false) => ({
     backgroundColor: theme.colors.SelectMenuBGColor,
     borderRadius: "14px",
     paddingRight: "10px",
-    border: theme.colors.SelectMenuBorderColor,
-    boxShadow: "0 0 0 1px rgba(255, 255, 255, 0)", // Додаємо прозору тінь як заміну бордеру
+    border: addPet ? `1px solid rgba(38, 38, 38, 0.15)` :  theme.colors.SelectMenuBorderColor,
+    boxShadow: "0 0 0 1px rgba(255, 255, 255, 0)", 
   }),
   menuList: (provided) => ({
     ...provided,
