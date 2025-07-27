@@ -23,6 +23,7 @@ import { selectProfile } from "../../../redux/profile/profileSelectors";
 import { birthdateFormat } from "../../../helpers/birthdateFormat";
 import { useDeviceType } from "../../../hooks/useDeviceType";
 import { deletePet } from "../../../redux/profile/profileSlice";
+import { capitalizeFirstLetter } from "../../../helpers/capitalizeFirstLetter";
 
 export const PetsBlock = () => {
   const deviceType = useDeviceType();
@@ -51,13 +52,13 @@ export const PetsBlock = () => {
           <PetListItem key={item.name}>
             <PetItemImg src={item.imgURL} alt="pet-photo" />
             <ItemTextBlock>
-              <PetTitle>{item.title}</PetTitle>
+              <PetTitle>{capitalizeFirstLetter(item.title)}</PetTitle>
               <ItemTextBlockList>
                 {[
-                  { title: "Name", value: item.name },
+                  { title: "Name", value: capitalizeFirstLetter(item.name) },
                   { title: "Birthday", value: item.birthday },
-                  { title: "Sex", value: item.sex },
-                  { title: "Species", value: item.species },
+                  { title: "Sex", value: capitalizeFirstLetter(item.sex)  },
+                  { title: "Species", value: capitalizeFirstLetter(item.species)  },
                 ].map(({ title, value }) => (
                   <TextBlockListItem key={title}>
                     <TextBlockListItemTitle>{title}</TextBlockListItemTitle>
