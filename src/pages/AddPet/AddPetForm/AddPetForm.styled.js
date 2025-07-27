@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const AddPetFormWrap = styled.form`
   padding: 28px 20px 20px;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.AddMyPetFormBG};
+  /* background-color: #fff; */
   border-radius: 30px;
+  border: ${(props) => props.theme.colors.AddMyPetFormBorder};
+  box-sizing: border-box;
 
   @media screen and (min-width: 768px) {
     border-radius: 60px;
@@ -12,6 +15,7 @@ export const AddPetFormWrap = styled.form`
   @media screen and (min-width: 1280px) {
     border-radius: 60px;
     padding: 60px 80px;
+    max-width: 592px;
   }
 `;
 
@@ -20,7 +24,7 @@ export const AddPetTitle = styled.h2`
   font-size: 28px;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: #262626;
+  color: ${(props) => props.theme.colors.AddMyPetFormTitleColor};
   margin-bottom: 24px;
 
   @media screen and (min-width: 768px) {
@@ -36,7 +40,7 @@ export const AddPetTitleSpan = styled.span`
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28;
-  color: rgba(43, 43, 42, 0.4);
+  color: ${(props) => props.theme.colors.AddMyPetFormTitleSpanCol};
   margin-left: 8px;
 
   @media screen and (min-width: 768px) {
@@ -56,7 +60,8 @@ export const AddPetInputsWrap = styled.div`
 `
 
 export const AddPetInput = styled.input`
-  border: 1px solid rgba(38, 38, 38, 0.15);
+  border: ${(props) => props.theme.colors.AddMyPetFormInputBorder};
+  /* border: 1px solid rgba(38, 38, 38, 0.15); */
   border-radius: 30px;
   padding: 12px;
   width: 269px;
@@ -65,9 +70,11 @@ export const AddPetInput = styled.input`
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.03em;
-  color:  #262626;
+  color: ${(props) => props.theme.colors.textColor};
+  /* color:  #262626; */
   transition: border-color 300ms ease-in-out;
   outline: none;
+  background-color: ${(props) => props.theme.colors.AddMyPetFormInputBGC};
 
   @media screen and (min-width: 768px) {
     padding: 16px;
@@ -88,7 +95,7 @@ export const AddPetInput = styled.input`
   }
 
   &::placeholder{
-    color: rgba(38, 38, 38, 0.5); 
+    color: ${(props) => props.theme.colors.AddMyPetFormInputPlaceholderColor}; 
   }
 
   &:hover {
@@ -102,7 +109,8 @@ export const AddPetInput = styled.input`
 
   &:-webkit-autofill {
     transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
-    -webkit-text-fill-color: #262626 !important;
+    -webkit-text-fill-color: ${(props) => props.theme.colors.textColor} !important;
+    /* -webkit-text-fill-color: #262626 !important; */
     caret-color: ${(props) => props.theme.colors.accentColor};
   }
 `
@@ -153,20 +161,20 @@ export const AddPetFormBtn = styled.button`
   transition: background 300ms ease-in-out;
 
   &.back {
-    color: #262626;
-    background: rgba(38, 38, 38, 0.05);
+    color: ${(props) => props.theme.colors.AddMyPetFormBtnBackColor};
+    background: ${(props) => props.theme.colors.AddMyPetFormBtnBackBGColor};
     &:hover {
-    background: rgba(38, 38, 38, 0.08);
-  }
+      background: ${(props) => props.theme.colors.AddMyPetFormBtnBackBGHoverColor};
+    }
   };
 
   &.submit {
-    color: #fff;
-    background: #f6b83d;
+    color: ${(props) => props.theme.colors.AddMyPetFormBtnSubColor};
+    background: ${(props) => props.theme.colors.AddMyPetFormBtnSubBGColor};
 
     &:hover {
-    background: #f9b020;;
-  }
+      background: ${(props) => props.theme.colors.AddMyPetFormBtnSubBGHoverColor};
+    }
   };
 
   @media screen and (min-width: 768px) {

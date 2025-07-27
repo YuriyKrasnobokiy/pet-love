@@ -100,6 +100,6 @@ export const App = () => {
           </Routes>
         </Layout>
       </Suspense>
-    )};
+    )}
     </ThemeProvider>)
 };

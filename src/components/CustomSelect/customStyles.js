@@ -10,7 +10,7 @@ export const customStyles = (theme, addPet = false) => ({
     width: "100%",
     height: "42px",
     // borderColor: theme.colors.SelectControlBorderColor,
-    borderColor: addPet ? "rgba(38, 38, 38, 0.15)" : theme.colors.SelectControlBorderColor,
+    borderColor: addPet ? theme.colors.SelectControlBorderColorSecondary : theme.colors.SelectControlBorderColor,
     cursor: "pointer",
     transition: "border-color 300ms ease",
 
@@ -58,7 +58,7 @@ export const customStyles = (theme, addPet = false) => ({
   placeholder: (provided) => ({
     ...provided,
     // color: theme.colors.SelectInputPlaceholderColor,
-    color: addPet ? "rgba(38, 38, 38, 0.5)" : theme.colors.SelectInputPlaceholderColor,
+    color: addPet ? theme.colors.SelectInputPlaceholderColorSecondary : theme.colors.SelectInputPlaceholderColor,
     fontWeight: 500,
     fontSize: "14px",
     lineHeight: 1.25,

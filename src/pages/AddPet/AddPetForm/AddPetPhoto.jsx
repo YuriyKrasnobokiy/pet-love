@@ -24,7 +24,7 @@ const PetPhoto = styled.div`
   padding: 10px;
   width: 48px;
   height: 48px;
-  background: #fff4df;
+  background: ${(props) => props.theme.colors.AddMyPetPhotoImgBGC};
   margin: 0 auto 16px;
   background-image: ${({ $imgPreview }) => ($imgPreview ? `url(${$imgPreview})` : 'none')};
   background-size: cover;
@@ -46,7 +46,7 @@ const InputBtnWrap = styled.div`
 `;
 
 const UrlInput = styled.input`
-  border: 1px solid rgba(38, 38, 38, 0.15);
+  border: ${(props) => props.theme.colors.AddMyPetPhotoUrlInputBorder};
   border-radius: 30px;
   padding: 9px 18px 9px 10px;
   height: 16px;
@@ -54,10 +54,11 @@ const UrlInput = styled.input`
   font-size: 12px;
   line-height: 1.28;
   letter-spacing: -0.02em;
-  color: #262626;
+  color: ${(props) => props.theme.colors.textColor};
   width: 140px;
   transition: all 300ms ease-in-out;
   outline: none;
+  background-color: ${(props) => props.theme.colors.AddMyPetPhotoUrlInputBGC};
 
   @media screen and (min-width: 768px) {
     padding: 12px 20px 12px 12px;
@@ -76,7 +77,7 @@ const UrlInput = styled.input`
 
   &::placeholder {
     font-style: 14px;
-    color: rgba(38, 38, 38, 0.5);
+    color: ${(props) => props.theme.colors.AddMyPetPhotoUrlInputPlaceholderColor};
     font-weight: inherit;
     line-height: inherit;
     letter-spacing: inherit;
@@ -84,7 +85,7 @@ const UrlInput = styled.input`
 
   &:-webkit-autofill {
     transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
-    -webkit-text-fill-color: #262626 !important;
+    -webkit-text-fill-color: ${(props) => props.theme.colors.textColor} !important;
     caret-color: ${(props) => props.theme.colors.accentColor};
   }
 `;
@@ -95,7 +96,7 @@ const UploadBtn = styled.button`
   padding: 10px;
   width: 117px;
   height: 36px;
-  background: #fff4df;
+  background: ${(props) => props.theme.colors.AddMyPetPhotoUploadBtnBGC};
   align-items: center;
   justify-content: center;
   gap: 5px;
@@ -103,7 +104,7 @@ const UploadBtn = styled.button`
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: -0.02em;
-  color: #262626;
+  color: ${(props) => props.theme.colors.AddMyPetPhotoUploadBtnColor};
   transition: background 300ms ease-in-out;
 
   @media screen and (min-width: 768px) {
@@ -115,7 +116,7 @@ const UploadBtn = styled.button`
   }
 
   &:hover {
-    background: #fbe7c1;
+    background: ${(props) => props.theme.colors.AddMyPetPhotoUploadBtnHoverBGC};
   }
 `;
 

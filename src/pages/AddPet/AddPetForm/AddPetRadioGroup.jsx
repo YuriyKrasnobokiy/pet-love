@@ -27,7 +27,7 @@ const RoundLabel = styled.label`
       ? "rgba(244, 63, 94, 0.1)"
       : props.$opt === "male"
       ? "rgba(84, 173, 255, 0.1)"
-      : "#fff4df"};
+      : props.theme.colors.AddMyPetRadioMultipleBGC};
   color: #0a0a0a;
   display: flex;
   justify-content: center;
