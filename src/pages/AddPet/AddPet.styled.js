@@ -20,5 +20,6 @@ export const AddPetWrap = styled.div`
     gap: 32px;
     padding:  0 0 32px 0;
     /* padding: 32px 0; */
+    max-width: 1216px;
   }
 `

@@ -26,6 +26,7 @@ const Viewed = lazy(() => import("./MyNotices/Viewed/Viewed"));
 const AddPet = lazy(() => import("../pages/AddPet/AddPet"))
 
 export const App = () => {
+  const [isThemeLoading, setIsThemeLoading] = useState(false);
   const [currentTheme, setCurrentTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme || "dark";
@@ -35,9 +36,16 @@ export const App = () => {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   const toggleTheme = () => {
+    if (isThemeLoading) return;
+    setIsThemeLoading(true);
     const newTheme = currentTheme === "light" ? "dark" : "light";
+
+    setTimeout(() => {
     setCurrentTheme(newTheme);
     localStorage.setItem("theme", newTheme);
+    setIsThemeLoading(false);
+    }, 1000)
+    
   };
 
   useEffect(() => {
@@ -45,11 +53,12 @@ export const App = () => {
     dispatch(refresh());
   }, [dispatch, currentToken]);
 
-  return isRefreshing ? (
-    <b>Refreshing user...</b>
-  ) : (
+  return (
     <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyles />
+      {isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : isThemeLoading ? (<Loader/>) : (
       <Suspense fallback={<Loader />}>
         <Layout currentTheme={currentTheme} toggleTheme={toggleTheme}>
           <Routes>
@@ -91,6 +100,6 @@ export const App = () => {
           </Routes>
         </Layout>
       </Suspense>
-    </ThemeProvider>
-  );
+    )};
+    </ThemeProvider>)
 };
