@@ -164,7 +164,7 @@ export const AddPetForm = () => {
         </DateTypeWrap>
       </AddPetInputsWrap>
       <BtnsWrap>
-        <AddPetFormBtn onClick={handleBackClick} className="back">
+        <AddPetFormBtn type="button" onClick={handleBackClick} className="back">
           Back
         </AddPetFormBtn>
         <AddPetFormBtn type="submit" className="submit">

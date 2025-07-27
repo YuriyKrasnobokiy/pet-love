@@ -71,20 +71,24 @@ export const PetsList = styled.ul`
 export const PetListItem = styled.li`
   position: relative;
   display: flex;
-  border: 1px solid rgba(38, 38, 38, 0.1);
+  border: ${(props) =>
+      props.theme.colors.MyPetsCardBorder};; 
+  /* border: 1px solid rgba(38, 38, 38, 0.1);  */
   border-radius: 20px;
-  width: calc(295px - 16px - 16px);
+  width: calc(295px - 16px - 16px - 2px);
   max-height: calc(132px - 16px - 16px);
   padding: 16px;
-  background-color: transparent;
+  background-color: ${(props) =>
+      props.theme.colors.MyPetsCardBG};
+  /* background-color: transparent; */
 
   @media screen and (min-width: 768px) {
-    width: calc(303px - 16px - 16px);
+    width: calc(305px - 16px - 16px - 2px);
     max-height: calc(149px - 22px - 22px);
     padding: 22px 16px;
   }
   @media screen and (min-width: 1280px) {
-    width: calc(440px - 42px);
+    width: calc(440px - 40px - 2px);
     height: calc(130px - 40px);
     padding: 20px;
   }
@@ -130,7 +134,9 @@ export const PetTitle = styled.h3`
   font-weight: 700;
   font-size: 14px;
   line-height: 1.28;
-  color: #2b2b2a;
+  color: ${(props) =>
+      props.theme.colors.MyPetsCardTitleColor};
+  /* color: #2b2b2a; */
   max-width: 100%;
 
   overflow: hidden;
@@ -167,14 +173,18 @@ export const TextBlockListItemTitle = styled.p`
   font-size: 10px;
   line-height: 1.4;
   letter-spacing: -0.02em;
-  color: rgba(38, 38, 38, 0.5);
+  color: ${(props) =>
+      props.theme.colors.MyPetsCardSecondColor};
+  /* color: rgba(38, 38, 38, 0.5); */
 `
 export const TextBlockListItemValue = styled.p`
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16667;
   letter-spacing: -0.02em;
-  color: #262626;
+  /* color: #262626; */
+  color:${(props) =>
+      props.theme.colors.MyPetsCardColor};
   max-width: 64px;
 
   overflow: hidden;
@@ -195,13 +205,17 @@ export const DeleteBtn = styled.button`
   border-radius: 30px;
   width: 30px;
   height: 30px;
-  background: #fff4df;
-  transition: background 0.3ms ease-in-out;
+  /* background: #fff4df; */
+  background: ${(props) =>
+      props.theme.colors.MyPetsCardDelBtnBG};
+  transition: background 300ms ease-in-out;
   top: 12px;
   right: 12px;
 
   &:hover {
-    background: #FBE7C1;
+    /* background: #FBE7C1; */
+    background:${(props) =>
+      props.theme.colors.MyPetsCardDelHoverBtnBG}
   }
 
   @media screen and (min-width: 768px) {

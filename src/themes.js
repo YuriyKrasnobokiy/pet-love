@@ -158,6 +158,14 @@ export const themes = {
       PetsBlockLogOutBtnBGColor: "#fff4df",
       PetsBlockLogOutBtnBGHoverColor: "#fbe7c1",
 
+      MyPetsCardBorder: '1px solid rgba(38, 38, 38, 0.1)',
+      MyPetsCardBG: 'transparent',
+      MyPetsCardTitleColor: '#2b2b2a', 
+      MyPetsCardColor: '#262626',
+      MyPetsCardSecondColor: 'rgba(38, 38, 38, 0.5)',
+      MyPetsCardDelBtnBG: '#fff4df',
+      MyPetsCardDelHoverBtnBG: '#FBE7C1',
+
       MyNoticesLinkActiveColor: "#fff",
       MyNoticesLinkColor: "#262626",
       MyNoticesLinkActiveBGColor: "#f6b83d",
@@ -352,6 +360,14 @@ export const themes = {
       MyNoticesLinkBGColor: "#fff",
       MyNoticesLinkActiveHoverBGColor: "#f9b020",
       MyNoticesLinkHoverBGColor: "#fff4df",
+
+      MyPetsCardBorder: '1px solid transparent',
+      MyPetsCardBG: '#121212',
+      MyPetsCardTitleColor: '#fff', 
+      MyPetsCardColor: '#f6b83d',
+      MyPetsCardSecondColor: 'rgba(255, 255, 255, 0.5)',
+      MyPetsCardDelBtnBG: '#fff4df',
+      MyPetsCardDelHoverBtnBG: '#FBE7C1',
 
       ModalEditUserTitleColor: "2b2b2a",
       ModalEditUserAvatarColor: "rgba(255, 255, 255, 0.5)",
